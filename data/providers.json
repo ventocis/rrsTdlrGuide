@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Aceable",
+    "duplicates": [
+      { "name": "Ace Driver School", "url": "acedriverschool.com" },
+      { "name": "Aceable Defensive Driving", "url": "aceabledd.com" }
+    ],
+    "rating": 4.6,
+    "reviewCount": 2847,
+    "price": 25.0,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": false,
+    "languages": ["English", "Spanish"],
+    "instantCert": "Free",
+    "moneyBack": true,
+    "completionWindow": "90 days",
+    "lastVerified": "2026-02-28"
+  },
+  {
+    "id": 2,
+    "name": "iDriveSafely",
+    "duplicates": [
+      { "name": "I Drive Safely Texas", "url": "idrivesafely-tx.com" },
+      { "name": "DriversEd.com Defensive Driving", "url": "driversed.com/dd" }
+    ],
+    "rating": 4.4,
+    "reviewCount": 1923,
+    "price": 24.95,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": false,
+    "languages": ["English", "Spanish"],
+    "instantCert": "Paid",
+    "moneyBack": true,
+    "completionWindow": "90 days",
+    "lastVerified": "2026-03-01"
+  },
+  {
+    "id": 3,
+    "name": "Road Ready Safety",
+    "duplicates": [],
+    "rating": 4.9,
+    "reviewCount": 312,
+    "price": 29.99,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": true,
+    "languages": ["English", "Spanish"],
+    "instantCert": "Free",
+    "moneyBack": true,
+    "completionWindow": "180 days",
+    "lastVerified": "2026-03-09",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Comedy Defensive Driving",
+    "duplicates": [
+      { "name": "ComedyDrive Texas", "url": "comedydrive-tx.com" },
+      { "name": "Improv Comedy Driving", "url": "improvdd.com" },
+      { "name": "LOL Traffic School", "url": "loltrafficschool.com" }
+    ],
+    "rating": 4.2,
+    "reviewCount": 1456,
+    "price": 35.0,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": true,
+    "languages": ["English"],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "completionWindow": "60 days",
+    "lastVerified": "2026-02-15"
+  },
+  {
+    "id": 5,
+    "name": "GoToTrafficSchool",
+    "duplicates": [
+      { "name": "Go To Driving School TX", "url": "gotodrivingtx.com" },
+      { "name": "GTTS Online", "url": "gttsonline.com" }
+    ],
+    "rating": 3.8,
+    "reviewCount": 634,
+    "price": 19.99,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": false,
+    "languages": ["English", "Spanish", "Vietnamese"],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "completionWindow": "90 days",
+    "lastVerified": "2026-01-20"
+  },
+  {
+    "id": 6,
+    "name": "TexasDefensiveDriving.com",
+    "duplicates": [
+      { "name": "Texas State Approved Driving", "url": "txstateapproved.com" },
+      { "name": "TDD Online", "url": "tddonline.com" }
+    ],
+    "rating": 4.0,
+    "reviewCount": 891,
+    "price": 25.0,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": false,
+    "languages": ["English"],
+    "instantCert": "Free",
+    "moneyBack": true,
+    "completionWindow": "90 days",
+    "lastVerified": "2026-02-10"
+  },
+  {
+    "id": 7,
+    "name": "ApprovedCourse.com",
+    "duplicates": [
+      { "name": "Approved Course Texas", "url": "approvedcoursetx.com" }
+    ],
+    "rating": 4.3,
+    "reviewCount": 1102,
+    "price": 25.0,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": false,
+    "languages": ["English", "Spanish"],
+    "instantCert": "Free",
+    "moneyBack": true,
+    "completionWindow": "90 days",
+    "lastVerified": "2026-02-20"
+  },
+  {
+    "id": 8,
+    "name": "DefensiveDriving.com",
+    "duplicates": [
+      { "name": "National Defensive Driving TX", "url": "nddtx.com" },
+      { "name": "Safe2Drive Texas", "url": "safe2drive-tx.com" }
+    ],
+    "rating": 4.1,
+    "reviewCount": 2103,
+    "price": 25.0,
+    "stateFee": 10.0,
+    "online": true,
+    "inPerson": false,
+    "languages": ["English", "Spanish"],
+    "instantCert": "Paid",
+    "moneyBack": true,
+    "completionWindow": "90 days",
+    "lastVerified": "2026-03-05"
+  }
+]
