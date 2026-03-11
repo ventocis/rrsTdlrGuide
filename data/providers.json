@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Road Ready Safety",
     "license": "CP1234",
+    "website": "roadreadysafety.com/texas",
     "duplicates": [],
     "rating": 4.9,
     "price": 25,
@@ -69,6 +70,7 @@
     "id": 4,
     "name": "$25 DEFENSIVE DRIVING",
     "license": "CP1003",
+    "website": "https://tylerdrivingschool.com",
     "duplicates": [],
     "rating": 3.5,
     "price": 25,
@@ -91,6 +93,7 @@
     "id": 5,
     "name": "1-DRIVING.COM",
     "license": "CP935",
+    "website": "https://1driving.com/",
     "duplicates": [],
     "rating": 3.2,
     "price": 29,
@@ -135,6 +138,7 @@
     "id": 7,
     "name": "1SAFEDRIVER.COM",
     "license": "CP221",
+    "website": "https://1safedriver.com/",
     "duplicates": [],
     "rating": 3.2,
     "price": 25,
@@ -157,6 +161,7 @@
     "id": 8,
     "name": "247TEXASDRIVERSAFETY.COM",
     "license": "CP156",
+    "website": "https://247texasdriversafety.com/",
     "duplicates": [],
     "rating": 3.8,
     "price": 25,
@@ -245,6 +250,7 @@
     "id": 12,
     "name": "ACEABLE DEFENSIVE DRIVING",
     "license": "CP262",
+    "website": "https://www.aceable.com/defensive-driving/texas/#products",
     "duplicates": [],
     "rating": 4.5,
     "price": 49,
@@ -267,6 +273,7 @@
     "id": 13,
     "name": "ADS DEFENSIVE DRIVING CURRICULUM",
     "license": "CP042",
+    "website": "https://austindrivingschool.com/",
     "duplicates": [],
     "rating": 3.1,
     "price": 39,
@@ -290,6 +297,7 @@
     "id": 14,
     "name": "ALL IS WELL DRIVING ACADEMY, LLC",
     "license": "CP1046",
+    "website": "https://www.alliswelldrivingacademy.com/",
     "duplicates": [],
     "rating": 3.6,
     "price": 0,
@@ -312,6 +320,7 @@
     "id": 15,
     "name": "ANGELO DRIVING, INC.",
     "license": "CP136",
+    "website": "https://www.angelodrivingacademy.com/driver-safety-defensive-driver-safety-class.html",
     "duplicates": [],
     "rating": 3.9,
     "price": 30,
@@ -335,6 +344,7 @@
     "id": 16,
     "name": "APPROVED NATIONAL DRIVING SCHOOL OF TEXAS",
     "license": "CP1093",
+    "website": "https://approvedonlinedefensivedriving.com/",
     "duplicates": [],
     "rating": 3.4,
     "price": 25,
@@ -357,6 +367,7 @@
     "id": 17,
     "name": "- ONLY $25 - CLICK HERE NOW - EASY, FAST, QUICK COURSE",
     "license": "CP028",
+    "website": "https://fastestwaytopass.com",
     "duplicates": [
       {
         "name": "$25 FAST EASY QUICK DEFENSIVE DRIVING-CLICK HERE",
@@ -800,6 +811,7 @@
     "id": 18,
     "name": "FAST EASY DEFENSIVE DRIVING",
     "license": "CP023",
+    "website": "https://fasteasydefensivedriving.com",
     "duplicates": [
       {
         "name": "$25 DRIVING SAFETY",
@@ -1129,6 +1141,7 @@
     "id": 19,
     "name": "EASYPASSDEFENSIVEDRIVING.COM",
     "license": "CP1126",
+    "website": "easypassdefensivedriving.com",
     "duplicates": [
       {
         "name": "ERASEMYTICKET.COM",
@@ -1486,6 +1499,7 @@
     "id": 22,
     "name": "COURTAPPROVEDCOMEDYDRIVINGSAFETY.COM",
     "license": "CP1199",
+    "website": "COURTAPPROVEDCOMEDYDRIVINGSAFETY.COM",
     "duplicates": [
       {
         "name": "TRYITFREEDEFENSIVEDRIVING",
@@ -1563,6 +1577,7 @@
     "id": 23,
     "name": "COMEDY DRIVING SAFETY",
     "license": "CP126",
+    "website": "https://www.comedydrivingsafety.com/",
     "duplicates": [],
     "rating": 3,
     "price": 25,
@@ -1585,6 +1600,7 @@
     "id": 24,
     "name": "$25-FREE VIDEO COURSE-INSTANT CERTIFICATE DOWNLOAD",
     "license": "CP077",
+    "website": "https://www.easyvideocourseonline.com/register",
     "duplicates": [
       {
         "name": "$25 - --E--A--S--Y-- NO FINAL EXAM - INSTANT CERTI",
@@ -1656,6 +1672,7 @@
     "id": 25,
     "name": "ONLINE DEFENSIVE DRIVING SCHOOLS",
     "license": "CP027",
+    "website": "https://www.instantdefensivedriving.com/",
     "duplicates": [
       {
         "name": "COURT APPROVED DEFENSIVE DRIVING",
@@ -1709,6 +1726,7 @@
     "id": 26,
     "name": "FAST TRACK DEFENSIVE DRIVING",
     "license": "CP037",
+    "website": "https://fasttrackdefensivedriving.com/tdlr-approved-driving-safety-course",
     "duplicates": [
       {
         "name": "BEST DRIVING SAFETY",
@@ -1750,6 +1768,7 @@
     "id": 27,
     "name": "AMERICAN SAFETY COUNCIL, INC.",
     "license": "CP520",
+    "website": "https://cart.safemotorist.com/cart/",
     "duplicates": [],
     "rating": 3.6,
     "price": 25,
@@ -1773,6 +1792,7 @@
     "id": 28,
     "name": "COMEDY GUYS DEFENSIVE DRIVING",
     "license": "CP1054",
+    "website": "https://www.comedyguys.com/",
     "duplicates": [
       {
         "name": "EASY DEFENSIVE DRIVING",
@@ -1808,6 +1828,7 @@
     "id": 29,
     "name": "-- VIDEO -- CHEAPER -- FASTER -- EASIER -- TEXAS DEFENSIVE DRIVING",
     "license": "CP065",
+    "website": "https://www.defensivedrivingez.com/home",
     "duplicates": [
       {
         "name": "LOWEST PRICE-FREE CERTIFICATE-VIDEO-100%PASS-SHORT EZ-FREE AUDIO",
@@ -1849,6 +1870,7 @@
     "id": 30,
     "name": "DEFENSIVEDRIVINGCOURSE.COM",
     "license": "CP280",
+    "website": "DEFENSIVEDRIVINGCOURSE.COM",
     "duplicates": [
       {
         "name": "ASENSEOFHUMORDRIVING.COM",
@@ -1879,6 +1901,7 @@
     "id": 31,
     "name": "FUNNY DRIVING LLC",
     "license": "CP073",
+    "website": "funnydriving.com",
     "duplicates": [
       {
         "name": "COMEDY DRIVING INC.",
@@ -1908,6 +1931,7 @@
     "id": 32,
     "name": "I DRIVE SAFELY, LLC",
     "license": "CP022",
+    "website": "www.idrivesafely.com",
     "duplicates": [
       {
         "name": "I DRIVE SAFELY LLC",
@@ -1937,6 +1961,7 @@
     "id": 33,
     "name": "URBANTRAFFICSCHOOL.COM",
     "license": "CP003",
+    "website": "https://www.urbantrafficschool.com/user",
     "duplicates": [
       {
         "name": "---WITH VIDEOS----EASYTEXASCOURSE.COM",

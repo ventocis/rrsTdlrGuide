@@ -12,6 +12,7 @@ export type Provider = {
   id: number
   name: string
   license?: string
+  website?: string
   duplicates: DuplicateBrand[]
   rating: number
   price: number

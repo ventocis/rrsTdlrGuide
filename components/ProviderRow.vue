@@ -52,19 +52,38 @@ function langVariant(label: string) {
   if (label === 'Spanish') return 'lang-spanish'
   return 'lang-other'
 }
+
+const hasWebsite = computed(() => {
+  const u = props.provider.website?.trim() || ''
+  if (!u) return false
+  if (u.toLowerCase() === 'not found') return false
+  return true
+})
+
+function openWebsite() {
+  if (!hasWebsite.value || !props.provider.website) return
+  let u = props.provider.website.trim()
+  if (!/^https?:\/\//i.test(u)) u = `https://${u}`
+  window.open(u, '_blank', 'noopener,noreferrer')
+}
+
+function onRowClick() {
+  if (hasDupes.value) emit('toggle')
+  else if (hasWebsite.value) openWebsite()
+}
 </script>
 
 <template>
   <tr
     :class="[
-      'cursor-default border-b transition-colors h-12',
+      'border-b transition-colors h-12',
       provider.featured
         ? 'bg-[var(--proto-teal-bg)]'
         : 'bg-white hover:bg-[var(--proto-hover-bg)]',
-      hasDupes ? 'cursor-pointer' : ''
+      hasDupes || hasWebsite ? 'cursor-pointer' : 'cursor-default'
     ]"
     style="border-bottom-color: var(--proto-row-border);"
-    @click="hasDupes && emit('toggle')"
+    @click="onRowClick"
   >
     <td class="px-3 py-0">
       <div class="flex items-center gap-2">

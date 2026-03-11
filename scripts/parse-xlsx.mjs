@@ -138,6 +138,9 @@ function buildProvider(first, rest, id) {
   const name = get(first, 'Provider')
   const license = get(first, 'License')
   const websiteRaw = getRaw(first, 'Website')
+  const website = websiteRaw != null && String(websiteRaw).trim() !== ''
+    ? String(websiteRaw).replace(/^\[\"?|\"?\]$/g, '').trim()
+    : undefined
   const rating = parseNumber(get(first, 'Rating'))
   const priceRaw = getRaw(first, 'Price')
   const feeRaw = getRaw(first, 'Fee')
@@ -155,6 +158,7 @@ function buildProvider(first, rest, id) {
     id,
     name,
     license,
+    website: (website && website.toLowerCase() !== 'not found') ? website : undefined,
     duplicates: rest.map((r) => ({
       name: get(r, 'Provider'),
       url: String(getRaw(r, 'Website')).replace(/^\[\"?|\"?\]$/g, '').trim(),

@@ -151,14 +151,14 @@ function sortArrow(col: string) {
         brands grouped under parent company
       </span>
       <span>
-        Data sourced from TDLR public records ·
-        <button
-          type="button"
+        Data sourced from TDLR public records and available websites found at time of search ·
+        <a
+          href="#"
           class="font-semibold hover:opacity-90"
           style="color: var(--proto-teal);"
         >
-          Submit a correction →
-        </button>
+          Submit a correction by filling out form →
+        </a>
       </span>
     </div>
   </div>

@@ -16,7 +16,7 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
     <div
       class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
     >
-      <!-- Left: logo + BETA -->
+      <!-- Left: logo + BETA + tagline -->
       <div class="flex flex-col gap-2 sm:shrink-0">
         <div class="flex items-center gap-2">
           <img
@@ -31,6 +31,12 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
             BETA
           </span>
         </div>
+        <p
+          class="m-0 mt-0.5 text-[14px] font-medium leading-snug"
+          style="color: var(--proto-header-subtitle);"
+        >
+          Don't overpay for your ticket dismissal. Compare Texas' top-rated courses.
+        </p>
       </div>
 
       <!-- Search -->

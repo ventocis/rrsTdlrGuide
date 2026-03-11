@@ -44,12 +44,29 @@ function langVariant(label: string) {
   if (label === 'Spanish') return 'lang-spanish'
   return 'lang-other'
 }
+
+const hasWebsite = computed(() => {
+  const u = props.dupe.url?.trim() || ''
+  if (!u) return false
+  const lower = u.toLowerCase()
+  if (lower === 'not found' || lower === 'n/a' || lower === 'na') return false
+  return true
+})
+
+function openWebsite() {
+  if (!hasWebsite.value) return
+  let u = props.dupe.url!.trim()
+  if (!/^https?:\/\//i.test(u)) u = `https://${u}`
+  window.open(u, '_blank', 'noopener,noreferrer')
+}
 </script>
 
 <template>
   <tr
-    class="border-b h-10 bg-[var(--proto-hover-bg)]"
+    class="border-b h-10 bg-[var(--proto-hover-bg)] transition-colors"
     style="border-bottom-color: var(--proto-row-border);"
+    :class="{ 'cursor-pointer hover:opacity-90': hasWebsite }"
+    @click="openWebsite"
   >
     <td class="pl-11 pr-3 py-0">
       <div class="flex items-center gap-1.5">
