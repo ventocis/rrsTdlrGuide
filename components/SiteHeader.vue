@@ -16,10 +16,10 @@ const isSubmitReviewPage = route.path === '/submit-review'
       style="background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%);"
     />
     <div
-      class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+      class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
     >
       <!-- Left: logo + BETA + tagline -->
-      <div class="flex flex-col gap-2 sm:shrink-0">
+      <div class="flex flex-col gap-2 sm:shrink-0 sm:max-w-[420px]">
         <div class="flex items-center gap-2">
           <NuxtLink to="/" class="flex items-center focus:outline-none focus:ring-2 focus:ring-[var(--proto-teal)] focus:ring-offset-2 focus:ring-offset-transparent rounded">
             <img
@@ -39,13 +39,13 @@ const isSubmitReviewPage = route.path === '/submit-review'
           class="m-0 mt-0.5 text-[14px] font-medium leading-snug"
           style="color: var(--proto-header-subtitle);"
         >
-          Don't overpay for your ticket dismissal. Compare Texas' top-rated courses.
+          Don't overpay for your ticket dismissal. Compare Texas' top-rated driver safety courses.
         </p>
       </div>
 
       <!-- Search + Submit Review (hide Submit Review on form page) -->
-      <div class="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
-        <div class="relative w-full sm:w-[280px]">
+      <div class="flex w-full flex-col gap-5 sm:w-auto sm:flex-row sm:items-stretch sm:gap-3">
+        <div class="relative w-full sm:w-[280px] min-h-[42px] flex items-center shrink-0">
           <span
             class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--proto-header-subtitle)]"
             aria-hidden="true"

@@ -27,21 +27,21 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Compare every TDLR-approved defensive driving course in Texas. Real prices, ratings, formats, and student reviews. Find the best course for ticket dismissal.'
+            'Compare Texas’ top-rated driver safety and defensive driving courses. TDLR-approved. Real prices, ratings, formats, and student reviews. Find the best course for ticket dismissal.'
         },
         { name: 'robots', content: 'index, follow' },
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'TDLR Guide — Compare Texas Defensive Driving Courses' },
         {
           property: 'og:description',
-          content: 'Compare every TDLR-approved defensive driving course in Texas. Real prices, ratings, and student reviews.'
+          content: 'Compare Texas’ top-rated driver safety and defensive driving courses. TDLR-approved. Real prices, ratings, and student reviews.'
         },
         { property: 'og:locale', content: 'en_US' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'TDLR Guide — Compare Texas Defensive Driving Courses' },
         {
           name: 'twitter:description',
-          content: 'Compare every TDLR-approved defensive driving course in Texas. Real prices, ratings, and student reviews.'
+          content: 'Compare Texas’ top-rated driver safety and defensive driving courses. TDLR-approved. Real prices, ratings, and student reviews.'
         }
       ],
       link: [

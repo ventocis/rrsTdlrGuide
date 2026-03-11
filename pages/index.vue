@@ -10,7 +10,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'TDLR Guide',
-  description: 'Compare every TDLR-approved defensive driving course in Texas. Real prices, ratings, formats, and student reviews. Find the best course for ticket dismissal.',
+  description: 'Compare Texas’ top-rated driver safety and defensive driving courses. TDLR-approved. Real prices, ratings, formats, and student reviews. Find the best course for ticket dismissal.',
   url: siteUrl,
   potentialAction: {
     '@type': 'SearchAction',
