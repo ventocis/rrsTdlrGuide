@@ -7,7 +7,8 @@ useProviders()
 
 <template>
   <div
-    class="min-h-screen bg-rui-neutral-50 font-[family-name:var(--font-dm-sans,DM_Sans,_system-ui,_sans-serif)]"
+    class="min-h-screen font-['DM_Sans',system-ui,sans-serif]"
+    style="background-color: var(--proto-page-bg);"
   >
     <SiteHeader />
     <FilterBar />

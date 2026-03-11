@@ -1,7 +1,11 @@
 <template>
-  <footer class="border-t border-rui-neutral-200 bg-rui-neutral-50 py-4">
+  <footer
+    class="border-t bg-white py-4 px-3 sm:px-5"
+    style="border-color: var(--proto-card-border);"
+  >
     <div
-      class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-5 text-[11px] text-rui-neutral-500"
+      class="mx-auto flex w-full max-w-[1600px] flex-wrap items-center justify-between gap-2 text-[11px]"
+      style="color: var(--proto-text-light);"
     >
       <span>
         Independent guide · Not affiliated with TDLR or the State of Texas

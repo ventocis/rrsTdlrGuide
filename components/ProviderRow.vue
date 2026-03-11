@@ -34,164 +34,148 @@ const languageLabel = computed(() => {
   return langs.join(', ')
 })
 
-function certColor(value: string) {
-  if (value === 'Free') return 'success'   // Nuxt UI: green
-  if (value === 'Paid') return 'error'     // Nuxt UI: red
-  if (value === 'Mail') return 'neutral'   // Nuxt UI: gray
-  return 'neutral'
+function certVariant(value: string) {
+  if (value === 'Free') return 'cert-free'
+  if (value === 'Paid') return 'cert-paid'
+  return 'cert-mail'
 }
 
-function formatColor(label: string) {
-  if (label === 'Online / In-Person') return 'primary'  // Nuxt UI: violet/purple
-  if (label === 'In-Person') return 'warning'           // Nuxt UI: orange
-  if (label === 'Online') return 'info'                 // Nuxt UI: blue
-  return 'neutral'
+function formatVariant(label: string) {
+  if (label === 'Online / In-Person') return 'format-both'
+  if (label === 'In-Person') return 'format-inperson'
+  return 'format-online'
 }
 
-function langColor(label: string) {
-  if (label === 'Eng / Spanish') return 'warning'      // Nuxt UI: orange/amber
-  if (label === 'English') return 'neutral'
-  if (label === 'Spanish') return 'warning'
-  if (label.toLowerCase() === 'not found') return 'error'
-  return 'neutral'
+function langVariant(label: string) {
+  if (label === 'Eng / Spanish') return 'lang-engspanish'
+  if (label === 'English') return 'lang-english'
+  if (label === 'Spanish') return 'lang-spanish'
+  return 'lang-other'
 }
 </script>
 
 <template>
   <tr
     :class="[
-      'cursor-default border-b border-rui-neutral-200 transition-colors',
+      'cursor-default border-b transition-colors h-12',
       provider.featured
-        ? 'bg-rui-success-50'
-        : 'bg-white hover:bg-rui-neutral-50',
+        ? 'bg-[var(--proto-teal-bg)]'
+        : 'bg-white hover:bg-[var(--proto-hover-bg)]',
       hasDupes ? 'cursor-pointer' : ''
     ]"
+    style="border-bottom-color: var(--proto-row-border);"
     @click="hasDupes && emit('toggle')"
   >
-    <td class="h-12 px-3">
+    <td class="px-3 py-0">
       <div class="flex items-center gap-2">
-        <span class="flex h-4 w-4 items-center justify-center text-rui-neutral-400">
+        <span class="flex h-3.5 w-3.5 items-center justify-center" style="color: var(--proto-text-light);">
           <UIcon
             v-if="hasDupes"
             name="i-heroicons-chevron-down-20-solid"
-            class="h-3.5 w-3.5 text-rui-neutral-400 transition-transform duration-150"
+            class="h-3.5 w-3.5 transition-transform duration-200"
+            style="color: var(--proto-text-light);"
             :class="isExpanded ? 'rotate-180' : ''"
           />
         </span>
-        <span class="text-sm font-bold text-rui-neutral-900">
+        <span class="text-[14px] font-bold" style="color: var(--proto-text);">
           {{ provider.name }}
         </span>
         <span
           v-if="provider.featured"
-          class="bg-rui-success-600 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.16em] text-white rounded-full shadow-sm"
+          class="rounded px-1.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-white"
+          style="background: linear-gradient(90deg, var(--proto-teal), var(--proto-teal-dark)); letter-spacing: 0.05em;"
         >
           Overall Pick
         </span>
         <span
           v-if="hasDupes"
-          class="text-[11px] font-medium text-rui-neutral-500"
+          class="text-[11px] font-medium"
+          style="color: var(--proto-text-light);"
         >
           +{{ provider.duplicates.length }}
         </span>
       </div>
     </td>
-    <td class="h-12 px-3 text-center">
+    <td class="px-3 py-0 text-center">
       <div class="flex items-center justify-center gap-1">
         <StarRating :rating="provider.rating" />
-        <span class="text-sm font-bold text-rui-neutral-900">
+        <span class="text-[13px] font-bold" style="color: var(--proto-text);">
           {{ provider.rating.toFixed(1) }}
         </span>
       </div>
     </td>
-    <td class="h-12 px-3">
+    <td class="px-3 py-0">
       <template
         v-if="
           provider.priceDisplay &&
           provider.priceDisplay.toString().trim().toLowerCase() === 'not found'
         "
       >
-        <span class="text-sm text-rui-neutral-500">—</span>
+        <span class="text-[13px]" style="color: var(--proto-text-light);">—</span>
       </template>
       <template v-else>
-        <span class="text-sm text-rui-neutral-700">
+        <span class="text-[13px]" style="color: #374151;">
           ${{ provider.price.toFixed(2) }}
         </span>
       </template>
     </td>
-    <td class="h-12 px-3">
+    <td class="px-3 py-0">
       <template
         v-if="
           provider.stateFeeDisplay &&
           provider.stateFeeDisplay.toString().trim().toLowerCase() === 'not found'
         "
       >
-        <span class="text-sm text-rui-neutral-500">—</span>
+        <span class="text-[13px]" style="color: var(--proto-text-light);">—</span>
       </template>
       <template v-else>
-        <span class="text-sm text-rui-neutral-600">
+        <span class="text-[13px]" style="color: var(--proto-text-muted);">
           ${{ provider.stateFee.toFixed(2) }}
         </span>
       </template>
     </td>
-    <td class="h-12 px-3">
+    <td class="px-3 py-0">
       <template
         v-if="
           provider.totalCostDisplay &&
           provider.totalCostDisplay.toString().trim().toLowerCase() === 'not found'
         "
       >
-        <span class="text-sm text-rui-neutral-500">—</span>
+        <span class="text-[13px]" style="color: var(--proto-text-light);">—</span>
       </template>
       <template v-else>
         <span
-          class="inline-flex items-center rounded border border-rui-success-200 bg-rui-success-50 px-2 py-0.5 text-sm font-extrabold text-rui-neutral-900"
+          class="inline-flex items-center rounded px-2 py-0.5 text-[14px] font-extrabold"
+          style="background: #F0FDF4; border: 1px solid #D1FAE5; color: var(--proto-text);"
         >
           ${{ provider.totalCost.toFixed(2) }}
         </span>
       </template>
     </td>
-    <td class="h-12 px-3 text-center">
-      <UBadge
-        :label="provider.instantCert"
-        size="xs"
-        :color="certColor(provider.instantCert)"
-        variant="soft"
-        class="px-2.5 py-0.5 text-[12px] font-semibold"
-      />
+    <td class="px-3 py-0 text-center">
+      <ProtoPill :label="provider.instantCert" :variant="certVariant(provider.instantCert)" />
     </td>
-    <td class="h-12 px-3 text-center">
+    <td class="px-3 py-0 text-center">
       <template
         v-if="
           !provider.online &&
           !provider.inPerson
         "
       >
-        <span class="text-sm text-rui-neutral-500">—</span>
+        <span class="text-[13px]" style="color: var(--proto-text-light);">—</span>
       </template>
       <template v-else>
-        <UBadge
-          :label="formatLabel"
-          size="xs"
-          :color="formatColor(formatLabel)"
-          variant="soft"
-          class="px-2.5 py-0.5 text-[12px] font-semibold"
-        />
+        <ProtoPill :label="formatLabel" :variant="formatVariant(formatLabel)" />
       </template>
     </td>
-    <td class="h-12 px-3 text-center">
+    <td class="px-3 py-0 text-center">
       <template
         v-if="languageLabel.toString().trim().toLowerCase() === 'not found'"
       >
-        <span class="text-sm text-rui-neutral-500">—</span>
+        <span class="text-[13px]" style="color: var(--proto-text-light);">—</span>
       </template>
       <template v-else>
-        <UBadge
-          :label="languageLabel"
-          size="xs"
-          :color="langColor(languageLabel)"
-          variant="soft"
-          class="px-2.5 py-0.5 text-[12px] font-semibold"
-        />
+        <ProtoPill :label="languageLabel" :variant="langVariant(languageLabel)" />
       </template>
     </td>
   </tr>

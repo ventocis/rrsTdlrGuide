@@ -13,7 +13,8 @@ const {
 } = useProviders()
 
 const thBase =
-  'sticky top-0 z-10 bg-white border-b-2 border-rui-neutral-200 text-[11px] font-bold uppercase tracking-[0.08em] text-rui-neutral-600 whitespace-nowrap select-none cursor-pointer px-3 py-3'
+  'sticky top-0 z-10 border-b-2 bg-white px-3 py-3 text-[11px] font-bold uppercase tracking-[0.05em] whitespace-nowrap select-none cursor-pointer'
+  + ' border-[var(--proto-card-border)] text-[var(--proto-label)]'
 
 function headerClasses(col: string) {
   return [
@@ -32,12 +33,12 @@ function sortArrow(col: string) {
 </script>
 
 <template>
-  <div class="mx-auto mb-16 mt-3 w-full max-w-full px-4 sm:px-6">
+  <div class="mx-auto mb-16 mt-3.5 w-full max-w-[1600px] px-3 sm:px-5">
     <div
-      class="overflow-hidden rounded-xl border border-rui-neutral-200 bg-white shadow-sm"
+      class="overflow-hidden rounded-xl border bg-white shadow-sm"
+      style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04);"
     >
-      <div class="overflow-x-auto">
-        <table class="min-w-[860px] w-full border-collapse">
+      <table class="w-full min-w-0 border-collapse">
           <thead>
             <tr>
               <th
@@ -128,21 +129,20 @@ function sortArrow(col: string) {
             </template>
           </tbody>
         </table>
-      </div>
     </div>
 
     <div
       v-if="providers.length === 0"
-      class="py-12 text-center text-rui-neutral-500"
+      class="py-12 text-center text-[15px] font-semibold"
+      style="color: var(--proto-text-muted); padding: 48px 20px;"
     >
       <div class="mb-2 text-3xl">🔍</div>
-      <p class="text-[15px] font-semibold">
-        No providers match your filters
-      </p>
+      <p>No providers match your filters</p>
     </div>
 
     <div
-      class="mt-3 flex flex-wrap items-center justify-between gap-2 text-[12px] text-rui-neutral-500"
+      class="mt-3 flex flex-wrap items-center justify-between gap-2 text-[12px]"
+      style="color: var(--proto-text-light);"
     >
       <span>
         Showing {{ resultCount }} of {{ totalProviders }} providers · Duplicate
@@ -152,7 +152,8 @@ function sortArrow(col: string) {
         Data sourced from TDLR public records ·
         <button
           type="button"
-          class="font-semibold text-rui-primary-600 hover:text-rui-primary-700"
+          class="font-semibold hover:opacity-90"
+          style="color: var(--proto-teal);"
         >
           Submit a correction →
         </button>

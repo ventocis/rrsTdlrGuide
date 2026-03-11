@@ -6,13 +6,15 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
 
 <template>
   <header
-    class="relative overflow-hidden bg-gradient-to-br from-rui-neutral-900 to-rui-neutral-800 px-4 py-5 sm:px-6 sm:py-6"
+    class="relative overflow-hidden py-6 px-3 sm:px-5"
+    style="background: linear-gradient(135deg, var(--proto-header-from), var(--proto-header-to));"
   >
     <div
-      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(79,115,219,0.12)_0%,transparent_55%)]"
+      class="pointer-events-none absolute inset-0 opacity-100"
+      style="background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%);"
     />
     <div
-      class="relative mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+      class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
     >
       <!-- Left: logo + BETA, then tagline/counts stacked underneath -->
       <div class="flex flex-col gap-2 sm:gap-3">
@@ -23,7 +25,8 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
             class="h-14 w-auto object-contain drop-shadow-md sm:h-16"
           />
           <span
-            class="rounded-full bg-rui-primary-500/20 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-rui-primary-200 ring-1 ring-rui-primary-400/50"
+            class="rounded px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider"
+            style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.3); color: var(--proto-teal-text);"
           >
             BETA
           </span>
@@ -32,12 +35,14 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
         <!-- Tagline + counts -->
         <div class="mt-1 space-y-0.5 sm:min-w-0">
           <p
-            class="m-0 text-[13px] font-medium leading-snug text-rui-neutral-200 sm:text-[14px]"
+            class="m-0 text-[14px] leading-snug"
+            style="color: var(--proto-header-subtitle);"
           >
             Don't overpay for your ticket dismissal. Compare Texas’ top-rated
             courses.
           </p>
-          <p class="m-0 text-[12px] leading-snug text-rui-neutral-400">
+          <p class="m-0 text-[12px] leading-snug"
+            style="color: var(--proto-header-subtitle);">
             Compare 33 unique Texas defensive driving providers · 236 total
             brand names
           </p>
@@ -45,17 +50,13 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
       </div>
 
       <!-- Search -->
-      <div class="w-full sm:w-auto sm:min-w-[240px] sm:max-w-[280px]">
+      <div class="w-full sm:w-[280px]">
         <UInput
           v-model="searchQuery"
           placeholder="Search providers or brands..."
           size="md"
-          class="w-full text-sm"
           icon="i-heroicons-magnifying-glass-20-solid"
-          :ui="{
-            base: 'bg-white/10 border-rui-neutral-500/30 text-rui-neutral-100 placeholder:text-rui-neutral-400 backdrop-blur-sm',
-            rounded: 'rounded-lg',
-          }"
+          class="w-full !rounded-lg !border !border-[length:1px] !border-[var(--proto-search-border)] !bg-[var(--proto-search-bg)] !py-2.5 !pl-9 !pr-4 !text-[13px] !text-[#F9FAFB] placeholder:!text-[#94A3B8]"
         />
       </div>
     </div>
