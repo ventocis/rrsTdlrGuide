@@ -76,10 +76,10 @@ function displayPaid(r: StudentResponse) {
       Reviews and corrections submitted by students. Data is refreshed when we run the ingest script.
     </p>
     <div
-      class="w-full min-w-0 overflow-x-auto rounded-xl border bg-white shadow-sm"
+      class="block w-full min-w-0 max-w-full overflow-x-auto overflow-y-visible rounded-xl border bg-white shadow-sm"
       style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); -webkit-overflow-scrolling: touch;"
     >
-      <table class="w-full min-w-[800px] border-collapse">
+      <table class="border-collapse" style="min-width: 800px; width: 800px;">
         <thead>
           <tr>
             <th
