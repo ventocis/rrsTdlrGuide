@@ -1,7 +1,7 @@
 <template>
-  <footer class="border-t border-slate-200 bg-slate-50/60 py-4">
+  <footer class="border-t border-rui-neutral-200 bg-rui-neutral-50 py-4">
     <div
-      class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-5 text-[11px] text-slate-400"
+      class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-5 text-[11px] text-rui-neutral-500"
     >
       <span>
         Independent guide · Not affiliated with TDLR or the State of Texas

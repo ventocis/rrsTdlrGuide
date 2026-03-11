@@ -35,58 +35,61 @@ const languageLabel = computed(() => {
 })
 
 function certColor(value: string) {
-  if (value === 'Free') return 'emerald'
-  if (value === 'Paid') return 'red'
-  return 'gray'
+  if (value === 'Free') return 'success'   // Nuxt UI: green
+  if (value === 'Paid') return 'error'     // Nuxt UI: red
+  if (value === 'Mail') return 'neutral'   // Nuxt UI: gray
+  return 'neutral'
 }
 
 function formatColor(label: string) {
-  if (label === 'Online / In-Person') return 'violet'
-  if (label === 'In-Person') return 'orange'
-  return 'blue'
+  if (label === 'Online / In-Person') return 'primary'  // Nuxt UI: violet/purple
+  if (label === 'In-Person') return 'warning'           // Nuxt UI: orange
+  if (label === 'Online') return 'info'                 // Nuxt UI: blue
+  return 'neutral'
 }
 
 function langColor(label: string) {
-  if (label === 'Eng / Spanish') return 'orange'
-  if (label === 'English') return 'gray'
-  if (label === 'Spanish') return 'yellow'
-  return 'slate'
+  if (label === 'Eng / Spanish') return 'warning'      // Nuxt UI: orange/amber
+  if (label === 'English') return 'neutral'
+  if (label === 'Spanish') return 'warning'
+  if (label.toLowerCase() === 'not found') return 'error'
+  return 'neutral'
 }
 </script>
 
 <template>
   <tr
     :class="[
-      'cursor-default border-b border-slate-100 transition-colors',
+      'cursor-default border-b border-rui-neutral-200 transition-colors',
       provider.featured
-        ? 'bg-teal-50'
-        : 'bg-white hover:bg-slate-50',
+        ? 'bg-rui-success-50'
+        : 'bg-white hover:bg-rui-neutral-50',
       hasDupes ? 'cursor-pointer' : ''
     ]"
     @click="hasDupes && emit('toggle')"
   >
     <td class="h-12 px-3">
       <div class="flex items-center gap-2">
-        <span class="flex h-4 w-4 items-center justify-center text-slate-400">
+        <span class="flex h-4 w-4 items-center justify-center text-rui-neutral-400">
           <UIcon
             v-if="hasDupes"
             name="i-heroicons-chevron-down-20-solid"
-            class="h-3.5 w-3.5 transition-transform"
+            class="h-3.5 w-3.5 text-rui-neutral-400 transition-transform duration-150"
             :class="isExpanded ? 'rotate-180' : ''"
           />
         </span>
-        <span class="text-sm font-bold text-slate-900">
+        <span class="text-sm font-bold text-rui-neutral-900">
           {{ provider.name }}
         </span>
         <span
           v-if="provider.featured"
-          class="bg-gradient-to-r from-teal-600 to-teal-700 px-1.5 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.12em] text-white rounded-[3px]"
+          class="bg-rui-success-600 px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-[0.16em] text-white rounded-full shadow-sm"
         >
-          ✦ PICK
+          Overall Pick
         </span>
         <span
           v-if="hasDupes"
-          class="text-[11px] font-medium text-slate-400"
+          class="text-[11px] font-medium text-rui-neutral-500"
         >
           +{{ provider.duplicates.length }}
         </span>
@@ -95,27 +98,57 @@ function langColor(label: string) {
     <td class="h-12 px-3 text-center">
       <div class="flex items-center justify-center gap-1">
         <StarRating :rating="provider.rating" />
-        <span class="text-sm font-bold text-slate-900">
+        <span class="text-sm font-bold text-rui-neutral-900">
           {{ provider.rating.toFixed(1) }}
         </span>
       </div>
     </td>
     <td class="h-12 px-3">
-      <span class="text-sm text-slate-700">
-        ${{ provider.price.toFixed(2) }}
-      </span>
-    </td>
-    <td class="h-12 px-3">
-      <span class="text-sm text-slate-500">
-        ${{ provider.stateFee.toFixed(2) }}
-      </span>
-    </td>
-    <td class="h-12 px-3">
-      <span
-        class="inline-flex items-center rounded border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-sm font-extrabold text-slate-900"
+      <template
+        v-if="
+          provider.priceDisplay &&
+          provider.priceDisplay.toString().trim().toLowerCase() === 'not found'
+        "
       >
-        ${{ (provider.price + provider.stateFee).toFixed(2) }}
-      </span>
+        <span class="text-sm text-rui-neutral-500">—</span>
+      </template>
+      <template v-else>
+        <span class="text-sm text-rui-neutral-700">
+          ${{ provider.price.toFixed(2) }}
+        </span>
+      </template>
+    </td>
+    <td class="h-12 px-3">
+      <template
+        v-if="
+          provider.stateFeeDisplay &&
+          provider.stateFeeDisplay.toString().trim().toLowerCase() === 'not found'
+        "
+      >
+        <span class="text-sm text-rui-neutral-500">—</span>
+      </template>
+      <template v-else>
+        <span class="text-sm text-rui-neutral-600">
+          ${{ provider.stateFee.toFixed(2) }}
+        </span>
+      </template>
+    </td>
+    <td class="h-12 px-3">
+      <template
+        v-if="
+          provider.totalCostDisplay &&
+          provider.totalCostDisplay.toString().trim().toLowerCase() === 'not found'
+        "
+      >
+        <span class="text-sm text-rui-neutral-500">—</span>
+      </template>
+      <template v-else>
+        <span
+          class="inline-flex items-center rounded border border-rui-success-200 bg-rui-success-50 px-2 py-0.5 text-sm font-extrabold text-rui-neutral-900"
+        >
+          ${{ provider.totalCost.toFixed(2) }}
+        </span>
+      </template>
     </td>
     <td class="h-12 px-3 text-center">
       <UBadge
@@ -127,36 +160,40 @@ function langColor(label: string) {
       />
     </td>
     <td class="h-12 px-3 text-center">
-      <UBadge
-        :label="formatLabel"
-        size="xs"
-        :color="formatColor(formatLabel)"
-        variant="soft"
-        class="px-2.5 py-0.5 text-[12px] font-semibold"
-      />
+      <template
+        v-if="
+          !provider.online &&
+          !provider.inPerson
+        "
+      >
+        <span class="text-sm text-rui-neutral-500">—</span>
+      </template>
+      <template v-else>
+        <UBadge
+          :label="formatLabel"
+          size="xs"
+          :color="formatColor(formatLabel)"
+          variant="soft"
+          class="px-2.5 py-0.5 text-[12px] font-semibold"
+        />
+      </template>
     </td>
     <td class="h-12 px-3 text-center">
-      <UBadge
-        :label="languageLabel"
-        size="xs"
-        :color="langColor(languageLabel)"
-        variant="soft"
-        class="px-2.5 py-0.5 text-[12px] font-semibold"
-      />
-    </td>
-    <td class="h-12 px-3 text-center">
-      <span class="inline-flex items-center justify-center">
-        <UIcon
-          v-if="provider.moneyBack"
-          name="i-heroicons-check-circle-20-solid"
-          class="h-4 w-4 text-emerald-500"
+      <template
+        v-if="languageLabel.toString().trim().toLowerCase() === 'not found'"
+      >
+        <span class="text-sm text-rui-neutral-500">—</span>
+      </template>
+      <template v-else>
+        <UBadge
+          :label="languageLabel"
+          size="xs"
+          :color="langColor(languageLabel)"
+          variant="soft"
+          class="px-2.5 py-0.5 text-[12px] font-semibold"
         />
-        <UIcon
-          v-else
-          name="i-heroicons-x-circle-20-solid"
-          class="h-4 w-4 text-red-500"
-        />
-      </span>
+      </template>
     </td>
   </tr>
 </template>
+

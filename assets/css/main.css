@@ -1,3 +1,69 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* Refactoring UI palette: Neutrals (Blue Grey) */
+@theme {
+  --color-rui-neutral-50: #f0f4f8;
+  --color-rui-neutral-100: #d9e2ec;
+  --color-rui-neutral-200: #bcccdc;
+  --color-rui-neutral-300: #9fb3c8;
+  --color-rui-neutral-400: #829ab1;
+  --color-rui-neutral-500: #627d98;
+  --color-rui-neutral-600: #486581;
+  --color-rui-neutral-700: #334e68;
+  --color-rui-neutral-800: #243b53;
+  --color-rui-neutral-900: #102a43;
+  --color-rui-neutral-950: #0a1929;
+
+  /* Indigo - primary */
+  --color-rui-primary-50: #e0e8f9;
+  --color-rui-primary-100: #bed0f7;
+  --color-rui-primary-200: #98aeeb;
+  --color-rui-primary-300: #7b93db;
+  --color-rui-primary-400: #647acb;
+  --color-rui-primary-500: #4c63b6;
+  --color-rui-primary-600: #4055a8;
+  --color-rui-primary-700: #35469c;
+  --color-rui-primary-800: #2d3a8c;
+  --color-rui-primary-900: #19216c;
+  --color-rui-primary-950: #0f1644;
+
+  /* Red - error */
+  --color-rui-error-50: #ffeeee;
+  --color-rui-error-100: #facdcd;
+  --color-rui-error-200: #f29b9b;
+  --color-rui-error-300: #e66a6a;
+  --color-rui-error-400: #d64545;
+  --color-rui-error-500: #ba2525;
+  --color-rui-error-600: #a61b1b;
+  --color-rui-error-700: #911111;
+  --color-rui-error-800: #780a0a;
+  --color-rui-error-900: #610404;
+  --color-rui-error-950: #3d0202;
+
+  /* Amber - warning */
+  --color-rui-warning-50: #fff8e7;
+  --color-rui-warning-100: #fcefc7;
+  --color-rui-warning-200: #f8e3a3;
+  --color-rui-warning-300: #f9da8b;
+  --color-rui-warning-400: #f7d070;
+  --color-rui-warning-500: #e9b949;
+  --color-rui-warning-600: #c99a2e;
+  --color-rui-warning-700: #a27c1a;
+  --color-rui-warning-800: #7c5e10;
+  --color-rui-warning-900: #513c06;
+  --color-rui-warning-950: #332501;
+
+  /* Success - muted green (Refactoring UI style) */
+  --color-rui-success-50: #e8f5e9;
+  --color-rui-success-100: #c8e6c9;
+  --color-rui-success-200: #a5d6a7;
+  --color-rui-success-300: #81c784;
+  --color-rui-success-400: #66bb6a;
+  --color-rui-success-500: #4caf50;
+  --color-rui-success-600: #43a047;
+  --color-rui-success-700: #388e3c;
+  --color-rui-success-800: #2e7d32;
+  --color-rui-success-900: #1b5e20;
+  --color-rui-success-950: #0d3d12;
+}

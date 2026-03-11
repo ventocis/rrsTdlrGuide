@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useProviders } from '~/composables/useProviders'
 
-const { formatFilter, certFilter, clearFilters, hasActiveFilters } =
+const { formatFilter, certFilter, clearFilters, hasActiveFilters, toggleFormat, toggleCert } =
   useProviders()
 
 const formatOptions = [
@@ -17,45 +17,67 @@ const certOptions = [
   { key: 'paid', label: 'Paid' },
   { key: 'mail', label: 'Mail' }
 ] as const
+
+function isFormatActive(key: string) {
+  if (key === 'all') return formatFilter.value.length === 0
+  return formatFilter.value.includes(key)
+}
+
+function isCertActive(key: string) {
+  if (key === 'all') return certFilter.value.length === 0
+  return certFilter.value.includes(key.toLowerCase())
+}
 </script>
 
 <template>
-  <div class="mx-auto max-w-5xl px-5 pt-3">
+  <div class="mx-auto w-full max-w-full px-4 pt-2 sm:px-6">
     <div
-      class="flex flex-wrap items-center gap-4 text-[12px] text-slate-600"
+      class="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-rui-neutral-200 bg-rui-neutral-50 px-3 py-2 text-[12px] text-rui-neutral-600 shadow-sm"
     >
-      <div class="flex items-center gap-1.5">
-        <span class="font-semibold">Format:</span>
-        <UButton
-          v-for="f in formatOptions"
-          :key="f.key"
-          size="2xs"
-          :variant="formatFilter === f.key ? 'soft' : 'outline'"
-          :color="formatFilter === f.key ? 'teal' : 'gray'"
-          class="rounded-md px-2.5 py-1 text-[12px] font-semibold"
-          @click="formatFilter = f.key"
-        >
-          {{ f.label }}
-        </UButton>
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="flex items-center gap-1.5">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-rui-neutral-500">
+            Format
+          </span>
+          <div class="inline-flex gap-1 rounded-full bg-rui-neutral-200 p-0.5">
+            <UButton
+              v-for="f in formatOptions"
+              :key="f.key"
+              size="2xs"
+              :variant="isFormatActive(f.key) ? 'solid' : 'ghost'"
+              :color="isFormatActive(f.key) ? 'success' : 'neutral'"
+              class="rounded-full px-3 py-1 text-[11px] font-semibold"
+              @click="toggleFormat(f.key)"
+            >
+              {{ f.label }}
+            </UButton>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1.5">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.12em] text-rui-neutral-500">
+            Certificate
+          </span>
+          <div class="inline-flex gap-1 rounded-full bg-rui-neutral-200 p-0.5">
+            <UButton
+              v-for="f in certOptions"
+              :key="f.key"
+              size="2xs"
+              :variant="isCertActive(f.key) ? 'solid' : 'ghost'"
+              :color="isCertActive(f.key) ? 'success' : 'neutral'"
+              class="rounded-full px-3 py-1 text-[11px] font-semibold"
+              @click="toggleCert(f.key)"
+            >
+              {{ f.label }}
+            </UButton>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-1.5">
-        <span class="font-semibold">Certificate:</span>
-        <UButton
-          v-for="f in certOptions"
-          :key="f.key"
-          size="2xs"
-          :variant="certFilter === f.key ? 'soft' : 'outline'"
-          :color="certFilter === f.key ? 'teal' : 'gray'"
-          class="rounded-md px-2.5 py-1 text-[12px] font-semibold"
-          @click="certFilter = f.key"
-        >
-          {{ f.label }}
-        </UButton>
-      </div>
+
       <UButton
         v-if="hasActiveFilters"
         size="2xs"
-        color="red"
+        color="error"
         variant="ghost"
         class="px-2.5 py-1 text-[12px] font-semibold"
         icon="i-heroicons-x-mark-20-solid"
