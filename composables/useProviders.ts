@@ -4,6 +4,8 @@ import { computed, ref } from 'vue'
 export type DuplicateBrand = {
   name: string
   url: string
+  license?: string
+  rating?: number
 }
 
 export type Provider = {

@@ -157,7 +157,9 @@ function buildProvider(first, rest, id) {
     license,
     duplicates: rest.map((r) => ({
       name: get(r, 'Provider'),
-      url: String(getRaw(r, 'Website')).replace(/^\[\"?|\"?\]$/g, '').trim()
+      url: String(getRaw(r, 'Website')).replace(/^\[\"?|\"?\]$/g, '').trim(),
+      license: get(r, 'License') || undefined,
+      rating: parseNumber(get(r, 'Rating')) || undefined
     })),
     rating,
     price,

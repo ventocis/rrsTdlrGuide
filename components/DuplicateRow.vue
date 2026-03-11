@@ -62,8 +62,23 @@ function langVariant(label: string) {
         </span>
       </div>
     </td>
-    <td class="h-10 px-3 py-0 text-center text-[12px]" style="color: var(--proto-text-light);">
-      —
+    <td class="px-3 py-0">
+      <span class="text-[13px]" style="color: var(--proto-text-muted);">
+        {{ dupe.license || '—' }}
+      </span>
+    </td>
+    <td class="px-3 py-0 text-center">
+      <template v-if="dupe.rating != null && dupe.rating > 0">
+        <div class="flex items-center justify-center gap-1">
+          <StarRating :rating="dupe.rating" />
+          <span class="text-[13px] font-bold" style="color: var(--proto-text);">
+            {{ dupe.rating.toFixed(1) }}
+          </span>
+        </div>
+      </template>
+      <template v-else>
+        <span class="text-[13px]" style="color: var(--proto-text-light);">—</span>
+      </template>
     </td>
     <td class="px-3 py-0">
       <span class="text-[13px]" style="color: var(--proto-text-muted);">

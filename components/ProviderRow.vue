@@ -96,6 +96,11 @@ function langVariant(label: string) {
         </span>
       </div>
     </td>
+    <td class="px-3 py-0">
+      <span class="text-[13px]" style="color: var(--proto-text-muted);">
+        {{ provider.license || '—' }}
+      </span>
+    </td>
     <td class="px-3 py-0 text-center">
       <div class="flex items-center justify-center gap-1">
         <StarRating :rating="provider.rating" />

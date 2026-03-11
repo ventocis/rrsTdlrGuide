@@ -20,12 +20,11 @@ function headerClasses(col: string) {
   return [
     thBase,
     col === 'provider' ? 'text-left min-w-[220px]' : '',
-    ['rating', 'price', 'fee', 'total', 'cert', 'format', 'lang'].includes(col)
+    ['license', 'rating', 'price', 'fee', 'total', 'cert', 'format', 'lang'].includes(col)
       ? 'text-center'
       : ''
   ]
 }
-
 function sortArrow(col: string) {
   const active = sortBy.value === col
   return active ? (sortDir.value === 'asc' ? '▲' : '▼') : '▼'
@@ -54,6 +53,9 @@ function sortArrow(col: string) {
                     {{ sortArrow('name') }}
                   </span>
                 </span>
+              </th>
+              <th :class="headerClasses('license')">
+                License
               </th>
               <th
                 :class="headerClasses('rating')"

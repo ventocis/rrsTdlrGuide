@@ -30,7 +30,15 @@ function isCertActive(key: string) {
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-[1600px] px-3 pt-3.5 sm:px-5">
+  <div class="mx-auto w-full max-w-[1600px] px-3 pt-3.5 sm:px-5" style="background-color: var(--proto-page-bg);">
+    <div class="mb-3 space-y-0.5 px-2 sm:px-0">
+      <p class="m-0 text-[14px] font-medium leading-snug" style="color: var(--proto-text);">
+        Don't overpay for your ticket dismissal. Compare Texas' top-rated courses.
+      </p>
+      <p class="m-0 text-[12px] leading-snug" style="color: var(--proto-text-muted);">
+        Compare 33 unique Texas defensive driving providers · 236 total brand names
+      </p>
+    </div>
     <div
       class="flex flex-wrap items-center justify-between gap-4 rounded-none px-5 py-0"
       style="background-color: var(--proto-page-bg);"

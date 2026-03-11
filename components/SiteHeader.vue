@@ -16,9 +16,9 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
     <div
       class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
     >
-      <!-- Left: logo + BETA, then tagline/counts stacked underneath -->
-      <div class="flex flex-col gap-2 sm:gap-3">
-        <div class="flex items-center gap-2 sm:shrink-0">
+      <!-- Left: logo + BETA -->
+      <div class="flex flex-col gap-2 sm:shrink-0">
+        <div class="flex items-center gap-2">
           <img
             src="/TDLR%20GUIDE%20LOGO%20(altcolor).png"
             alt="TDLR Guide logo"
@@ -31,32 +31,22 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
             BETA
           </span>
         </div>
-
-        <!-- Tagline + counts -->
-        <div class="mt-1 space-y-0.5 sm:min-w-0">
-          <p
-            class="m-0 text-[14px] leading-snug"
-            style="color: var(--proto-header-subtitle);"
-          >
-            Don't overpay for your ticket dismissal. Compare Texas’ top-rated
-            courses.
-          </p>
-          <p class="m-0 text-[12px] leading-snug"
-            style="color: var(--proto-header-subtitle);">
-            Compare 33 unique Texas defensive driving providers · 236 total
-            brand names
-          </p>
-        </div>
       </div>
 
       <!-- Search -->
-      <div class="w-full sm:w-[280px]">
-        <UInput
+      <div class="relative w-full sm:w-[280px]">
+        <span
+          class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--proto-header-subtitle)]"
+          aria-hidden="true"
+        >
+          <UIcon name="i-heroicons-magnifying-glass-20-solid" class="h-4 w-4" />
+        </span>
+        <input
           v-model="searchQuery"
+          type="search"
           placeholder="Search providers or brands..."
-          size="md"
-          icon="i-heroicons-magnifying-glass-20-solid"
-          class="w-full !rounded-lg !border !border-[length:1px] !border-[var(--proto-search-border)] !bg-[var(--proto-search-bg)] !py-2.5 !pl-9 !pr-4 !text-[13px] !text-[#F9FAFB] placeholder:!text-[#94A3B8]"
+          class="w-full rounded-lg border border-white/20 bg-white/10 py-2.5 pl-10 pr-4 text-[13px] text-[#F9FAFB] placeholder:text-[#94A3B8] outline-none transition-colors focus:border-[var(--proto-teal)] focus:bg-white/15 focus:ring-2 focus:ring-[var(--proto-teal)]/30"
+          aria-label="Search providers or brands"
         />
       </div>
     </div>
