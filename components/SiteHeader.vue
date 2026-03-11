@@ -41,21 +41,32 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
         </p>
       </div>
 
-      <!-- Search -->
-      <div class="relative w-full sm:w-[280px]">
-        <span
-          class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--proto-header-subtitle)]"
-          aria-hidden="true"
+      <!-- Search + Submit Review -->
+      <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
+        <div class="relative w-full sm:w-[280px]">
+          <span
+            class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--proto-header-subtitle)]"
+            aria-hidden="true"
+          >
+            <UIcon name="i-heroicons-magnifying-glass-20-solid" class="h-4 w-4" />
+          </span>
+          <input
+            v-model="searchQuery"
+            type="search"
+            placeholder="Search providers or brands..."
+            class="w-full rounded-lg border border-white/20 bg-white/10 py-2.5 pl-10 pr-4 text-[13px] text-[#F9FAFB] placeholder:text-[#94A3B8] outline-none transition-colors focus:border-[var(--proto-teal)] focus:bg-white/15 focus:ring-2 focus:ring-[var(--proto-teal)]/30"
+            aria-label="Search providers or brands"
+          />
+        </div>
+        <NuxtLink
+          to="/submit-review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shrink-0 rounded-lg px-4 py-2.5 text-center text-[13px] font-bold text-white shadow-md transition-colors hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[var(--proto-teal-dark)]"
+          style="background: linear-gradient(135deg, var(--proto-teal), var(--proto-teal-dark)); border: 1px solid rgba(255,255,255,0.25);"
         >
-          <UIcon name="i-heroicons-magnifying-glass-20-solid" class="h-4 w-4" />
-        </span>
-        <input
-          v-model="searchQuery"
-          type="search"
-          placeholder="Search providers or brands..."
-          class="w-full rounded-lg border border-white/20 bg-white/10 py-2.5 pl-10 pr-4 text-[13px] text-[#F9FAFB] placeholder:text-[#94A3B8] outline-none transition-colors focus:border-[var(--proto-teal)] focus:bg-white/15 focus:ring-2 focus:ring-[var(--proto-teal)]/30"
-          aria-label="Search providers or brands"
-        />
+          Submit Review
+        </NuxtLink>
       </div>
     </div>
   </header>

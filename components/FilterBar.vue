@@ -30,9 +30,9 @@ function isCertActive(key: string) {
 </script>
 
 <template>
-  <div class="mx-auto w-full max-w-[1600px] px-3 pt-3.5 sm:px-5" style="background-color: var(--proto-page-bg);">
+  <div class="mx-auto w-full max-w-[1600px] px-2 pt-3.5 sm:px-5" style="background-color: var(--proto-page-bg);">
     <div
-      class="flex flex-wrap items-center justify-between gap-4 rounded-none px-5 py-0"
+      class="flex flex-wrap items-center justify-between gap-3 rounded-none px-2 py-0 sm:px-5"
       style="background-color: var(--proto-page-bg);"
     >
       <div class="flex flex-wrap items-center gap-4">

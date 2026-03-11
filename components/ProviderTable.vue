@@ -32,12 +32,12 @@ function sortArrow(col: string) {
 </script>
 
 <template>
-  <div class="mx-auto mb-16 mt-3.5 w-full max-w-[1600px] px-3 sm:px-5">
+  <div class="mx-auto mb-16 mt-3.5 w-full max-w-[1600px] px-2 sm:px-5">
     <div
-      class="overflow-hidden rounded-xl border bg-white shadow-sm"
-      style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04);"
+      class="w-full min-w-0 overflow-x-auto rounded-xl border bg-white shadow-sm"
+      style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); -webkit-overflow-scrolling: touch; overflow-x: scroll;"
     >
-      <table class="w-full min-w-0 border-collapse">
+      <table class="w-full border-collapse" style="min-width: 880px; width: max(100%, 880px);">
           <thead>
             <tr>
               <th
@@ -132,6 +132,9 @@ function sortArrow(col: string) {
           </tbody>
         </table>
     </div>
+    <p class="mt-1.5 text-center text-[11px] sm:hidden" style="color: var(--proto-text-light);">
+      Scroll horizontally to see all columns
+    </p>
 
     <div
       v-if="providers.length === 0"

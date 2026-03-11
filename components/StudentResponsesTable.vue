@@ -68,7 +68,7 @@ function displayPaid(r: StudentResponse) {
 </script>
 
 <template>
-  <div class="mx-auto mb-16 mt-3.5 w-full max-w-[1600px] px-3 sm:px-5">
+  <div class="mx-auto mb-16 mt-3.5 w-full max-w-[1600px] px-2 sm:px-5">
     <h2 class="mb-2 text-lg font-bold" style="color: var(--proto-text);">
       Student responses
     </h2>
@@ -76,10 +76,10 @@ function displayPaid(r: StudentResponse) {
       Reviews and corrections submitted by students. Data is refreshed when we run the ingest script.
     </p>
     <div
-      class="overflow-hidden rounded-xl border bg-white shadow-sm"
-      style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04);"
+      class="w-full min-w-0 overflow-x-auto rounded-xl border bg-white shadow-sm"
+      style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); -webkit-overflow-scrolling: touch;"
     >
-      <table class="w-full min-w-0 border-collapse">
+      <table class="w-full min-w-[800px] border-collapse">
         <thead>
           <tr>
             <th
@@ -219,6 +219,9 @@ function displayPaid(r: StudentResponse) {
         </tbody>
       </table>
     </div>
+    <p class="mt-1.5 text-center text-[11px] sm:hidden" style="color: var(--proto-text-light);">
+      Scroll horizontally to see all columns
+    </p>
 
     <div
       v-if="studentResponses.length === 0"
