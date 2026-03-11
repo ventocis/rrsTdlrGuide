@@ -19,11 +19,13 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
       <!-- Left: logo + BETA + tagline -->
       <div class="flex flex-col gap-2 sm:shrink-0">
         <div class="flex items-center gap-2">
-          <img
-            src="/TDLR%20GUIDE%20LOGO%20(altcolor).png"
-            alt="TDLR Guide logo"
-            class="h-14 w-auto object-contain drop-shadow-md sm:h-16"
-          />
+          <NuxtLink to="/" class="flex items-center focus:outline-none focus:ring-2 focus:ring-[var(--proto-teal)] focus:ring-offset-2 focus:ring-offset-transparent rounded">
+            <img
+              src="/TDLR%20GUIDE%20LOGO%20(altcolor).png"
+              alt="TDLR Guide logo"
+              class="h-14 w-auto object-contain drop-shadow-md sm:h-16"
+            />
+          </NuxtLink>
           <span
             class="rounded px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider"
             style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.3); color: var(--proto-teal-text);"
