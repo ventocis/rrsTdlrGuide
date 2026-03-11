@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Provider } from '~/composables/useProviders'
+import { useStudentResponses } from '~/composables/useStudentResponses'
 
 const props = defineProps<{
   provider: Provider
@@ -9,6 +10,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'toggle'): void
 }>()
+
+const { providerSlug } = useStudentResponses()
 
 const hasDupes = computed(
   () => props.provider.duplicates && props.provider.duplicates.length > 0
@@ -113,6 +116,14 @@ function onRowClick() {
         >
           +{{ provider.duplicates.length }}
         </span>
+        <NuxtLink
+          :to="`/reviews/${providerSlug(provider.name)}`"
+          class="ml-2 text-[11px] font-semibold hover:underline"
+          style="color: var(--proto-teal);"
+          @click.stop
+        >
+          View reviews
+        </NuxtLink>
       </div>
     </td>
     <td class="px-3 py-0">

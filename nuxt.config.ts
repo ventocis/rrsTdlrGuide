@@ -7,6 +7,14 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/ui'],
   css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      /** Form submission endpoint. Override with NUXT_PUBLIC_FORM_ACTION if needed. */
+      formAction: process.env.NUXT_PUBLIC_FORM_ACTION || 'https://formspree.io/f/maqpolpb',
+      /** Optional: reCAPTCHA v3 site key for Formspree. When set, the submit-review form sends a token. */
+      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
+    }
+  },
   app: {
     head: {
       title: 'TDLR Guide — Compare Texas Defensive Driving Courses',

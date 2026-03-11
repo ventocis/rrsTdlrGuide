@@ -152,13 +152,15 @@ function sortArrow(col: string) {
       </span>
       <span>
         Data sourced from TDLR public records and available websites found at time of search ·
-        <a
-          href="#"
+        <NuxtLink
+          to="/submit-review"
+          target="_blank"
+          rel="noopener noreferrer"
           class="font-semibold hover:opacity-90"
           style="color: var(--proto-teal);"
         >
           Submit a correction by filling out form →
-        </a>
+        </NuxtLink>
       </span>
     </div>
   </div>

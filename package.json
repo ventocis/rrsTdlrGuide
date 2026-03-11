@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "build:data": "node ./scripts/parse-xlsx.mjs"
+    "build:data": "node ./scripts/parse-xlsx.mjs",
+    "ingest:reviews": "node ./scripts/ingest-form-submissions.mjs"
   },
   "dependencies": {
     "@nuxt/ui": "latest",

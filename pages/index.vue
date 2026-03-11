@@ -13,6 +13,7 @@ useProviders()
     <SiteHeader />
     <FilterBar />
     <ProviderTable />
+    <StudentResponsesTable />
     <SiteFooter />
   </div>
 </template>
