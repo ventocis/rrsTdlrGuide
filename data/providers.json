@@ -1,152 +1,1560 @@
 [
   {
     "id": 1,
-    "name": "Aceable",
-    "duplicates": [
-      { "name": "Ace Driver School", "url": "acedriverschool.com" },
-      { "name": "Aceable Defensive Driving", "url": "aceabledd.com" }
-    ],
-    "rating": 4.6,
-    "reviewCount": 2847,
-    "price": 25.0,
-    "stateFee": 10.0,
+    "name": "Road Ready Safety",
+    "license": "CP1234",
+    "duplicates": [],
+    "rating": 4.9,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
     "online": true,
     "inPerson": false,
-    "languages": ["English", "Spanish"],
+    "languages": [
+      "English"
+    ],
     "instantCert": "Free",
-    "moneyBack": true,
-    "completionWindow": "90 days",
-    "lastVerified": "2026-02-28"
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 2,
-    "name": "iDriveSafely",
-    "duplicates": [
-      { "name": "I Drive Safely Texas", "url": "idrivesafely-tx.com" },
-      { "name": "DriversEd.com Defensive Driving", "url": "driversed.com/dd" }
-    ],
-    "rating": 4.4,
-    "reviewCount": 1923,
-    "price": 24.95,
-    "stateFee": 10.0,
-    "online": true,
+    "name": "AAA CONTINUING EDUCATION",
+    "license": "CP084",
+    "duplicates": [],
+    "rating": 3.7,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
     "inPerson": false,
-    "languages": ["English", "Spanish"],
-    "instantCert": "Paid",
-    "moneyBack": true,
-    "completionWindow": "90 days",
-    "lastVerified": "2026-03-01"
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 3,
-    "name": "Road Ready Safety",
+    "name": "RUSHDEFENSIVEDRIVING.COM",
+    "license": "CP343",
     "duplicates": [],
-    "rating": 4.9,
-    "reviewCount": 312,
-    "price": 29.99,
-    "stateFee": 10.0,
-    "online": true,
-    "inPerson": true,
-    "languages": ["English", "Spanish"],
-    "instantCert": "Free",
-    "moneyBack": true,
-    "completionWindow": "180 days",
-    "lastVerified": "2026-03-09",
-    "featured": true
+    "rating": 3.3,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 4,
-    "name": "Comedy Defensive Driving",
-    "duplicates": [
-      { "name": "ComedyDrive Texas", "url": "comedydrive-tx.com" },
-      { "name": "Improv Comedy Driving", "url": "improvdd.com" },
-      { "name": "LOL Traffic School", "url": "loltrafficschool.com" }
-    ],
-    "rating": 4.2,
-    "reviewCount": 1456,
-    "price": 35.0,
-    "stateFee": 10.0,
+    "name": "$25 DEFENSIVE DRIVING",
+    "license": "CP1003",
+    "duplicates": [],
+    "rating": 3.5,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
     "online": true,
-    "inPerson": true,
-    "languages": ["English"],
-    "instantCert": "Mail",
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
     "moneyBack": false,
-    "completionWindow": "60 days",
-    "lastVerified": "2026-02-15"
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 5,
-    "name": "GoToTrafficSchool",
-    "duplicates": [
-      { "name": "Go To Driving School TX", "url": "gotodrivingtx.com" },
-      { "name": "GTTS Online", "url": "gttsonline.com" }
-    ],
-    "rating": 3.8,
-    "reviewCount": 634,
-    "price": 19.99,
-    "stateFee": 10.0,
+    "name": "1-DRIVING.COM",
+    "license": "CP935",
+    "duplicates": [],
+    "rating": 3.2,
+    "price": 29,
+    "priceDisplay": "29",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 29,
+    "totalCostDisplay": "29",
     "online": true,
     "inPerson": false,
-    "languages": ["English", "Spanish", "Vietnamese"],
-    "instantCert": "Paid",
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
     "moneyBack": false,
-    "completionWindow": "90 days",
-    "lastVerified": "2026-01-20"
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 6,
-    "name": "TexasDefensiveDriving.com",
-    "duplicates": [
-      { "name": "Texas State Approved Driving", "url": "txstateapproved.com" },
-      { "name": "TDD Online", "url": "tddonline.com" }
-    ],
-    "rating": 4.0,
-    "reviewCount": 891,
-    "price": 25.0,
-    "stateFee": 10.0,
-    "online": true,
+    "name": "1-STREET WISE DRIVING SCHOOLS",
+    "license": "CP1091",
+    "duplicates": [],
+    "rating": 4,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
     "inPerson": false,
-    "languages": ["English"],
-    "instantCert": "Free",
-    "moneyBack": true,
-    "completionWindow": "90 days",
-    "lastVerified": "2026-02-10"
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 7,
-    "name": "ApprovedCourse.com",
-    "duplicates": [
-      { "name": "Approved Course Texas", "url": "approvedcoursetx.com" }
-    ],
-    "rating": 4.3,
-    "reviewCount": 1102,
-    "price": 25.0,
-    "stateFee": 10.0,
+    "name": "1SAFEDRIVER.COM",
+    "license": "CP221",
+    "duplicates": [],
+    "rating": 3.2,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
     "online": true,
     "inPerson": false,
-    "languages": ["English", "Spanish"],
-    "instantCert": "Free",
-    "moneyBack": true,
-    "completionWindow": "90 days",
-    "lastVerified": "2026-02-20"
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
   },
   {
     "id": 8,
-    "name": "DefensiveDriving.com",
-    "duplicates": [
-      { "name": "National Defensive Driving TX", "url": "nddtx.com" },
-      { "name": "Safe2Drive Texas", "url": "safe2drive-tx.com" }
-    ],
-    "rating": 4.1,
-    "reviewCount": 2103,
-    "price": 25.0,
-    "stateFee": 10.0,
+    "name": "247TEXASDRIVERSAFETY.COM",
+    "license": "CP156",
+    "duplicates": [],
+    "rating": 3.8,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
     "online": true,
     "inPerson": false,
-    "languages": ["English", "Spanish"],
+    "languages": [
+      "English"
+    ],
     "instantCert": "Paid",
-    "moneyBack": true,
-    "completionWindow": "90 days",
-    "lastVerified": "2026-03-05"
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "name": "2SIC INC",
+    "license": "CP076",
+    "duplicates": [],
+    "rating": 3.5,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "4 V DRIVING SCHOOL LLC",
+    "license": "CP1089",
+    "duplicates": [],
+    "rating": 4,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "A2Z DRIVING SCHOOL DALLAS",
+    "license": "CP1088",
+    "duplicates": [],
+    "rating": 3.3,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "name": "ACEABLE DEFENSIVE DRIVING",
+    "license": "CP262",
+    "duplicates": [],
+    "rating": 4.5,
+    "price": 49,
+    "priceDisplay": "49",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 64,
+    "totalCostDisplay": "64",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "name": "ADS DEFENSIVE DRIVING CURRICULUM",
+    "license": "CP042",
+    "duplicates": [],
+    "rating": 3.1,
+    "price": 39,
+    "priceDisplay": "39",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 39,
+    "totalCostDisplay": "39",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "name": "ALL IS WELL DRIVING ACADEMY, LLC",
+    "license": "CP1046",
+    "duplicates": [],
+    "rating": 3.6,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "name": "ANGELO DRIVING, INC.",
+    "license": "CP136",
+    "duplicates": [],
+    "rating": 3.9,
+    "price": 30,
+    "priceDisplay": "30",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 30,
+    "totalCostDisplay": "30",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 16,
+    "name": "APPROVED NATIONAL DRIVING SCHOOL OF TEXAS",
+    "license": "CP1093",
+    "duplicates": [],
+    "rating": 3.4,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 17,
+    "name": "- ONLY $25 - CLICK HERE NOW - EASY, FAST, QUICK COURSE",
+    "license": "CP028",
+    "duplicates": [
+      {
+        "name": "$25 FAST EASY QUICK DEFENSIVE DRIVING-CLICK HERE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "-JUST $25-FAST, EASY, SHORTEST COURSE ONLINE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "- ONLY $25 - START TODAY - FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "-ONLY $25 FASTEST LEGAL DEFENSIVE DRIVING COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "-SHORTEST LEGAL DEFENSIVE DRIVING COURSE -ONLY $25",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 LOWEST PRICE ALLOWED - FINISH AS FAST AS LEGAL",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "-NO FINAL EXAM COURSE-ONLY $25-FAST AND SIMPLE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "ONLY $25 FAST, SIMPLE & EASY - START HERE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "-FINISH ANYTIME-JUST $25- TX LOWEST PRICE ALLOWED",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "-FINISH AS FAST AS ALLOWED, LOWEST PRICE BY LAW$25",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25-FREE-CERTIFICATE/NO FINAL",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 - NO HIDDEN FEES / FREE - CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25-WITH-VIDEOS & FREE-CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25-FREE-CERTIFICATE/NO HIDDEN FEES",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25-EASY&FAST/FREE-CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 / FREE - CERTIFICATE / GUARANTEED PASS",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 TODAY - FREE CERTIFICATE - GUARANTEED TO PASS",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 - N O - F I N A L - E X A M / FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "NOW $25 - F R E E - C E R T I F I C A T E / NO HID",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25-NO HIDDEN FEES/NO FINAL EXAM/FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "ONLY $25-FREE CERTIFICATE/EASY&FAST/NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "ONLY $25-FREE-CERTIFICATE-EASY TO PASS",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "ONLY $25-FREE CERTIFICATE-SAVE $$ AND TIME",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25-FREE-CERTIFICATE & NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM PASS GUARANTEE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM PASS PROMISE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM ALL VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM PASS GUARANTEE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM ALL VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM FREE VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM - VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM NO FINAL",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FREE CERTIFICATE ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 PASS PROMISE ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 NO FINAL EXAM ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 PASS GUARANTEE ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "FREE VIDEO COURSE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "QUICK $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "NO FINAL EXAM $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "SIMPLE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "24/7 365 SIGN UP NOW $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "SUPER FAST $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "FAST EASY $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "JOIN TODAY $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "FAST $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM 24/7 365 SIGN UP NOW",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM FREE VIDEO COURSE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM JOIN TODAY",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "FREE PDF CERTIFICATE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "FREE CERTIFICATE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "PASS GUARANTEE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM PASS GUARANTEE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "START TODAY $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "PASS PROMISE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM PASS PROMISE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM FREE PDF CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM START TODAY",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM START NOW",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "EASY FAST $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com"
+      },
+      {
+        "name": "ONLY $25 -F R E E - CERTIFICATE-SAVE TIME & $$$",
+        "url": "https://fastestwaytopass.com"
+      }
+    ],
+    "rating": 3.8,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 18,
+    "name": "FAST EASY DEFENSIVE DRIVING",
+    "license": "CP023",
+    "duplicates": [
+      {
+        "name": "$25 DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DALLAS DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "EASIEST COURSE DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "FASTEST COURSE DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "HOUSTON DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DFW DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "6 HOUR DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "FUNNY DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "ARLINGTON DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 COMEDY DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 COURT APPROVED DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 EASY DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 FAST EASY DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 FINISH FAST DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 STATE APPROVED DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "$25 DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "ALLEN DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "ROUND ROCK DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DENTON DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "SUGAR LAND DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "THE WOODLANDS DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "GARLAND DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "SAN ANTONIO DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "FRISCO DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "RICHARDSON DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "FORT WORTH DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "PEARLAND DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "ABILENE DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "COLLEGE STATION DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "TEMPLE DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "LEANDER DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "CELINA DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "BEAUMONT DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "CONROE DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "CEDAR PARK DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "PHARR DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "BAYTOWN DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      },
+      {
+        "name": "DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com"
+      }
+    ],
+    "rating": 3.4,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 19,
+    "name": "EASYPASSDEFENSIVEDRIVING.COM",
+    "license": "CP1126",
+    "duplicates": [
+      {
+        "name": "ERASEMYTICKET.COM",
+        "url": "ereasemyticket.com"
+      },
+      {
+        "name": "$25 EASYQUICKDEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "QUICKDEFENSIVEDRIVING.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM FREE CERTIFICATE",
+        "url": "TEXASCOURSEONLINE.COM"
+      },
+      {
+        "name": "$25 TICKETDISMISSONLINE.COM FREE CERTIFICATE",
+        "url": "TICKETDISMISSONLINE.COM"
+      },
+      {
+        "name": "$25 EASYPASSTEXASCOURSE.COM FREE CERTIFICATE",
+        "url": "PASSTEXASCOURSE.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM EASY FAST",
+        "url": "TEXASCOURSEONLINE.COM"
+      },
+      {
+        "name": "$25 EASYPASSDEFENSIVEDRIVING.COM FREE AUDIO",
+        "url": "PASSDEFENSIVEDRIVING.COM"
+      },
+      {
+        "name": "$25 EASYPASSDEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "PASSDEFENSIVEDRIVING.COM"
+      },
+      {
+        "name": "$25 EASYPASSTEXASCOURSE.COM FREE AUDIO",
+        "url": "PASSTEXASCOURSE.COM"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM FREE CERTIFICATE",
+        "url": "ERASEMYTICKET.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM EASY PASS",
+        "url": "TEXASCOURSEONLINE.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM PASS PROMISE",
+        "url": "TEXASCOURSEONLINE.COM"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM EASY PASS",
+        "url": "ERASEMYTICKET.COM"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM EASY FAST",
+        "url": "ERASEMYTICKET.COM"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM EASY QUICK",
+        "url": "ERASEMYTICKET.COM"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM FREE AUDIO",
+        "url": "ERASEMYTICKET.COM"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM QUICK EASY",
+        "url": "ERASEMYTICKET.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM EASY QUICK",
+        "url": "TEXASCOURSEONLINE.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM FAST EASY",
+        "url": "TEXASCOURSEONLINE.COM"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM QUICK EASY",
+        "url": "TEXASCOURSEONLINE.COM"
+      }
+    ],
+    "rating": 3.8,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 20,
+    "name": "$25 DALLAS VIDEO DEFENSIVE DRIVING",
+    "license": "CP1147",
+    "duplicates": [
+      {
+        "name": "$25 EL PASO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 GARLAND VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 FORT WORTH VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 PLANO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 DENTON VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 BROWNSVILLE VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 LEWISVILLE VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "SAN ANTONIO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 ROUND ROCK VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 MCKINNEY VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 LUBBOCK VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 IRVING VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 FRISCO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 HOUSTON VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 ARLINGTON VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found"
+      }
+    ],
+    "rating": 3.8,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 21,
+    "name": "$25 - ONLINE VIDEO COURSE - NO FINAL TEST- INSTANT",
+    "license": "CP082",
+    "duplicates": [
+      {
+        "name": "$$$ $25 $$$ - ONLINE VIDEO COURSE- UNLIMITED ATTEM",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - EASY ONLINE VIDEO DEF DRIVING- NO FINAL EXAM",
+        "url": "Not Found"
+      },
+      {
+        "name": "$$$ $25 $$$ - ONLINE VIDEO COURSE- INSTANT CERT",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - EASY FASTER DEFENSIVE DRIVING- NO FINAL EXAM",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - EASY CRS ONLINE WITH VIDEOS - NO FINAL TEST",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25- FREE VIDEO UPGRADE DEFENSIVE DRIVING COURSE",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - VIDEO COURSE TEXAS WITH - NO FINAL TEST",
+        "url": "Not Found"
+      },
+      {
+        "name": "$$$ $25 $$$ SAVE MONEY WITH FREE VIDEO DEF",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - FAST EASY VIDEO COURSE - NO FINAL TEST",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - VIDEO COURSE WITH INSTANT CERTIFICATE",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - SAME DAY CERTIFICATE VIDEO COURSE NO FINAL",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25- VIDEO UPGRADE COURSE - NO FINAL EXAM",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25- EASY TO TAKE ONLINE VIDEO COURSE",
+        "url": "Not Found"
+      }
+    ],
+    "rating": 3.7,
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 22,
+    "name": "COURTAPPROVEDCOMEDYDRIVINGSAFETY.COM",
+    "license": "CP1199",
+    "duplicates": [
+      {
+        "name": "TRYITFREEDEFENSIVEDRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "COMEDYDRIVINGSAFETYONLINE.COM",
+        "url": "COMEDYDRIVINGSAFETYONLINE.COM"
+      },
+      {
+        "name": "TRYITFREECOMEDYDRIVINGSAFETY.COM",
+        "url": "TRYITFREECOMEDYDRIVINGSAFETY.COM"
+      },
+      {
+        "name": "APPROVEDDEFENSIVEDRIVING.COM",
+        "url": "APPROVEDDEFENSIVEDRIVING.COM"
+      },
+      {
+        "name": "25USDDEFENSIVEDRIVING.COM",
+        "url": "25USDDEFENSIVEDRIVING.COM"
+      },
+      {
+        "name": "25USDCOMEDYDRIVINGSAFETY.COM",
+        "url": "25USDCOMEDYDRIVINGSAFETY.COM"
+      },
+      {
+        "name": "TRYITFREEDRIVINGSAFETY.COM",
+        "url": "TRYITFREEDRIVINGSAFETY.COM"
+      },
+      {
+        "name": "CURELEADFOOT.COM",
+        "url": "CURELEADFOOT.COM"
+      },
+      {
+        "name": "ASAFERDRIVER.COM",
+        "url": "ASAFERDRIVER.COM"
+      }
+    ],
+    "rating": 3.9,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 23,
+    "name": "COMEDY DRIVING SAFETY",
+    "license": "CP126",
+    "duplicates": [],
+    "rating": 3,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 24,
+    "name": "$25-FREE VIDEO COURSE-INSTANT CERTIFICATE DOWNLOAD",
+    "license": "CP077",
+    "duplicates": [
+      {
+        "name": "$25 - --E--A--S--Y-- NO FINAL EXAM - INSTANT CERTI",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - EASY TO PASS COURSE VIDEO COURSE",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 -EASY TO PASS COURSE - INSTANT CERTIFICATE",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25- NO FINAL EXAM- VID CRS ONLINE- NO FINAL TEST",
+        "url": "Not Found"
+      },
+      {
+        "name": "$$$ $25 $$$ - BEST-WITH VIDEO COURSE -INSTANT CERT",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 - TEXAS DEFENSIVE DRIVING - FREE CERTIFICATE",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25 EASY TO PASS COURSE - FREE CERTIFICATE- WITH",
+        "url": "https://www.easyvideocourseonline.com/register"
+      },
+      {
+        "name": "$25 - E A S Y - CHEAP -FREE INSTANT CERTIFICATE DO",
+        "url": "Not Found"
+      }
+    ],
+    "rating": 3.9,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 25,
+    "name": "ONLINE DEFENSIVE DRIVING SCHOOLS",
+    "license": "CP027",
+    "duplicates": [
+      {
+        "name": "COURT APPROVED DEFENSIVE DRIVING",
+        "url": "https://www.courtapproved.com/"
+      },
+      {
+        "name": "TEXAS COMEDY COURSE",
+        "url": "https://www.texascomedycourse.com/how/"
+      },
+      {
+        "name": "DEFENSIVEDRIVINGSCHOOL.COM",
+        "url": "DEFENSIVEDRIVINGSCHOOL.COM"
+      },
+      {
+        "name": "TEXAS BEST DEFENSIVE DRIVING",
+        "url": "DEFENSIVEDRIVINGSCHOOL.COM"
+      },
+      {
+        "name": "TEXAS DRIVING SAFETY",
+        "url": "https://www.texasonlinedrivingsafety.com/driving-safety-courses/"
+      }
+    ],
+    "rating": 3.3,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 26,
+    "name": "FAST TRACK DEFENSIVE DRIVING",
+    "license": "CP037",
+    "duplicates": [
+      {
+        "name": "BEST DRIVING SAFETY",
+        "url": "Not Found"
+      },
+      {
+        "name": "$25-FREE CERTIFICATE - NO HIDDEN FEES",
+        "url": "Not Found"
+      },
+      {
+        "name": "TEXAS APPROVED DRIVING SAFETY",
+        "url": "https://fasttrackdefensivedriving.com/register"
+      }
+    ],
+    "rating": 3.5,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 27,
+    "name": "AMERICAN SAFETY COUNCIL, INC.",
+    "license": "CP520",
+    "duplicates": [],
+    "rating": 3.6,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 28,
+    "name": "COMEDY GUYS DEFENSIVE DRIVING",
+    "license": "CP1054",
+    "duplicates": [
+      {
+        "name": "EASY DEFENSIVE DRIVING",
+        "url": "Not Found"
+      },
+      {
+        "name": "MESQUITE DEFENSIVE DRIVING",
+        "url": "Not Found"
+      }
+    ],
+    "rating": 3.9,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 29,
+    "name": "-- VIDEO -- CHEAPER -- FASTER -- EASIER -- TEXAS DEFENSIVE DRIVING",
+    "license": "CP065",
+    "duplicates": [
+      {
+        "name": "LOWEST PRICE-FREE CERTIFICATE-VIDEO-100%PASS-SHORT EZ-FREE AUDIO",
+        "url": "Not Found"
+      },
+      {
+        "name": "CHEAPEST--FREE AUDIO--FREE CERTIFICATE--EASY--FAST--TEXAS SCHOOL",
+        "url": "https://www.dismisstickettexas.com/home"
+      },
+      {
+        "name": "CHEAPEST - FREE CERTIFICATE-VIDEO-100% PASS-SHORT EZ-FREE AUDIO",
+        "url": "https://www.dismissticketcheapfast.com/start-course"
+      }
+    ],
+    "rating": 3.8,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 30,
+    "name": "DEFENSIVEDRIVINGCOURSE.COM",
+    "license": "CP280",
+    "duplicates": [
+      {
+        "name": "ASENSEOFHUMORDRIVING.COM",
+        "url": "ASENSEOFHUMORDRIVING.COM"
+      }
+    ],
+    "rating": 3.1,
+    "price": 28.95,
+    "priceDisplay": "28.95",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28.95,
+    "totalCostDisplay": "28.95",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 31,
+    "name": "FUNNY DRIVING LLC",
+    "license": "CP073",
+    "duplicates": [
+      {
+        "name": "COMEDY DRIVING INC.",
+        "url": "comedydriving.com"
+      }
+    ],
+    "rating": 3.3,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 27,
+    "totalCostDisplay": "27",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 32,
+    "name": "I DRIVE SAFELY, LLC",
+    "license": "CP022",
+    "duplicates": [
+      {
+        "name": "I DRIVE SAFELY LLC",
+        "url": "www.idrivesafely.com"
+      }
+    ],
+    "rating": 3.9,
+    "price": 29,
+    "priceDisplay": "29",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 29,
+    "totalCostDisplay": "29",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 33,
+    "name": "URBANTRAFFICSCHOOL.COM",
+    "license": "CP003",
+    "duplicates": [
+      {
+        "name": "---WITH VIDEOS----EASYTEXASCOURSE.COM",
+        "url": "https://www.easytexascourse.com/"
+      }
+    ],
+    "rating": 3,
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
   }
 ]

@@ -9,59 +9,73 @@ export type DuplicateBrand = {
 export type Provider = {
   id: number
   name: string
+  license?: string
   duplicates: DuplicateBrand[]
   rating: number
-  reviewCount?: number
   price: number
+  priceDisplay: string
   stateFee: number
+  stateFeeDisplay: string
+  totalCost: number
+  totalCostDisplay: string
   online: boolean
   inPerson: boolean
   languages: string[]
   instantCert: 'Free' | 'Paid' | 'Mail'
-  moneyBack: boolean
-  lastVerified: string
+  lastVerified?: string
   featured?: boolean
 }
 
-type SortKey = 'rating' | 'price' | 'reviews' | 'name'
+type SortKey = 'rating' | 'price' | 'totalCost' | 'name'
 type SortDir = 'asc' | 'desc'
 
-const baseProviders = providersRaw as Provider[]
+// Mark our overall pick (Road Ready Safety) as featured
+const baseProviders = (providersRaw as Provider[]).map((p) => ({
+  ...p,
+  featured: p.name === 'Road Ready Safety' ? true : p.featured
+}))
 
-export function useProviders() {
-  const sortBy = ref<SortKey>('rating')
-  const sortDir = ref<SortDir>('desc')
-  const searchQuery = ref('')
-  const formatFilter = ref<'all' | 'online' | 'in-person' | 'both'>('all')
-  const certFilter = ref<'all' | 'free' | 'paid' | 'mail'>('all')
-  const expandedRows = ref<Record<number, boolean>>({})
+// Shared reactive state (single source of truth across components)
+const sortBy = ref<SortKey>('rating')
+const sortDir = ref<SortDir>('desc')
+const searchQuery = ref('')
+/** Multi-select: empty = All (no filter). Otherwise show providers matching ANY selected format. */
+const formatFilter = ref<string[]>([])
+/** Multi-select: empty = All. Otherwise show providers matching ANY selected cert type. */
+const certFilter = ref<string[]>([])
+const expandedRows = ref<Record<number, boolean>>({})
 
-  const totalProviders = baseProviders.length
+const totalProviders = baseProviders.length
 
-  const totalBrands = computed(() =>
-    baseProviders.reduce((sum, p) => sum + 1 + (p.duplicates?.length || 0), 0)
-  )
+const totalBrands = computed(() =>
+  baseProviders.reduce((sum, p) => sum + 1 + (p.duplicates?.length || 0), 0)
+)
 
-  const hasActiveFilters = computed(
-    () => formatFilter.value !== 'all' || certFilter.value !== 'all'
-  )
+const hasActiveFilters = computed(
+  () => formatFilter.value.length > 0 || certFilter.value.length > 0
+)
 
-  const filtered = computed(() => {
+const filtered = computed(() => {
     return baseProviders.filter((p) => {
-      if (formatFilter.value === 'online' && !p.online) return false
-      if (formatFilter.value === 'in-person' && !p.inPerson) return false
-      if (formatFilter.value === 'both' && !(p.online && p.inPerson)) return false
+      // Format: empty = show all. Else include if provider matches ANY selected format.
+      if (formatFilter.value.length > 0) {
+        const matchFormat =
+          (formatFilter.value.includes('online') && p.online) ||
+          (formatFilter.value.includes('in-person') && p.inPerson) ||
+          (formatFilter.value.includes('both') && p.online && p.inPerson)
+        if (!matchFormat) return false
+      }
 
-      if (
-        certFilter.value !== 'all' &&
-        p.instantCert.toLowerCase() !== certFilter.value
-      ) {
-        return false
+      // Certificate: empty = show all. Else include if provider's cert is in selected set.
+      if (certFilter.value.length > 0) {
+        const cert = p.instantCert.toLowerCase()
+        if (!certFilter.value.includes(cert)) return false
       }
 
       if (searchQuery.value) {
         const q = searchQuery.value.toLowerCase()
         if (p.name.toLowerCase().includes(q)) return true
+        if (p.license && p.license.toLowerCase().includes(q)) return true
         if (
           p.duplicates?.some((d) => d.name.toLowerCase().includes(q))
         ) {
@@ -74,16 +88,21 @@ export function useProviders() {
     })
   })
 
-  const providers = computed(() => {
+const providers = computed(() => {
     const arr = [...filtered.value]
     const dir = sortDir.value === 'asc' ? 1 : -1
 
     arr.sort((a, b) => {
+      // Always keep featured provider(s) at the top
+      if (a.featured && !b.featured) return -1
+      if (!a.featured && b.featured) return 1
+
       if (sortBy.value === 'rating') return (a.rating - b.rating) * dir
       if (sortBy.value === 'price') {
-        const ta = a.price + a.stateFee
-        const tb = b.price + b.stateFee
-        return (ta - tb) * dir
+        return (a.price - b.price) * dir
+      }
+      if (sortBy.value === 'totalCost') {
+        return (a.totalCost - b.totalCost) * dir
       }
       if (sortBy.value === 'name') {
         return a.name.localeCompare(b.name) * dir
@@ -94,29 +113,57 @@ export function useProviders() {
     return arr
   })
 
-  const resultCount = computed(() => providers.value.length)
+const resultCount = computed(() => providers.value.length)
 
-  function toggleSort(col: SortKey) {
+function toggleSort(col: SortKey) {
     if (sortBy.value === col) {
       sortDir.value = sortDir.value === 'asc' ? 'desc' : 'asc'
     } else {
       sortBy.value = col
-      sortDir.value = col === 'price' ? 'asc' : 'desc'
+      sortDir.value = col === 'name' ? 'asc' : 'asc'
     }
   }
 
-  function toggleExpand(id: number) {
+function toggleExpand(id: number) {
     expandedRows.value = {
       ...expandedRows.value,
       [id]: !expandedRows.value[id]
     }
   }
 
-  function clearFilters() {
-    formatFilter.value = 'all'
-    certFilter.value = 'all'
+function clearFilters() {
+    formatFilter.value = []
+    certFilter.value = []
   }
 
+/** Toggle a format filter. "all" clears selection; others add/remove from set. */
+function toggleFormat(key: string) {
+    if (key === 'all') {
+      formatFilter.value = []
+      return
+    }
+    const next = [...formatFilter.value]
+    const idx = next.indexOf(key)
+    if (idx >= 0) next.splice(idx, 1)
+    else next.push(key)
+    formatFilter.value = next
+  }
+
+/** Toggle a certificate filter. "all" clears selection; others add/remove. */
+function toggleCert(key: string) {
+    if (key === 'all') {
+      certFilter.value = []
+      return
+    }
+    const k = key.toLowerCase()
+    const next = [...certFilter.value]
+    const idx = next.indexOf(k)
+    if (idx >= 0) next.splice(idx, 1)
+    else next.push(k)
+    certFilter.value = next
+  }
+
+export function useProviders() {
   return {
     providers,
     totalProviders,
@@ -131,6 +178,8 @@ export function useProviders() {
     toggleSort,
     toggleExpand,
     clearFilters,
-    hasActiveFilters
+    hasActiveFilters,
+    toggleFormat,
+    toggleCert
   }
 }
