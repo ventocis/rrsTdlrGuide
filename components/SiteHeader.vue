@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useProviders } from '~/composables/useProviders'
 
-const { searchQuery, totalProviders, totalBrands } = useProviders()
+const route = useRoute()
+const { searchQuery } = useProviders()
+const isSubmitReviewPage = route.path === '/submit-review'
 </script>
 
 <template>
@@ -41,8 +43,8 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
         </p>
       </div>
 
-      <!-- Search + Submit Review -->
-      <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
+      <!-- Search + Submit Review (hide Submit Review on form page) -->
+      <div class="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
         <div class="relative w-full sm:w-[280px]">
           <span
             class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--proto-header-subtitle)]"
@@ -59,6 +61,7 @@ const { searchQuery, totalProviders, totalBrands } = useProviders()
           />
         </div>
         <NuxtLink
+          v-if="!isSubmitReviewPage"
           to="/submit-review"
           target="_blank"
           rel="noopener noreferrer"
