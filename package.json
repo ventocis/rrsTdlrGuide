@@ -8,6 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "build:data": "node ./scripts/parse-xlsx.mjs",
+    "build:courts": "node ./scripts/parse-courts-xlsx.mjs",
     "ingest:reviews": "node ./scripts/ingest-form-submissions.mjs"
   },
   "dependencies": {

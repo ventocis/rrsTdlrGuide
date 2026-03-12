@@ -54,13 +54,14 @@ useHead({
 })
 
 // State
+const { allCourtsRows } = useCourts()
 const state = reactive({
   violation: null as string | null,
   speedOver: null as number | null,
   cdl: null as boolean | null,
   priorDismissal: null as boolean | null,
   courtApproval: null as boolean | string | null,
-  county: null as string | null
+  selectedCourt: null as import('~/composables/useCourts').CourtRecord | null
 })
 
 const STEPS = ['step1', 'step2', 'step3', 'step4', 'step5', 'resultCard']
@@ -70,6 +71,41 @@ const progressBar = ref<HTMLElement | null>(null)
 const progressLabel = ref<HTMLElement | null>(null)
 const speedInput = ref<HTMLInputElement | null>(null)
 const resultContent = ref<HTMLElement | null>(null)
+
+// Step 5: three cascading dropdowns (County → Court Type → Court)
+const selectedCounty = ref<string | null>(null)
+const selectedCourtType = ref<string | null>(null)
+const selectedCourtRecord = ref<import('~/composables/useCourts').CourtRecord | null>(null)
+
+const countyOptions = computed(() => {
+  const counties = [...new Set(allCourtsRows.map((r) => r.county))].filter(Boolean).sort()
+  return counties.map((c) => ({ label: c, value: c }))
+})
+
+const courtTypeOptions = computed(() => {
+  if (!selectedCounty.value) return []
+  const types = [...new Set(
+    allCourtsRows
+      .filter((r) => r.county === selectedCounty.value)
+      .map((r) => r.courtType)
+  )].filter(Boolean).sort()
+  return types.map((t) => ({ label: t, value: t }))
+})
+
+const courtNameOptions = computed(() => {
+  if (!selectedCounty.value || !selectedCourtType.value) return []
+  const rows = allCourtsRows.filter(
+    (r) => r.county === selectedCounty.value && r.courtType === selectedCourtType.value
+  )
+  const seen = new Set<string>()
+  const options: { label: string; value: import('~/composables/useCourts').CourtRecord }[] = []
+  for (const row of rows) {
+    if (seen.has(row.court)) continue
+    seen.add(row.court)
+    options.push({ label: row.court, value: row })
+  }
+  return options
+})
 
 // Navigation
 function goTo(stepId: string) {
@@ -134,31 +170,28 @@ function selectCourtApproval(val: boolean | string) {
   goTo('step5')
 }
 
-function selectCounty(county: string) {
-  state.county = county
+function selectCourt(court: import('~/composables/useCourts').CourtRecord) {
+  state.selectedCourt = court
   showResult()
 }
-
-// Decision logic
-function getCountyNote(county: string): string | null {
-  const notes: Record<string, string | null> = {
-    harris: "⚠️ <strong>Harris County:</strong> You must file your dismissal request through the Harris County District Clerk's online portal. In-person filing is also available. Confirm your specific court's deadline before enrolling.",
-    dallas: "⚠️ <strong>Dallas County:</strong> Dallas Municipal Court has an online ticket management system. Confirm which court issued your ticket (JP or Municipal) as procedures differ.",
-    travis: "⚠️ <strong>Travis County:</strong> Austin Municipal Court handles most city traffic violations. The court allows online requests in many cases. Confirm with your specific court.",
-    bexar: "⚠️ <strong>Bexar County:</strong> San Antonio Municipal Court allows online deferral requests. Confirm fees and deadlines directly with the court.",
-    tarrant: "⚠️ <strong>Tarrant County:</strong> Procedures vary by municipality (Fort Worth, Arlington, etc.). Contact the specific court listed on your citation.",
-    other: null
+function buildCourtNote(selectedCourt: import('~/composables/useCourts').CourtRecord): string {
+  const courtName = selectedCourt.court
+  const url = selectedCourt.website && selectedCourt.website.trim() !== ''
+    ? selectedCourt.website.trim()
+    : null
+  if (url) {
+    return `⚠️ For <strong>${courtName}</strong>, see <a href="${url}" target="_blank" rel="noopener noreferrer">court website</a>. Confirm procedures and deadlines with the court.`
   }
-  return notes[county] ?? null
+  return `⚠️ For <strong>${courtName}</strong>, confirm procedures and deadlines directly with the court.`
 }
 
-function buildEligibleSteps(isPending: boolean, countyNote: string | null): { text: string }[] {
+function buildEligibleSteps(isPending: boolean, selectedCourt: import('~/composables/useCourts').CourtRecord | null): { text: string }[] {
   const steps: { text: string }[] = []
   if (isPending) {
     steps.push({ text: '<strong>Contact your court first</strong> and request permission to take a defensive driving course. You can usually do this in person, by mail, or sometimes online. Do not take the course before receiving approval.' })
   }
   steps.push({ text: "Pay the court's administrative fee to request dismissal. Some courts require this when you make your request." })
-  if (countyNote) steps.push({ text: countyNote })
+  if (selectedCourt) steps.push({ text: buildCourtNote(selectedCourt) })
   steps.push({ text: "Enroll in and complete a <strong>TDLR-approved Driving Safety Course</strong>. The course is 6 hours and must be completed within the court's deadline." })
   steps.push({ text: 'Obtain your <strong>Type 3A driving record</strong> from <a href="https://www.dps.texas.gov" target="_blank" rel="noopener noreferrer">dps.texas.gov</a> for $10 (if your court requires it). Do not buy it through the course provider — it costs more.' })
   steps.push({ text: "Submit your <strong>completion certificate</strong> and driving record to the court by the deadline. Confirm the court's preferred submission method (in person, mail, or online)." })
@@ -250,7 +283,6 @@ function evaluate(): EvalResult {
     }
   }
 
-  const countyNotes = getCountyNote(state.county ?? '')
   const isPending = state.courtApproval === 'pending'
   return {
     status: 'eligible',
@@ -259,7 +291,7 @@ function evaluate(): EvalResult {
     reason: isPending
       ? "Based on your answers, you should qualify to have this ticket dismissed through a TDLR-approved defensive driving course. However, you must get court approval before signing up for the course. Taking the course before approval is granted is a common and costly mistake."
       : 'Based on your answers, you appear to qualify to dismiss this ticket through a TDLR-approved defensive driving course. Follow the steps below to complete the process.',
-    steps: buildEligibleSteps(isPending, countyNotes),
+    steps: buildEligibleSteps(isPending, state.selectedCourt),
     course: {
       name: 'Any TDLR-Approved Driving Safety Course',
       desc: 'Look for a course at or near the $25 base price. Skip optional add-ons to minimize cost. Order your Type 3A driving record directly from dps.texas.gov for $10 instead of through the course provider.'
@@ -281,6 +313,31 @@ function showResult() {
       </div>
     `
   }
+  let emailBlockHTML = ''
+  if (result.status === 'eligible' && state.selectedCourt) {
+    const court = state.selectedCourt
+    const subject = 'Free resource for people with traffic tickets'
+    const body = `Hello,
+
+I got a traffic ticket and used a free website called TDLR Guide (tdlrguide.com/eligibility-checker) to check if I could use defensive driving to dismiss it.
+
+It answered my questions before I had to call the court. I wanted to pass it along in case it helps other people who come to your court with the same questions.
+
+Thank you!`
+    const toPart = court.email && String(court.email).trim() !== ''
+      ? encodeURIComponent(court.email.trim())
+      : ''
+    const mailto = `mailto:${toPart}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const courtEmail = court.email && String(court.email).trim() !== '' ? court.email.trim() : ''
+    emailBlockHTML = `
+      <div class="email-court-section">
+        <h3>📬 One last thing — we built this for free</h3>
+        <p class="email-court-desc">This tool is free and took a lot of work to build. If it helped you, there's one small way to pay it back: email your court and let them know it exists. Your email client will open with everything already written. Just hit send. That's it.</p>
+        <a class="email-court-btn" href="${mailto}">Open in email client</a>
+        ${courtEmail ? `<p class="email-court-fallback">If your email client didn't open, copy the address and paste it into your email app: <button type="button" class="email-court-copy" data-email="${courtEmail.replace(/"/g, '&quot;')}">${courtEmail}</button></p>` : ''}
+      </div>
+    `
+  }
   if (resultContent.value) {
     resultContent.value.innerHTML = `
       <div class="result-banner ${statusClass}">
@@ -295,6 +352,7 @@ function showResult() {
         <ul class="steps-list">${stepsHTML}</ul>
       </div>
       ${courseHTML}
+      ${emailBlockHTML}
     `
   }
   goTo('resultCard')
@@ -306,12 +364,23 @@ function restart() {
   state.cdl = null
   state.priorDismissal = null
   state.courtApproval = null
-  state.county = null
+  state.selectedCourt = null
+  selectedCounty.value = null
+  selectedCourtType.value = null
+  selectedCourtRecord.value = null
   if (speedInput.value) speedInput.value.value = ''
   goTo('step1')
 }
 
-onMounted(() => updateProgress())
+onMounted(() => {
+  updateProgress()
+  resultContent.value?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement)?.closest?.('.email-court-copy')
+    if (btn && btn instanceof HTMLElement && btn.dataset.email) {
+      navigator.clipboard.writeText(btn.dataset.email).catch(() => {})
+    }
+  })
+})
 </script>
 
 <template>
@@ -446,39 +515,47 @@ onMounted(() => updateProgress())
 
       <div class="step-card" id="step5">
         <div class="step-number">Question 5 of 5</div>
-        <h2>Which county issued your ticket?</h2>
-        <p class="sub">Some counties have specific procedures. Select the closest match.</p>
-        <div class="options">
-          <button type="button" class="opt-btn" @click="selectCounty('harris')">
-            <div class="icon">🏙️</div>
-            <div class="label">Harris County (Houston) <small>Specific online filing portal required</small></div>
-            <div class="arrow">›</div>
-          </button>
-          <button type="button" class="opt-btn" @click="selectCounty('dallas')">
-            <div class="icon">🌆</div>
-            <div class="label">Dallas County <small>Includes Dallas Municipal and JP courts</small></div>
-            <div class="arrow">›</div>
-          </button>
-          <button type="button" class="opt-btn" @click="selectCounty('travis')">
-            <div class="icon">🎸</div>
-            <div class="label">Travis County (Austin)</div>
-            <div class="arrow">›</div>
-          </button>
-          <button type="button" class="opt-btn" @click="selectCounty('bexar')">
-            <div class="icon">🤠</div>
-            <div class="label">Bexar County (San Antonio)</div>
-            <div class="arrow">›</div>
-          </button>
-          <button type="button" class="opt-btn" @click="selectCounty('tarrant')">
-            <div class="icon">⭐</div>
-            <div class="label">Tarrant County (Fort Worth)</div>
-            <div class="arrow">›</div>
-          </button>
-          <button type="button" class="opt-btn" @click="selectCounty('other')">
-            <div class="icon">📍</div>
-            <div class="label">Other Texas County</div>
-            <div class="arrow">›</div>
-          </button>
+        <h2>Which court is handling your ticket?</h2>
+        <p class="sub">Select your county, then court type, then the specific court.</p>
+        <div v-if="countyOptions.length === 0" class="court-empty-state">
+          No court data is loaded. Place <strong>Courts Directory By County (1).xlsx</strong> in the project root and run <code>npm run build:courts</code> to populate the list.
+        </div>
+        <div v-else class="court-dropdowns">
+          <div class="court-dropdown-field">
+            <label class="court-dropdown-label">County</label>
+            <USelectMenu
+              v-model="selectedCounty"
+              :items="countyOptions"
+              value-key="value"
+              placeholder="Select county"
+              class="court-select-menu"
+              @update:model-value="selectedCourtType = null; selectedCourtRecord = null"
+            />
+          </div>
+          <div class="court-dropdown-field">
+            <label class="court-dropdown-label">Court Type</label>
+            <USelectMenu
+              v-model="selectedCourtType"
+              :items="courtTypeOptions"
+              value-key="value"
+              placeholder="Select court type"
+              class="court-select-menu"
+              :disabled="!selectedCounty"
+              @update:model-value="selectedCourtRecord = null"
+            />
+          </div>
+          <div class="court-dropdown-field">
+            <label class="court-dropdown-label">Court</label>
+            <USelectMenu
+              v-model="selectedCourtRecord"
+              :items="courtNameOptions"
+              value-key="value"
+              placeholder="Select court"
+              class="court-select-menu"
+              :disabled="!selectedCounty || !selectedCourtType"
+              @update:model-value="(court: import('~/composables/useCourts').CourtRecord) => { if (court) { state.selectedCourt = court; showResult(); } }"
+            />
+          </div>
         </div>
       </div>
 
@@ -858,6 +935,132 @@ onMounted(() => updateProgress())
   line-height: 1.6;
   text-align: center;
 }
+
+/* Step 5 court dropdowns */
+.eligibility-checker-page .court-dropdowns {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.eligibility-checker-page .court-dropdown-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.eligibility-checker-page .court-dropdown-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+/* Match step card / speed input: border, radius, font */
+.eligibility-checker-page .court-dropdowns .court-select-menu [data-slot="trigger"],
+.eligibility-checker-page .court-dropdowns .court-select-menu button,
+.eligibility-checker-page .court-dropdowns [class*="trigger"],
+.eligibility-checker-page .court-dropdowns .court-select-menu > div:first-child {
+  width: 100% !important;
+  padding: 12px 16px !important;
+  border: 2px solid var(--proto-card-border) !important;
+  border-radius: 10px !important;
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: var(--navy) !important;
+  background: #fff !important;
+  transition: border-color 0.18s ease !important;
+}
+.eligibility-checker-page .court-dropdowns .court-select-menu [data-slot="trigger"]:focus,
+.eligibility-checker-page .court-dropdowns .court-select-menu button:focus,
+.eligibility-checker-page .court-dropdowns .court-select-menu [data-state="open"] > div:first-child,
+.eligibility-checker-page .court-dropdowns .court-select-menu [data-state="open"] [data-slot="trigger"],
+.eligibility-checker-page .court-dropdowns .court-select-menu [data-state="open"] button {
+  border-color: var(--navy-mid) !important;
+  outline: none !important;
+}
+.eligibility-checker-page .court-dropdowns .court-select-menu {
+  width: 100%;
+}
+.eligibility-checker-page .court-empty-state {
+  margin-top: 12px;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+  background: var(--proto-hover-bg);
+  border-radius: 10px;
+  border: 1px solid var(--proto-card-border);
+}
+.eligibility-checker-page .court-empty-state code {
+  font-size: 0.85em;
+  padding: 2px 6px;
+  background: var(--proto-card-border);
+  border-radius: 4px;
+}
+
+/* Result card – Email your court block (injected HTML) */
+.eligibility-checker-page .email-court-section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--proto-card-border);
+}
+.eligibility-checker-page .email-court-section h3 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.eligibility-checker-page .email-court-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.eligibility-checker-page .email-court-fallback {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.5;
+}
+.eligibility-checker-page .email-court-copy {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 8px 12px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--proto-teal-dark);
+  background: var(--proto-teal-bg);
+  border: 1px solid var(--proto-teal-border);
+  border-radius: 8px;
+  cursor: pointer;
+  word-break: break-all;
+  text-align: left;
+  transition: background 0.18s, border-color 0.18s;
+}
+.eligibility-checker-page .email-court-copy:hover {
+  background: var(--proto-teal-border);
+  border-color: var(--proto-teal);
+}
+.eligibility-checker-page .email-court-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  background: var(--proto-header-from);
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.1s;
+}
+.eligibility-checker-page .email-court-btn:hover {
+  background: var(--proto-header-to);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 @media (max-width: 500px) {
   .eligibility-checker-page .step-card { padding: 28px 24px; }
   .eligibility-checker-page .hero { padding: 40px 20px 68px; }

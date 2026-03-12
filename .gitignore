@@ -23,3 +23,6 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Courts data source (place in project root and run npm run build:courts)
+Courts Directory By County*.xlsx
