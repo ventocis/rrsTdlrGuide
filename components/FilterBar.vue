@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useProviders } from '~/composables/useProviders'
 
-const { formatFilter, certFilter, clearFilters, hasActiveFilters, toggleFormat, toggleCert } =
+const { formatFilter, certFilter, clearFilters, hasActiveFilters, toggleFormat, toggleCert, searchQuery } =
   useProviders()
 
 const formatOptions = [
@@ -32,7 +32,7 @@ function isCertActive(key: string) {
 <template>
   <div class="mx-auto w-full max-w-[1600px] px-2 pt-3.5 sm:px-5" style="background-color: var(--proto-page-bg);">
     <div
-      class="flex flex-wrap items-center justify-between gap-3 rounded-none px-2 py-0 sm:px-5"
+      class="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-none px-2 py-0 sm:px-5"
       style="background-color: var(--proto-page-bg);"
     >
       <div class="flex flex-wrap items-center gap-4">
@@ -83,10 +83,27 @@ function isCertActive(key: string) {
         </div>
       </div>
 
+      <div class="relative min-w-[200px] flex-1 sm:max-w-[280px] sm:flex-none">
+        <span
+          class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2"
+          aria-hidden="true"
+        >
+          <UIcon name="i-heroicons-magnifying-glass-20-solid" class="h-4 w-4" style="color: var(--proto-text-muted);" />
+        </span>
+        <input
+          v-model="searchQuery"
+          type="search"
+          placeholder="Search providers or brands..."
+          class="w-full rounded-lg border py-2 pl-10 pr-4 text-[13px] outline-none transition-colors placeholder:text-[var(--proto-text-muted)] focus:border-[var(--proto-teal)] focus:ring-2 focus:ring-[var(--proto-teal)]/30"
+          style="border-color: var(--proto-card-border); background: white; color: var(--proto-text);"
+          aria-label="Search providers or brands"
+        />
+      </div>
+
       <button
         v-if="hasActiveFilters"
         type="button"
-        class="px-2.5 py-1 text-[12px] font-semibold text-[#EF4444] transition-colors hover:opacity-80"
+        class="ml-auto px-2.5 py-1 text-[12px] font-semibold text-[#EF4444] transition-colors hover:opacity-80"
         @click="clearFilters"
       >
         Clear filters

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
-      routes: ['/pricing', '/terms', '/privacy', '/submit-review']
+      routes: ['/pricing', '/eligibility-checker', '/terms', '/privacy', '/submit-review']
     }
   },
   modules: ['@nuxt/ui'],
