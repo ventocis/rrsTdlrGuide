@@ -1,7 +1,56 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
+
+const seoTitle = 'Texas Ticket Dismissal Eligibility Checker | TDLR Guide'
+const seoDescription = 'Find out if you can dismiss your Texas traffic ticket with defensive driving. Answer 5 quick questions to get your eligibility result and next steps. Free tool for Texas drivers.'
+
 useSeoMeta({
-  title: 'Texas Ticket Dismissal Eligibility Checker | TDLR Guide',
-  description: 'Find out if you can dismiss your Texas traffic ticket with defensive driving. Answer 5 quick questions to get your eligibility result and next steps.'
+  title: seoTitle,
+  description: seoDescription,
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogUrl: `${siteUrl}/eligibility-checker`,
+  ogType: 'website',
+  ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  twitterTitle: seoTitle,
+  twitterDescription: seoDescription,
+  robots: 'index, follow'
+})
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Texas Ticket Dismissal Eligibility Checker',
+  description: seoDescription,
+  url: `${siteUrl}/eligibility-checker`,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'TDLR Guide',
+    url: siteUrl
+  },
+  mainEntity: {
+    '@type': 'WebPage',
+    name: seoTitle,
+    description: seoDescription,
+    primaryImageOfPage: { '@type': 'ImageObject', url: `${siteUrl}/favicon.png` }
+  }
+}
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/eligibility-checker` }],
+  meta: [
+    { property: 'og:url', content: `${siteUrl}/eligibility-checker` },
+    { name: 'keywords', content: 'Texas ticket dismissal, defensive driving eligibility, TDLR, traffic ticket, defensive driving course Texas' }
+  ],
+  script: [
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLd) }
+  ],
+  __dangerouslyDisableSanitizers: ['script']
 })
 
 // State
@@ -270,7 +319,7 @@ onMounted(() => updateProgress())
     <SiteHeader />
 
     <!-- Hero -->
-    <div class="eligibility-checker-content">
+    <main class="eligibility-checker-content" role="main" aria-label="Eligibility checker content">
     <div class="hero">
       <h1>Can I Dismiss My<br>Texas Traffic Ticket?</h1>
       <p>Answer 5 quick questions. Get your eligibility result and exact next steps in under a minute.</p>
@@ -442,7 +491,7 @@ onMounted(() => updateProgress())
     <p class="disclaimer">
       This tool provides general guidance only and is not legal advice. Court decisions on dismissal requests are at the judge's discretion. Always confirm requirements directly with your court. Eligibility rules are based on Texas Transportation Code §543.101–543.112 and TDLR regulations.
     </p>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -481,6 +530,7 @@ onMounted(() => updateProgress())
 /* ─── Checker layout & components (unchanged structure) ───────── */
 /* Only reset margin/padding inside checker content so header is untouched */
 .eligibility-checker-page .eligibility-checker-content * { box-sizing: border-box; margin: 0; padding: 0; }
+.eligibility-checker-page main.eligibility-checker-content { margin: 0; padding: 0; }
 .eligibility-checker-page .hero {
   padding: 48px 24px 72px;
   text-align: center;

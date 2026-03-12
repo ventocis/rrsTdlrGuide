@@ -1,7 +1,61 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
+
+const seoTitle = 'How Texas Defensive Driving Pricing Really Works — TDLR Guide'
+const seoDescription = 'Texas law sets a $25 minimum for defensive driving — but extra fees can push the real total much higher. Here\'s exactly what to expect and how to pay the least.'
+
 useSeoMeta({
-  title: 'How Texas Defensive Driving Pricing Really Works — TDLR Guide',
-  description: 'Texas law sets a $25 minimum for defensive driving — but extra fees can push the real total much higher. Here\'s exactly what to expect and how to pay the least.'
+  title: seoTitle,
+  description: seoDescription,
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogUrl: `${siteUrl}/pricing`,
+  ogType: 'article',
+  ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  twitterTitle: seoTitle,
+  twitterDescription: seoDescription,
+  robots: 'index, follow'
+})
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'How Texas Defensive Driving Pricing Really Works',
+  description: seoDescription,
+  url: `${siteUrl}/pricing`,
+  datePublished: '2025-01-01',
+  dateModified: '2025-01-01',
+  author: {
+    '@type': 'Organization',
+    name: 'TDLR Guide',
+    url: siteUrl
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'TDLR Guide',
+    url: siteUrl,
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/favicon.png` }
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${siteUrl}/pricing`
+  }
+}
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/pricing` }],
+  meta: [
+    { property: 'og:url', content: `${siteUrl}/pricing` },
+    { property: 'article:published_time', content: '2025-01-01' },
+    { property: 'article:modified_time', content: '2025-01-01' },
+    { name: 'keywords', content: 'Texas defensive driving cost, defensive driving price, TDLR course fee, $25 defensive driving Texas' }
+  ],
+  script: [
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLd) }
+  ],
+  __dangerouslyDisableSanitizers: ['script']
 })
 </script>
 
