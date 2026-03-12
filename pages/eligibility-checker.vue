@@ -324,16 +324,25 @@ I got a traffic ticket and used a free website called TDLR Guide (tdlrguide.com/
 It answered my questions before I had to call the court. I wanted to pass it along in case it helps other people who come to your court with the same questions.
 
 Thank you!`
-    const toPart = court.email && String(court.email).trim() !== ''
+    const encodedTo = court.email && String(court.email).trim() !== ''
       ? encodeURIComponent(court.email.trim())
       : ''
-    const mailto = `mailto:${toPart}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const encodedSubject = encodeURIComponent(subject)
+    const encodedBody = encodeURIComponent(body)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${encodedTo}&su=${encodedSubject}&body=${encodedBody}`
+    const outlookUrl = `https://outlook.live.com/mail/deeplink/compose?to=${encodedTo}&subject=${encodedSubject}&body=${encodedBody}`
     const courtEmail = court.email && String(court.email).trim() !== '' ? court.email.trim() : ''
     emailBlockHTML = `
       <div class="email-court-section">
         <h3>📬 One last thing — we built this for free</h3>
         <p class="email-court-desc">This tool is free and took a lot of work to build. If it helped you, there's one small way to pay it back: email your court and let them know it exists. Your email client will open with everything already written. Just hit send. That's it.</p>
-        <a class="email-court-btn" href="${mailto}">Open in email client</a>
+        <div class="email-court-actions">
+          <div class="email-court-row">
+            <a class="email-court-btn email-court-btn-gmail" href="${gmailUrl}" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+            <a class="email-court-btn email-court-btn-outlook" href="${outlookUrl}" target="_blank" rel="noopener noreferrer">Open in Outlook</a>
+          </div>
+          <button type="button" class="email-court-copy-body" data-body="${encodeURIComponent(body)}" data-original-label="Copy message">Copy message</button>
+        </div>
         ${courtEmail ? `<p class="email-court-fallback">If your email client didn't open, copy the address and paste it into your email app: <button type="button" class="email-court-copy" data-email="${courtEmail.replace(/"/g, '&quot;')}">${courtEmail}</button></p>` : ''}
       </div>
     `
@@ -375,11 +384,41 @@ function restart() {
 onMounted(() => {
   updateProgress()
   resultContent.value?.addEventListener('click', (e) => {
-    const btn = (e.target as HTMLElement)?.closest?.('.email-court-copy')
-    if (btn && btn instanceof HTMLElement && btn.dataset.email) {
-      navigator.clipboard.writeText(btn.dataset.email).catch(() => {})
+    const target = e.target as HTMLElement
+    const emailBtn = target.closest('.email-court-copy') as HTMLElement | null
+    if (emailBtn && emailBtn.dataset.email) {
+      navigator.clipboard.writeText(emailBtn.dataset.email).catch(() => {})
+      return
+    }
+    const bodyBtn = target.closest('.email-court-copy-body') as HTMLElement | null
+    if (bodyBtn && bodyBtn.dataset.body) {
+      const raw = bodyBtn.dataset.body
+      const text = raw ? decodeURIComponent(raw) : ''
+      navigator.clipboard.writeText(text).then(() => {
+        const original = bodyBtn.dataset.originalLabel || bodyBtn.textContent || 'Copy message'
+        bodyBtn.textContent = 'Copied ✓'
+        setTimeout(() => {
+          bodyBtn.textContent = original
+        }, 2000)
+      }).catch(() => {})
     }
   })
+
+  // #region agent log
+  fetch('http://127.0.0.1:7243/ingest/85ec810a-b311-4f04-8fc4-ebe6f9a5fcb1', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      id: `log_${Date.now()}`,
+      runId: 'eligibility-checker-routing',
+      hypothesisId: 'H1',
+      location: 'pages/eligibility-checker.vue:onMounted',
+      message: 'Eligibility checker page mounted',
+      data: {},
+      timestamp: Date.now()
+    })
+  }).catch(() => {})
+  // #endregion agent log
 })
 </script>
 
@@ -1017,6 +1056,16 @@ onMounted(() => {
   line-height: 1.55;
   margin-bottom: 14px;
 }
+.eligibility-checker-page .email-court-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.eligibility-checker-page .email-court-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .eligibility-checker-page .email-court-fallback {
   font-size: 0.85rem;
   color: var(--muted);
@@ -1046,7 +1095,6 @@ onMounted(() => {
   display: inline-flex;
   align-items: center;
   padding: 12px 22px;
-  background: var(--proto-header-from);
   color: #fff;
   border-radius: 10px;
   font-family: 'DM Sans', sans-serif;
@@ -1055,9 +1103,38 @@ onMounted(() => {
   text-decoration: none;
   transition: background 0.18s, transform 0.1s;
 }
-.eligibility-checker-page .email-court-btn:hover {
-  background: var(--proto-header-to);
-  color: #fff;
+.eligibility-checker-page .email-court-btn-gmail {
+  background: #DC2626;
+}
+.eligibility-checker-page .email-court-btn-gmail:hover {
+  background: #B91C1C;
+  transform: translateY(-1px);
+}
+.eligibility-checker-page .email-court-btn-outlook {
+  background: #2563EB;
+}
+.eligibility-checker-page .email-court-btn-outlook:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+}
+.eligibility-checker-page .email-court-copy-body {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #F3F4F6;
+  color: var(--proto-text);
+  border: 1px solid var(--proto-card-border);
+  transition: background 0.18s, border-color 0.18s, transform 0.1s;
+}
+.eligibility-checker-page .email-court-copy-body:hover {
+  background: #E5E7EB;
+  border-color: var(--proto-row-border);
   transform: translateY(-1px);
 }
 
