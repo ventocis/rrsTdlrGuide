@@ -79,7 +79,8 @@ function displayPaid(r: StudentResponse) {
       class="block w-full min-w-0 max-w-full overflow-x-auto overflow-y-visible rounded-xl border bg-white shadow-sm"
       style="border-color: var(--proto-card-border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); -webkit-overflow-scrolling: touch;"
     >
-      <table class="border-collapse" style="min-width: 800px; width: 800px;">
+      <div style="display: block; width: 100%; min-width: 800px;">
+        <table class="w-full border-collapse" style="min-width: 800px;">
         <thead>
           <tr>
             <th
@@ -218,6 +219,7 @@ function displayPaid(r: StudentResponse) {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
     <p class="mt-1.5 text-center text-[11px] sm:hidden" style="color: var(--proto-text-light);">
       Scroll horizontally to see all columns

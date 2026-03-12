@@ -3,7 +3,10 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   ssr: true,
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      routes: ['/pricing', '/terms', '/privacy', '/submit-review']
+    }
   },
   modules: ['@nuxt/ui'],
   css: ['~/assets/css/main.css'],

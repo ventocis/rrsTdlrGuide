@@ -4,20 +4,49 @@ import { useProviders } from '~/composables/useProviders'
 const route = useRoute()
 const { searchQuery } = useProviders()
 const isSubmitReviewPage = route.path === '/submit-review'
+const isPricingPage = route.path === '/pricing'
 </script>
 
 <template>
-  <header
-    class="relative overflow-hidden py-6 px-3 sm:px-5"
-    style="background: linear-gradient(135deg, var(--proto-header-from), var(--proto-header-to));"
-  >
+  <div>
+    <!-- Top bar: Pricing link + Submit Review (teal-tinted strip to complement main header) -->
     <div
-      class="pointer-events-none absolute inset-0 opacity-100"
-      style="background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%);"
-    />
-    <div
-      class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+      class="flex items-center justify-end gap-3 px-3 py-2 sm:px-5"
+      style="background: linear-gradient(90deg, #0A3D38 0%, #0F766E 50%, #0D9488 100%); border-bottom: 1px solid rgba(255,255,255,0.12);"
     >
+      <div class="mx-auto flex w-full max-w-[1600px] items-center justify-end gap-3">
+        <NuxtLink
+          v-if="!isPricingPage"
+          to="/pricing"
+          class="inline-flex shrink-0 items-center rounded-lg px-3 py-2 text-[12px] font-semibold transition-colors hover:opacity-90 sm:text-[13px]"
+          style="color: var(--proto-teal-text);"
+        >
+          How Texas Defensive Driving Pricing Really Works
+        </NuxtLink>
+        <NuxtLink
+          v-if="!isSubmitReviewPage"
+          to="/submit-review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shrink-0 rounded-lg px-4 py-2.5 text-center text-[13px] font-bold text-white shadow-lg transition-all hover:opacity-95 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-800 sm:px-5 sm:py-3 sm:text-[14px]"
+          style="background: linear-gradient(135deg, #14B8A6 0%, var(--proto-teal) 50%, var(--proto-teal-dark) 100%); border: 2px solid rgba(255,255,255,0.5); box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.15);"
+        >
+          Submit Review
+        </NuxtLink>
+      </div>
+    </div>
+
+    <header
+      class="relative overflow-hidden py-6 px-3 sm:px-5"
+      style="background: linear-gradient(135deg, var(--proto-header-from), var(--proto-header-to));"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 opacity-100"
+        style="background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%);"
+      />
+      <div
+        class="relative mx-auto flex w-full max-w-[1600px] flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+      >
       <!-- Left: logo + BETA + tagline -->
       <div class="flex flex-col gap-2 sm:shrink-0 sm:max-w-[420px]">
         <div class="flex items-center gap-2">
@@ -43,8 +72,8 @@ const isSubmitReviewPage = route.path === '/submit-review'
         </p>
       </div>
 
-      <!-- Search + Submit Review (hide Submit Review on form page) -->
-      <div class="flex w-full flex-col gap-5 sm:w-auto sm:flex-row sm:items-stretch sm:gap-3">
+      <!-- Search only -->
+      <div class="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-stretch sm:gap-3">
         <div class="relative w-full sm:w-[280px] min-h-[42px] flex items-center shrink-0">
           <span
             class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--proto-header-subtitle)]"
@@ -60,18 +89,9 @@ const isSubmitReviewPage = route.path === '/submit-review'
             aria-label="Search providers or brands"
           />
         </div>
-        <NuxtLink
-          v-if="!isSubmitReviewPage"
-          to="/submit-review"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="shrink-0 rounded-lg px-4 py-2.5 text-center text-[13px] font-bold text-white shadow-md transition-colors hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[var(--proto-teal-dark)]"
-          style="background: linear-gradient(135deg, var(--proto-teal), var(--proto-teal-dark)); border: 1px solid rgba(255,255,255,0.25);"
-        >
-          Submit Review
-        </NuxtLink>
       </div>
-    </div>
-  </header>
+      </div>
+    </header>
+  </div>
 </template>
 
