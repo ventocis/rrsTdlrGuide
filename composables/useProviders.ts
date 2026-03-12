@@ -32,11 +32,16 @@ export type Provider = {
 type SortKey = 'rating' | 'price' | 'totalCost' | 'name'
 type SortDir = 'asc' | 'desc'
 
-// Mark our overall pick (Road Ready Safety) as featured
-const baseProviders = (providersRaw as Provider[]).map((p) => ({
-  ...p,
-  featured: p.name === 'Road Ready Safety' ? true : p.featured
-}))
+// Mark our overall pick (Road Ready Safety) as featured (case-insensitive)
+const baseProviders = (providersRaw as Provider[]).map((p) => {
+  const isRoadReady =
+    typeof p.name === 'string' &&
+    p.name.trim().toLowerCase() === 'road ready safety'
+  return {
+    ...p,
+    featured: isRoadReady ? true : p.featured
+  }
+})
 
 // Shared reactive state (single source of truth across components)
 const sortBy = ref<SortKey>('rating')

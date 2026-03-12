@@ -324,8 +324,9 @@ I got a traffic ticket and used a free website called TDLR Guide (tdlrguide.com/
 It answered my questions before I had to call the court. I wanted to pass it along in case it helps other people who come to your court with the same questions.
 
 Thank you!`
-    const encodedTo = court.email && String(court.email).trim() !== ''
-      ? encodeURIComponent(court.email.trim())
+    const rawEmail = court.email && String(court.email).trim()
+    const encodedTo = rawEmail && rawEmail !== ''
+      ? encodeURIComponent(rawEmail)
       : ''
     const encodedSubject = encodeURIComponent(subject)
     const encodedBody = encodeURIComponent(body)
@@ -403,22 +404,6 @@ onMounted(() => {
       }).catch(() => {})
     }
   })
-
-  // #region agent log
-  fetch('http://127.0.0.1:7243/ingest/85ec810a-b311-4f04-8fc4-ebe6f9a5fcb1', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      id: `log_${Date.now()}`,
-      runId: 'eligibility-checker-routing',
-      hypothesisId: 'H1',
-      location: 'pages/eligibility-checker.vue:onMounted',
-      message: 'Eligibility checker page mounted',
-      data: {},
-      timestamp: Date.now()
-    })
-  }).catch(() => {})
-  // #endregion agent log
 })
 </script>
 
@@ -994,10 +979,7 @@ onMounted(() => {
   color: var(--navy);
 }
 /* Match step card / speed input: border, radius, font */
-.eligibility-checker-page .court-dropdowns .court-select-menu [data-slot="trigger"],
-.eligibility-checker-page .court-dropdowns .court-select-menu button,
-.eligibility-checker-page .court-dropdowns [class*="trigger"],
-.eligibility-checker-page .court-dropdowns .court-select-menu > div:first-child {
+.eligibility-checker-page .court-dropdowns button.court-select-menu {
   width: 100% !important;
   padding: 12px 16px !important;
   border: 2px solid var(--proto-card-border) !important;
@@ -1007,18 +989,12 @@ onMounted(() => {
   font-weight: 500 !important;
   color: var(--navy) !important;
   background: #fff !important;
-  transition: border-color 0.18s ease !important;
+  box-shadow: none !important;
 }
-.eligibility-checker-page .court-dropdowns .court-select-menu [data-slot="trigger"]:focus,
-.eligibility-checker-page .court-dropdowns .court-select-menu button:focus,
-.eligibility-checker-page .court-dropdowns .court-select-menu [data-state="open"] > div:first-child,
-.eligibility-checker-page .court-dropdowns .court-select-menu [data-state="open"] [data-slot="trigger"],
-.eligibility-checker-page .court-dropdowns .court-select-menu [data-state="open"] button {
+.eligibility-checker-page .court-dropdowns button.court-select-menu[data-state="open"],
+.eligibility-checker-page .court-dropdowns button.court-select-menu:focus-visible {
   border-color: var(--navy-mid) !important;
   outline: none !important;
-}
-.eligibility-checker-page .court-dropdowns .court-select-menu {
-  width: 100%;
 }
 .eligibility-checker-page .court-empty-state {
   margin-top: 12px;
