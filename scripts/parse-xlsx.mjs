@@ -154,17 +154,29 @@ function buildProvider(first, rest, id) {
 
   const { online, inPerson } = mapFormatFlags(formatRaw)
 
+  // Build duplicates and deduplicate by license (course code) — spreadsheet may have repeated rows
+  const seenLicenses = new Set()
+  const duplicates = rest
+    .map((r) => ({
+      name: get(r, 'Provider'),
+      url: String(getRaw(r, 'Website')).replace(/^\[\"?|\"?\]$/g, '').trim(),
+      license: get(r, 'License') || undefined,
+      rating: parseNumber(get(r, 'Rating')) || undefined
+    }))
+    .filter((d) => {
+      const lic = (d.license || '').trim()
+      if (!lic) return true // keep rows with no license
+      if (seenLicenses.has(lic)) return false
+      seenLicenses.add(lic)
+      return true
+    })
+
   return {
     id,
     name,
     license,
     website: (website && website.toLowerCase() !== 'not found') ? website : undefined,
-    duplicates: rest.map((r) => ({
-      name: get(r, 'Provider'),
-      url: String(getRaw(r, 'Website')).replace(/^\[\"?|\"?\]$/g, '').trim(),
-      license: get(r, 'License') || undefined,
-      rating: parseNumber(get(r, 'Rating')) || undefined
-    })),
+    duplicates,
     rating,
     price,
     priceDisplay: priceRaw === undefined || priceRaw === null ? '' : String(priceRaw),
