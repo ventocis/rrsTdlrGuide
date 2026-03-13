@@ -6,7 +6,8 @@ const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
 
 useProviders()
 
-const jsonLd = {
+// Structured data for Google and AI: WebSite + Organization
+const jsonLdWebSite = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'TDLR Guide',
@@ -19,16 +20,27 @@ const jsonLd = {
   }
 }
 
+const jsonLdOrganization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TDLR Guide',
+  url: siteUrl,
+  description: 'Independent comparison guide for TDLR-approved defensive driving and driver safety courses in Texas.'
+}
+
 useHead({
   link: [{ rel: 'canonical', href: siteUrl + '/' }],
   meta: [
-    { property: 'og:url', content: siteUrl + '/' }
+    { property: 'og:url', content: siteUrl + '/' },
+    {
+      name: 'keywords',
+      content:
+        'Texas defensive driving, TDLR approved courses, driver safety course Texas, ticket dismissal, defensive driving comparison, TDLR Guide, compare courses'
+    }
   ],
   script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(jsonLd)
-    }
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdWebSite) },
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdOrganization) }
   ],
   __dangerouslyDisableSanitizers: ['script']
 })
@@ -40,9 +52,11 @@ useHead({
     style="background-color: var(--proto-page-bg);"
   >
     <SiteHeader />
-    <FilterBar />
-    <ProviderTable />
-    <StudentResponsesTable />
+    <main role="main" aria-label="Compare Texas defensive driving courses">
+      <FilterBar />
+      <ProviderTable />
+      <StudentResponsesTable />
+    </main>
     <SiteFooter />
   </div>
 </template>

@@ -3,6 +3,7 @@ const route = useRoute()
 const isSubmitReviewPage = route.path === '/submit-review'
 const isPricingPage = route.path === '/pricing'
 const isEligibilityPage = route.path === '/eligibility-checker'
+const isCourtsPage = route.path === '/courts'
 
 const mobileMenuOpen = ref(false)
 function toggleMobileMenu() {
@@ -52,6 +53,14 @@ watch(() => route.path, closeMobileMenu)
 
         <!-- Desktop: nav links -->
         <div class="hidden min-h-[36px] flex-wrap items-center justify-end gap-1.5 sm:flex sm:gap-2">
+          <NuxtLink
+            v-if="!isCourtsPage"
+            to="/courts"
+            class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+            style="color: #fff;"
+          >
+            Court Lookup
+          </NuxtLink>
           <NuxtLink
             v-if="!isEligibilityPage"
             to="/eligibility-checker"
@@ -131,6 +140,14 @@ watch(() => route.path, closeMobileMenu)
       >
         <nav class="border-t border-white/10 px-3 py-3" aria-label="Mobile navigation">
           <div class="flex flex-col gap-0.5">
+            <NuxtLink
+              v-if="!isCourtsPage"
+              to="/courts"
+              class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10"
+              @click="closeMobileMenu"
+            >
+              Court Lookup
+            </NuxtLink>
             <NuxtLink
               v-if="!isEligibilityPage"
               to="/eligibility-checker"

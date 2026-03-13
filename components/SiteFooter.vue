@@ -8,7 +8,7 @@
       style="color: var(--proto-text-light);"
     >
       <p class="m-0 text-[10px] leading-snug" style="color: var(--proto-text-light);">
-        Compare 33 unique Texas defensive driving providers · 236 total brand names
+        Compare {{ totalProviders }} unique Texas defensive driving providers · {{ totalBrands }} total brand names
       </p>
       <p class="m-0 max-w-[800px] leading-snug" style="color: var(--proto-text-muted); font-size: 10px;">
         This site is for informational and comparison purposes only. We are not affiliated with TDLR or the State of Texas. Prices and details may change; always verify with the provider and TDLR before making decisions. Use of this site is subject to our
@@ -41,3 +41,7 @@
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const { totalProviders, totalBrands } = useProviders()
+</script>

@@ -41,19 +41,36 @@ const jsonLd = {
   }
 }
 
+// BreadcrumbList for Google and AI
+const jsonLdBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TDLR Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Eligibility Checker', item: `${siteUrl}/eligibility-checker` }
+  ]
+}
+
 useHead({
   link: [{ rel: 'canonical', href: `${siteUrl}/eligibility-checker` }],
   meta: [
     { property: 'og:url', content: `${siteUrl}/eligibility-checker` },
-    { name: 'keywords', content: 'Texas ticket dismissal, defensive driving eligibility, TDLR, traffic ticket, defensive driving course Texas' }
+    {
+      name: 'keywords',
+      content:
+        'Texas ticket dismissal, defensive driving eligibility, TDLR, traffic ticket, defensive driving course Texas, can I dismiss my ticket, eligibility checker'
+    }
   ],
   script: [
-    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLd) }
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLd) },
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdBreadcrumb) }
   ],
   __dangerouslyDisableSanitizers: ['script']
 })
 
 // State
+import type { CourtRecord } from '~/composables/useCourts'
+
 const { allCourtsRows } = useCourts()
 const state = reactive({
   violation: null as string | null,
@@ -72,39 +89,14 @@ const progressLabel = ref<HTMLElement | null>(null)
 const speedInput = ref<HTMLInputElement | null>(null)
 const resultContent = ref<HTMLElement | null>(null)
 
-// Step 5: three cascading dropdowns (County → Court Type → Court)
-const selectedCounty = ref<string | null>(null)
-const selectedCourtType = ref<string | null>(null)
-const selectedCourtRecord = ref<import('~/composables/useCourts').CourtRecord | null>(null)
+// Step 5: selected court (driven by shared CourtSelector component)
+const selectedCourtRecord = ref<CourtRecord | null>(null)
 
-const countyOptions = computed(() => {
-  const counties = [...new Set(allCourtsRows.map((r) => r.county))].filter(Boolean).sort()
-  return counties.map((c) => ({ label: c, value: c }))
-})
-
-const courtTypeOptions = computed(() => {
-  if (!selectedCounty.value) return []
-  const types = [...new Set(
-    allCourtsRows
-      .filter((r) => r.county === selectedCounty.value)
-      .map((r) => r.courtType)
-  )].filter(Boolean).sort()
-  return types.map((t) => ({ label: t, value: t }))
-})
-
-const courtNameOptions = computed(() => {
-  if (!selectedCounty.value || !selectedCourtType.value) return []
-  const rows = allCourtsRows.filter(
-    (r) => r.county === selectedCounty.value && r.courtType === selectedCourtType.value
-  )
-  const seen = new Set<string>()
-  const options: { label: string; value: import('~/composables/useCourts').CourtRecord }[] = []
-  for (const row of rows) {
-    if (seen.has(row.court)) continue
-    seen.add(row.court)
-    options.push({ label: row.court, value: row })
+watch(selectedCourtRecord, (court) => {
+  if (court) {
+    state.selectedCourt = court
+    showResult()
   }
-  return options
 })
 
 // Navigation
@@ -375,8 +367,6 @@ function restart() {
   state.priorDismissal = null
   state.courtApproval = null
   state.selectedCourt = null
-  selectedCounty.value = null
-  selectedCourtType.value = null
   selectedCourtRecord.value = null
   if (speedInput.value) speedInput.value.value = ''
   goTo('step1')
@@ -541,46 +531,7 @@ onMounted(() => {
         <div class="step-number">Question 5 of 5</div>
         <h2>Which court is handling your ticket?</h2>
         <p class="sub">Select your county, then court type, then the specific court.</p>
-        <div v-if="countyOptions.length === 0" class="court-empty-state">
-          No court data is loaded. Place <strong>Courts Directory By County (1).xlsx</strong> in the project root and run <code>npm run build:courts</code> to populate the list.
-        </div>
-        <div v-else class="court-dropdowns">
-          <div class="court-dropdown-field">
-            <label class="court-dropdown-label">County</label>
-            <USelectMenu
-              v-model="selectedCounty"
-              :items="countyOptions"
-              value-key="value"
-              placeholder="Select county"
-              class="court-select-menu"
-              @update:model-value="selectedCourtType = null; selectedCourtRecord = null"
-            />
-          </div>
-          <div class="court-dropdown-field">
-            <label class="court-dropdown-label">Court Type</label>
-            <USelectMenu
-              v-model="selectedCourtType"
-              :items="courtTypeOptions"
-              value-key="value"
-              placeholder="Select court type"
-              class="court-select-menu"
-              :disabled="!selectedCounty"
-              @update:model-value="selectedCourtRecord = null"
-            />
-          </div>
-          <div class="court-dropdown-field">
-            <label class="court-dropdown-label">Court</label>
-            <USelectMenu
-              v-model="selectedCourtRecord"
-              :items="courtNameOptions"
-              value-key="value"
-              placeholder="Select court"
-              class="court-select-menu"
-              :disabled="!selectedCounty || !selectedCourtType"
-              @update:model-value="(court: import('~/composables/useCourts').CourtRecord) => { if (court) { state.selectedCourt = court; showResult(); } }"
-            />
-          </div>
-        </div>
+        <CourtSelector v-model:selectedCourt="selectedCourtRecord" />
       </div>
 
       <div class="step-card" id="resultCard">
