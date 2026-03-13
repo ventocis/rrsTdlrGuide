@@ -8,6 +8,7 @@ export default defineNuxtConfig({
       routes: [
         '/pricing',
         '/eligibility-checker',
+        '/dsc-vs-deferred',
         '/terms',
         '/privacy',
         '/submit-review',

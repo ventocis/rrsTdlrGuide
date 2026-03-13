@@ -4,6 +4,7 @@ const isSubmitReviewPage = route.path === '/submit-review'
 const isPricingPage = route.path === '/pricing'
 const isEligibilityPage = route.path === '/eligibility-checker'
 const isCourtsPage = route.path === '/courts'
+const isDscVsDeferredPage = route.path === '/dsc-vs-deferred'
 
 const mobileMenuOpen = ref(false)
 function toggleMobileMenu() {
@@ -60,6 +61,14 @@ watch(() => route.path, closeMobileMenu)
             style="color: #fff;"
           >
             Court Lookup
+          </NuxtLink>
+          <NuxtLink
+            v-if="!isDscVsDeferredPage"
+            to="/dsc-vs-deferred"
+            class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+            style="color: #fff;"
+          >
+            DSC vs Deferred
           </NuxtLink>
           <NuxtLink
             v-if="!isEligibilityPage"
@@ -147,6 +156,14 @@ watch(() => route.path, closeMobileMenu)
               @click="closeMobileMenu"
             >
               Court Lookup
+            </NuxtLink>
+            <NuxtLink
+              v-if="!isDscVsDeferredPage"
+              to="/dsc-vs-deferred"
+              class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10"
+              @click="closeMobileMenu"
+            >
+              DSC vs Deferred
             </NuxtLink>
             <NuxtLink
               v-if="!isEligibilityPage"
