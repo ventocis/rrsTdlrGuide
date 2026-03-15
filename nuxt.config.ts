@@ -26,7 +26,9 @@ export default defineNuxtConfig({
       /** Form submission endpoint. Override with NUXT_PUBLIC_FORM_ACTION if needed. */
       formAction: process.env.NUXT_PUBLIC_FORM_ACTION || 'https://formspree.io/f/maqpolpb',
       /** Optional: reCAPTCHA v3 site key for Formspree. When set, the submit-review form sends a token. */
-      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
+      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
+      /** Google Analytics 4 Measurement ID (e.g. G-XXXXXXXXXX). Set NUXT_PUBLIC_GOOGLE_ANALYTICS_ID in production only; leave unset in dev to disable. */
+      googleAnalyticsId: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
     }
   },
   app: {
