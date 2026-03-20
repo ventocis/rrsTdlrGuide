@@ -1,4 +1,13 @@
 import { defineNuxtConfig } from 'nuxt/config'
+import providersData from './data/providers.json'
+
+function slugify(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}
+
+const reviewRoutes = (providersData as { name: string }[]).map(
+  (p) => `/reviews/${slugify(p.name)}`
+)
 
 export default defineNuxtConfig({
   ssr: true,
@@ -13,7 +22,8 @@ export default defineNuxtConfig({
         '/submit-review',
         '/court-outreach',
         '/courts',
-        '/ticket-calculator'
+        '/ticket-calculator',
+        ...reviewRoutes
       ]
     }
   },

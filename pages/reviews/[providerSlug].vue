@@ -2,6 +2,9 @@
 import type { StudentResponse } from '~/composables/useStudentResponses'
 import { useStudentResponses } from '~/composables/useStudentResponses'
 
+const config = useRuntimeConfig()
+const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
+
 const route = useRoute()
 const slug = (route.params.providerSlug as string) || ''
 
@@ -19,6 +22,67 @@ const reviews = computed(() => {
   const found = list.find((p) => p.slug === slug)
   if (!found) return []
   return getReviewsForProvider(found.name)
+})
+
+const seoTitle = computed(() => `${providerName.value} Reviews — TDLR Guide`)
+const seoDescription = computed(
+  () =>
+    `Read student reviews for ${providerName.value}, a Texas defensive driving course provider. Compare pricing, features, and customer ratings.`
+)
+const canonicalUrl = computed(() => `${siteUrl}/reviews/${slug}`)
+
+useSeoMeta({
+  title: seoTitle,
+  description: seoDescription,
+  ogTitle: seoTitle,
+  ogDescription: seoDescription,
+  ogUrl: canonicalUrl,
+  ogType: 'website',
+  ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  twitterTitle: seoTitle,
+  twitterDescription: seoDescription,
+  robots: 'index, follow'
+})
+
+const jsonLdBreadcrumb = computed(() => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TDLR Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Reviews', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 3, name: providerName.value, item: canonicalUrl.value }
+  ]
+}))
+
+const jsonLdReviews = computed(() => {
+  if (!reviews.value.length) return null
+  const avgRating =
+    reviews.value.reduce((sum, r) => sum + (r.rating || 0), 0) / reviews.value.length
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: providerName.value,
+    description: `Texas defensive driving course — ${providerName.value}`,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: avgRating.toFixed(1),
+      reviewCount: reviews.value.length,
+      bestRating: 5,
+      worstRating: 1
+    }
+  }
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: canonicalUrl }],
+  script: [
+    { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdBreadcrumb.value) },
+    ...(jsonLdReviews.value
+      ? [{ type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdReviews.value) }]
+      : [])
+  ],
+  __dangerouslyDisableSanitizers: ['script']
 })
 
 function certVariant(value: string) {
@@ -77,8 +141,11 @@ function displayDate(r: StudentResponse) {
       <h1 class="mb-1 text-xl font-bold" style="color: var(--proto-text);">
         Reviews for {{ providerName }}
       </h1>
-      <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">
+      <p class="mb-2 text-[14px]" style="color: var(--proto-text-muted);">
         Student-submitted reviews and corrections for this course.
+      </p>
+      <p class="mb-8 text-[11px]" style="color: var(--proto-text-light);">
+        Affiliate disclosure: TDLR Guide may earn a commission when you purchase a course through links on this site. This does not affect our rankings or editorial independence.
       </p>
 
       <div v-if="reviews.length === 0" class="rounded-xl border bg-white py-12 text-center" style="border-color: var(--proto-card-border);">

@@ -16,6 +16,9 @@
         and
         <NuxtLink to="/privacy" class="font-medium underline" style="color: var(--proto-teal);">Privacy Policy</NuxtLink>.
       </p>
+      <p class="m-0 max-w-[800px] leading-snug" style="color: var(--proto-text-muted); font-size: 10px;">
+        <strong>Affiliate disclosure:</strong> TDLR Guide may earn a commission when you purchase a course through links on this site. This does not affect our rankings or editorial independence.
+      </p>
       <div class="flex flex-wrap items-center justify-between gap-2">
         <span>
           Independent guide · Not affiliated with TDLR or the State of Texas
