@@ -6,7 +6,7 @@
     "typescript": "~5.9.3"
   },
   "dependencies": {
-    "constructs": "^10.0.0",
-    "@roadreadysafety/cdk-infrastructure": "^0.9.0"
+    "@roadreadysafety/cdk-infrastructure": "^0.14.0",
+    "constructs": "^10.0.0"
   }
 }
