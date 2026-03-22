@@ -7,6 +7,7 @@ const formAction = config.public?.formAction as string || 'https://formspree.io/
 const recaptchaSiteKey = (config.public?.recaptchaSiteKey as string) || ''
 
 useHead({
+  meta: [{ name: 'robots', content: 'noindex, nofollow' }],
   script: recaptchaSiteKey
     ? [{ src: `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`, async: true, defer: true }]
     : []

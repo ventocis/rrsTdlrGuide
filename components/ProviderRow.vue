@@ -67,6 +67,13 @@ function openWebsite() {
   if (!hasWebsite.value || !props.provider.website) return
   let u = props.provider.website.trim()
   if (!/^https?:\/\//i.test(u)) u = `https://${u}`
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    ;(window as any).gtag('event', 'provider_click', {
+      provider_name: props.provider.name,
+      provider_slug: providerSlug(props.provider.name),
+      destination_url: u
+    })
+  }
   window.open(u, '_blank', 'noopener,noreferrer')
 }
 
@@ -86,6 +93,8 @@ function onRowClick() {
       hasDupes || hasWebsite ? 'cursor-pointer' : 'cursor-default'
     ]"
     style="border-bottom-color: var(--proto-row-border);"
+    :data-provider-name="provider.name"
+    :data-provider-slug="providerSlug(provider.name)"
     @click="onRowClick"
   >
     <td class="px-3 py-0">

@@ -53,10 +53,21 @@ const hasWebsite = computed(() => {
   return true
 })
 
+function slugify(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}
+
 function openWebsite() {
   if (!hasWebsite.value) return
   let u = props.dupe.url!.trim()
   if (!/^https?:\/\//i.test(u)) u = `https://${u}`
+  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+    ;(window as any).gtag('event', 'provider_click', {
+      provider_name: props.dupe.name,
+      provider_slug: slugify(props.dupe.name),
+      destination_url: u
+    })
+  }
   window.open(u, '_blank', 'noopener,noreferrer')
 }
 </script>
@@ -66,6 +77,8 @@ function openWebsite() {
     class="border-b h-10 bg-[var(--proto-hover-bg)] transition-colors"
     style="border-bottom-color: var(--proto-row-border);"
     :class="{ 'cursor-pointer hover:opacity-90': hasWebsite }"
+    :data-provider-name="dupe.name"
+    :data-provider-slug="slugify(dupe.name)"
     @click="openWebsite"
   >
     <td class="pl-11 pr-3 py-0">

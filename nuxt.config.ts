@@ -1,4 +1,13 @@
 import { defineNuxtConfig } from 'nuxt/config'
+import providersData from './data/providers.json'
+
+function slugify(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}
+
+const reviewRoutes = (providersData as { name: string }[]).map(
+  (p) => `/reviews/${slugify(p.name)}`
+)
 
 export default defineNuxtConfig({
   ssr: true,
@@ -13,7 +22,8 @@ export default defineNuxtConfig({
         '/submit-review',
         '/court-outreach',
         '/courts',
-        '/ticket-calculator'
+        '/ticket-calculator',
+        ...reviewRoutes
       ]
     }
   },
@@ -26,7 +36,9 @@ export default defineNuxtConfig({
       /** Form submission endpoint. Override with NUXT_PUBLIC_FORM_ACTION if needed. */
       formAction: process.env.NUXT_PUBLIC_FORM_ACTION || 'https://formspree.io/f/maqpolpb',
       /** Optional: reCAPTCHA v3 site key for Formspree. When set, the submit-review form sends a token. */
-      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
+      recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
+      /** Google Analytics 4 Measurement ID (e.g. G-XXXXXXXXXX). Set NUXT_PUBLIC_GOOGLE_ANALYTICS_ID in production only; leave unset in dev to disable. */
+      googleAnalyticsId: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
     }
   },
   app: {

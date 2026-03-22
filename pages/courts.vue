@@ -74,6 +74,16 @@ useHead({
 
 const selectedCourt = ref<CourtRecord | null>(null)
 
+/** Only use as link when it looks like a real URL (avoids "Website Not Found" etc. breaking prerender). */
+const courtWebsiteUrl = computed(() => {
+  const w = selectedCourt.value?.website
+  if (!w || typeof w !== 'string') return ''
+  const t = w.trim()
+  if (t === '' || t.toLowerCase() === 'website not found' || t.toLowerCase() === 'not found' || t.toLowerCase() === 'n/a') return ''
+  if (t.startsWith('http://') || t.startsWith('https://')) return t
+  return ''
+})
+
 function formatPhone(phone: string) {
   const raw = String(phone || '').trim()
   if (!raw) return ''
@@ -230,8 +240,8 @@ function formatPhone(phone: string) {
               </h4>
               <p class="m-0" style="color: var(--proto-text);">
                 <a
-                  v-if="selectedCourt.website"
-                  :href="selectedCourt.website"
+                  v-if="courtWebsiteUrl"
+                  :href="courtWebsiteUrl"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="font-medium hover:underline"

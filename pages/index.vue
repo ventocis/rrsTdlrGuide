@@ -4,7 +4,7 @@ import { useProviders } from '~/composables/useProviders'
 const config = useRuntimeConfig()
 const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
 
-useProviders()
+const { totalProviders } = useProviders()
 
 // Structured data for Google and AI: WebSite + Organization
 const jsonLdWebSite = {
@@ -53,6 +53,17 @@ useHead({
   >
     <SiteHeader />
     <main role="main" aria-label="Compare Texas defensive driving courses">
+      <div class="mx-auto w-full max-w-[1600px] px-3 pt-5 pb-1 sm:px-4">
+        <h1
+          class="text-[15px] font-semibold leading-tight sm:text-[16px]"
+          style="color: var(--proto-text);"
+        >
+          Compare Texas Defensive Driving Courses
+        </h1>
+        <p class="mt-0.5 text-[12px]" style="color: var(--proto-text-muted);">
+          {{ totalProviders }} TDLR-approved providers · real prices, ratings, and student reviews
+        </p>
+      </div>
       <FilterBar />
       <ProviderTable />
       <StudentResponsesTable />
