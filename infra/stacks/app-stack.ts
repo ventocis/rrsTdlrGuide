@@ -13,6 +13,8 @@ export interface AppStackProps extends cdk.StackProps {
   hostedZone: r53.IHostedZone;
   certificate: acm.ICertificate;
   googleVerificationTxt: string;
+  dkimValue?: string;
+  dmarcPolicy: "none" | "quarantine" | "reject";
 }
 
 export class AppStack extends cdk.Stack {
@@ -32,6 +34,8 @@ export class AppStack extends cdk.Stack {
     new GoogleWorkspaceEmail(this, "Email", {
       hostedZone: props.hostedZone,
       googleVerificationTxt: props.googleVerificationTxt,
+      dkimValue: props.dkimValue,
+      dmarcPolicy: props.dmarcPolicy,
     });
   }
 }
