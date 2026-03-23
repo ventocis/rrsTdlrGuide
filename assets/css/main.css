@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Refactoring UI palette: Neutrals (Blue Grey) */
 @theme {
   --color-rui-neutral-50: #f0f4f8;
