@@ -33,8 +33,8 @@ function isCertActive(key: string) {
 
 // ── Sort: computed two-way binding ───────────────────────────────────
 const sortOptions = [
-  { value: 'totalCost-asc', label: 'Total cost: Low → High' },
   { value: 'totalCost-desc', label: 'Total cost: High → Low' },
+  { value: 'totalCost-asc', label: 'Total cost: Low → High' },
   { value: 'price-asc', label: 'Price: Low → High' },
   { value: 'name-asc', label: 'Name: A–Z' },
 ]
@@ -65,7 +65,7 @@ function closeDrawer() {
 function clearAllFilters() {
   clearFilters()
   sortBy.value = 'totalCost'
-  sortDir.value = 'asc'
+  sortDir.value = 'desc'
 }
 
 // ── Active chip labels for collapsed mobile bar ──────────────────────
@@ -86,7 +86,7 @@ const activeChips = computed(() => {
 const sortLabel = computed(() => {
   const s = sortBy.value
   const d = sortDir.value
-  if (s === 'totalCost') return d === 'asc' ? 'Total: Low → High' : 'Total: High → Low'
+  if (s === 'totalCost') return d === 'desc' ? 'Total: High → Low' : 'Total: Low → High'
   if (s === 'price') return d === 'asc' ? 'Price: Low → High' : 'Price: High → Low'
   if (s === 'name') return 'Name: A–Z'
   return ''

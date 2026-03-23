@@ -34,7 +34,7 @@ const baseProviders = providersRaw as Provider[]
 
 // Shared reactive state (single source of truth across components)
 const sortBy = ref<SortKey>('totalCost')
-const sortDir = ref<SortDir>('asc')
+const sortDir = ref<SortDir>('desc')
 const searchQuery = ref('')
 /** Multi-select: empty = All (no filter). Otherwise show providers matching ANY selected format. */
 const formatFilter = ref<string[]>([])

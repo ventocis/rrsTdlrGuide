@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+useSiteSeoMeta({
   title: 'Terms of Use — TDLR Guide',
   description: 'Terms of use for TDLR Guide. Rules and disclaimers for using our Texas defensive driving course comparison site.'
 })

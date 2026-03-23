@@ -5,7 +5,7 @@ const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
 const seoTitle = 'How Texas Defensive Driving Pricing Really Works — TDLR Guide'
 const seoDescription = 'Texas law sets a $25 minimum for defensive driving — but extra fees can push the real total much higher. Here\'s exactly what to expect and how to pay the least.'
 
-useSeoMeta({
+useSiteSeoMeta({
   title: seoTitle,
   description: seoDescription,
   ogTitle: seoTitle,
@@ -44,10 +44,10 @@ const jsonLd = {
   }
 }
 
+useSiteCanonical(`${siteUrl}/pricing`, `${siteUrl}/pricing`)
+
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/pricing` }],
   meta: [
-    { property: 'og:url', content: `${siteUrl}/pricing` },
     { property: 'article:published_time', content: '2025-01-01' },
     { property: 'article:modified_time', content: '2025-01-01' },
     { name: 'keywords', content: 'Texas defensive driving cost, defensive driving price, TDLR course fee, $25 defensive driving Texas' }
