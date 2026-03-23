@@ -6,7 +6,6 @@ on:
       - "v*.*.*"
     branches:
       - prod
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,6 +18,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Fetch recent main and prod
+        run: git fetch origin main prod --depth=10
 
       - name: Set env
         id: set-env
