@@ -1,16 +1,1 @@
-[
-  {
-    "id": "sr-example-1",
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "providerOrCourse": "Road Ready Safety",
-    "totalPaid": 28,
-    "rating": 5,
-    "notes": "Good",
-    "submittedAt": "2025-03-11T21:56:00",
-    "licenseCp": "CP1234",
-    "format": "Online",
-    "language": "English",
-    "instantCert": "Free"
-  }
-]
+[]

@@ -29,7 +29,7 @@ watch(() => route.path, closeMobileMenu)
         style="background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%);"
       />
       <div class="relative mx-auto flex w-full max-w-[1600px] flex-wrap items-center justify-between gap-2 py-0 sm:gap-4">
-        <!-- Left: logo + BETA + tagline -->
+        <!-- Left: logo + tagline -->
         <div class="flex min-h-[36px] flex-wrap items-center gap-1.5 sm:gap-2 sm:shrink-0 sm:max-w-[520px]">
           <NuxtLink to="/" class="flex items-center focus:outline-none focus:ring-2 focus:ring-[var(--proto-teal)] focus:ring-offset-2 focus:ring-offset-transparent rounded">
             <img
@@ -38,12 +38,6 @@ watch(() => route.path, closeMobileMenu)
               class="h-8 w-auto object-contain drop-shadow-md sm:h-9"
             />
           </NuxtLink>
-          <span
-            class="rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider"
-            style="background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.3); color: var(--proto-teal-text);"
-          >
-            BETA
-          </span>
           <p
             class="m-0 hidden text-[11px] font-medium leading-tight sm:block sm:text-[12px]"
             style="color: var(--proto-header-subtitle);"
