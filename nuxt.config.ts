@@ -31,8 +31,6 @@ export default defineNuxtConfig({
       googleAnalyticsEnabled: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_ENABLED !== 'false',
       /** Canonical site URL for SEO. Set NUXT_PUBLIC_SITE_URL in production. */
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://tdlrguide.com',
-      /** Form submission endpoint. */
-      formAction: process.env.NUXT_PUBLIC_FORM_ACTION || 'https://formspree.io/f/maqpolpb',
       /** Optional: reCAPTCHA v3 site key for Formspree. */
       recaptchaSiteKey: process.env.NUXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
       /** Google Analytics 4 Measurement ID. Set NUXT_PUBLIC_GOOGLE_ANALYTICS_ID in production only. */
