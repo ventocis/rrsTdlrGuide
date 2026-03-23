@@ -5,7 +5,6 @@ export type DuplicateBrand = {
   name: string
   url: string
   license?: string
-  rating?: number
 }
 
 export type Provider = {
@@ -14,7 +13,6 @@ export type Provider = {
   license?: string
   website?: string
   duplicates: DuplicateBrand[]
-  rating: number
   price: number
   priceDisplay: string
   stateFee: number
@@ -29,14 +27,14 @@ export type Provider = {
   featured?: boolean
 }
 
-type SortKey = 'rating' | 'price' | 'totalCost' | 'name'
+type SortKey = 'price' | 'totalCost' | 'name'
 type SortDir = 'asc' | 'desc'
 
 const baseProviders = providersRaw as Provider[]
 
 // Shared reactive state (single source of truth across components)
-const sortBy = ref<SortKey>('rating')
-const sortDir = ref<SortDir>('desc')
+const sortBy = ref<SortKey>('totalCost')
+const sortDir = ref<SortDir>('asc')
 const searchQuery = ref('')
 /** Multi-select: empty = All (no filter). Otherwise show providers matching ANY selected format. */
 const formatFilter = ref<string[]>([])
@@ -96,7 +94,6 @@ const providers = computed(() => {
       if (a.featured && !b.featured) return -1
       if (!a.featured && b.featured) return 1
 
-      if (sortBy.value === 'rating') return (a.rating - b.rating) * dir
       if (sortBy.value === 'price') {
         return (a.price - b.price) * dir
       }

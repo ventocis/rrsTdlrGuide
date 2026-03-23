@@ -21,7 +21,7 @@ function headerClasses(col: string) {
   return [
     thBase,
     col === 'provider' ? 'text-left min-w-[220px]' : '',
-    ['license', 'rating', 'price', 'fee', 'total', 'cert', 'format', 'lang'].includes(col)
+    ['license', 'price', 'fee', 'total', 'cert', 'format', 'lang'].includes(col)
       ? 'text-center'
       : ''
   ]
@@ -32,7 +32,7 @@ function sortArrow(col: string) {
 }
 
 // ── Mobile card helpers ──────────────────────────────────────────────
-function mobileSlug(name: string): string {
+function slugify(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
 }
 
@@ -50,7 +50,7 @@ function openProviderWebsite(p: Provider) {
   if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
     ;(window as any).gtag('event', 'provider_click', {
       provider_name: p.name,
-      provider_slug: mobileSlug(p.name),
+      provider_slug: slugify(p.name),
       destination_url: u
     })
   }
@@ -116,20 +116,6 @@ function langPillStyle(langs: string[]): string {
               </th>
               <th :class="headerClasses('license')">
                 License
-              </th>
-              <th
-                :class="headerClasses('rating')"
-                @click="toggleSort('rating')"
-              >
-                <span class="inline-flex items-center justify-center">
-                  Rating
-                  <span
-                    class="ml-1 text-[10px]"
-                    :class="sortBy === 'rating' ? 'opacity-100' : 'opacity-25'"
-                  >
-                    {{ sortArrow('rating') }}
-                  </span>
-                </span>
               </th>
               <th
                 :class="headerClasses('price')"
@@ -258,17 +244,9 @@ function langPillStyle(langs: string[]): string {
             </template>
           </p>
 
-          <!-- Footer row: reviews link + visit hint -->
-          <div class="mt-2.5 flex items-center justify-between">
-            <NuxtLink
-              :to="`/reviews/${mobileSlug(p.name)}`"
-              class="text-[11px] font-semibold"
-              style="color: var(--proto-teal);"
-              @click.stop
-            >
-              View reviews →
-            </NuxtLink>
-            <span v-if="isValidUrl(p.website)" class="text-[11px]" style="color: var(--proto-text-light);">
+          <!-- Footer row: visit hint -->
+          <div v-if="isValidUrl(p.website)" class="mt-2.5 flex items-center justify-end">
+            <span class="text-[11px]" style="color: var(--proto-text-light);">
               Tap to visit ↗
             </span>
           </div>

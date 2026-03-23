@@ -37,7 +37,6 @@ const sortOptions = [
   { value: 'totalCost-desc', label: 'Total cost: High → Low' },
   { value: 'price-asc', label: 'Price: Low → High' },
   { value: 'name-asc', label: 'Name: A–Z' },
-  { value: 'rating-desc', label: 'Rating: High → Low' },
 ]
 
 /** Two-way binding for sort — used with v-model in the drawer radio buttons. */
@@ -65,8 +64,8 @@ function closeDrawer() {
 
 function clearAllFilters() {
   clearFilters()
-  sortBy.value = 'rating'
-  sortDir.value = 'desc'
+  sortBy.value = 'totalCost'
+  sortDir.value = 'asc'
 }
 
 // ── Active chip labels for collapsed mobile bar ──────────────────────
@@ -90,7 +89,6 @@ const sortLabel = computed(() => {
   if (s === 'totalCost') return d === 'asc' ? 'Total: Low → High' : 'Total: High → Low'
   if (s === 'price') return d === 'asc' ? 'Price: Low → High' : 'Price: High → Low'
   if (s === 'name') return 'Name: A–Z'
-  if (s === 'rating') return 'Rating: High → Low'
   return ''
 })
 </script>
