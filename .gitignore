@@ -26,3 +26,4 @@ Thumbs.db
 
 # Courts data source (place in project root and run npm run build:courts)
 Courts Directory By County*.xlsx
+infra/cdk.out/
