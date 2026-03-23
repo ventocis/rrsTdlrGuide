@@ -5,7 +5,7 @@ const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
 const seoTitle = 'Texas Ticket Dismissal Eligibility Checker | TDLR Guide'
 const seoDescription = 'Find out if you can dismiss your Texas traffic ticket with defensive driving. Answer 5 quick questions to get your eligibility result and next steps. Free tool for Texas drivers.'
 
-useSeoMeta({
+useSiteSeoMeta({
   title: seoTitle,
   description: seoDescription,
   ogTitle: seoTitle,
@@ -51,10 +51,10 @@ const jsonLdBreadcrumb = {
   ]
 }
 
+useSiteCanonical(`${siteUrl}/eligibility-checker`, `${siteUrl}/eligibility-checker`)
+
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/eligibility-checker` }],
   meta: [
-    { property: 'og:url', content: `${siteUrl}/eligibility-checker` },
     {
       name: 'keywords',
       content:

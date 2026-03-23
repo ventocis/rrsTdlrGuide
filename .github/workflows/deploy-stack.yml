@@ -72,4 +72,6 @@ jobs:
         working-directory: infra
         run: npm ci
 
+      # All config comes from .env.qa or .env.production (committed to repo).
+      # No secrets needed — site URL and GA ID are public values baked into the env files.
       - run: make deploy ENV=${{ needs.get-env.outputs.env }}

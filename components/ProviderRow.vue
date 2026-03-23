@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Provider } from '~/composables/useProviders'
-import { useStudentResponses } from '~/composables/useStudentResponses'
 
 const props = defineProps<{
   provider: Provider
@@ -11,7 +10,9 @@ const emit = defineEmits<{
   (e: 'toggle'): void
 }>()
 
-const { providerSlug } = useStudentResponses()
+function providerSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}
 
 const hasDupes = computed(
   () => props.provider.duplicates && props.provider.duplicates.length > 0
@@ -125,28 +126,12 @@ function onRowClick() {
         >
           +{{ provider.duplicates.length }}
         </span>
-        <NuxtLink
-          :to="`/reviews/${providerSlug(provider.name)}`"
-          class="ml-2 text-[11px] font-semibold hover:underline"
-          style="color: var(--proto-teal);"
-          @click.stop
-        >
-          View reviews
-        </NuxtLink>
       </div>
     </td>
     <td class="px-3 py-0">
       <span class="text-[13px]" style="color: var(--proto-text-muted);">
         {{ provider.license || '—' }}
       </span>
-    </td>
-    <td class="px-3 py-0 text-center">
-      <div class="flex items-center justify-center gap-1">
-        <StarRating :rating="provider.rating" />
-        <span class="text-[13px] font-bold" style="color: var(--proto-text);">
-          {{ provider.rating.toFixed(1) }}
-        </span>
-      </div>
     </td>
     <td class="px-3 py-0">
       <template

@@ -28,16 +28,9 @@ const jsonLdOrganization = {
   description: 'Independent comparison guide for TDLR-approved defensive driving and driver safety courses in Texas.'
 }
 
+useSiteCanonical(siteUrl + '/', siteUrl + '/')
+
 useHead({
-  link: [{ rel: 'canonical', href: siteUrl + '/' }],
-  meta: [
-    { property: 'og:url', content: siteUrl + '/' },
-    {
-      name: 'keywords',
-      content:
-        'Texas defensive driving, TDLR approved courses, driver safety course Texas, ticket dismissal, defensive driving comparison, TDLR Guide, compare courses'
-    }
-  ],
   script: [
     { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdWebSite) },
     { type: 'application/ld+json', innerHTML: JSON.stringify(jsonLdOrganization) }
@@ -61,12 +54,11 @@ useHead({
           Compare Texas Defensive Driving Courses
         </h1>
         <p class="mt-0.5 text-[12px]" style="color: var(--proto-text-muted);">
-          {{ totalProviders }} TDLR-approved providers · real prices, ratings, and student reviews
+          {{ totalProviders }} TDLR-approved providers · real prices, formats, and certificate delivery
         </p>
       </div>
       <FilterBar />
       <ProviderTable />
-      <StudentResponsesTable />
     </main>
     <SiteFooter />
   </div>

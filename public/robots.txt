@@ -1,6 +1,0 @@
-# TDLR Guide — Texas defensive driving course comparison
-User-agent: *
-Allow: /
-
-# Sitemap (update the origin to your live domain)
-Sitemap: https://tdlrguide.com/sitemap.xml

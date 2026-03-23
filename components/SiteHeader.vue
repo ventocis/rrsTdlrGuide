@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const route = useRoute()
-const isSubmitReviewPage = route.path === '/submit-review'
 const isPricingPage = route.path === '/pricing'
 const isEligibilityPage = route.path === '/eligibility-checker'
 const isCourtsPage = route.path === '/courts'
@@ -79,16 +78,6 @@ watch(() => route.path, closeMobileMenu)
             style="color: #fff;"
           >
             How Texas Defensive Driving Pricing Really Works
-          </NuxtLink>
-          <NuxtLink
-            v-if="!isSubmitReviewPage"
-            to="/submit-review"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="shrink-0 rounded px-3 py-1.5 text-center text-[11px] font-semibold text-white transition-all hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-[var(--proto-header-from)] sm:px-4 sm:text-[12px]"
-            style="background: #0F766E; border: 1px solid rgba(255,255,255,0.15);"
-          >
-            Submit Review
           </NuxtLink>
         </div>
 
@@ -174,17 +163,6 @@ watch(() => route.path, closeMobileMenu)
               @click="closeMobileMenu"
             >
               How Texas Defensive Driving Pricing Really Works
-            </NuxtLink>
-            <NuxtLink
-              v-if="!isSubmitReviewPage"
-              to="/submit-review"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="rounded px-3 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-white/10"
-              style="background: #0F766E;"
-              @click="closeMobileMenu"
-            >
-              Submit Review
             </NuxtLink>
           </div>
         </nav>

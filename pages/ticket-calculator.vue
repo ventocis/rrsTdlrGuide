@@ -11,7 +11,7 @@ const ogTitle = 'Texas Ticket Cost Calculator — See the Real 3-Year Price'
 const ogDescription =
   'A $200 speeding ticket can cost $1,700+ in insurance increases. See your numbers and find out if a $25 course changes the math.'
 
-useSeoMeta({
+useSiteSeoMeta({
   title: seoTitle,
   description: seoDescription,
   ogTitle,
@@ -85,11 +85,10 @@ const jsonLdFaq = {
   ]
 }
 
+useSiteCanonical(`${siteUrl}/ticket-calculator`, `${siteUrl}/ticket-calculator`)
+
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/ticket-calculator` }],
   meta: [
-    { property: 'og:url', content: `${siteUrl}/ticket-calculator` },
-    { name: 'robots', content: 'index, follow' },
     {
       name: 'keywords',
       content:

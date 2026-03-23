@@ -7,7 +7,7 @@ const siteUrl = (config.public?.siteUrl as string) || 'https://tdlrguide.com'
 const seoTitle = 'Texas Court Outreach Directory | TDLR Guide'
 const seoDescription = 'Find Texas court contact information by county and court type. Email addresses, judge names, and court websites for defensive driving and ticket dismissal.'
 
-useSeoMeta({
+useSiteSeoMeta({
   title: seoTitle,
   description: seoDescription,
   ogTitle: seoTitle,
@@ -21,10 +21,10 @@ useSeoMeta({
   robots: 'index, follow'
 })
 
+useSiteCanonical(`${siteUrl}/court-outreach`, `${siteUrl}/court-outreach`)
+
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/court-outreach` }],
   meta: [
-    { property: 'og:url', content: `${siteUrl}/court-outreach` },
     { name: 'keywords', content: 'Texas courts, court email, court directory, defensive driving court contact' }
   ]
 })

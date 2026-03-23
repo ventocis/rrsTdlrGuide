@@ -6,6 +6,8 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
+    "generate:qa": "nuxt generate --dotenv .env.qa",
+    "generate:prod": "nuxt generate --dotenv .env.production",
     "preview": "nuxt preview",
     "build:data": "node ./scripts/parse-xlsx.mjs",
     "build:courts": "node ./scripts/parse-courts-xlsx.mjs",

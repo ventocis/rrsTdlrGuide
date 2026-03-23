@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+useSiteSeoMeta({
   title: 'Privacy Policy — TDLR Guide',
   description: 'Privacy policy for TDLR Guide. How we collect, use, and protect your information when you use our Texas defensive driving comparison site.'
 })

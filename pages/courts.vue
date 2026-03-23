@@ -9,7 +9,7 @@ const seoTitle =
 const seoDescription =
   'Look up any Texas Justice of the Peace or Municipal court by county. Get judge name, phone, email, and website for defensive driving ticket dismissal.'
 
-useSeoMeta({
+useSiteSeoMeta({
   title: seoTitle,
   description: seoDescription,
   ogTitle: seoTitle,
@@ -55,10 +55,10 @@ const jsonLdBreadcrumb = {
   ]
 }
 
+useSiteCanonical(`${siteUrl}/courts`, `${siteUrl}/courts`)
+
 useHead({
-  link: [{ rel: 'canonical', href: `${siteUrl}/courts` }],
   meta: [
-    { property: 'og:url', content: `${siteUrl}/courts` },
     {
       name: 'keywords',
       content:
