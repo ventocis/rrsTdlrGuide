@@ -13,6 +13,16 @@ const {
   totalProviders
 } = useProviders()
 
+const INITIAL_LIMIT = 25
+const showAll = ref(false)
+
+// Reset to first 25 whenever the filtered list changes (new filter/search applied)
+watch(resultCount, () => { showAll.value = false })
+
+const visibleProviders = computed(() =>
+  showAll.value ? providers.value : providers.value.slice(0, INITIAL_LIMIT)
+)
+
 const thBase =
   'sticky top-0 z-10 border-b-2 bg-white px-3 py-3 text-[11px] font-bold uppercase tracking-[0.05em] whitespace-nowrap select-none cursor-pointer'
   + ' border-[var(--proto-card-border)] text-[var(--proto-label)]'
@@ -160,7 +170,7 @@ function langPillStyle(langs: string[]): string {
             </tr>
           </thead>
           <tbody>
-            <template v-for="p in providers" :key="p.id">
+            <template v-for="p in visibleProviders" :key="p.id">
               <ProviderRow
                 :provider="p"
                 :is-expanded="!!expandedRows[p.id]"
@@ -183,7 +193,7 @@ function langPillStyle(langs: string[]): string {
     <!-- ─── Mobile card stack (hidden on desktop) ─────────────────────── -->
     <div class="flex flex-col gap-3 sm:hidden">
       <div
-        v-for="p in providers"
+        v-for="p in visibleProviders"
         :key="p.id"
         class="rounded-xl border bg-white shadow-sm overflow-hidden"
         :style="expandedRows[p.id] && p.duplicates?.length
@@ -304,6 +314,7 @@ function langPillStyle(langs: string[]): string {
       </div>
     </div>
 
+    <!-- Empty state -->
     <div
       v-if="providers.length === 0"
       class="py-12 text-center text-[15px] font-semibold"
@@ -313,25 +324,39 @@ function langPillStyle(langs: string[]): string {
       <p>No providers match your filters</p>
     </div>
 
+    <!-- Show all / Show fewer button -->
+    <div
+      v-if="providers.length > INITIAL_LIMIT"
+      class="mt-5 flex justify-center"
+    >
+      <button
+        type="button"
+        class="rounded-xl border px-6 py-2.5 text-[13px] font-semibold transition-colors hover:opacity-80"
+        style="border-color: var(--proto-card-border); background: white; color: var(--proto-text);"
+        @click="showAll = !showAll"
+      >
+        {{ showAll ? 'Show fewer ↑' : `Show all ${resultCount} providers ↓` }}
+      </button>
+    </div>
+
+    <!-- Metadata footer -->
     <div
       class="mt-3 flex flex-wrap items-center justify-between gap-2 text-[12px]"
       style="color: var(--proto-text-light);"
     >
       <span>
-        Showing {{ resultCount }} of {{ totalProviders }} providers · Duplicate
+        Showing {{ visibleProviders.length }} of {{ resultCount }} providers · Duplicate
         brands grouped under parent company
       </span>
       <span>
         Data sourced from TDLR public records and available websites found at time of search ·
-        <NuxtLink
-          to="/submit-review"
-          target="_blank"
-          rel="noopener noreferrer"
+        <a
+          href="mailto:info@tdlrguide.com"
           class="font-semibold hover:opacity-90"
           style="color: var(--proto-teal);"
         >
-          Submit a correction by filling out form →
-        </NuxtLink>
+          Submit a correction → info@tdlrguide.com
+        </a>
       </span>
     </div>
   </div>

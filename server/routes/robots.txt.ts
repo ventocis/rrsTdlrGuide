@@ -1,15 +1,15 @@
 /**
  * Dynamically generated robots.txt.
- * On QA (NUXT_PUBLIC_ENV=qa): block all crawlers.
- * On prod (default): allow all, reference sitemap.
+ * When NUXT_PUBLIC_SEO_ENABLED=false (QA): block all crawlers.
+ * When NUXT_PUBLIC_SEO_ENABLED=true or unset (prod/local): allow all, reference sitemap.
  *
- * This file is prerendered by Nitro at build time so the static
- * output already contains the correct content for each environment.
+ * Prerendered by Nitro at build time so the static output already contains
+ * the correct content for each environment.
  */
 export default defineEventHandler(() => {
-  const isQA = process.env.NUXT_PUBLIC_ENV === 'qa'
+  const seoEnabled = process.env.NUXT_PUBLIC_SEO_ENABLED !== 'false'
 
-  const content = isQA
+  const content = !seoEnabled
     ? [
         '# QA environment — not for public indexing',
         'User-agent: *',

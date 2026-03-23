@@ -34,8 +34,8 @@
         <NuxtLink to="/terms" class="font-medium" style="color: var(--proto-teal);">
           Terms of Use
         </NuxtLink>
-        <a href="mailto:TDLRguide@gmail.com" class="font-medium" style="color: var(--proto-teal);">
-          TDLRguide@gmail.com
+        <a href="mailto:info@tdlrguide.com" class="font-medium" style="color: var(--proto-teal);">
+          info@tdlrguide.com
         </a>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
-const isQA = process.env.NUXT_PUBLIC_ENV === 'qa'
+const seoEnabled = process.env.NUXT_PUBLIC_SEO_ENABLED !== 'false'
 
 export default defineNuxtConfig({
   ssr: true,
@@ -23,8 +23,12 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     public: {
-      /** 'qa' | 'prod' — set via NUXT_PUBLIC_ENV in CI; defaults to prod behaviour locally */
+      /** 'qa' | 'prod' — set via NUXT_PUBLIC_ENV in CI */
       env: process.env.NUXT_PUBLIC_ENV || 'prod',
+      /** SEO meta tags, canonical links, OG tags enabled. Set NUXT_PUBLIC_SEO_ENABLED=false on QA. */
+      seoEnabled: process.env.NUXT_PUBLIC_SEO_ENABLED !== 'false',
+      /** Google Analytics loading enabled. Set NUXT_PUBLIC_GOOGLE_ANALYTICS_ENABLED=false on QA. */
+      googleAnalyticsEnabled: process.env.NUXT_PUBLIC_GOOGLE_ANALYTICS_ENABLED !== 'false',
       /** Canonical site URL for SEO. Set NUXT_PUBLIC_SITE_URL in production. */
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://tdlrguide.com',
       /** Form submission endpoint. */
@@ -43,12 +47,12 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         // QA: block all crawling. Prod: normal indexing.
-        isQA
-          ? { name: 'robots', content: 'noindex, nofollow' }
-          : { name: 'robots', content: 'index, follow' },
+        seoEnabled
+          ? { name: 'robots', content: 'index, follow' }
+          : { name: 'robots', content: 'noindex, nofollow' },
         { name: 'theme-color', content: '#0d9488' },
         // Prod-only: description, keywords, Search Console verification, OG, Twitter
-        ...(!isQA ? [
+        ...(seoEnabled ? [
           {
             name: 'description',
             content: 'Compare Texas\u2019 top-rated driver safety and defensive driving courses. TDLR-approved. Real prices, formats, and certificate delivery options. Find the best course for ticket dismissal.'

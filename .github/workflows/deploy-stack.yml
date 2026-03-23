@@ -72,8 +72,10 @@ jobs:
         working-directory: infra
         run: npm ci
 
+      # ENV-specific config comes from .env.qa or .env.production (committed, non-secret).
+      # Only real secrets are injected here — they override the placeholders in .env.production.
+      # On QA, no secrets are needed since analytics and SEO are disabled.
       - run: make deploy ENV=${{ needs.get-env.outputs.env }}
         env:
-          NUXT_PUBLIC_ENV: ${{ needs.get-env.outputs.env }}
-          NUXT_PUBLIC_SITE_URL: ${{ needs.get-env.outputs.env == 'prod' && secrets.NUXT_PUBLIC_SITE_URL || 'https://qa.tdlrguide.com' }}
+          NUXT_PUBLIC_SITE_URL: ${{ needs.get-env.outputs.env == 'prod' && secrets.NUXT_PUBLIC_SITE_URL || '' }}
           NUXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ needs.get-env.outputs.env == 'prod' && secrets.NUXT_PUBLIC_GOOGLE_ANALYTICS_ID || '' }}
