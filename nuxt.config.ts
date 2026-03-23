@@ -48,7 +48,7 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         // QA: block all crawling. Prod: normal indexing.
         seoEnabled
-          ? { name: 'robots', content: 'index, follow' }
+          ? { name: 'robots', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' }
           : { name: 'robots', content: 'noindex, nofollow' },
         { name: 'theme-color', content: '#0d9488' },
         // Prod-only: description, keywords, Search Console verification, OG, Twitter
