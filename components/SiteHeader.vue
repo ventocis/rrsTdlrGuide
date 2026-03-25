@@ -76,6 +76,52 @@ watch(() => route.path, closeMobileMenu)
           >
             Eligibility Checker
           </NuxtLink>
+
+          <!-- City Guides dropdown -->
+          <div
+            class="city-dropdown-wrapper"
+            @mouseenter="cityGuidesDesktopOpen = true"
+            @mouseleave="cityGuidesDesktopOpen = false"
+          >
+            <button
+              class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+              style="color: #fff; background: transparent; border: none; cursor: pointer;"
+              :aria-expanded="cityGuidesDesktopOpen"
+              aria-haspopup="true"
+              @click="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
+              @keydown.escape="cityGuidesDesktopOpen = false"
+              @keydown.space.prevent="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
+              @keydown.enter.prevent="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
+            >
+              City Guides <span class="chevron">▾</span>
+            </button>
+            <Transition
+              enter-active-class="transition duration-100 ease-out"
+              enter-from-class="opacity-0 -translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition duration-75 ease-in"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 -translate-y-1"
+            >
+              <div v-show="cityGuidesDesktopOpen" class="city-dropdown-menu">
+                <NuxtLink
+                  to="/houston"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Houston
+                </NuxtLink>
+                <NuxtLink
+                  to="/dallas"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Dallas
+                </NuxtLink>
+              </div>
+            </Transition>
+          </div>
+
           <NuxtLink
             v-if="!isFaqPage"
             to="/faq"
@@ -236,6 +282,49 @@ watch(() => route.path, closeMobileMenu)
             >
               Eligibility Checker
             </NuxtLink>
+
+            <!-- City Guides expandable (mobile) -->
+            <div>
+              <button
+                class="w-full rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10 flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-white/30"
+                :aria-expanded="cityGuidesMobileOpen"
+                aria-haspopup="true"
+                @click="cityGuidesMobileOpen = !cityGuidesMobileOpen"
+                @keydown.escape="cityGuidesMobileOpen = false"
+              >
+                <span>City Guides</span>
+                <span
+                  class="text-[10px] transition-transform duration-150"
+                  :style="cityGuidesMobileOpen ? 'display:inline-block;transform:rotate(180deg)' : 'display:inline-block'"
+                >▾</span>
+              </button>
+              <Transition
+                enter-active-class="transition duration-150 ease-out"
+                enter-from-class="opacity-0 -translate-y-1"
+                enter-to-class="opacity-100 translate-y-0"
+                leave-active-class="transition duration-100 ease-in"
+                leave-from-class="opacity-100 translate-y-0"
+                leave-to-class="opacity-0 -translate-y-1"
+              >
+                <div v-show="cityGuidesMobileOpen" class="pl-3 pt-0.5 flex flex-col gap-0.5">
+                  <NuxtLink
+                    to="/houston"
+                    class="rounded px-3 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/10"
+                    @click="closeMobileMenu"
+                  >
+                    Houston
+                  </NuxtLink>
+                  <NuxtLink
+                    to="/dallas"
+                    class="rounded px-3 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/10"
+                    @click="closeMobileMenu"
+                  >
+                    Dallas
+                  </NuxtLink>
+                </div>
+              </Transition>
+            </div>
+
             <NuxtLink
               v-if="!isFaqPage"
               to="/faq"
