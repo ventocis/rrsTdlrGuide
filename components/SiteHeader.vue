@@ -117,6 +117,13 @@ watch(() => route.path, closeMobileMenu)
                 >
                   Dallas
                 </NuxtLink>
+                <NuxtLink
+                  to="/san-antonio"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  San Antonio
+                </NuxtLink>
               </div>
             </Transition>
           </div>
@@ -244,6 +251,13 @@ watch(() => route.path, closeMobileMenu)
                     @click="closeMobileMenu"
                   >
                     Dallas
+                  </NuxtLink>
+                  <NuxtLink
+                    to="/san-antonio"
+                    class="rounded px-3 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/10"
+                    @click="closeMobileMenu"
+                  >
+                    San Antonio
                   </NuxtLink>
                 </div>
               </Transition>
