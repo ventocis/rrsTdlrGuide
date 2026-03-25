@@ -140,6 +140,13 @@ watch(() => route.path, closeMobileMenu)
                 >
                   Harris County JP Courts
                 </NuxtLink>
+                <NuxtLink
+                  to="/austin"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Austin
+                </NuxtLink>
               </div>
             </Transition>
           </div>
@@ -289,6 +296,13 @@ watch(() => route.path, closeMobileMenu)
                     @click="closeMobileMenu"
                   >
                     Harris County JP Courts
+                  </NuxtLink>
+                  <NuxtLink
+                    to="/austin"
+                    class="rounded px-3 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/10"
+                    @click="closeMobileMenu"
+                  >
+                    Austin
                   </NuxtLink>
                 </div>
               </Transition>
