@@ -4,6 +4,7 @@ const isPricingPage = route.path === '/pricing'
 const isEligibilityPage = route.path === '/eligibility-checker'
 const isCourtsPage = route.path === '/courts'
 const isTicketCalculatorPage = route.path === '/ticket-calculator'
+const isFaqPage = route.path === '/faq'
 
 const mobileMenuOpen = ref(false)
 const cityGuidesDesktopOpen = ref(false)
@@ -74,6 +75,14 @@ watch(() => route.path, closeMobileMenu)
             style="color: #fff;"
           >
             Eligibility Checker
+          </NuxtLink>
+          <NuxtLink
+            v-if="!isFaqPage"
+            to="/faq"
+            class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+            style="color: #fff;"
+          >
+            FAQ
           </NuxtLink>
 
           <!-- City Guides dropdown -->
@@ -219,6 +228,14 @@ watch(() => route.path, closeMobileMenu)
               @click="closeMobileMenu"
             >
               Eligibility Checker
+            </NuxtLink>
+            <NuxtLink
+              v-if="!isFaqPage"
+              to="/faq"
+              class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10"
+              @click="closeMobileMenu"
+            >
+              FAQ
             </NuxtLink>
 
             <!-- City Guides expandable (mobile) -->
