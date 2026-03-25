@@ -32,6 +32,8 @@ useSiteCanonical(pageUrl, pageUrl)
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
   mainEntity: [
     {
       '@type': 'Question',
@@ -80,11 +82,13 @@ const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
   name: 'How to Dismiss a Houston Traffic Ticket with a Driver Safety Course',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
   step: [
-    { '@type': 'HowToStep', text: 'Submit your DSC application to the court before your arraignment date' },
-    { '@type': 'HowToStep', text: 'Wait for your approval letter in the mail' },
-    { '@type': 'HowToStep', text: 'Take any TDLR-approved 6-hour defensive driving course' },
-    { '@type': 'HowToStep', text: 'Submit your Certificate of Completion (and other documents if required) to the court by mail or in person within 90 days' }
+    { '@type': 'HowToStep', name: 'Submit your DSC request to the court', text: 'Submit your DSC application to the court before your arraignment date' },
+    { '@type': 'HowToStep', name: 'Wait for written approval by mail', text: 'Wait for your approval letter in the mail' },
+    { '@type': 'HowToStep', name: 'Complete a TDLR-approved 6-hour course', text: 'Take any TDLR-approved 6-hour defensive driving course' },
+    { '@type': 'HowToStep', name: 'Submit completion documents within 90 days', text: 'Submit your Certificate of Completion (and other documents if required) to the court by mail or in person within 90 days' }
   ]
 }
 
@@ -108,7 +112,7 @@ useHead({
         <p class="lead">Most traffic tickets in Houston can be dismissed without paying the fine. Pick the option that fits your situation below.</p>
 
         <!-- Step 1: Choose path -->
-        <div class="sh">Step 1 — Choose your path</div>
+        <h2 class="sh">Step 1 — Choose your path</h2>
 
         <div class="picker">
           <button
@@ -167,9 +171,9 @@ useHead({
         </div>
 
         <!-- ── DSC Panel ── -->
-        <div v-show="selectedOption === 'dsc'">
+        <section v-show="selectedOption === 'dsc'" aria-label="Driver Safety Course option">
 
-          <div class="sh">Driver Safety Course — Am I eligible?</div>
+          <h2 class="sh">Driver Safety Course — Am I eligible?</h2>
 
           <div class="box danger">
             <div class="box-lbl">You are NOT eligible for DSC if any of these apply</div>
@@ -189,7 +193,7 @@ useHead({
 
           <p style="font-size:14px;color:var(--tx2);margin:.875rem 0 0;line-height:1.6">If none of the above apply, you are likely eligible. Continue below.</p>
 
-          <div class="sh">Did you miss your first court date?</div>
+          <h2 class="sh">Did you miss your first court date?</h2>
 
           <div class="inline-q">
             <div class="q-label">This affects your fee amount.</div>
@@ -231,7 +235,7 @@ useHead({
             <p style="font-size:13px;color:var(--tx2);margin-top:.75rem">When you finish the course, you only need to submit: <strong style="color:var(--tx)">Certificate of Completion.</strong> That's it.</p>
           </div>
 
-          <div class="sh">How to complete DSC — step by step</div>
+          <h2 class="sh">How to complete DSC — step by step</h2>
 
           <div class="box warn">
             <div class="box-lbl">Important — do this in the right order</div>
@@ -269,7 +273,7 @@ useHead({
             </div>
           </div>
 
-          <div class="sh">Forms and documents to download</div>
+          <h2 class="sh">Forms and documents to download</h2>
 
           <div class="req-list">
             <div class="req-item">
@@ -307,7 +311,7 @@ useHead({
             </div>
           </div>
 
-          <div class="sh">Where to submit your request and documents</div>
+          <h2 class="sh">Where to submit your request and documents</h2>
 
           <div class="sub-methods">
             <div class="sub-card">
@@ -329,12 +333,12 @@ useHead({
 
           <p style="font-size:13px;color:var(--tx2);margin-top:1rem">Questions? Call the Houston Court Help Line: <strong style="color:var(--tx)">713.837.0311</strong></p>
 
-        </div><!-- /DSC Panel -->
+        </section><!-- /DSC Panel -->
 
         <!-- ── Deferred Disposition Panel ── -->
-        <div v-show="selectedOption === 'def'">
+        <section v-show="selectedOption === 'def'" aria-label="Deferred Disposition option">
 
-          <div class="sh">What is Deferred Disposition?</div>
+          <h2 class="sh">What is Deferred Disposition?</h2>
 
           <div class="box neutral">
             <div class="box-lbl">Plain English explanation</div>
@@ -346,7 +350,7 @@ useHead({
             <p>If you choose Deferred Disposition and you are <strong>under 25 years old</strong>, the judge is required by law to also make you complete a Driver Safety Course as one of your conditions. You effectively end up doing both.</p>
           </div>
 
-          <div class="sh">Am I eligible?</div>
+          <h2 class="sh">Am I eligible?</h2>
 
           <p style="font-size:14px;color:var(--tx2);margin-bottom:.875rem">Most people are eligible to request by mail or email. However, the following situations require you to appear in person — the court will not accept a mail or email request:</p>
 
@@ -359,7 +363,7 @@ useHead({
             <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">Juvenile — must appear in person with a parent or guardian</span></div>
           </div>
 
-          <div class="sh">How much does it cost?</div>
+          <h2 class="sh">How much does it cost?</h2>
 
           <table class="fee-table" style="width:100%">
             <tbody>
@@ -372,7 +376,7 @@ useHead({
             </tbody>
           </table>
 
-          <div class="sh">How to apply — step by step</div>
+          <h2 class="sh">How to apply — step by step</h2>
 
           <div class="box warn">
             <div class="box-lbl">Deadline</div>
@@ -403,7 +407,7 @@ useHead({
             </div>
           </div>
 
-          <div class="sh">Forms to download</div>
+          <h2 class="sh">Forms to download</h2>
 
           <div class="req-list">
             <div class="req-item">
@@ -432,7 +436,7 @@ useHead({
             </div>
           </div>
 
-          <div class="sh">Where to submit</div>
+          <h2 class="sh">Where to submit</h2>
 
           <div class="sub-methods sub-methods-4">
             <div class="sub-card">
@@ -463,7 +467,7 @@ useHead({
 
           <p style="font-size:13px;color:var(--tx2);margin-top:1rem">Questions? Call: <strong style="color:var(--tx)">713.837.0311</strong> or <strong style="color:var(--tx)">713.247.5479</strong></p>
 
-        </div><!-- /Deferred Panel -->
+        </section><!-- /Deferred Panel -->
 
         <div class="div" />
 
