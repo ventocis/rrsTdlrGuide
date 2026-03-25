@@ -291,23 +291,23 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'Which Spanish-language courses are highest rated?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Based on available rating data, GetDefensive.com (rating 4.0, English/Spanish, online and in-person) and Drivers Education of America (rating 3.9, English/Spanish, online) are among the more established bilingual providers. For the most current ratings, use the TDLRguide comparison tool filtered by language.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Based on available data, GetDefensive.com (English/Spanish, online and in-person) and Drivers Education of America (English/Spanish, online) are among the more established bilingual providers. For the most current options, use the TDLRguide comparison tool filtered by language.' }
     },
     // Provider Comparisons
     {
       '@type': 'Question',
       name: 'Which Texas defensive driving course has the best reviews?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Based on available ratings data, the highest-rated providers are: Road Ready Safety (4.9 rating, $28 total, online, free instant certificate), Driver Training Associates (4.6 rating, $25 total, online, certificate by mail), Aceable Defensive Driving (4.5 rating, $49+ total, online, polished mobile experience), and iDriveSafely (3.9 rating, $29 total, online, free instant certificate, large established provider).' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Based on available data, the highest-reviewed providers are: Road Ready Safety ($28 total, online, free instant certificate), Driver Training Associates ($25 total, online, certificate by mail), Aceable Defensive Driving ($49+ total, online, polished mobile experience), and iDriveSafely ($29 total, online, free instant certificate, large established provider).' }
     },
     {
       '@type': 'Question',
       name: 'What is the difference between Road Ready Safety and iDriveSafely?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Road Ready Safety: $28 total ($25 + $3 cert fee), free instant certificate download, 4.9 student rating, newer platform. iDriveSafely: $29 total, free instant certificate, 3.9 rating, long-established national provider with a large review base. Both are accepted by all Texas courts. Road Ready Safety is higher rated and lower cost. iDriveSafely has a longer track record and more name recognition.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Road Ready Safety: $28 total ($25 + $3 cert fee), free instant certificate download, newer platform. iDriveSafely: $29 total, free instant certificate, long-established national provider with a large review base. Both are accepted by all Texas courts. Road Ready Safety is lower cost. iDriveSafely has a longer track record and more name recognition.' }
     },
     {
       '@type': 'Question',
       name: 'What is the difference between Aceable and DefensiveDriving.com?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Aceable: $49+ total, 4.5 rating, online only, known for a high-quality mobile-first interface and polished video content. DefensiveDriving.com: $28 total, 4.0 rating, online, certificate by mail, well-established provider with a straightforward interface. If you want the best user experience and do not mind paying more, Aceable is a good choice. If you want a reliable course at the minimum cost, DefensiveDriving.com delivers.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Aceable: $49+ total, online only, known for a high-quality mobile-first interface and polished video content. DefensiveDriving.com: $28 total, online, certificate by mail, well-established provider with a straightforward interface. If you want the best user experience and do not mind paying more, Aceable is a good choice. If you want a reliable course at the minimum cost, DefensiveDriving.com delivers.' }
     },
     {
       '@type': 'Question',
@@ -317,12 +317,12 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'Which Texas defensive driving courses are easiest to complete?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Based on ratings and provider characteristics: Driver Training Associates (4.6 rating, straightforward online format, low cost), Road Ready Safety (4.9 rating, modern interface, free instant cert), iDriveSafely (established platform, clear section structure, video-based content), and Drivers Education of America (available in English and Spanish, straightforward format). All Texas courses must be 6 hours — none can legally be shorter.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Based on provider characteristics: Driver Training Associates (straightforward online format, low cost), Road Ready Safety (modern interface, free instant cert), iDriveSafely (established platform, clear section structure, video-based content), and Drivers Education of America (available in English and Spanish, straightforward format). All Texas courses must be 6 hours — none can legally be shorter.' }
     },
     {
       '@type': 'Question',
       name: 'What are the best courses for people who want to finish fast?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Every TDLR-approved course is required to be 6 hours — no course can legally be completed faster. That said, courses with efficient layouts, clear video content, and no confusing navigation feel faster. Top choices for a smooth experience: Road Ready Safety (4.9 rating, clean modern interface, instant cert), Driver Training Associates (4.6 rating, no-frills efficient format), Driving University ($25 total, free instant cert, streamlined online), and iDriveSafely (video-based, self-paced).' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Every TDLR-approved course is required to be 6 hours — no course can legally be completed faster. That said, courses with efficient layouts, clear video content, and no confusing navigation feel faster. Top choices for a smooth experience: Road Ready Safety (clean modern interface, instant cert), Driver Training Associates (no-frills efficient format), Driving University ($25 total, free instant cert, streamlined online), and iDriveSafely (video-based, self-paced).' }
     },
     {
       '@type': 'Question',
@@ -784,7 +784,7 @@ useHead({
 
           <div class="qa">
             <h3>Which Spanish-language courses are highest rated?</h3>
-            <p>Based on available rating data, GetDefensive.com (rating 4.0, English/Spanish, online and in-person) and Drivers Education of America (rating 3.9, English/Spanish, online) are among the more established bilingual providers. For the most current ratings, use the TDLRguide comparison tool filtered by language.</p>
+            <p>Based on available data, GetDefensive.com (English/Spanish, online and in-person) and Drivers Education of America (English/Spanish, online) are among the more established bilingual providers. For the most current options, use the TDLRguide comparison tool filtered by language.</p>
           </div>
         </section>
 
@@ -796,10 +796,10 @@ useHead({
             <h3>Which Texas defensive driving course has the best reviews?</h3>
             <p>Based on available ratings data, the highest-rated providers are:</p>
             <ul>
-              <li>Road Ready Safety — 4.9 rating, $28 total, online, free instant certificate</li>
-              <li>Driver Training Associates — 4.6 rating, $25 total, online, certificate by mail</li>
-              <li>Aceable Defensive Driving — 4.5 rating, $49+ total, online, known for polished mobile experience</li>
-              <li>iDriveSafely — 3.9 rating, $29 total, online, free instant certificate, large established provider</li>
+              <li>Road Ready Safety — $28 total, online, free instant certificate</li>
+              <li>Driver Training Associates — $25 total, online, certificate by mail</li>
+              <li>Aceable Defensive Driving — $49+ total, online, known for polished mobile experience</li>
+              <li>iDriveSafely — $29 total, online, free instant certificate, large established provider</li>
             </ul>
             <p class="note">Higher price does not always mean better experience — Road Ready Safety and Driver Training Associates both rank near the top while offering lower prices.</p>
           </div>
@@ -809,8 +809,8 @@ useHead({
             <h3>What is the difference between Road Ready Safety and iDriveSafely?</h3>
             <p>Both are fully online TDLR-approved courses. Key differences:</p>
             <ul>
-              <li><strong>Road Ready Safety:</strong> $28 total ($25 + $3 cert fee), free instant certificate download, 4.9 student rating, newer platform</li>
-              <li><strong>iDriveSafely:</strong> $29 total, free instant certificate, 3.9 rating, long-established national provider with a large review base</li>
+              <li><strong>Road Ready Safety:</strong> $28 total ($25 + $3 cert fee), free instant certificate download, newer platform</li>
+              <li><strong>iDriveSafely:</strong> $29 total, free instant certificate, long-established national provider with a large review base</li>
             </ul>
             <p>Both are accepted by all Texas courts. Road Ready Safety is higher rated and lower cost. iDriveSafely has a longer track record and more name recognition.</p>
           </div>
@@ -819,8 +819,8 @@ useHead({
           <div class="qa">
             <h3>Aceable vs. DefensiveDriving.com — what is the difference?</h3>
             <ul>
-              <li><strong>Aceable:</strong> $49+ total, 4.5 rating, online only, known for a high-quality mobile-first interface and polished video content. Higher cost than most competitors.</li>
-              <li><strong>DefensiveDriving.com:</strong> $28 total, 4.0 rating, online, certificate by mail, well-established provider with a straightforward interface.</li>
+              <li><strong>Aceable:</strong> $49+ total, online only, known for a high-quality mobile-first interface and polished video content. Higher cost than most competitors.</li>
+              <li><strong>DefensiveDriving.com:</strong> $28 total, online, certificate by mail, well-established provider with a straightforward interface.</li>
             </ul>
             <p>If you want the best user experience and do not mind paying more, Aceable is a good choice. If you want a reliable course at the minimum cost, DefensiveDriving.com delivers.</p>
           </div>
@@ -844,8 +844,8 @@ useHead({
             <h3>Which Texas defensive driving courses are easiest to complete?</h3>
             <p>Based on ratings and provider characteristics:</p>
             <ul>
-              <li>Driver Training Associates — 4.6 rating, straightforward online format, low cost</li>
-              <li>Road Ready Safety — 4.9 rating, modern interface, free instant cert</li>
+              <li>Driver Training Associates — straightforward online format, low cost</li>
+              <li>Road Ready Safety — modern interface, free instant cert</li>
               <li>iDriveSafely — established platform, clear section structure, video-based content</li>
               <li>Drivers Education of America — available in English and Spanish, straightforward format</li>
             </ul>
@@ -857,8 +857,8 @@ useHead({
             <h3>What are the best courses for people who want to finish fast?</h3>
             <p>Every TDLR-approved course is required to be 6 hours — no course can legally be completed faster. That said, courses with efficient layouts, clear video content, and no confusing navigation feel faster. Top choices for a smooth experience:</p>
             <ul>
-              <li>Road Ready Safety — 4.9 rating, clean modern interface, instant cert</li>
-              <li>Driver Training Associates — 4.6 rating, no-frills efficient format</li>
+              <li>Road Ready Safety — clean modern interface, instant cert</li>
+              <li>Driver Training Associates — no-frills efficient format</li>
               <li>Driving University — $25 total, free instant cert, streamlined online</li>
               <li>iDriveSafely — video-based, self-paced, large established platform</li>
             </ul>
