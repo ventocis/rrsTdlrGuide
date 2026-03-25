@@ -587,7 +587,7 @@ h2.sh {
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--tx3);
-  margin: 2.25rem 0 .875rem;
+  margin: 2.75rem 0 1rem;
   padding-bottom: .5rem;
   border-bottom: 1px solid var(--bd);
 }
@@ -602,19 +602,19 @@ h2.sh {
   .picker { grid-template-columns: 1fr; }
 }
 .pick-btn {
-  border: 1.5px solid var(--bd);
+  border: 1px solid var(--bd);
   border-radius: var(--rl);
   padding: 1.125rem 1.25rem;
   cursor: pointer;
-  background: var(--bg2);
+  background: var(--bg);
   text-align: left;
   font-family: var(--sans);
   transition: all .15s;
   position: relative;
 }
-.pick-btn:hover { border-color: var(--bd2); background: var(--bg3); }
-.pick-btn.active.blue { border-color: var(--blue); background: var(--blue-bg); }
-.pick-btn.active.green { border-color: var(--green); background: var(--green-bg); }
+.pick-btn:hover { border-color: var(--bd2); background: var(--bg2); }
+.pick-btn.active.blue { border: 1.5px solid var(--blue); background: var(--bg); }
+.pick-btn.active.green { border: 1.5px solid var(--green); background: var(--bg); }
 .pick-btn .pb-tag {
   font-size: 10px;
   font-weight: 700;
@@ -653,11 +653,12 @@ h2.sh {
   padding: 1.125rem 1.375rem;
   margin-bottom: 1rem;
 }
-.box.warn    { background: var(--amber-bg); border: 1px solid var(--amber-bd); }
-.box.danger  { background: var(--red-bg);   border: 1px solid var(--red-bd); }
-.box.info    { background: var(--blue-bg);  border: 1px solid var(--blue-bd); }
-.box.success { background: var(--green-bg); border: 1px solid var(--green-bd); }
-.box.neutral { background: var(--bg2);      border: 1px solid var(--bd); }
+.box.warn    { background: transparent; border: 1px solid var(--amber-bd); border-left: 3px solid var(--amber); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.danger  { background: transparent; border: 1px solid var(--red-bd);   border-left: 3px solid var(--red);   border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info    { background: transparent; border: 1px solid var(--blue-bd);  border-left: 3px solid var(--blue);  border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.success { background: transparent; border: 1px solid var(--green-bd); border-left: 3px solid var(--green); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.neutral { background: var(--bg2);  border: 1px solid var(--bd);                                            border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info:has(.compare) { background: var(--bg2); border: 1px solid var(--bd); border-left: none; border-radius: var(--rl); }
 .box-lbl {
   font-size: 10px;
   font-weight: 700;
@@ -674,16 +675,18 @@ h2.sh {
 .box strong { color: var(--tx); font-weight: 600; }
 .box ul { padding-left: 1rem; margin-top: .4rem; display: flex; flex-direction: column; gap: .3rem; }
 
-.inel-list { display: flex; flex-direction: column; gap: .35rem; margin-top: .6rem; }
+.inel-list { display: flex; flex-direction: column; gap: .25rem; margin-top: .6rem; }
 .inel-row {
   display: flex;
   gap: .75rem;
   align-items: flex-start;
-  padding: .55rem .875rem;
-  background: var(--red-bg);
-  border: 1px solid var(--red-bd);
-  border-radius: var(--r);
+  padding: .5rem .75rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--bd);
+  border-radius: 4px;
 }
+.inel-row:last-child { border-bottom: none; }
 .inel-x { font-size: 11px; font-weight: 700; color: var(--red-tx); flex-shrink: 0; padding-top: 2px; }
 .inel-text { font-size: 13px; color: var(--tx2); line-height: 1.45; }
 
@@ -758,16 +761,17 @@ h2.sh {
   bottom: 28px;
   width: 1px;
   background: var(--bd);
+  opacity: 0.6;
 }
 .step { display: flex; gap: 1rem; padding: .75rem 0; }
 .step-dot {
-  width: 27px;
-  height: 27px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   border: 1.5px solid var(--bd2);
   background: var(--bg);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--tx2);
   display: flex;
   align-items: center;
@@ -799,7 +803,7 @@ h2.sh {
   border: 1px solid var(--bd);
   border-radius: var(--r);
   padding: .875rem 1rem;
-  background: var(--bg2);
+  background: var(--bg);
 }
 .sub-card .method {
   font-size: 10px;
@@ -821,9 +825,9 @@ h2.sh {
 @media (max-width: 480px) {
   .compare { grid-template-columns: 1fr; }
 }
-.comp-card { border-radius: var(--r); padding: .875rem 1rem; border: 1px solid var(--bd); }
-.comp-card.dsc { background: var(--blue-bg); border-color: var(--blue-bd); }
-.comp-card.def { background: var(--green-bg); border-color: var(--green-bd); }
+.comp-card { border-radius: var(--r); padding: .875rem 1rem; border: 1px solid var(--bd); background: var(--bg); }
+.comp-card.dsc { border-top: 2px solid var(--blue); }
+.comp-card.def { border-top: 2px solid var(--green); }
 .comp-card .ct {
   font-size: 10px;
   font-weight: 700;
