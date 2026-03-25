@@ -38,6 +38,19 @@
   </url>
 
   <url>
+    <loc>https://tdlrguide.com/houston</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tdlrguide.com/dallas</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://tdlrguide.com/privacy</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>yearly</changefreq>

@@ -6,21 +6,25 @@ const isCourtsPage = route.path === '/courts'
 const isTicketCalculatorPage = route.path === '/ticket-calculator'
 
 const mobileMenuOpen = ref(false)
+const cityGuidesDesktopOpen = ref(false)
+const cityGuidesMobileOpen = ref(false)
+
 function toggleMobileMenu() {
   mobileMenuOpen.value = !mobileMenuOpen.value
 }
 function closeMobileMenu() {
   mobileMenuOpen.value = false
+  cityGuidesMobileOpen.value = false
 }
 
-// Close menu on route change (e.g. after navigating)
+// Close menus on route change
 watch(() => route.path, closeMobileMenu)
 </script>
 
 <template>
   <div class="relative">
     <header
-      class="relative overflow-hidden px-3 py-1.5 sm:px-4 sm:py-2"
+      class="relative px-3 py-1.5 sm:px-4 sm:py-2"
       style="background: linear-gradient(135deg, var(--proto-header-from), var(--proto-header-to));"
     >
       <div
@@ -41,7 +45,7 @@ watch(() => route.path, closeMobileMenu)
             class="m-0 hidden text-[11px] font-medium leading-tight sm:block sm:text-[12px]"
             style="color: var(--proto-header-subtitle);"
           >
-            Don't overpay for your ticket dismissal. Compare Texas' top-rated driver safety courses.
+            Free tools to compare, dismiss, and understand Texas traffic tickets.
           </p>
         </div>
 
@@ -71,13 +75,59 @@ watch(() => route.path, closeMobileMenu)
           >
             Eligibility Checker
           </NuxtLink>
+
+          <!-- City Guides dropdown -->
+          <div
+            class="city-dropdown-wrapper"
+            @mouseenter="cityGuidesDesktopOpen = true"
+            @mouseleave="cityGuidesDesktopOpen = false"
+          >
+            <button
+              class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+              style="color: #fff; background: transparent; border: none; cursor: pointer;"
+              :aria-expanded="cityGuidesDesktopOpen"
+              aria-haspopup="true"
+              @click="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
+              @keydown.escape="cityGuidesDesktopOpen = false"
+              @keydown.space.prevent="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
+              @keydown.enter.prevent="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
+            >
+              City Guides <span class="chevron">▾</span>
+            </button>
+            <Transition
+              enter-active-class="transition duration-100 ease-out"
+              enter-from-class="opacity-0 -translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition duration-75 ease-in"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 -translate-y-1"
+            >
+              <div v-show="cityGuidesDesktopOpen" class="city-dropdown-menu">
+                <NuxtLink
+                  to="/houston"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Houston
+                </NuxtLink>
+                <NuxtLink
+                  to="/dallas"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Dallas
+                </NuxtLink>
+              </div>
+            </Transition>
+          </div>
+
           <NuxtLink
             v-if="!isPricingPage"
             to="/pricing"
             class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
             style="color: #fff;"
           >
-            How Texas Defensive Driving Pricing Really Works
+            Pricing Guide
           </NuxtLink>
         </div>
 
@@ -156,13 +206,56 @@ watch(() => route.path, closeMobileMenu)
             >
               Eligibility Checker
             </NuxtLink>
+
+            <!-- City Guides expandable (mobile) -->
+            <div>
+              <button
+                class="w-full rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10 flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-white/30"
+                :aria-expanded="cityGuidesMobileOpen"
+                aria-haspopup="true"
+                @click="cityGuidesMobileOpen = !cityGuidesMobileOpen"
+                @keydown.escape="cityGuidesMobileOpen = false"
+              >
+                <span>City Guides</span>
+                <span
+                  class="text-[10px] transition-transform duration-150"
+                  :style="cityGuidesMobileOpen ? 'display:inline-block;transform:rotate(180deg)' : 'display:inline-block'"
+                >▾</span>
+              </button>
+              <Transition
+                enter-active-class="transition duration-150 ease-out"
+                enter-from-class="opacity-0 -translate-y-1"
+                enter-to-class="opacity-100 translate-y-0"
+                leave-active-class="transition duration-100 ease-in"
+                leave-from-class="opacity-100 translate-y-0"
+                leave-to-class="opacity-0 -translate-y-1"
+              >
+                <div v-show="cityGuidesMobileOpen" class="pl-3 pt-0.5 flex flex-col gap-0.5">
+                  <NuxtLink
+                    to="/houston"
+                    class="rounded px-3 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/10"
+                    @click="closeMobileMenu"
+                  >
+                    Houston
+                  </NuxtLink>
+                  <NuxtLink
+                    to="/dallas"
+                    class="rounded px-3 py-2 text-[13px] font-medium text-white/90 transition-colors hover:bg-white/10"
+                    @click="closeMobileMenu"
+                  >
+                    Dallas
+                  </NuxtLink>
+                </div>
+              </Transition>
+            </div>
+
             <NuxtLink
               v-if="!isPricingPage"
               to="/pricing"
               class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10"
               @click="closeMobileMenu"
             >
-              How Texas Defensive Driving Pricing Really Works
+              Pricing Guide
             </NuxtLink>
           </div>
         </nav>
@@ -170,3 +263,45 @@ watch(() => route.path, closeMobileMenu)
     </Transition>
   </div>
 </template>
+
+<style scoped>
+.city-dropdown-wrapper {
+  position: relative;
+}
+.chevron {
+  margin-left: 3px;
+  font-size: 9px;
+  line-height: 1;
+}
+.city-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 130px;
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  padding: 4px;
+}
+.city-dropdown-item {
+  display: block;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+}
+.city-dropdown-item:hover,
+.city-dropdown-item:focus {
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+.city-dropdown-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 1px;
+}
+</style>
