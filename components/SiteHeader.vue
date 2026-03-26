@@ -265,7 +265,6 @@ watch(() => route.path, closeMobileMenu)
             >
               FAQ
             </NuxtLink>
-
             <NuxtLink
               v-if="!isPricingPage"
               to="/pricing"
