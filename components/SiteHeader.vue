@@ -77,6 +77,15 @@ watch(() => route.path, closeMobileMenu)
             Eligibility Checker
           </NuxtLink>
 
+          <NuxtLink
+            v-if="!isFaqPage"
+            to="/faq"
+            class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+            style="color: #fff;"
+          >
+            FAQ
+          </NuxtLink>
+
           <!-- City Guides dropdown -->
           <div
             class="city-dropdown-wrapper"
@@ -117,6 +126,27 @@ watch(() => route.path, closeMobileMenu)
                   @click="cityGuidesDesktopOpen = false"
                 >
                   Dallas
+                </NuxtLink>
+                <NuxtLink
+                  to="/san-antonio"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  San Antonio
+                </NuxtLink>
+                <NuxtLink
+                  to="/harris-county"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Harris County JP Courts
+                </NuxtLink>
+                <NuxtLink
+                  to="/austin"
+                  class="city-dropdown-item"
+                  @click="cityGuidesDesktopOpen = false"
+                >
+                  Austin
                 </NuxtLink>
               </div>
             </Transition>
