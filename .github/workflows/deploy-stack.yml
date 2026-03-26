@@ -1,16 +1,12 @@
-name: Deploy stack
+name: Deploy stack on tag push
 
 on:
   push:
     tags:
-      - "v*.*.*"
-    branches:
-      - prod
-
-permissions:
-  contents: read
+      - 'v*.*.*'
 
 jobs:
+<<<<<<< Updated upstream
   get-env:
     runs-on: ubuntu-latest
     outputs:
@@ -75,3 +71,10 @@ jobs:
       # All config comes from .env.qa or .env.production (committed to repo).
       # No secrets needed — site URL and GA ID are public values baked into the env files.
       - run: make deploy ENV=${{ needs.get-env.outputs.env }}
+=======
+  deploy:
+    uses: ./.github/workflows/util-deploy.yml
+    with:
+      environment: qa
+      version_tag: ${{ github.ref_name }}
+>>>>>>> Stashed changes
