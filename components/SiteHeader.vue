@@ -77,51 +77,6 @@ watch(() => route.path, closeMobileMenu)
             Eligibility Checker
           </NuxtLink>
 
-          <!-- City Guides dropdown -->
-          <div
-            class="city-dropdown-wrapper"
-            @mouseenter="cityGuidesDesktopOpen = true"
-            @mouseleave="cityGuidesDesktopOpen = false"
-          >
-            <button
-              class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
-              style="color: #fff; background: transparent; border: none; cursor: pointer;"
-              :aria-expanded="cityGuidesDesktopOpen"
-              aria-haspopup="true"
-              @click="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
-              @keydown.escape="cityGuidesDesktopOpen = false"
-              @keydown.space.prevent="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
-              @keydown.enter.prevent="cityGuidesDesktopOpen = !cityGuidesDesktopOpen"
-            >
-              City Guides <span class="chevron">▾</span>
-            </button>
-            <Transition
-              enter-active-class="transition duration-100 ease-out"
-              enter-from-class="opacity-0 -translate-y-1"
-              enter-to-class="opacity-100 translate-y-0"
-              leave-active-class="transition duration-75 ease-in"
-              leave-from-class="opacity-100 translate-y-0"
-              leave-to-class="opacity-0 -translate-y-1"
-            >
-              <div v-show="cityGuidesDesktopOpen" class="city-dropdown-menu">
-                <NuxtLink
-                  to="/houston"
-                  class="city-dropdown-item"
-                  @click="cityGuidesDesktopOpen = false"
-                >
-                  Houston
-                </NuxtLink>
-                <NuxtLink
-                  to="/dallas"
-                  class="city-dropdown-item"
-                  @click="cityGuidesDesktopOpen = false"
-                >
-                  Dallas
-                </NuxtLink>
-              </div>
-            </Transition>
-          </div>
-
           <NuxtLink
             v-if="!isFaqPage"
             to="/faq"
