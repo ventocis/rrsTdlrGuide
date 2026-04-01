@@ -13,7 +13,7 @@ jobs:
   deploy:
     uses: ./.github/workflows/util-deploy.yml
     with:
-      # Must be prod so `make deploy ENV=prod` runs `generate:prod` (SEO on, Allow: /).
-      # QA uses the manual workflow with environment qa.
-      environment: prod
+      # Tags are created by "Version Bump on Merges" after pushes to main → deploy QA automatically.
+      # Production (tdlrguide.com, SEO on) is deployed only via "Deploy to environment (manual)" with environment prod.
+      environment: qa
       version_tag: ${{ github.ref_name }}

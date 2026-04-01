@@ -1,11 +1,9 @@
 /**
- * Dynamically generated robots.txt.
+ * Dynamically generated robots.txt (wins over public/robots.txt when prerendered).
  * When NUXT_PUBLIC_SEO_ENABLED=false (QA): block all crawlers including AI bots.
- * When NUXT_PUBLIC_SEO_ENABLED=true or unset (prod/local): allow all legitimate
- * crawlers, allow AI crawlers, block low-value scrapers, reference sitemap.
+ * When NUXT_PUBLIC_SEO_ENABLED=true or unset (prod/local): allow crawlers, reference sitemap.
  *
- * Prerendered by Nitro at build time so the static output already contains
- * the correct content for each environment.
+ * CI: tag-based deploys use generate:qa → Disallow here; manual prod deploy uses generate:prod → Allow.
  */
 export default defineEventHandler(() => {
   const seoEnabled = process.env.NUXT_PUBLIC_SEO_ENABLED !== 'false'
