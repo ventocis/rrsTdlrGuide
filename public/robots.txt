@@ -1,0 +1,9 @@
+# Default checked-in rules for production-style static hosting.
+# QA builds (npm run generate:qa): Nitro prerenders /robots.txt from server/routes/robots.txt.ts
+# with Disallow: / for all crawlers, and HTML uses noindex — QA is not meant to be indexed.
+# Production builds (generate:prod): same prerender extends this with Allow rules + sitemap URL.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tdlrguide.com/sitemap.xml
