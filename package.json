@@ -1,24 +1,26 @@
 {
-  "name": "tdlrguide",
-  "version": "1.13.0",
-  "private": true,
+  "name": "tdlrguide-astro",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "generate:qa": "nuxt generate --dotenv .env.qa",
-    "generate:prod": "nuxt generate --dotenv .env.production",
-    "preview": "nuxt preview",
-    "build:data": "node ./scripts/parse-xlsx.mjs",
-    "build:courts": "node ./scripts/parse-courts-xlsx.mjs",
-    "ingest:reviews": "node ./scripts/ingest-form-submissions.mjs"
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:qa": "astro build --mode qa",
+    "build:prod": "astro build --mode production",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@nuxt/ui": "latest",
-    "nuxt": "latest",
-    "xlsx": "^0.18.5"
+    "@astrojs/react": "^3.6.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.10"
   },
   "devDependencies": {
-    "typescript": "^5.6.0"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.4"
   }
 }

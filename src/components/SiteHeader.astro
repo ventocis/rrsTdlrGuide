@@ -1,0 +1,191 @@
+---
+const { currentPath = '/' } = Astro.props;
+---
+
+<div class="relative">
+  <header
+    class="relative px-3 py-1.5 sm:px-4 sm:py-2"
+    style="background: linear-gradient(135deg, var(--proto-header-from), var(--proto-header-to));"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 opacity-100"
+      style="background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%);"
+    />
+    <div class="relative mx-auto flex w-full max-w-[1600px] flex-wrap items-center justify-between gap-2 py-0 sm:gap-4">
+      <!-- Left: logo + tagline -->
+      <div class="flex min-h-[36px] flex-wrap items-center gap-1.5 sm:gap-2 sm:shrink-0 sm:max-w-[520px]">
+        <a href="/" class="flex items-center focus:outline-none focus:ring-2 focus:ring-[var(--proto-teal)] focus:ring-offset-2 focus:ring-offset-transparent rounded">
+          <img
+            src="/logo-altcolor.png"
+            alt="TDLR Guide logo"
+            class="h-8 w-auto object-contain drop-shadow-md sm:h-9"
+          />
+        </a>
+        <p
+          class="m-0 hidden text-[11px] font-medium leading-tight sm:block sm:text-[12px]"
+          style="color: var(--proto-header-subtitle);"
+        >
+          Free tools to compare, dismiss, and understand Texas traffic tickets.
+        </p>
+      </div>
+
+      <!-- Desktop nav links -->
+      <nav class="hidden min-h-[36px] flex-wrap items-center justify-end gap-1.5 sm:flex sm:gap-2" aria-label="Main navigation">
+        {currentPath !== '/courts' && (
+          <a href="/courts" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
+            Court Lookup
+          </a>
+        )}
+        {currentPath !== '/ticket-calculator' && (
+          <a href="/ticket-calculator" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
+            Ticket Calculator
+          </a>
+        )}
+        {currentPath !== '/eligibility-checker' && (
+          <a href="/eligibility-checker" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
+            Eligibility Checker
+          </a>
+        )}
+        {currentPath !== '/faq' && (
+          <a href="/faq" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
+            FAQ
+          </a>
+        )}
+
+        <!-- City Guides dropdown (pure CSS) -->
+        <div class="city-dropdown-wrapper">
+          <button
+            class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]"
+            style="color: #fff; background: transparent; border: none; cursor: pointer;"
+            aria-haspopup="true"
+            id="city-guides-btn"
+          >
+            City Guides <span style="margin-left:3px;font-size:9px;line-height:1;">▾</span>
+          </button>
+          <div class="city-dropdown-menu" id="city-dropdown-menu" role="menu">
+            <a href="/houston" class="city-dropdown-item" role="menuitem">Houston</a>
+            <a href="/dallas" class="city-dropdown-item" role="menuitem">Dallas</a>
+            <a href="/san-antonio" class="city-dropdown-item" role="menuitem">San Antonio</a>
+            <a href="/harris-county" class="city-dropdown-item" role="menuitem">Harris County JP Courts</a>
+            <a href="/austin" class="city-dropdown-item" role="menuitem">Austin</a>
+          </div>
+        </div>
+
+        {currentPath !== '/pricing' && (
+          <a href="/pricing" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
+            Pricing Guide
+          </a>
+        )}
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button
+        type="button"
+        class="flex min-h-[36px] items-center justify-center rounded p-2 text-white transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--proto-teal)] focus:ring-offset-2 focus:ring-offset-transparent sm:hidden"
+        aria-label="Open menu"
+        id="mobile-menu-btn"
+        aria-expanded="false"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" id="hamburger-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" id="close-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu panel -->
+  <div
+    id="mobile-menu"
+    class="absolute left-0 right-0 z-50 sm:hidden hidden"
+    style="background: linear-gradient(180deg, var(--proto-header-to), var(--proto-header-from)); box-shadow: 0 10px 25px rgba(0,0,0,0.2);"
+  >
+    <nav class="border-t border-white/10 px-3 py-3" aria-label="Mobile navigation">
+      <div class="flex flex-col gap-0.5">
+        {currentPath !== '/courts' && (
+          <a href="/courts" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Court Lookup</a>
+        )}
+        {currentPath !== '/ticket-calculator' && (
+          <a href="/ticket-calculator" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Ticket Calculator</a>
+        )}
+        {currentPath !== '/eligibility-checker' && (
+          <a href="/eligibility-checker" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Eligibility Checker</a>
+        )}
+        <details class="group">
+          <summary class="w-full cursor-pointer list-none rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10 flex items-center justify-between">
+            City Guides <span class="text-[10px]">▾</span>
+          </summary>
+          <div class="pl-3 pt-0.5 flex flex-col gap-0.5">
+            <a href="/houston" class="rounded px-3 py-2 text-[13px] font-medium text-white/90 hover:bg-white/10">Houston</a>
+            <a href="/dallas" class="rounded px-3 py-2 text-[13px] font-medium text-white/90 hover:bg-white/10">Dallas</a>
+            <a href="/san-antonio" class="rounded px-3 py-2 text-[13px] font-medium text-white/90 hover:bg-white/10">San Antonio</a>
+            <a href="/harris-county" class="rounded px-3 py-2 text-[13px] font-medium text-white/90 hover:bg-white/10">Harris County JP Courts</a>
+            <a href="/austin" class="rounded px-3 py-2 text-[13px] font-medium text-white/90 hover:bg-white/10">Austin</a>
+          </div>
+        </details>
+        {currentPath !== '/faq' && (
+          <a href="/faq" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">FAQ</a>
+        )}
+        {currentPath !== '/pricing' && (
+          <a href="/pricing" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Pricing Guide</a>
+        )}
+      </div>
+    </nav>
+  </div>
+</div>
+
+<style is:global>
+.city-dropdown-wrapper {
+  position: relative;
+}
+.city-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 170px;
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  padding: 4px;
+}
+.city-dropdown-wrapper:hover .city-dropdown-menu,
+.city-dropdown-wrapper:focus-within .city-dropdown-menu {
+  display: block;
+}
+.city-dropdown-item {
+  display: block;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.1s;
+}
+.city-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+</style>
+
+<script>
+document.addEventListener('astro:page-load', () => {
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+    hamburger?.classList.toggle('hidden', !menu.classList.contains('hidden'));
+    closeIcon?.classList.toggle('hidden', menu.classList.contains('hidden'));
+  });
+});
+</script>

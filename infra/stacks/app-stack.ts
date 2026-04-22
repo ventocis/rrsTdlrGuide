@@ -26,9 +26,10 @@ export class AppStack extends cdk.Stack {
       domainName: props.domainName,
       hostedZone: props.hostedZone,
       certificate: props.certificate,
-      buildOutputPath: path.join(__dirname, "../../.output/public"),
+      buildOutputPath: path.join(__dirname, "../../dist"),
       env: props.env,
-      spaFallbackPage: "/200.html",
+      isPrerendered: true,
+      customErrorConfig: { mode: "static", errorPage: "/404.html" },
     });
 
     new GoogleWorkspaceEmail(this, "Email", {

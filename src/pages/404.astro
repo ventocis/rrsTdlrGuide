@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="Page Not Found | TDLR Guide"
+  description="The page you were looking for could not be found."
+  noindex={true}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader />
+    <main class="mx-auto flex min-h-[60vh] w-full max-w-[640px] flex-col items-center justify-center px-4 py-16 text-center">
+      <div class="mb-4 text-6xl">🚦</div>
+      <h1 class="mb-3 text-3xl font-bold" style="color: var(--proto-text);">Page Not Found</h1>
+      <p class="mb-8 text-[16px]" style="color: var(--proto-text-muted);">
+        The page you were looking for doesn't exist or has been moved.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a
+          href="/"
+          class="inline-flex items-center rounded-lg px-5 py-3 text-[14px] font-semibold text-white transition-colors"
+          style="background: var(--proto-header-from);"
+        >
+          ← Back to Guide
+        </a>
+        <a
+          href="/eligibility-checker"
+          class="inline-flex items-center rounded-lg border px-5 py-3 text-[14px] font-semibold transition-colors"
+          style="border-color: var(--proto-card-border); background: white; color: var(--proto-text);"
+        >
+          Eligibility Checker
+        </a>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

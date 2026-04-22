@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import EligibilityChecker from '../components/EligibilityChecker';
+import courtsRaw from '../data/courts.json';
+
+const courts = courtsRaw as any[];
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Texas Ticket Dismissal Eligibility Checker',
+  description: 'Find out if you can dismiss your Texas traffic ticket with defensive driving. Answer 5 quick questions.',
+  url: `${siteUrl}/eligibility-checker`,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'TDLR Guide', url: siteUrl }
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TDLR Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Eligibility Checker', item: `${siteUrl}/eligibility-checker` }
+  ]
+};
+---
+
+<Layout
+  title="Texas Ticket Dismissal Eligibility Checker | TDLR Guide"
+  description="Find out if you can dismiss your Texas traffic ticket with defensive driving. Answer 5 quick questions to get your eligibility result and next steps. Free tool for Texas drivers."
+  keywords="Texas ticket dismissal, defensive driving eligibility, TDLR, traffic ticket, can I dismiss my ticket"
+  url="/eligibility-checker"
+  jsonLd={[jsonLd, breadcrumb]}
+>
+  <SiteHeader currentPath="/eligibility-checker" />
+  <EligibilityChecker courts={courts} client:load />
+</Layout>

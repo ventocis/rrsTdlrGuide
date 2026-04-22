@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CourtsFilter from '../components/CourtsFilter';
+import courtsRaw from '../data/courts.json';
+
+const courts = courtsRaw as any[];
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+
+const jsonLdWebApp = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Texas Court Lookup',
+  description: 'Look up any Texas Justice of the Peace or Municipal court by county.',
+  url: `${siteUrl}/courts`,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  publisher: { '@type': 'Organization', name: 'TDLR Guide', url: siteUrl }
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TDLR Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Texas Court Lookup', item: `${siteUrl}/courts` }
+  ]
+};
+---
+
+<Layout
+  title="Texas Court Lookup — Find Your JP or Municipal Court | TDLR Guide"
+  description="Look up any Texas Justice of the Peace or Municipal court by county. Get judge name, phone, email, and website for defensive driving ticket dismissal."
+  keywords="Texas court lookup, JP court Texas, municipal court Texas, Justice of the Peace, court directory Texas"
+  url="/courts"
+  jsonLd={[jsonLdWebApp, breadcrumb]}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/courts" />
+    <main class="mx-auto w-full max-w-[960px] px-4 py-8 sm:px-6" role="main">
+      <header class="mb-6" aria-label="Page header">
+        <h1 class="mb-2 text-2xl font-bold leading-tight sm:text-3xl" style="color: var(--proto-text);">
+          Texas Court Lookup — Find Your JP or Municipal Court
+        </h1>
+        <p class="max-w-[640px] text-[14px]" style="color: var(--proto-text-muted);">
+          Look up any Texas Justice of the Peace or Municipal court by county.
+          Get judge name, phone, email, and website for defensive driving and ticket dismissal.
+        </p>
+      </header>
+
+      <CourtsFilter courts={courts} client:load />
+
+      <section
+        class="mt-4 rounded-2xl border px-4 py-4 sm:px-6 sm:py-5"
+        style="background: var(--proto-teal-bg); border-color: var(--proto-teal-border);"
+        aria-labelledby="eligibility-cta-heading"
+      >
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 id="eligibility-cta-heading" class="mb-1 text-base font-semibold sm:text-lg" style="color: var(--proto-text);">
+              Not sure if you qualify for defensive driving?
+            </h2>
+            <p class="m-0 max-w-[520px] text-[13px]" style="color: var(--proto-text-muted);">
+              Answer 5 quick questions to find out if your ticket is eligible for dismissal — and get your exact next steps.
+            </p>
+          </div>
+          <a
+            href="/eligibility-checker"
+            class="inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-[13px] font-semibold text-white transition-colors"
+            style="background: var(--proto-header-from);"
+          >
+            Check My Eligibility →
+          </a>
+        </div>
+      </section>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

@@ -1,0 +1,611 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+
+const pageTitle = 'Dallas Traffic Ticket Guide: DSC & Deferred Disposition Explained | TDLRguide';
+const pageDescription = 'Got a Dallas traffic ticket? Learn how to dismiss it with a Driver Safety Course or Deferred Disposition. Plain-English guide with fees, forms, and step-by-step instructions from Dallas Municipal Court.';
+const pageUrl = `${siteUrl}/dallas`;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I dismiss a traffic ticket in Dallas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You have two options: take a TDLR-approved 6-hour Driver Safety Course (DSC) or request Deferred Disposition. For DSC, you must request within 21 days of your citation to avoid higher fees or losing the option. Once approved, you have 90 days to complete the course — no extensions are allowed.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a Driver Safety Course cost in Dallas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The court fee is $144 for violations not in a school zone, or $169 for school zone violations. You also pay at least $25 for the course itself. An online convenience fee applies if you apply online.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I apply for DSC online in Dallas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Dallas Municipal Court offers online applications 24/7 at dallascityhall.com. An online convenience fee applies. You can also apply by mail or in person at 2014 Main St, Dallas TX 75201.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I take the driving safety course before the court approves me?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. You must wait for written approval from the court before enrolling in or completing any course. The court will mail a response within 5-7 business days. The court can revoke or deny the DSC option if you complete any required items before approval.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What documents do I need to submit when I finish DSC in Dallas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You must submit by mail or in person (no fax, email, or live chat): a signed Certificate of Completion (Court Copy), a certified Type 3A driving record from DPS, and a notarized affidavit. All documents must be submitted on or before the 90th day — no extensions are allowed.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Deferred Disposition at Dallas Municipal Court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Deferred Disposition keeps your citation from being reported as a conviction. The judge dismisses the citation after successful completion of the conditions. It is not available for all violations, and all deferred dispositions are subject to judicial review and approval."
+      }
+    }
+  ]
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Dismiss a Dallas Traffic Ticket with a Driver Safety Course',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  step: [
+    { '@type': 'HowToStep', name: 'Submit your DSC request within 21 days', text: 'Submit your DSC request to Dallas Municipal Court online, by mail, or in person within 21 days of your citation' },
+    { '@type': 'HowToStep', name: 'Wait for written approval by mail', text: 'Wait for your written approval letter — the court responds within 5-7 business days by mail. Do not take the course until you receive this.' },
+    { '@type': 'HowToStep', name: 'Complete a TDLR-approved 6-hour course', text: 'Enroll in and complete any TDLR-approved 6-hour defensive driving course' },
+    { '@type': 'HowToStep', name: 'Submit all documents by your 90-day deadline', text: 'Submit your signed Certificate of Completion, certified Type 3A driving record, and notarized affidavit to the court by mail or in person on or before your 90-day deadline. No extensions allowed.' }
+  ]
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url="/dallas"
+  jsonLd={[faqSchema, howToSchema]}
+>
+  <div class="dallas-page">
+    <SiteHeader currentPath="/dallas" />
+    <main>
+      <div class="wrap">
+
+        <div class="pg-label">Dallas Municipal Court</div>
+        <h1>Got a Dallas traffic ticket?<br>Here are your options.</h1>
+        <p class="lead">Most traffic tickets in Dallas can be dismissed without paying the fine. Both options are explained below — choose the one that fits your situation.</p>
+
+        <!-- Comparison box -->
+        <div class="box info" style="margin-bottom:1.5rem">
+          <div class="box-lbl">Not sure which option to use?</div>
+          <div class="compare">
+            <div class="comp-card dsc">
+              <div class="ct">Driver Safety Course</div>
+              <h4>Choose this if you...</h4>
+              <ul>
+                <li>Want a clear path to dismissal with a fixed cost</li>
+                <li>Are comfortable taking a 6-hour course</li>
+                <li>Have a valid Texas license (not CDL)</li>
+                <li>Are within 21 days of your citation</li>
+              </ul>
+            </div>
+            <div class="comp-card def">
+              <div class="ct">Deferred Disposition</div>
+              <h4>Choose this if you...</h4>
+              <ul>
+                <li>Want to avoid taking a course (if over 25)</li>
+                <li>Have a violation that is not eligible for DSC</li>
+                <li>Are willing to comply with court-set conditions</li>
+                <li>All deferred dispositions require judicial approval</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DSC Section ── -->
+        <section aria-label="Driver Safety Course option">
+
+          <h2 class="sh">Option A — Driver Safety Course</h2>
+
+          <h2 class="sh">Am I eligible?</h2>
+
+          <div class="box danger">
+            <div class="box-lbl">You are NOT eligible for DSC if any of these apply</div>
+            <div class="inel-list">
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You completed a court-ordered DSC within the 12 months before the date of your offense</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for speeding 25 mph or more over the speed limit</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for driving 95 mph or more</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket was committed in a construction or maintenance zone when workers were present</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for passing a school bus loading or unloading children</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for leaving the scene of a collision after causing damage to a vehicle that was driven or attended</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for a serious traffic violation</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You held a commercial driver's license at the time of the offense, OR you hold a CDL now at the time of making this request — even if driving your personal vehicle</span></div>
+            </div>
+          </div>
+
+          <p style="font-size:14px;color:var(--tx2);margin:.875rem 0 .875rem;line-height:1.6">If none of the above apply, you are likely eligible. You will need to sign a legal affidavit confirming you have not taken DSC in the past 12 months.</p>
+
+          <div class="box warn">
+            <div class="box-lbl">Act within 21 days</div>
+            <p>Once you are past 21 days from your citation date, the fee may be higher or this option may no longer be available. Request DSC as soon as possible.</p>
+          </div>
+
+          <h2 class="sh">Court fees</h2>
+
+          <div class="box neutral">
+            <div class="box-lbl">Court fees</div>
+            <table class="fee-table" style="margin-top:.25rem">
+              <tbody>
+                <tr><th>Violation type</th><th>Court fee</th></tr>
+                <tr><td>Violation not in a school zone</td><td>$144.00</td></tr>
+                <tr><td>Violation in a school zone</td><td>$169.00</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:12px;color:var(--tx3);margin-top:.75rem">An online convenience fee applies if you apply online. Fees are subject to change per state law.</p>
+          </div>
+
+          <h2 class="sh">How to complete DSC — step by step</h2>
+
+          <div class="box warn">
+            <div class="box-lbl">Important — do this in the right order</div>
+            <p>Do not take the course or complete any required paperwork before the court approves you. The court can revoke or deny your DSC option if you complete any steps before receiving written approval. You will receive approval by mail within 5-7 business days.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-dot">1</div>
+              <div class="step-body">
+                <strong>Submit your DSC request before 21 days from your citation date</strong>
+                <p>Apply online at <a href="https://dallascityhall.com/departments/courtdetentionservices/Pages/Driving-Safety-Course-Home.aspx" target="_blank" rel="noopener noreferrer">dallascityhall.com</a> (available 24/7, convenience fee applies), by mail, or in person at 2014 Main St, Dallas TX 75201. You will need your Texas Driver's License (or valid permit, or proof of active military duty), proof of car insurance with your name listed as a driver, and your court fee payment. Do not send cash by mail — check, cashier's check, or money order payable to "City of Dallas" only. Print your citation number on the payment.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">2</div>
+              <div class="step-body">
+                <strong>Wait for your written approval letter</strong>
+                <p>The court will mail a response to the address you provided within 5-7 business days. Do not enroll in or take any course until you receive this letter.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">3</div>
+              <div class="step-body">
+                <strong>Complete all three required items after approval</strong>
+                <p>(1) Enroll in and complete any TDLR-approved 6-hour defensive driving course. (2) Purchase your certified Type 3A driving record from DPS. (3) Have the affidavit the court sends you notarized by a Texas notary. You have 90 days from approval to do all three. No extensions are allowed under any circumstances.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">4</div>
+              <div class="step-body">
+                <strong>Submit everything to the court on or before your 90-day deadline</strong>
+                <p>Mail or bring in person to Dallas Municipal Court, 2014 Main St, Dallas TX 75201. Fax, email, and live chat are NOT accepted for submitting documents. The court uses the postmark date as the received date — mailing certified is recommended. Print your citation number on all paperwork.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Forms and documents</h2>
+
+          <div class="req-list">
+            <div class="req-item">
+              <div class="req-num">1</div>
+              <div class="req-body">
+                <strong>DSC Mail Application</strong>
+                <span>Required if applying by mail. Download, complete, and mail with your payment and supporting documents.</span><br>
+                <a class="dl-link" href="https://dallascityhall.com/departments/courtdetentionservices/DCH%20Documents/CTS-FRM-765%20-%20DSC%20Application.pdf" target="_blank" rel="noopener noreferrer">Download from Dallas Municipal Court</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">2</div>
+              <div class="req-body">
+                <strong>Certified Type 3A Driving Record</strong>
+                <span>Required when submitting your completed DSC documents. Must be the "Type 3A" version specifically. Order online instantly or by mail.</span><br>
+                <a class="dl-link" href="https://www.texas.gov" target="_blank" rel="noopener noreferrer">Order online at texas.gov</a>
+                <a class="dl-link" href="https://www.dps.texas.gov/internetforms/forms/dr-1.pdf" target="_blank" rel="noopener noreferrer" style="margin-left:.35rem">Mail-in order form (PDF)</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">3</div>
+              <div class="req-body">
+                <strong>DSC Affidavit</strong>
+                <span>Mailed to you by the court after your DSC request is approved. Must be signed and notarized by a Texas notary before submitting. You will NOT download this yourself — the court sends it to you.</span><br>
+                <span class="ph-link">Mailed to you by the court after approval</span>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">4</div>
+              <div class="req-body">
+                <strong>Certificate of Completion</strong>
+                <span>Provided by your course provider after finishing. The applicant must personally sign the "Court Copy." If it is not signed, the court will require you to appear in person to sign it.</span><br>
+                <span class="ph-link">Provided by your course provider</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Where to submit your request and documents</h2>
+
+          <div class="sub-methods">
+            <div class="sub-card">
+              <div class="method">By mail</div>
+              <p>Dallas Municipal Court<br>2014 Main St<br>Dallas, TX 75201-4406<br><br><span style="font-size:12px;color:var(--tx3)">Check, cashier's check, or money order payable to "City of Dallas." Print citation number on payment. Certified mail recommended.</span></p>
+            </div>
+            <div class="sub-card">
+              <div class="method">Online — 24/7</div>
+              <p>Available any time including weekends and holidays.<br>Visa and Mastercard accepted. Online convenience fee applies.<br><br>
+                <a class="dl-link" href="https://dallastx.municipalonlinepayments.com/dallastx" target="_blank" rel="noopener noreferrer">Request DSC online</a>
+              </p>
+            </div>
+            <div class="sub-card">
+              <div class="method">In person</div>
+              <p>Dallas Municipal Court<br>2014 Main St, Dallas TX 75201<br><br>
+                <a class="dl-link" href="https://dallascityhall.com/departments/courtdetentionservices/Pages/hours-of-operation.aspx" target="_blank" rel="noopener noreferrer">Hours of operation</a>
+                <br><br><span style="font-size:12px;color:var(--tx3)">No free or dedicated public parking. Street metering, daily lots, and private garages available nearby.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="box neutral" style="margin-top:1rem">
+            <div class="box-lbl">How to confirm the court received your documents</div>
+            <p>Mail certified for delivery confirmation. To check your citation status online, use the Dallas Municipal Court citation search. Cases show as pending until after the due date. After the deadline, allow 4–6 weeks for a Judge to review. If more than 4–6 weeks have passed, contact the court at 214-670-0109.</p>
+            <a class="dl-link" href="https://www.municipalrecordsearch.com/dallastx/Cases" target="_blank" rel="noopener noreferrer" style="margin-top:.5rem">Check citation status online</a>
+          </div>
+
+          <p style="font-size:13px;color:var(--tx2);margin-top:1rem">No fax, email, or live chat accepted for submitting completed documents.</p>
+          <p style="font-size:13px;color:var(--tx2);margin-top:.5rem">Questions? Call Dallas Municipal Court: <strong style="color:var(--tx)">214-670-0109</strong></p>
+
+          <div class="box warn" style="margin-top:1.5rem">
+            <div class="box-lbl">If you miss your 90-day deadline — no extensions allowed</div>
+            <p>The court will set your case for a show cause hearing and will mail a notice to your last known address on file. The show cause hearing is your opportunity to explain to a Judge why you did not meet the requirements. If you fail to appear, fail to comply, or cannot give a satisfactory explanation, a conviction will be reported to DPS and a warrant may be issued.</p>
+          </div>
+
+        </section>
+
+        <!-- ── Deferred Disposition Section ── -->
+        <section aria-label="Deferred Disposition option">
+
+          <h2 class="sh">Option B — Deferred Disposition</h2>
+
+          <h2 class="sh">What is Deferred Disposition?</h2>
+
+          <div class="box neutral">
+            <div class="box-lbl">Plain English explanation</div>
+            <p>Deferred Disposition keeps your ticket from being reported as a conviction on your driving record. The judge defers — meaning delays — any finding of guilt. If you successfully meet all of the court's conditions by the deadline, the case is dismissed. If you do not comply, a conviction is reported to DPS and a warrant may be issued. All deferred dispositions in Dallas are subject to judicial review and approval.</p>
+          </div>
+
+          <div class="box info" style="margin-top:.75rem">
+            <div class="box-lbl">If you are under 25</div>
+            <p>If you are under 25 years old and charged with a moving traffic violation, the judge is required by law to order you to complete a Driver Safety Course as a condition of Deferred Disposition. You will effectively need to do both. The judge may also require an additional course designed for drivers under 25.</p>
+          </div>
+
+          <div class="box info" style="margin-top:.75rem">
+            <div class="box-lbl">If you have a provisional driver's license (under 18)</div>
+            <p>If you hold a provisional driver's license and are charged with a moving violation, the court is required to order you to be examined by the Texas Department of Public Safety (DPS) as a condition of Deferred Disposition. You must pay DPS a $10 fee for the examination and submit proof of completion to the court.</p>
+          </div>
+
+          <h2 class="sh">Am I eligible?</h2>
+
+          <p style="font-size:14px;color:var(--tx2);margin-bottom:.875rem">Most traffic violations are eligible. However, you are NOT eligible for Deferred Disposition if any of the following apply:</p>
+
+          <div class="inel-list">
+            <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You hold or held a commercial driver's license at the time of the offense</span></div>
+            <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your violation was committed in a construction work zone when workers were present</span></div>
+            <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You are a minor charged with consuming alcohol and have been previously convicted of this offense twice or more</span></div>
+            <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You are a minor charged with driving under the influence of alcohol and have been previously convicted of this offense twice or more</span></div>
+            <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You are a minor aged 17 or older who has been previously convicted two or more times of an alcohol-related minor offense under Section 106.071 of the Texas Alcoholic Beverage Code</span></div>
+          </div>
+
+          <div class="box warn" style="margin-top:1.25rem">
+            <div class="box-lbl">These cases require in-person judge approval — online and mail requests will not be accepted</div>
+            <div class="inel-list" style="margin-top:.5rem">
+              <div class="inel-row" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="inel-x" style="color:var(--amber-tx)">!</span><span class="inel-text">Speeding 25 mph or more over the posted speed limit</span></div>
+              <div class="inel-row" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="inel-x" style="color:var(--amber-tx)">!</span><span class="inel-text">Any juvenile case — must appear in person with a parent or legal guardian</span></div>
+              <div class="inel-row" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="inel-x" style="color:var(--amber-tx)">!</span><span class="inel-text">Class C misdemeanor assault, theft, or reckless damage offenses</span></div>
+              <div class="inel-row" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="inel-x" style="color:var(--amber-tx)">!</span><span class="inel-text">A minor charged with an alcohol-related offense</span></div>
+              <div class="inel-row" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="inel-x" style="color:var(--amber-tx)">!</span><span class="inel-text">A minor charged with a tobacco offense</span></div>
+              <div class="inel-row" style="background:var(--amber-bg);border-color:var(--amber-bd)"><span class="inel-x" style="color:var(--amber-tx)">!</span><span class="inel-text">Public intoxication if you were under 21 years old at the time of the violation</span></div>
+            </div>
+          </div>
+
+          <h2 class="sh">How much does it cost?</h2>
+
+          <div class="box warn">
+            <div class="box-lbl">Fee amounts not published</div>
+            <p>Dallas Municipal Court does not publish specific Deferred Disposition fee amounts on their website. The fee is listed as "payment in full" and is set by the court based on your specific citation. Contact the court directly at 214-670-0109 or check your citation online for the amount owed before submitting your request.</p>
+          </div>
+
+          <h2 class="sh">How to apply — step by step</h2>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-dot">1</div>
+              <div class="step-body">
+                <strong>Download and complete the Deferred Disposition application</strong>
+                <p>Fill out completely and sign. For mail or online applications, you will also need an acceptable form of identification (social security cards and photos of yourself are not valid forms of ID) and payment in full.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">2</div>
+              <div class="step-body">
+                <strong>Submit your request online, by mail, or in person before your court date</strong>
+                <p>Online at <a href="https://dallascityhall.com/departments/courtdetentionservices/Pages/Deferred-Disposition.aspx" target="_blank" rel="noopener noreferrer">dallascityhall.com</a> (convenience fee applies, available 24/7). By mail to 2014 Main St, Dallas TX 75201-4406 — check, cashier's check, or money order payable to "City of Dallas," print your citation number on the payment. In person at 2014 Main St, Dallas TX 75201.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">3</div>
+              <div class="step-body">
+                <strong>Comply with all court-ordered conditions by your deadline</strong>
+                <p>After approval, the court will mail you instructions with your conditions and due date. Complete all required items by the deadline. Once complete, submit any required paperwork by mail or in person — fax, email, and live chat are not accepted.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Forms to download</h2>
+
+          <div class="req-list">
+            <div class="req-item">
+              <div class="req-num">1</div>
+              <div class="req-body">
+                <strong>Deferred Disposition Mail Application</strong>
+                <span>Required if applying by mail. Download, complete, and submit with payment and ID.</span><br>
+                <a class="dl-link" href="https://dallascityhall.com/departments/courtdetentionservices/DCH%20Documents/CTS-FRM-759%20-%20Deferred%20Disposition%20Application.pdf" target="_blank" rel="noopener noreferrer">Download from Dallas Municipal Court</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">2</div>
+              <div class="req-body">
+                <strong>Acceptable ID</strong>
+                <span>You must bring or submit an acceptable form of ID. Social security cards and photos (selfies) are not valid.</span><br>
+                <span class="ph-link">Your own document — no download needed</span>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">3</div>
+              <div class="req-body">
+                <strong>Payment</strong>
+                <span>Check, cashier's check, or money order payable to "City of Dallas." No cash by mail. Print your citation number on the payment.</span><br>
+                <span class="ph-link">Your own document — no download needed</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Where to submit</h2>
+
+          <div class="sub-methods">
+            <div class="sub-card">
+              <div class="method">By mail</div>
+              <p>Dallas Municipal Court<br>2014 Main St<br>Dallas, TX 75201-4406<br><br><span style="font-size:12px;color:var(--tx3)">Check, cashier's check, or money order payable to "City of Dallas." Print citation number on payment. Certified mail recommended.</span></p>
+            </div>
+            <div class="sub-card">
+              <div class="method">Online — 24/7</div>
+              <p>Available any time including weekends and holidays.<br>Visa and Mastercard accepted. Online convenience fee applies.<br><br>
+                <a class="dl-link" href="https://dallastx.municipalonlinepayments.com/dallastx" target="_blank" rel="noopener noreferrer">Request Deferred Disposition online</a>
+              </p>
+            </div>
+            <div class="sub-card">
+              <div class="method">In person</div>
+              <p>Dallas Municipal Court<br>2014 Main St, Dallas TX 75201<br><br>
+                <a class="dl-link" href="https://dallascityhall.com/departments/courtdetentionservices/Pages/hours-of-operation.aspx" target="_blank" rel="noopener noreferrer">Hours of operation</a>
+                <br><br><span style="font-size:12px;color:var(--tx3)">No free or dedicated public parking.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="box neutral" style="margin-top:1rem">
+            <div class="box-lbl">How to confirm the court received your documents</div>
+            <p>Mail certified for delivery confirmation. To check your citation status online, use the Dallas Municipal Court citation search. Cases show as pending until after the due date. After the deadline, allow 4–6 weeks for a Judge to review. If more than 4–6 weeks have passed, contact the court at 214-670-0109.</p>
+            <a class="dl-link" href="https://www.municipalrecordsearch.com/dallastx/Cases" target="_blank" rel="noopener noreferrer" style="margin-top:.5rem">Check citation status online</a>
+          </div>
+
+          <p style="font-size:13px;color:var(--tx2);margin-top:1rem">No fax, email, or live chat accepted for documents.</p>
+          <p style="font-size:13px;color:var(--tx2);margin-top:.5rem">Questions? Call Dallas Municipal Court: <strong style="color:var(--tx)">214-670-0109</strong></p>
+
+          <div class="box warn" style="margin-top:1.5rem">
+            <div class="box-lbl">If you fail to meet the conditions of Deferred Disposition</div>
+            <p>The court will schedule a show cause hearing and mail a notice to your last known address. The show cause hearing gives you the opportunity to explain to a Judge why you did not comply. If you fail to appear, fail to comply, or cannot give a satisfactory explanation, a conviction will be reported to DPS as required by law and a warrant may be issued depending on the status of your case.</p>
+          </div>
+
+        </section>
+
+        <div class="div"></div>
+
+        <div class="cta">
+          <div>
+            <strong>Need to pick a defensive driving course?</strong>
+            <p style="font-size:14px;color:var(--tx2)">Compare all 133 TDLR-approved providers by price, format, and language — free, no signup.</p>
+          </div>
+          <a class="cta-btn" href="/">Compare courses on TDLRguide</a>
+        </div>
+
+        <div class="disc">
+          <div class="dl">Disclaimer and source verification</div>
+          <p>This page is an independent summary created by TDLRguide for informational purposes only. TDLRguide is not affiliated with Dallas Municipal Court, the City of Dallas, or the Texas Department of Licensing and Regulation (TDLR). All information is sourced directly from official Dallas Municipal Court pages and reflects content as of March 2026. Rules, fees, and procedures may change — always verify current requirements with the court before taking action. This is not legal advice. If you have questions specific to your case, contact the court directly or consult a licensed attorney.</p>
+          <div class="src-links">
+            <a class="src-link" href="https://dallascityhall.com/departments/courtdetentionservices/Pages/Driving-Safety-Course-Home.aspx" target="_blank" rel="noopener noreferrer">Official DSC page</a>
+            <a class="src-link" href="https://dallascityhall.com/departments/courtdetentionservices/Pages/Deferred-Disposition.aspx" target="_blank" rel="noopener noreferrer">Official Deferred Disposition page</a>
+            <a class="src-link" href="https://dallascityhall.com/departments/courtdetentionservices/Pages/default.aspx" target="_blank" rel="noopener noreferrer">Dallas Municipal Court</a>
+            <a class="src-link" href="https://www.tdlr.texas.gov/driver/safety/providers/search/" target="_blank" rel="noopener noreferrer">TDLR provider search</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>
+
+<style>
+.dallas-page {
+  --tx: #18181b;
+  --tx2: #52525b;
+  --tx3: #a1a1aa;
+  --bg: #fff;
+  --bg2: #fafaf9;
+  --bg3: #f4f4f0;
+  --bd: #e4e4e7;
+  --bd2: #d4d4d8;
+  --blue: #1d4ed8;
+  --blue-bg: #eff6ff;
+  --blue-bd: #bfdbfe;
+  --blue-tx: #1e40af;
+  --green: #15803d;
+  --green-bg: #f0fdf4;
+  --green-bd: #bbf7d0;
+  --green-tx: #166534;
+  --red: #b91c1c;
+  --red-bg: #fef2f2;
+  --red-bd: #fecaca;
+  --red-tx: #991b1b;
+  --amber: #92400e;
+  --amber-bg: #fffbeb;
+  --amber-bd: #fde68a;
+  --amber-tx: #78350f;
+  --sans: 'DM Sans', sans-serif;
+  --r: 8px;
+  --rl: 12px;
+  font-family: var(--sans);
+  color: var(--tx);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+@media (prefers-color-scheme: dark) {
+  .dallas-page {
+    --tx: #f4f4f5;
+    --tx2: #a1a1aa;
+    --tx3: #71717a;
+    --bg: #18181b;
+    --bg2: #1f1f23;
+    --bg3: #27272a;
+    --bd: #3f3f46;
+    --bd2: #52525b;
+    --blue: #60a5fa;
+    --blue-bg: #1e3a5f;
+    --blue-bd: #1d4ed8;
+    --blue-tx: #93c5fd;
+    --green: #4ade80;
+    --green-bg: #14532d;
+    --green-bd: #15803d;
+    --green-tx: #86efac;
+    --red: #f87171;
+    --red-bg: #450a0a;
+    --red-bd: #7f1d1d;
+    --red-tx: #fca5a5;
+    --amber: #fbbf24;
+    --amber-bg: #1c1400;
+    --amber-bd: #78350f;
+    --amber-tx: #fcd34d;
+  }
+}
+
+.wrap { max-width: 700px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+
+.pg-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tx3); margin-bottom: .5rem; }
+h1 { font-size: 1.875rem; font-weight: 600; line-height: 1.25; margin-bottom: .75rem; }
+.lead { font-size: 15px; color: var(--tx2); line-height: 1.7; max-width: 580px; margin-bottom: 2rem; }
+
+.sh { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tx3); margin: 2.75rem 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--bd); }
+
+.box { border-radius: var(--rl); padding: 1.125rem 1.375rem; margin-bottom: 1rem; }
+.box.warn    { background: transparent; border: 1px solid var(--amber-bd); border-left: 3px solid var(--amber); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.danger  { background: transparent; border: 1px solid var(--red-bd);   border-left: 3px solid var(--red);   border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info    { background: transparent; border: 1px solid var(--blue-bd);  border-left: 3px solid var(--blue);  border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.success { background: transparent; border: 1px solid var(--green-bd); border-left: 3px solid var(--green); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.neutral { background: var(--bg2);  border: 1px solid var(--bd);       border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info:has(.compare) { background: var(--bg2); border: 1px solid var(--bd); border-left: none; border-radius: var(--rl); }
+.box-lbl { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-bottom: .45rem; }
+.box.warn .box-lbl    { color: var(--amber-tx); }
+.box.danger .box-lbl  { color: var(--red-tx); }
+.box.info .box-lbl    { color: var(--blue-tx); }
+.box.success .box-lbl { color: var(--green-tx); }
+.box.neutral .box-lbl { color: var(--tx3); }
+.box p, .box li { font-size: 14px; color: var(--tx2); line-height: 1.6; }
+.box strong { color: var(--tx); font-weight: 600; }
+.box ul { padding-left: 1rem; margin-top: .4rem; display: flex; flex-direction: column; gap: .3rem; }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: .875rem; margin-top: .75rem; }
+@media (max-width: 480px) { .compare { grid-template-columns: 1fr; } }
+.comp-card { border-radius: var(--r); padding: .875rem 1rem; border: 1px solid var(--bd); background: var(--bg); }
+.comp-card.dsc { border-top: 2px solid var(--blue); }
+.comp-card.def { border-top: 2px solid var(--green); }
+.comp-card .ct { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .35rem; }
+.comp-card.dsc .ct { color: var(--blue-tx); }
+.comp-card.def .ct { color: var(--green-tx); }
+.comp-card h4 { font-size: 14px; font-weight: 600; color: var(--tx); margin-bottom: .35rem; }
+.comp-card ul { list-style: none; display: flex; flex-direction: column; gap: .3rem; }
+.comp-card li { font-size: 13px; color: var(--tx2); line-height: 1.4; display: flex; gap: .5rem; }
+.comp-card li::before { content: '–'; color: var(--tx3); flex-shrink: 0; }
+
+.inel-list { display: flex; flex-direction: column; gap: .25rem; margin-top: .6rem; }
+.inel-row { display: flex; gap: .75rem; align-items: flex-start; padding: .5rem .75rem; background: transparent; border: none; border-bottom: 1px solid var(--bd); border-radius: 4px; }
+.inel-row:last-child { border-bottom: none; }
+.inel-x { font-size: 11px; font-weight: 700; color: var(--red-tx); flex-shrink: 0; padding-top: 2px; }
+.inel-text { font-size: 13px; color: var(--tx2); line-height: 1.45; }
+
+.fee-table { width: 100%; border-collapse: collapse; margin-top: .75rem; font-size: 13px; }
+.fee-table th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--tx3); padding: .5rem .75rem; border-bottom: 1px solid var(--bd); }
+.fee-table td { padding: .5rem .75rem; border-bottom: 1px solid var(--bd); color: var(--tx2); }
+.fee-table td:last-child { font-weight: 600; color: var(--tx); text-align: right; }
+.fee-table tr:last-child td { border-bottom: none; }
+
+.steps { display: flex; flex-direction: column; gap: 0; position: relative; margin-top: .75rem; }
+.steps::before { content: ''; position: absolute; left: 13px; top: 28px; bottom: 28px; width: 1px; background: var(--bd); opacity: 0.6; }
+.step { display: flex; gap: 1rem; padding: .75rem 0; }
+.step-dot { width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--bd2); background: var(--bg); font-size: 12px; font-weight: 600; color: var(--tx2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; }
+.step-body { padding-top: 3px; }
+.step-body strong { font-size: 14px; font-weight: 600; color: var(--tx); display: block; margin-bottom: .2rem; }
+.step-body p { font-size: 13px; color: var(--tx2); line-height: 1.55; }
+.step-body a { color: var(--blue); text-decoration: none; }
+.step-body a:hover { text-decoration: underline; }
+
+.req-list { display: flex; flex-direction: column; gap: .5rem; margin-top: .75rem; }
+.req-item { display: flex; gap: .75rem; align-items: flex-start; padding: .75rem 1rem; background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--r); }
+.req-num { width: 22px; height: 22px; border-radius: 50%; background: var(--bd2); font-size: 11px; font-weight: 700; color: var(--tx2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.req-body { flex: 1; }
+.req-body strong { font-size: 14px; font-weight: 600; color: var(--tx); display: block; margin-bottom: .15rem; }
+.req-body span { font-size: 13px; color: var(--tx2); line-height: 1.5; }
+
+.dl-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .4rem; font-size: 12px; font-weight: 600; color: var(--blue); text-decoration: none; padding: .25rem .65rem; background: var(--blue-bg); border: 1px solid var(--blue-bd); border-radius: 4px; }
+.dl-link:hover { opacity: .8; }
+.ph-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .4rem; font-size: 12px; font-weight: 600; color: var(--tx3); padding: .25rem .65rem; background: var(--bg3); border: 1px dashed var(--bd2); border-radius: 4px; }
+
+.sub-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: .75rem; }
+@media (max-width: 520px) { .sub-methods { grid-template-columns: 1fr; } }
+.sub-card { border: 1px solid var(--bd); border-radius: var(--r); padding: .875rem 1rem; background: var(--bg); }
+.sub-card .method { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--tx3); margin-bottom: .4rem; }
+.sub-card p { font-size: 13px; color: var(--tx2); line-height: 1.5; }
+.sub-card a { color: var(--blue); text-decoration: none; }
+
+.div { height: 1px; background: var(--bd); margin: 2rem 0; }
+
+.cta { border: 1px solid var(--bd); border-radius: var(--rl); padding: 1.375rem 1.5rem; background: var(--bg2); display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem; }
+.cta p { font-size: 14px; color: var(--tx2); flex: 1; }
+.cta strong { color: var(--tx); font-weight: 600; display: block; margin-bottom: .2rem; }
+.cta-btn { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: .625rem 1.125rem; background: var(--tx); color: var(--bg); border: none; border-radius: var(--r); cursor: pointer; white-space: nowrap; text-decoration: none; flex-shrink: 0; }
+
+.disc { margin-top: 2.5rem; padding: 1.125rem 1.375rem; background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--rl); }
+.disc .dl { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--tx3); margin-bottom: .5rem; }
+.disc p { font-size: 12px; color: var(--tx3); line-height: 1.65; }
+.disc a { color: var(--blue); text-decoration: none; }
+.src-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+.src-link { font-size: 11px; font-weight: 600; padding: .25rem .6rem; background: var(--bg); border: 1px solid var(--bd); border-radius: 4px; color: var(--blue); text-decoration: none; }
+</style>

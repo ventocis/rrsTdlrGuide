@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="Privacy Policy — TDLR Guide"
+  description="Privacy policy for TDLR Guide. How we collect, use, and protect your information when you use our Texas defensive driving comparison site."
+  url="/privacy"
+  noindex={true}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/privacy" />
+    <main class="mx-auto w-full max-w-[720px] px-4 py-10 sm:px-6">
+      <h1 class="mb-2 text-2xl font-bold" style="color: var(--proto-text);">Privacy Policy</h1>
+      <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">Last updated: March 2025</p>
+
+      <div class="space-y-6 text-[14px] leading-relaxed" style="color: var(--proto-text);">
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Overview</h2>
+          <p>TDLR Guide ("we," "our," or "the site") is an independent comparison guide for TDLR-approved defensive driving courses in Texas. This privacy policy describes how we handle information when you use this website.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Information We Collect</h2>
+          <p>When you submit a review or correction through our form, we collect the information you provide (such as name, course name, rating, price paid, and comments). Form submissions are processed by Formspree, a third-party service. We do not collect account or payment information on this site.</p>
+          <p>We may collect basic usage data (e.g., pages visited) through standard web server logs or analytics if we use such tools. We do not sell your personal information.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">How We Use Your Information</h2>
+          <p>We use submitted reviews and corrections to improve and update the guide. We may display non-identifying or partially identifying information (e.g., first name and initial) in connection with reviews.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Cookies and Tracking</h2>
+          <p>This site may use minimal cookies or similar technologies for essential functionality. If we add analytics or advertising in the future, we will update this policy and, where required, obtain consent.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Third-Party Links</h2>
+          <p>This site contains links to defensive driving provider websites and other external resources. We are not responsible for the privacy practices of those third parties.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Contact</h2>
+          <p>For privacy-related questions, contact us at <a href="mailto:info@tdlrguide.com" class="font-medium hover:underline" style="color: var(--proto-teal);">info@tdlrguide.com</a>.</p>
+        </section>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

@@ -1,0 +1,222 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+
+const navSections = [
+  { id: 'cost',        label: 'Cost & Pricing' },
+  { id: 'eligibility', label: 'Eligibility & Rules' },
+  { id: 'process',     label: 'The Process' },
+  { id: 'certificate', label: 'Certificates' },
+  { id: 'format',      label: 'Format & Options' },
+  { id: 'spanish',     label: 'Spanish Courses' },
+  { id: 'providers',   label: 'Provider Comparisons' },
+  { id: 'court',       label: 'Court Questions' },
+  { id: 'insurance',   label: 'Insurance Discounts' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  mainEntity: [
+    { '@type': 'Question', name: 'What is the cheapest Texas defensive driving course?', acceptedAnswer: { '@type': 'Answer', text: 'By law, all Texas driving safety courses must charge a minimum of $25. Several providers charge exactly $25 with no additional fee. The lowest all-in total cost options include providers offering free instant certificate download at the $25 base price.' } },
+    { '@type': 'Question', name: 'What is the minimum legal price for a Texas driving safety course?', acceptedAnswer: { '@type': 'Answer', text: '$25. Texas law sets the minimum course fee at $25. No TDLR-approved provider can legally charge less than this for the course itself.' } },
+    { '@type': 'Question', name: 'Can I take a Texas defensive driving course online?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The majority of TDLR-approved providers offer fully online courses that meet Texas requirements. You complete the course in a web browser, at your own pace, with required time minimums.' } },
+    { '@type': 'Question', name: 'How long is a Texas defensive driving course?', acceptedAnswer: { '@type': 'Answer', text: 'Texas law requires a minimum of 6 hours for a Driving Safety Course (DSC). Most online providers present the material across multiple timed modules and require a final exam.' } },
+  ]
+};
+---
+
+<Layout
+  title="Texas Defensive Driving FAQ: Every Question Answered | TDLR Guide"
+  description="Every question about Texas defensive driving courses answered in one place. Costs, eligibility, certificates, court rules, Spanish courses, and top provider comparisons — updated 2026."
+  url="/faq"
+  jsonLd={jsonLd}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/faq" />
+    <div class="mx-auto w-full max-w-[1100px] px-4 py-8 sm:px-6">
+      <h1 class="mb-2 text-2xl font-bold sm:text-3xl" style="color: var(--proto-text);">Texas Defensive Driving FAQ</h1>
+      <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">Every question answered in one place — costs, eligibility, certificates, court rules, and more. Updated 2026.</p>
+
+      <div class="flex gap-8">
+        <!-- Sticky sidebar nav -->
+        <aside class="hidden lg:block w-[200px] shrink-0">
+          <nav class="sticky top-6" id="faq-nav">
+            <ul class="space-y-1">
+              {navSections.map(s => (
+                <li>
+                  <a
+                    href={`#${s.id}`}
+                    class="faq-nav-link block rounded px-3 py-1.5 text-[13px] font-medium transition-colors hover:bg-[var(--proto-hover-bg)]"
+                    style="color: var(--proto-text-muted);"
+                    data-section={s.id}
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="min-w-0 flex-1">
+          <section id="cost" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Cost &amp; Pricing</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What is the cheapest Texas defensive driving course?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">By law, all Texas driving safety courses must charge a minimum of $25. Several providers charge exactly $25 with no additional fee, making them the cheapest legally available options. Always compare the total all-in cost — base price + processing fee + certificate delivery — not just the advertised price.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What is the minimum legal price for a Texas driving safety course?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">$25. Texas law sets the minimum course fee at $25. No TDLR-approved provider can legally charge less than this for the course itself. Some providers add a separate fee for certificate delivery which can bring the total above $25.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Why do all Texas defensive driving courses cost $25?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">The Texas Legislature set a statutory minimum of $25 for driving safety courses. This applies to every TDLR-approved provider in the state — online or in-person. Courts also charge their own separate court fee (typically $144 in Houston and Dallas) which is paid to the court and is separate from the course fee.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What is the difference between the course fee and the certificate fee?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">These are two separate charges. The course fee is what you pay the provider to take the 6-hour course — minimum $25 by law. The certificate fee is an optional add-on some providers charge for how they deliver your completion certificate. The total cost to compare is course fee + certificate fee combined.</div>
+            </details>
+          </section>
+
+          <section id="eligibility" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Eligibility &amp; Rules</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Can I take defensive driving to dismiss any Texas traffic ticket?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">No. Dismissal is not available for all violations. Serious offenses like reckless driving, DWI, passing a school bus, and construction zone violations (with workers present) cannot be dismissed via defensive driving. Speeding at 25+ mph over the limit is typically denied as well.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Can CDL holders take defensive driving to dismiss a Texas ticket?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">No. Under Texas law, commercial driver's license holders are not eligible to dismiss traffic violations through a defensive driving course — even when driving a personal, non-commercial vehicle at the time of the ticket.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">How often can I use defensive driving to dismiss a Texas ticket?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Texas law allows only one defensive driving dismissal per 12-month period. The 12-month window is measured from the date your last dismissal was granted, not the ticket date.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Do I need to get court approval before taking a defensive driving course?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Yes — in most cases. In Texas, you must typically request and receive permission from the court before enrolling in and completing a defensive driving course for dismissal purposes. Taking the course without court approval is a common mistake that can result in the dismissal being denied.</div>
+            </details>
+          </section>
+
+          <section id="process" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">The Process</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What are the steps to dismiss a Texas ticket with defensive driving?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">1. Contact the court and request permission to take a defensive driving course before your appearance date. 2. Pay the court's administrative fee. 3. Enroll in and complete a TDLR-approved 6-hour Driving Safety Course. 4. Obtain your Type 3A driving record from dps.texas.gov for $10 (if required by your court). 5. Submit your completion certificate and driving record to the court by the deadline.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What is a Type 3A driving record and do I need one?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">A Type 3A driving record is an official document from the Texas Department of Public Safety showing your driving history. Many courts require it as part of the dismissal process to confirm you're eligible. Order it directly from dps.texas.gov for $10 — it's usually more expensive if you buy it through a course provider.</div>
+            </details>
+          </section>
+
+          <section id="certificate" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Certificates</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What is an instant certificate and is it worth paying for?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">An instant certificate is a PDF completion certificate you receive immediately after passing the final exam, rather than waiting for mail. Whether it's worth the extra cost depends on your court deadline. If your deadline is soon, it may be necessary. If you have time, standard mail is usually the cheapest option.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What delivery options exist for my completion certificate?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Most providers offer: (1) Standard mail — slowest but usually cheapest or free. (2) Expedited mail — faster, costs more. (3) Instant PDF download — immediate but often the most expensive option. Choose based on your court deadline.</div>
+            </details>
+          </section>
+
+          <section id="format" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Format &amp; Options</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Can I take a Texas defensive driving course online?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Yes. The majority of TDLR-approved providers offer fully online courses that meet Texas requirements. You complete the course in a web browser, at your own pace, with required time minimums per module and a final exam.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">How long is a Texas defensive driving course?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Texas law requires a minimum of 6 hours for a Driving Safety Course (DSC). Most online providers present the material across multiple timed modules. You cannot rush through the content faster than the required minimum time per section.</div>
+            </details>
+          </section>
+
+          <section id="spanish" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Spanish Courses</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Are there Texas defensive driving courses in Spanish?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Yes. Several TDLR-approved providers offer courses entirely in Spanish. Use the language filter on our <a href="/" style="color: var(--proto-teal);">comparison guide</a> to find Spanish-language course providers.</div>
+            </details>
+          </section>
+
+          <section id="providers" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Provider Comparisons</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">How do I choose the best Texas defensive driving provider?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Compare the total all-in cost (course + processing + certificate delivery), not just the advertised price. Also consider certificate delivery speed if your deadline is soon, whether you prefer online or in-person, and language availability. Our <a href="/" style="color: var(--proto-teal);">comparison table</a> shows all TDLR-approved providers side by side.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Are all providers on TDLR Guide TDLR-approved?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">We only list providers that appear in the official TDLR provider registry at the time of our last data update. Provider status can change — always verify a provider's current approval status at <a href="https://www.tdlr.texas.gov" target="_blank" rel="noopener noreferrer" style="color: var(--proto-teal);">tdlr.texas.gov</a> before enrolling.</div>
+            </details>
+          </section>
+
+          <section id="court" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Court Questions</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">How do I find my Texas court's contact information?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Use our <a href="/courts" style="color: var(--proto-teal);">Texas Court Lookup</a> tool. Select your county, then court type, to find judge name, phone, email, and website for your specific court.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">What is the court fee for defensive driving in Texas?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">The court fee is separate from the course fee and varies by court. In Houston and Dallas, the administrative fee is typically around $144. Contact your specific court for the exact amount — it is not set by TDLR or by the course provider.</div>
+            </details>
+          </section>
+
+          <section id="insurance" class="mb-10">
+            <h2 class="mb-4 text-xl font-bold border-b pb-2" style="color: var(--proto-text); border-color: var(--proto-card-border);">Insurance Discounts</h2>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">Can defensive driving lower my Texas insurance rates?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">Yes, for eligible policyholders. Most carriers offer 3–10% discounts for drivers who voluntarily complete an approved defensive driving course — separate from the ticket dismissal benefit. The discount typically lasts 3 years and is renewable. On a $2,600 annual premium, a 5% discount saves about $390 over 3 years.</div>
+            </details>
+            <details class="faq-item mb-3 rounded-xl border bg-white" style="border-color: var(--proto-card-border);">
+              <summary class="cursor-pointer px-5 py-4 text-[15px] font-semibold" style="color: var(--proto-text);">How much does a speeding ticket raise Texas car insurance?</summary>
+              <div class="px-5 pb-4 text-[14px] leading-relaxed" style="color: var(--proto-text-muted);">A speeding ticket raises Texas car insurance premiums by an average of 22%, based on industry data. The increase typically lasts 3 years. On a $2,600 annual premium, that's roughly $572 in extra insurance costs per year, or over $1,700 over 3 years — on top of the ticket fine itself. Use our <a href="/ticket-calculator" style="color: var(--proto-teal);">Ticket Calculator</a> to see your numbers.</div>
+            </details>
+          </section>
+        </main>
+      </div>
+    </div>
+    <SiteFooter />
+  </div>
+</Layout>
+
+<style is:global>
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; }
+.faq-item summary { list-style: none; }
+.faq-item[open] summary { border-bottom: 1px solid var(--proto-card-border); }
+.faq-nav-link[data-active="true"] { background: var(--proto-teal-bg); color: var(--proto-teal-dark) !important; font-weight: 600; }
+</style>
+
+<script>
+document.addEventListener('astro:page-load', () => {
+  const links = document.querySelectorAll('.faq-nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        links.forEach(l => {
+          const active = l.getAttribute('data-section') === entry.target.id;
+          l.setAttribute('data-active', String(active));
+          (l as HTMLElement).style.color = active ? 'var(--proto-teal-dark)' : 'var(--proto-text-muted)';
+        });
+      }
+    }
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+});
+</script>

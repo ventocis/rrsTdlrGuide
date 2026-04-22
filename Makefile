@@ -1,27 +1,31 @@
+AWS_REGION ?= us-east-2
+
 CDK = cd infra && npx cdk
+CDK_SYNTH = $(CDK) synth
 CDK_DEPLOY = $(CDK) deploy --app cdk.out --require-approval never
 
-.PHONY: clean generate synth build deploy
+.PHONY: clean build deploy
 
 clean:
 	rm -rf infra/cdk.out
-	rm -rf .output
+	rm -rf dist
 
-# Generates the static site using the env file for the given ENV.
-# Usage: make generate ENV=qa   or   make generate ENV=prod
-generate:
-ifndef ENV
-	$(error ENV is required. Usage: make generate ENV=qa)
+ifeq ($(ENV),qa)
+BUILD_CMD = npm run build:qa
+else
+BUILD_CMD = npm run build:prod
 endif
-	npm run generate:$(ENV)
 
-# Synthesises the CDK app after generating the site.
-synth: generate
-	$(CDK) synth
+build:
+ifndef ENV
+	$(error ENV is required. Usage: make build ENV=qa)
+endif
+	$(BUILD_CMD)
+	$(CDK_SYNTH)
 
-# Full build (generate + synth).
-build: synth
-
-# Deploy to AWS. Usage: make deploy ENV=qa  or  make deploy ENV=prod
+# Usage: make deploy ENV=qa  or  make deploy ENV=prod
 deploy: build
+ifndef ENV
+	$(error ENV is required. Usage: make deploy ENV=qa)
+endif
 	$(CDK_DEPLOY) '*-$(ENV)'

@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  noindex?: boolean;
+  jsonLd?: object | object[];
+}
+
+const {
+  title,
+  description = 'Compare Texas defensive driving courses. TDLR-approved providers, real prices, formats, and certificate delivery. Free tools for Texas ticket dismissal.',
+  keywords,
+  image,
+  url = '/',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+const canonicalUrl = `${siteUrl}${url}`;
+const fullImageUrl = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : undefined;
+const enableAnalytics = import.meta.env.VITE_ENABLE_ANALYTICS === 'true';
+const ga4Id = import.meta.env.VITE_GA4_ID;
+const isNoindex = noindex || import.meta.env.VITE_ENABLE_SEO !== 'true';
+const pageTitle = title.includes('TDLR') ? title : `${title} | TDLR Guide`;
+
+const jsonLdScripts = jsonLd
+  ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd])
+  : [];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+
+    <!-- SEO -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <link rel="canonical" href={canonicalUrl} />
+    {isNoindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {fullImageUrl && <meta property="og:image" content={fullImageUrl} />}
+    <meta property="og:site_name" content="TDLR Guide" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {fullImageUrl && <meta name="twitter:image" content={fullImageUrl} />}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+
+    <!-- Fonts: preconnect then load with display=optional (eliminates font-swap CLS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=optional"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=optional"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD structured data -->
+    {jsonLdScripts.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+
+    <!-- Google Analytics — production only -->
+    {enableAnalytics && ga4Id && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+        <script define:vars={{ ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+      </>
+    )}
+  </head>
+  <body class="w-full overflow-x-hidden m-0 p-0" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--proto-text);">
+    <slot />
+  </body>
+</html>
