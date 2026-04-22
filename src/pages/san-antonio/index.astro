@@ -1,0 +1,360 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+const pageTitle = 'San Antonio Traffic Ticket Guide: DSC & Deferred Disposition | TDLRguide';
+const pageDescription = 'Got a San Antonio traffic ticket? Learn how to dismiss it with a Driver Safety Course or Deferred Disposition. Plain-English guide with eligibility requirements and instructions from San Antonio Municipal Court.';
+const pageUrl = `${siteUrl}/san-antonio`;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  mainEntity: [
+    { '@type': 'Question', name: 'How do I dismiss a traffic ticket in San Antonio?', acceptedAnswer: { '@type': 'Answer', text: 'San Antonio Municipal Court offers two options: a Driver Safety Course (DSC) or Deferred Disposition. For DSC, you plead no contest or guilty, pay court costs, and complete a TDLR-approved 6-hour defensive driving course. For Deferred Disposition, you plead no contest or guilty, pay court costs, and comply with the court\'s conditions for a set period.' } },
+    { '@type': 'Question', name: 'Am I eligible for a Driver Safety Course in San Antonio?', acceptedAnswer: { '@type': 'Answer', text: 'You may be eligible if you have a valid Texas Driver\'s License, current liability insurance with your name listed as a driver, have not taken a Driver Safety Course within the last 12 months to dismiss a citation, do not hold a Commercial Driver\'s License, and are not charged with speeding 25 mph or more over the limit, driving 95 mph or more, passing a school bus, an offense in a construction zone with workers present, or leaving the scene of a collision.' } },
+    { '@type': 'Question', name: 'Can I request a Driver Safety Course in San Antonio online?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. San Antonio Municipal Court accepts online requests through their citation web portal at 6.municipal.cc/sanantoniocosatx/citationwebportal. You can also contact the court by phone at 210-207-8970 or visit in person at 401 S. Frio St, San Antonio TX 78207.' } },
+    { '@type': 'Question', name: 'What is Deferred Disposition at San Antonio Municipal Court?', acceptedAnswer: { '@type': 'Answer', text: 'Deferred Disposition keeps your citation from being reported as a conviction on your driving record. You plead no contest or guilty and pay court costs. If assessed by the judge, you also pay a special expense fee. The Municipal Court Judge will dismiss your citation after you successfully complete all required conditions. It is not available for all violations.' } },
+    { '@type': 'Question', name: 'What are the court hours for San Antonio Municipal Court?', acceptedAnswer: { '@type': 'Answer', text: 'San Antonio Municipal Court is open Monday through Friday, 8 a.m. to 4:30 p.m., and is closed on city holidays. The Magistrate Court and Detention Center are open 24 hours a day, 7 days a week including holidays.' } }
+  ]
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Dismiss a San Antonio Traffic Ticket with a Driver Safety Course',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  step: [
+    { '@type': 'HowToStep', name: 'Confirm eligibility', text: 'Verify you have a valid Texas Driver\'s License, current liability insurance, have not taken DSC in the past 12 months, do not hold a CDL, and your violation qualifies.' },
+    { '@type': 'HowToStep', name: 'Request DSC from the court', text: 'Submit your request online through the San Antonio Municipal Court citation portal, or contact the court at 210-207-8970. You must plead no contest or guilty and pay court costs.' },
+    { '@type': 'HowToStep', name: 'Complete a TDLR-approved defensive driving course', text: 'Enroll in and complete any course approved by TDLR. Do not take the course before the court approves your request.' },
+    { '@type': 'HowToStep', name: 'Submit proof of completion', text: 'Contact San Antonio Municipal Court at 210-207-8970 or visit 401 S. Frio St for instructions on submitting your certificate of completion.' }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} url={pageUrl} jsonLd={[faqSchema, howToSchema]}>
+  <div class="sa-page">
+    <SiteHeader currentPath="/san-antonio" />
+    <main>
+      <div class="wrap">
+
+        <div class="pg-label">San Antonio Municipal Court</div>
+        <h1>Got a San Antonio traffic ticket?<br>Here are your options.</h1>
+        <p class="lead">Most traffic tickets in San Antonio can be dismissed without paying the fine. Pick the option that fits your situation below.</p>
+
+        <h2 class="sh">Step 1 — Choose your path</h2>
+
+        <div class="picker">
+          <div class="pick-btn blue">
+            <div class="pb-tag">Option A</div>
+            <h3>Driver Safety Course</h3>
+            <p>Take a TDLR-approved defensive driving course. Plead no contest, pay court costs, complete the course — citation dismissed.</p>
+          </div>
+          <div class="pick-btn green">
+            <div class="pb-tag">Option B</div>
+            <h3>Deferred Disposition</h3>
+            <p>The court puts your case on hold. Meet the judge's conditions by the deadline — citation dismissed. Not available for all violations.</p>
+          </div>
+        </div>
+
+        <div class="box info" style="margin-bottom:1.5rem">
+          <div class="box-lbl">Not sure which to pick?</div>
+          <div class="compare">
+            <div class="comp-card dsc">
+              <div class="ct">Driver Safety Course</div>
+              <h4>Choose this if you...</h4>
+              <ul>
+                <li>Have a valid Texas license (not CDL)</li>
+                <li>Have not taken DSC in the past 12 months</li>
+                <li>Want a clear course-based path to dismissal</li>
+                <li>Have a qualifying violation</li>
+              </ul>
+            </div>
+            <div class="comp-card def">
+              <div class="ct">Deferred Disposition</div>
+              <h4>Choose this if you...</h4>
+              <ul>
+                <li>Do not want to take a driving course (if eligible)</li>
+                <li>Have a violation that may not qualify for DSC</li>
+                <li>Are willing to comply with court-set conditions</li>
+                <li>Want to keep the citation off your driving record</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- DSC Panel -->
+        <section aria-label="Driver Safety Course option">
+          <h2 class="sh">Driver Safety Course — Am I eligible?</h2>
+
+          <div class="box success">
+            <div class="box-lbl">You ARE eligible if ALL of these are true</div>
+            <ul>
+              <li>You have a valid Texas Driver's License</li>
+              <li>You have current liability insurance with your name listed as a driver</li>
+              <li>You have not taken a Driver Safety Course within the last 12 months to dismiss a citation</li>
+              <li>You do not hold a Commercial Driver's License (CDL)</li>
+            </ul>
+          </div>
+
+          <div class="box danger">
+            <div class="box-lbl">You are NOT eligible if any of these apply</div>
+            <div class="inel-list">
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for speeding 25 mph or more over the speed limit</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for driving 95 mph or more</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for passing a school bus loading or unloading children</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for an offense in a construction zone or work zone when workers were present</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for leaving the scene of a collision after causing damage to a vehicle that was driven or attended</span></div>
+            </div>
+          </div>
+
+          <p style="font-size:14px;color:var(--tx2);margin:.875rem 0 .875rem;line-height:1.6">If you meet all of the green criteria and none of the red criteria apply, you are likely eligible. Contact the court at <strong style="color:var(--tx)">210-207-8970</strong> to confirm before proceeding.</p>
+
+          <h2 class="sh">Court fees</h2>
+
+          <div class="box warn">
+            <div class="box-lbl">Fee amounts — contact the court</div>
+            <p>San Antonio Municipal Court does not publish specific DSC fee amounts on their website. Fees are set by state law and subject to change. To find the exact amount for your citation, use the online portal or call the court at <strong>210-207-8970</strong> before submitting your request.</p>
+          </div>
+
+          <div class="box warn">
+            <div class="box-lbl">Important — request approval before taking the course</div>
+            <p>Do not enroll in or complete a driving safety course before the court approves your request. Contact the court to confirm you are approved before spending money on a course.</p>
+          </div>
+
+          <h2 class="sh">How to complete DSC — step by step</h2>
+
+          <div class="steps">
+            <div class="step"><div class="step-dot">1</div><div class="step-body"><strong>Confirm your eligibility and gather your documents</strong><p>Check that you meet all eligibility requirements above. Have your Texas Driver's License, proof of insurance, and citation information ready.</p></div></div>
+            <div class="step"><div class="step-dot">2</div><div class="step-body"><strong>Submit your DSC request to the court</strong><p>Request online through the San Antonio Municipal Court citation portal (link below), or contact the court by phone at <strong style="color:var(--tx)">210-207-8970</strong>, or visit in person at 401 S. Frio St, San Antonio TX 78207. You will plead no contest or guilty and pay court costs at this step.</p></div></div>
+            <div class="step"><div class="step-dot">3</div><div class="step-body"><strong>Wait for confirmation before taking the course</strong><p>Do not enroll in any course until the court has confirmed your request is approved. Contact the court at <strong style="color:var(--tx)">210-207-8970</strong> if you are unsure of your approval status.</p></div></div>
+            <div class="step"><div class="step-dot">4</div><div class="step-body"><strong>Complete a TDLR-approved 6-hour defensive driving course</strong><p>You can take the course online or in person. Any course approved by TDLR is accepted. All courses cost at least $25 by law.</p></div></div>
+            <div class="step"><div class="step-dot">5</div><div class="step-body"><strong>Submit your proof of completion to the court</strong><p>Contact the court at <strong style="color:var(--tx)">210-207-8970</strong> or visit in person for instructions on what to submit and by what deadline.</p></div></div>
+          </div>
+
+          <h2 class="sh">Forms and documents</h2>
+
+          <div class="req-list">
+            <div class="req-item"><div class="req-num">1</div><div class="req-body"><strong>Online request portal</strong><span>San Antonio Municipal Court accepts DSC requests online through their citation web portal.</span><br><a class="dl-link" href="https://6.municipal.cc/sanantoniocosatx/citationwebportal/" target="_blank" rel="noopener noreferrer">Request DSC online</a></div></div>
+            <div class="req-item"><div class="req-num">2</div><div class="req-body"><strong>Certificate of Completion</strong><span>Provided by your course provider after you finish. Contact the court for instructions on how and where to submit it.</span><br><span class="ph-link">Provided by your course provider</span></div></div>
+            <div class="req-item"><div class="req-num">3</div><div class="req-body"><strong>Additional forms</strong><span>San Antonio Municipal Court does not list specific form downloads on their website. Contact the court for any additional forms required for your case.</span><br><span class="ph-link">Contact the court at 210-207-8970</span></div></div>
+          </div>
+
+          <h2 class="sh">How to reach San Antonio Municipal Court</h2>
+
+          <div class="sub-methods sub-methods-4">
+            <div class="sub-card"><div class="method">Online portal</div><p>Available through the city citation web portal.<br><br><a class="dl-link" href="https://6.municipal.cc/sanantoniocosatx/citationwebportal/" target="_blank" rel="noopener noreferrer">Open citation portal</a></p></div>
+            <div class="sub-card"><div class="method">By phone</div><p><strong style="color:var(--tx)">210-207-8970</strong><br><br><span style="font-size:12px;color:var(--tx3)">Monday–Friday, 8 a.m.–4:30 p.m.<br>Closed on city holidays.</span></p></div>
+            <div class="sub-card"><div class="method">By email</div><p>Use the official court contact form.<br><br><a class="dl-link" href="https://www.sanantonio.gov/Municipal-Court/Contact" target="_blank" rel="noopener noreferrer">Open contact form</a></p></div>
+            <div class="sub-card"><div class="method">In person</div><p>401 S. Frio St<br>San Antonio TX 78207<br><br><span style="font-size:12px;color:var(--tx3)">Monday–Friday, 8 a.m.–4:30 p.m. Closed on city holidays.<br>Magistrate Court and Detention Center open 24/7.</span></p></div>
+          </div>
+
+          <p style="font-size:13px;color:var(--tx2);margin-top:1rem">Questions? Call San Antonio Municipal Court: <strong style="color:var(--tx)">210-207-8970</strong></p>
+        </section>
+
+        <div class="div"></div>
+
+        <!-- Deferred Disposition Panel -->
+        <section aria-label="Deferred Disposition option">
+          <h2 class="sh">What is Deferred Disposition?</h2>
+
+          <div class="box neutral">
+            <div class="box-lbl">Plain English explanation</div>
+            <p>Deferred Disposition keeps your citation from being reported as a conviction on your driving record. You plead no contest or guilty and pay court costs. If assessed by the judge, you also pay a special expense fee. The Municipal Court Judge will dismiss your citation after you successfully complete all required conditions. It is not available for all violations.</p>
+          </div>
+
+          <h2 class="sh">Am I eligible?</h2>
+
+          <div class="box neutral">
+            <div class="box-lbl">Contact the court to confirm eligibility</div>
+            <p>San Antonio Municipal Court's website does not list specific eligibility exclusions for Deferred Disposition beyond stating it is not available for all violations. Contact the court at <strong>210-207-8970</strong> or use the online citation portal to check whether your specific citation qualifies before submitting a request.</p>
+          </div>
+
+          <h2 class="sh">How much does it cost?</h2>
+
+          <div class="box warn">
+            <div class="box-lbl">Fee amounts — contact the court</div>
+            <p>San Antonio Municipal Court does not publish specific Deferred Disposition fee amounts on their website. You will pay court costs and, if assessed by the judge, a special expense fee not to exceed the maximum fine amount for your violation. Contact the court at <strong>210-207-8970</strong> or check your citation in the online portal for the specific amount.</p>
+          </div>
+
+          <h2 class="sh">How to apply — step by step</h2>
+
+          <div class="steps">
+            <div class="step"><div class="step-dot">1</div><div class="step-body"><strong>Contact the court to confirm your citation qualifies</strong><p>Deferred Disposition is not available for all violations. Call <strong style="color:var(--tx)">210-207-8970</strong> or use the online portal to confirm your citation is eligible before proceeding.</p></div></div>
+            <div class="step"><div class="step-dot">2</div><div class="step-body"><strong>Submit your Deferred Disposition request</strong><p>Request online through the San Antonio Municipal Court citation portal, by phone at <strong style="color:var(--tx)">210-207-8970</strong>, by email via the contact form, or in person at 401 S. Frio St, San Antonio TX 78207. You will plead no contest or guilty and pay court costs.</p></div></div>
+            <div class="step"><div class="step-dot">3</div><div class="step-body"><strong>Comply with all court-ordered conditions by the deadline</strong><p>The court will provide your specific conditions and deadline after approving your request. Comply with all conditions by the due date.</p></div></div>
+            <div class="step"><div class="step-dot">4</div><div class="step-body"><strong>Receive your dismissal</strong><p>If you successfully complete all conditions, the Municipal Court Judge will dismiss your citation and it will not appear as a conviction on your driving record.</p></div></div>
+          </div>
+
+          <h2 class="sh">Forms and documents</h2>
+
+          <div class="req-list">
+            <div class="req-item"><div class="req-num">1</div><div class="req-body"><strong>Online request portal</strong><span>Submit your Deferred Disposition request online through the San Antonio Municipal Court citation web portal.</span><br><a class="dl-link" href="https://6.municipal.cc/sanantoniocosatx/citationwebportal/" target="_blank" rel="noopener noreferrer">Open citation portal</a></div></div>
+            <div class="req-item"><div class="req-num">2</div><div class="req-body"><strong>Additional forms</strong><span>San Antonio Municipal Court does not list specific form downloads for Deferred Disposition on their website. The court will provide any required forms after you submit your request.</span><br><span class="ph-link">Contact the court at 210-207-8970</span></div></div>
+          </div>
+
+          <h2 class="sh">How to reach San Antonio Municipal Court</h2>
+
+          <div class="sub-methods sub-methods-4">
+            <div class="sub-card"><div class="method">Online portal</div><p>Available through the city citation web portal.<br><br><a class="dl-link" href="https://6.municipal.cc/sanantoniocosatx/citationwebportal/" target="_blank" rel="noopener noreferrer">Open citation portal</a></p></div>
+            <div class="sub-card"><div class="method">By phone</div><p><strong style="color:var(--tx)">210-207-8970</strong><br><br><span style="font-size:12px;color:var(--tx3)">Monday–Friday, 8 a.m.–4:30 p.m.<br>Closed on city holidays.</span></p></div>
+            <div class="sub-card"><div class="method">By email</div><p>Use the official court contact form.<br><br><a class="dl-link" href="https://www.sanantonio.gov/Municipal-Court/Contact" target="_blank" rel="noopener noreferrer">Open contact form</a></p></div>
+            <div class="sub-card"><div class="method">In person</div><p>401 S. Frio St<br>San Antonio TX 78207<br><br><span style="font-size:12px;color:var(--tx3)">Monday–Friday, 8 a.m.–4:30 p.m. Closed on city holidays.<br>Magistrate Court and Detention Center open 24/7.</span></p></div>
+          </div>
+
+          <p style="font-size:13px;color:var(--tx2);margin-top:1rem">Questions? Call San Antonio Municipal Court: <strong style="color:var(--tx)">210-207-8970</strong></p>
+        </section>
+
+        <div class="div"></div>
+
+        <div class="cta">
+          <div>
+            <strong>Need to pick a defensive driving course?</strong>
+            <p style="font-size:14px;color:var(--tx2)">Compare all 133 TDLR-approved providers by price, format, and language — free, no signup.</p>
+          </div>
+          <a class="cta-btn" href="/">Compare courses on TDLRguide</a>
+        </div>
+
+        <div class="disc">
+          <div class="dl">Disclaimer and source verification</div>
+          <p>This page is an independent summary created by TDLRguide for informational purposes only. TDLRguide is not affiliated with San Antonio Municipal Court, the City of San Antonio, or TDLR. All information is sourced directly from official San Antonio Municipal Court pages and reflects content as of March 2026. San Antonio Municipal Court does not publish specific fee amounts or detailed process timelines on their public website — always contact the court directly to confirm requirements before taking action. This is not legal advice.</p>
+          <div class="src-links">
+            <a class="src-link" href="https://www.sanantonio.gov/Municipal-Court/Court-Appearances-Procedures/Court-Programs/Defensive-Driving" target="_blank" rel="noopener noreferrer">Official DSC page</a>
+            <a class="src-link" href="https://www.sanantonio.gov/Municipal-Court/Court-Appearances-Procedures/Court-Programs/Deferred-Disposition" target="_blank" rel="noopener noreferrer">Official Deferred Disposition page</a>
+            <a class="src-link" href="https://www.sanantonio.gov/Municipal-Court" target="_blank" rel="noopener noreferrer">San Antonio Municipal Court</a>
+            <a class="src-link" href="https://www.tdlr.texas.gov/driver/safety/providers/search/" target="_blank" rel="noopener noreferrer">TDLR provider search</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap');
+
+.sa-page {
+  --tx: #18181b; --tx2: #52525b; --tx3: #a1a1aa;
+  --bg: #fff; --bg2: #fafaf9; --bg3: #f4f4f0;
+  --bd: #e4e4e7; --bd2: #d4d4d8;
+  --blue: #1d4ed8; --blue-bg: #eff6ff; --blue-bd: #bfdbfe; --blue-tx: #1e40af;
+  --green: #15803d; --green-bg: #f0fdf4; --green-bd: #bbf7d0; --green-tx: #166534;
+  --red: #b91c1c; --red-bg: #fef2f2; --red-bd: #fecaca; --red-tx: #991b1b;
+  --amber: #92400e; --amber-bg: #fffbeb; --amber-bd: #fde68a; --amber-tx: #78350f;
+  --sans: 'DM Sans', sans-serif; --serif: 'Literata', Georgia, serif;
+  --r: 8px; --rl: 12px;
+  font-family: var(--sans); color: var(--tx); background: var(--bg);
+  font-size: 15px; line-height: 1.6; min-height: 100vh;
+}
+@media (prefers-color-scheme: dark) {
+  .sa-page {
+    --tx: #f4f4f5; --tx2: #a1a1aa; --tx3: #71717a;
+    --bg: #18181b; --bg2: #1f1f23; --bg3: #27272a;
+    --bd: #3f3f46; --bd2: #52525b;
+    --blue: #60a5fa; --blue-bg: #1e3a5f; --blue-bd: #1d4ed8; --blue-tx: #93c5fd;
+    --green: #4ade80; --green-bg: #14532d; --green-bd: #15803d; --green-tx: #86efac;
+    --red: #f87171; --red-bg: #450a0a; --red-bd: #7f1d1d; --red-tx: #fca5a5;
+    --amber: #fbbf24; --amber-bg: #1c1400; --amber-bd: #78350f; --amber-tx: #fcd34d;
+  }
+}
+
+.wrap { max-width: 700px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+.pg-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tx3); margin-bottom: .5rem; }
+h1 { font-family: var(--serif); font-size: 1.875rem; font-weight: 600; line-height: 1.25; margin-bottom: .75rem; }
+.lead { font-size: 15px; color: var(--tx2); line-height: 1.7; max-width: 580px; margin-bottom: 2rem; }
+h2.sh { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tx3); margin: 2.75rem 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--bd); }
+
+.picker { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+@media (max-width: 500px) { .picker { grid-template-columns: 1fr; } }
+.pick-btn { border: 1px solid var(--bd); border-radius: var(--rl); padding: 1.125rem 1.25rem; background: var(--bg); text-align: left; font-family: var(--sans); }
+.pick-btn.blue { border-color: var(--blue); }
+.pick-btn.green { border-color: var(--green); }
+.pick-btn .pb-tag { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .35rem; }
+.pick-btn.blue .pb-tag { color: var(--blue-tx); }
+.pick-btn.green .pb-tag { color: var(--green-tx); }
+.pick-btn h3 { font-size: 15px; font-weight: 600; color: var(--tx); margin-bottom: .3rem; }
+.pick-btn p { font-size: 13px; color: var(--tx2); line-height: 1.5; margin: 0; }
+
+.box { border-radius: var(--rl); padding: 1.125rem 1.375rem; margin-bottom: 1rem; }
+.box.warn    { background: transparent; border: 1px solid var(--amber-bd); border-left: 3px solid var(--amber); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.danger  { background: transparent; border: 1px solid var(--red-bd);   border-left: 3px solid var(--red);   border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info    { background: transparent; border: 1px solid var(--blue-bd);  border-left: 3px solid var(--blue);  border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.success { background: transparent; border: 1px solid var(--green-bd); border-left: 3px solid var(--green); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.neutral { background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info:has(.compare) { background: var(--bg2); border: 1px solid var(--bd); border-left: none; border-radius: var(--rl); }
+.box-lbl { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-bottom: .45rem; }
+.box.warn .box-lbl { color: var(--amber-tx); }
+.box.danger .box-lbl { color: var(--red-tx); }
+.box.info .box-lbl { color: var(--blue-tx); }
+.box.success .box-lbl { color: var(--green-tx); }
+.box.neutral .box-lbl { color: var(--tx3); }
+.box p, .box li { font-size: 14px; color: var(--tx2); line-height: 1.6; }
+.box strong { color: var(--tx); font-weight: 600; }
+.box ul { padding-left: 1rem; margin-top: .4rem; display: flex; flex-direction: column; gap: .3rem; }
+
+.inel-list { display: flex; flex-direction: column; gap: .25rem; margin-top: .6rem; }
+.inel-row { display: flex; gap: .75rem; align-items: flex-start; padding: .5rem .75rem; border-bottom: 1px solid var(--bd); }
+.inel-row:last-child { border-bottom: none; }
+.inel-x { font-size: 11px; font-weight: 700; color: var(--red-tx); flex-shrink: 0; padding-top: 2px; }
+.inel-text { font-size: 13px; color: var(--tx2); line-height: 1.45; }
+
+.req-list { display: flex; flex-direction: column; gap: .5rem; margin-top: .75rem; }
+.req-item { display: flex; gap: .75rem; align-items: flex-start; padding: .75rem 1rem; background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--r); }
+.req-num { width: 22px; height: 22px; border-radius: 50%; background: var(--bd2); font-size: 11px; font-weight: 700; color: var(--tx2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.req-body { flex: 1; }
+.req-body strong { font-size: 14px; font-weight: 600; color: var(--tx); display: block; margin-bottom: .15rem; }
+.req-body span { font-size: 13px; color: var(--tx2); line-height: 1.5; }
+.dl-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .4rem; font-size: 12px; font-weight: 600; color: var(--blue); text-decoration: none; padding: .25rem .65rem; background: var(--blue-bg); border: 1px solid var(--blue-bd); border-radius: 4px; }
+.dl-link:hover { opacity: .8; }
+.ph-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: .4rem; font-size: 12px; font-weight: 600; color: var(--tx3); padding: .25rem .65rem; background: var(--bg3); border: 1px dashed var(--bd2); border-radius: 4px; }
+
+.steps { display: flex; flex-direction: column; gap: 0; position: relative; margin-top: .75rem; }
+.steps::before { content: ''; position: absolute; left: 13px; top: 28px; bottom: 28px; width: 1px; background: var(--bd); opacity: 0.6; }
+.step { display: flex; gap: 1rem; padding: .75rem 0; }
+.step-dot { width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--bd2); background: var(--bg); font-size: 12px; font-weight: 600; color: var(--tx2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1; }
+.step-body { padding-top: 3px; }
+.step-body strong { font-size: 14px; font-weight: 600; color: var(--tx); display: block; margin-bottom: .2rem; }
+.step-body p { font-size: 13px; color: var(--tx2); line-height: 1.55; margin: 0; }
+
+.sub-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: .75rem; }
+.sub-methods-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 640px) { .sub-methods-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .sub-methods { grid-template-columns: 1fr; } }
+.sub-card { border: 1px solid var(--bd); border-radius: var(--r); padding: .875rem 1rem; background: var(--bg); }
+.sub-card .method { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--tx3); margin-bottom: .4rem; }
+.sub-card p { font-size: 13px; color: var(--tx2); line-height: 1.5; margin: 0; }
+.sub-card a { color: var(--blue); text-decoration: none; }
+
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: .875rem; margin-top: .75rem; }
+@media (max-width: 480px) { .compare { grid-template-columns: 1fr; } }
+.comp-card { border-radius: var(--r); padding: .875rem 1rem; border: 1px solid var(--bd); background: var(--bg); }
+.comp-card.dsc { border-top: 2px solid var(--blue); }
+.comp-card.def { border-top: 2px solid var(--green); }
+.comp-card .ct { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .35rem; }
+.comp-card.dsc .ct { color: var(--blue-tx); }
+.comp-card.def .ct { color: var(--green-tx); }
+.comp-card h4 { font-size: 14px; font-weight: 600; color: var(--tx); margin-bottom: .35rem; }
+.comp-card ul { list-style: none; display: flex; flex-direction: column; gap: .3rem; padding: 0; margin: 0; }
+.comp-card li { font-size: 13px; color: var(--tx2); line-height: 1.4; display: flex; gap: .5rem; }
+.comp-card li::before { content: '–'; color: var(--tx3); flex-shrink: 0; }
+
+.div { height: 1px; background: var(--bd); margin: 2rem 0; }
+
+.cta { border: 1px solid var(--bd); border-radius: var(--rl); padding: 1.375rem 1.5rem; background: var(--bg2); display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap; margin-top: 2rem; }
+.cta p { font-size: 14px; color: var(--tx2); flex: 1; margin: 0; }
+.cta strong { color: var(--tx); font-weight: 600; display: block; margin-bottom: .2rem; }
+.cta-btn { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: .625rem 1.125rem; background: var(--tx); color: var(--bg); border: none; border-radius: var(--r); cursor: pointer; white-space: nowrap; text-decoration: none; flex-shrink: 0; }
+
+.disc { margin-top: 2.5rem; padding: 1.125rem 1.375rem; background: var(--bg2); border: 1px solid var(--bd); border-radius: var(--rl); }
+.disc .dl { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--tx3); margin-bottom: .5rem; }
+.disc p { font-size: 12px; color: var(--tx3); line-height: 1.65; margin: 0; }
+.src-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+.src-link { font-size: 11px; font-weight: 600; padding: .25rem .6rem; background: var(--bg); border: 1px solid var(--bd); border-radius: 4px; color: var(--blue); text-decoration: none; }
+</style>
