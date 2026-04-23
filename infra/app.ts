@@ -7,7 +7,7 @@ import { AppStackProps, CloudfrontCertificateStackProps, DnsStackProps } from ".
 const app = new cdk.App();
 
 const gitRepoName = "rrsTdlrGuide";
-const rootDomain = "tdlrguide.com";
+const rootDomain = "txcourseguide.com";
 
 const appConfig: Record<AppEnv, Omit<AppStackProps & CloudfrontCertificateStackProps & CloudfrontCertificateStackProps & DnsStackProps, "certificate" | "hostedZone">> = {
   [AppEnv.QA]: {
@@ -32,7 +32,7 @@ const appConfig: Record<AppEnv, Omit<AppStackProps & CloudfrontCertificateStackP
 };
 
 // TODO: Deploy QA DNS stack first, then paste the 4 NS record values here.
-// Find them in the Route 53 console under the qa.tdlrguide.com hosted zone.
+// Find them in the Route 53 console under the qa.txcourseguide.com hosted zone.
 const qaSubdomainNameServers: string[] = ["ns-1092.awsdns-08.org", "ns-1020.awsdns-63.net", "ns-184.awsdns-23.com", "ns-1741.awsdns-25.co.uk"];
 
 Object.values(AppEnv).forEach((env) => {

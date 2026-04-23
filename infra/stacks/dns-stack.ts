@@ -5,7 +5,7 @@ import type { Construct } from "constructs";
 
 export interface SubdomainDelegation {
   /**
-   * The subdomain to delegate (e.g. 'qa' for qa.tdlrguide.com).
+   * The subdomain to delegate (e.g. 'qa' for qa.txcourseguide.com).
    */
   subdomain: string;
 
@@ -17,7 +17,7 @@ export interface SubdomainDelegation {
 
 export interface DnsStackProps extends cdk.StackProps {
   /**
-   * The domain name for the hosted zone (e.g. 'tdlrguide.com' or 'qa.tdlrguide.com').
+   * The domain name for the hosted zone (e.g. 'txcourseguide.com' or 'qa.txcourseguide.com').
    */
   domainName: string;
 

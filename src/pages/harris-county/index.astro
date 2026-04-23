@@ -3,9 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
-const pageTitle = 'Harris County Traffic Ticket Guide: DSC & Deferred Disposition | TDLRguide';
+const pageTitle = 'Harris County Traffic Ticket Guide: DSC & Deferred Disposition | TX Course Guide';
 const pageDescription = 'Got a Harris County traffic ticket from a JP Court? Learn how to dismiss it with a Driver Safety Course or Deferred Disposition. Plain-English guide with fees, forms, and step-by-step instructions from Harris County Justice of the Peace Courts.';
 const pageUrl = `${siteUrl}/harris-county`;
 
@@ -20,7 +20,7 @@ const faqSchema = {
       name: 'Is this page for Houston Municipal Court or Harris County JP Courts?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "This page covers Harris County Justice of the Peace Courts only. These courts handle traffic citations issued in unincorporated Harris County and smaller cities within Harris County. If your citation was issued within the City of Houston, it is handled by Houston Municipal Court — see TDLRguide's Houston ticket guide instead."
+        text: "This page covers Harris County Justice of the Peace Courts only. These courts handle traffic citations issued in unincorporated Harris County and smaller cities within Harris County. If your citation was issued within the City of Houston, it is handled by Houston Municipal Court — see TX Course Guide's Houston ticket guide instead."
       }
     },
     {
@@ -571,12 +571,12 @@ const howToSchema = {
             <strong>Need to pick a defensive driving course?</strong>
             <p style="font-size:14px;color:var(--tx2)">Compare all 133 TDLR-approved providers by price, format, and language — free, no signup.</p>
           </div>
-          <a class="cta-btn" href="/">Compare courses on TDLRguide</a>
+          <a class="cta-btn" href="/">Compare courses on TX Course Guide</a>
         </div>
 
         <div class="disc">
           <div class="dl">Disclaimer and source verification</div>
-          <p>This page is an independent summary created by TDLRguide for informational purposes only. TDLRguide is not affiliated with Harris County Justice of the Peace Courts, Harris County, or the Texas Department of Licensing and Regulation (TDLR). The primary source document for this page (jp.hctx.net/traffic/Traffic.pdf) is dated September 2007. While fee amounts have been updated within that document, some procedures, amounts, and requirements may have changed since publication. Always verify current requirements directly with your specific precinct court before taking any action. This is not legal advice.</p>
+          <p>This page is an independent summary created by TX Course Guide for informational purposes only. TX Course Guide is not affiliated with Harris County Justice of the Peace Courts, Harris County, or the Texas Department of Licensing and Regulation (TDLR). The primary source document for this page (jp.hctx.net/traffic/Traffic.pdf) is dated September 2007. While fee amounts have been updated within that document, some procedures, amounts, and requirements may have changed since publication. Always verify current requirements directly with your specific precinct court before taking any action. This is not legal advice.</p>
           <div class="src-links">
             <a class="src-link" href="https://jp.hctx.net/traffic/Traffic.pdf" target="_blank" rel="noopener noreferrer">Official Harris County JP Courts traffic guide (PDF)</a>
             <a class="src-link" href="https://jp.hctx.net" target="_blank" rel="noopener noreferrer">Harris County JP Courts website</a>

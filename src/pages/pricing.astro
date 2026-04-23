@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -13,13 +13,13 @@ const jsonLd = {
   url: `${siteUrl}/pricing`,
   datePublished: '2025-01-01',
   dateModified: '2025-01-01',
-  author: { '@type': 'Organization', name: 'TDLR Guide', url: siteUrl },
-  publisher: { '@type': 'Organization', name: 'TDLR Guide', url: siteUrl }
+  author: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl }
 };
 ---
 
 <Layout
-  title="How Texas Defensive Driving Pricing Really Works — TDLR Guide"
+  title="How Texas Defensive Driving Pricing Really Works — TX Course Guide"
   description="Texas law sets a $25 minimum for defensive driving — but extra fees can push the real total much higher. Here's exactly what to expect and how to pay the least."
   keywords="Texas defensive driving cost, defensive driving price, TDLR course fee, $25 defensive driving Texas"
   url="/pricing"
@@ -32,7 +32,7 @@ const jsonLd = {
         How Texas Defensive Driving Pricing Really Works
       </h1>
       <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">
-        Published by TDLR Guide · Last updated 2025
+        Published by TX Course Guide · Last updated 2025
       </p>
 
       <div class="space-y-6 text-[15px] leading-relaxed sm:text-[16px]" style="color: var(--proto-text);">
@@ -165,7 +165,7 @@ const jsonLd = {
 
         <footer class="mt-12 border-t pt-6 text-[13px]" style="border-color: var(--proto-card-border); color: var(--proto-text-muted);">
           <p>This article is for informational purposes only. Fee structures and policies vary by provider and are subject to change. Always verify current pricing directly with your chosen provider. For official TDLR rules, visit <a href="https://www.tdlr.texas.gov" target="_blank" rel="noopener noreferrer" class="font-semibold hover:underline" style="color: var(--proto-teal);">tdlr.texas.gov</a>.</p>
-          <p class="mt-2">© 2025 TDLR Guide · tdlrguide.com</p>
+          <p class="mt-2">© 2025 TX Course Guide · txcourseguide.com</p>
         </footer>
       </div>
 

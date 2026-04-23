@@ -600,8 +600,8 @@ export default function ProviderTable({ providers: allProviders }: Props) {
           <span>Showing {visible.length} of {resultCount} providers · Duplicate brands grouped under parent company</span>
           <span>
             Data sourced from TDLR public records ·{' '}
-            <a href="mailto:info@tdlrguide.com" className="font-semibold hover:opacity-90" style={{ color: 'var(--proto-teal)' }}>
-              Submit a correction → info@tdlrguide.com
+            <a href="mailto:info@txcourseguide.com" className="font-semibold hover:opacity-90" style={{ color: 'var(--proto-teal)' }}>
+              Submit a correction → info@txcourseguide.com
             </a>
           </span>
         </div>

@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = () => {
   const enableSeo = import.meta.env.VITE_ENABLE_SEO === 'true';
-  const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+  const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
   const content = enableSeo
     ? `User-agent: *

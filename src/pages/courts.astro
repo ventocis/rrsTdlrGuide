@@ -6,7 +6,7 @@ import CourtsFilter from '../components/CourtsFilter';
 import courtsRaw from '../data/courts.json';
 
 const courts = courtsRaw as any[];
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
 const jsonLdWebApp = {
   '@context': 'https://schema.org',
@@ -17,21 +17,21 @@ const jsonLdWebApp = {
   applicationCategory: 'UtilitiesApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  publisher: { '@type': 'Organization', name: 'TDLR Guide', url: siteUrl }
+  publisher: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl }
 };
 
 const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'TDLR Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 1, name: 'TX Course Guide', item: siteUrl },
     { '@type': 'ListItem', position: 2, name: 'Texas Court Lookup', item: `${siteUrl}/courts` }
   ]
 };
 ---
 
 <Layout
-  title="Texas Court Lookup — Find Your JP or Municipal Court | TDLR Guide"
+  title="Texas Court Lookup — Find Your JP or Municipal Court | TX Course Guide"
   description="Look up any Texas Justice of the Peace or Municipal court by county. Get judge name, phone, email, and website for defensive driving ticket dismissal."
   keywords="Texas court lookup, JP court Texas, municipal court Texas, Justice of the Peace, court directory Texas"
   url="/courts"

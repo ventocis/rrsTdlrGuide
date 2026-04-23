@@ -7,12 +7,12 @@ import providersRaw from '../data/providers.json';
 
 const providers = providersRaw as any[];
 const totalProviders = providers.length;
-const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://tdlrguide.com').replace(/\/$/, '');
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
 const jsonLdWebSite = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'TDLR Guide',
+  name: 'TX Course Guide',
   description: "Compare Texas' top-rated driver safety and defensive driving courses. TDLR-approved. Real prices, ratings, formats, and student reviews.",
   url: siteUrl,
   potentialAction: {
@@ -25,14 +25,14 @@ const jsonLdWebSite = {
 const jsonLdOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'TDLR Guide',
+  name: 'TX Course Guide',
   url: siteUrl,
   description: 'Independent comparison guide for TDLR-approved defensive driving and driver safety courses in Texas.'
 };
 ---
 
 <Layout
-  title="Compare Texas Defensive Driving Courses | TDLR Guide"
+  title="Compare Texas Defensive Driving Courses | TX Course Guide"
   description="Compare all TDLR-approved defensive driving providers. Real prices, certificate options, formats, and languages. Free tool for Texas drivers."
   url="/"
   jsonLd={[jsonLdWebSite, jsonLdOrganization]}
