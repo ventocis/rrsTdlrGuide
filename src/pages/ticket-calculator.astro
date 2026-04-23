@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import TicketCalculator from '../components/TicketCalculator';
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Texas Speeding Ticket Insurance Cost Calculator',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Web',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: 'Free calculator showing the true 3-year cost of a Texas speeding ticket including insurance rate increases.',
+  url: `${siteUrl}/ticket-calculator`,
+  publisher: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl }
+};
+---
+
+<Layout
+  title="Texas Speeding Ticket Cost Calculator — See What It Really Costs You | TX Course Guide"
+  description="Find out the true 3-year cost of a Texas speeding ticket including insurance rate increases — and how a $25 Driver Safety Course changes the math. Free calculator."
+  url="/ticket-calculator"
+  jsonLd={jsonLd}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/ticket-calculator" />
+    <main class="mx-auto w-full max-w-[720px] px-4 py-10 sm:px-6">
+      <h1 class="mb-2 text-2xl font-bold leading-tight sm:text-3xl" style="color: var(--proto-text);">
+        Texas Ticket Cost Calculator
+      </h1>
+      <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">
+        See the true 3-year cost of your Texas ticket — including insurance rate increases — and how a defensive driving course changes the math.
+      </p>
+      <TicketCalculator client:load />
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

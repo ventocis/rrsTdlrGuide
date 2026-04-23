@@ -1,13 +1,10 @@
 # Dependencies
 node_modules/
 
-# Nuxt
-.nuxt
-.output
-dist
+# Astro
+dist/
+.astro/
 *.log
-.nitro
-.cache
 
 # OS
 .DS_Store
@@ -26,6 +23,7 @@ Thumbs.db
 !.env.qa
 !.env.production
 
-# Courts data source (place in project root and run npm run build:courts)
-Courts Directory By County*.xlsx
+# Courts data source
 infra/cdk.out/
+infra/node_modules/
+.claude/launch.json

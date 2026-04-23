@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ProviderTable from '../components/ProviderTable';
+import providersRaw from '../data/providers.json';
+
+const providers = providersRaw as any[];
+const totalProviders = providers.length;
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
+
+const jsonLdWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'TX Course Guide',
+  description: "Compare Texas' top-rated driver safety and defensive driving courses. All state-approved providers. Real prices, ratings, formats, and student reviews.",
+  url: siteUrl,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: `${siteUrl}/?q={search_term_string}` },
+    'query-input': 'required name=search_term_string'
+  }
+};
+
+const jsonLdOrganization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TX Course Guide',
+  url: siteUrl,
+  description: 'Independent comparison guide for TDLR-approved defensive driving and driver safety courses in Texas.'
+};
+---
+
+<Layout
+  title="Compare Texas Defensive Driving Courses | TX Course Guide"
+  description="Compare all TDLR-approved defensive driving providers. Real prices, certificate options, formats, and languages. Free tool for Texas drivers."
+  url="/"
+  jsonLd={[jsonLdWebSite, jsonLdOrganization]}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/" />
+    <main role="main" aria-label="Compare Texas defensive driving courses">
+      <div class="mx-auto w-full max-w-[1600px] px-3 pt-5 pb-1 sm:px-4">
+        <h1 class="text-[15px] font-semibold leading-tight sm:text-[16px]" style="color: var(--proto-text);">
+          Compare Texas Defensive Driving Courses
+        </h1>
+        <p class="mt-0.5 text-[12px]" style="color: var(--proto-text-muted);">
+          {totalProviders} TDLR-approved providers · real prices, formats, and certificate delivery
+        </p>
+      </div>
+      <ProviderTable providers={providers} client:load />
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

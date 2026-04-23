@@ -1,0 +1,911 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
+
+const pageTitle = 'Houston Traffic Ticket Guide: DSC vs Deferred Disposition Explained | TX Course Guide';
+const pageDescription = 'Got a Houston traffic ticket? Learn how to dismiss it with a Driver Safety Course or Deferred Disposition. Plain-English guide with fees, forms, and step-by-step instructions from the City of Houston Municipal Courts.';
+const pageUrl = `${siteUrl}/houston`;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I dismiss a traffic ticket in Houston?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You have two options: take a TDLR-approved 6-hour Driver Safety Course (DSC) or request Deferred Disposition. DSC starts at $144 and requires completing a course within 90 days. Deferred Disposition starts at $243.90 and puts your case on hold without requiring a course (unless you are under 25).'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a Driver Safety Course cost in Houston?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The court fee for DSC in Houston is $144 for a moving violation or $169 for a school zone violation. If you missed your first court date, the fee increases to $184 or $209. You also pay at least $25 for the course itself.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Deferred Disposition in Houston Municipal Court?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Deferred Disposition is a suspended sentence. You plead guilty or no contest, pay a bond, and the court holds your case. If you comply with the court's conditions, your case is dismissed. If you violate the conditions, a conviction goes on your record."
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I take any defensive driving course for a Houston ticket?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes — you can take any course approved by the Texas Department of Licensing and Regulation (TDLR). All TDLR-approved courses are accepted by Houston Municipal Court.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What documents do I need to submit for DSC in Houston?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'For standard DSC: Certificate of Completion (Court Copy), a Certified Type 3A Driving Record, and a signed and notarized DSC Affidavit. For Discretionary DSC (missed your first court date): only the Certificate of Completion is required.'
+      }
+    }
+  ]
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Dismiss a Houston Traffic Ticket with a Driver Safety Course',
+  datePublished: '2026-03-25',
+  dateModified: '2026-03-25',
+  step: [
+    { '@type': 'HowToStep', name: 'Submit your DSC request to the court', text: 'Submit your DSC application to the court before your arraignment date' },
+    { '@type': 'HowToStep', name: 'Wait for written approval by mail', text: 'Wait for your approval letter in the mail' },
+    { '@type': 'HowToStep', name: 'Complete a TDLR-approved 6-hour course', text: 'Take any TDLR-approved 6-hour defensive driving course' },
+    { '@type': 'HowToStep', name: 'Submit completion documents within 90 days', text: 'Submit your Certificate of Completion (and other documents if required) to the court by mail or in person within 90 days' }
+  ]
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  url={pageUrl}
+  jsonLd={[faqSchema, howToSchema]}
+>
+  <div class="houston-page">
+    <SiteHeader currentPath="/houston" />
+    <main>
+      <div class="wrap">
+
+        <div class="pg-label">Houston Municipal Court</div>
+        <h1>Got a Houston traffic ticket?<br>Here are your options.</h1>
+        <p class="lead">Most traffic tickets in Houston can be dismissed without paying the fine. Pick the option that fits your situation below.</p>
+
+        <h2 class="sh">Step 1 — Choose your path</h2>
+
+        <div class="picker">
+          <div class="pick-btn blue">
+            <div class="pb-tag">Option A</div>
+            <h3>Driver Safety Course</h3>
+            <p>Take a 6-hour online or in-person driving course. Starts at $144. Good if you want the fastest, lowest-cost route.</p>
+          </div>
+          <div class="pick-btn green">
+            <div class="pb-tag">Option B</div>
+            <h3>Deferred Disposition</h3>
+            <p>The court puts your case on hold. Stay out of trouble for a set period — ticket dismissed. Starts at $243.90.</p>
+          </div>
+        </div>
+
+        <div class="box info" style="margin-bottom:1.5rem">
+          <div class="box-lbl">Not sure which to pick?</div>
+          <div class="compare">
+            <div class="comp-card dsc">
+              <div class="ct">Driver Safety Course</div>
+              <h4>Choose this if you...</h4>
+              <ul>
+                <li>Want the lowest cost option</li>
+                <li>Are comfortable taking a 6-hour course</li>
+                <li>Want to keep the option off your record cleanly</li>
+                <li>Have a valid Texas license (not CDL)</li>
+              </ul>
+            </div>
+            <div class="comp-card def">
+              <div class="ct">Deferred Disposition</div>
+              <h4>Choose this if you...</h4>
+              <ul>
+                <li>Missed your first court date for DSC</li>
+                <li>Already took DSC in the past 12 months</li>
+                <li>Don't want to take a course</li>
+                <li>Are willing to pay a higher fee upfront</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DSC Panel ── -->
+        <section aria-label="Driver Safety Course option">
+          <h2 class="sh">Driver Safety Course — Am I eligible?</h2>
+
+          <div class="box danger">
+            <div class="box-lbl">You are NOT eligible for DSC if any of these apply</div>
+            <div class="inel-list">
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You do not have a valid Texas Driver's License</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You hold a Commercial Driver's License (CDL)</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You already completed a court-ordered DSC within the past 12 months</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for going 95 mph or more</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for going 25 mph or more over the posted speed limit</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for passing a school bus</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for a serious traffic violation</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for failing to stop and help after an accident</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">Your ticket is for a violation in a construction zone with workers present</span></div>
+              <div class="inel-row"><span class="inel-x">X</span><span class="inel-text">You are a juvenile (must appear in person with a parent or guardian)</span></div>
+            </div>
+          </div>
+
+          <p style="font-size:14px;color:var(--tx2);margin:.875rem 0 0;line-height:1.6">If none of the above apply, you are likely eligible. Continue below.</p>
+
+          <h2 class="sh">DSC Court Fees</h2>
+
+          <div class="box success">
+            <div class="box-lbl">Standard DSC — on-time request</div>
+            <p>Submit your request before your court date and pay the lower fee. You have <strong>90 days</strong> after approval to complete the course and submit everything.</p>
+            <table class="fee-table" style="margin-top:.75rem">
+              <tbody>
+                <tr><th>Violation type</th><th>Court fee</th></tr>
+                <tr><td>Moving violation</td><td>$144.00</td></tr>
+                <tr><td>School zone moving violation</td><td>$169.00</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:13px;color:var(--tx2);margin-top:.75rem">When you finish the course, you must submit: <strong style="color:var(--tx)">Certificate of Completion + Certified Type 3A Driving Record + Notarized DSC Affidavit.</strong></p>
+          </div>
+
+          <div class="box warn" style="margin-top:.75rem">
+            <div class="box-lbl">Discretionary DSC — if you missed your first court date</div>
+            <p>Because you missed your first court date (or took DSC within the past year), the fee is higher. The process is otherwise the same — and it is <strong>simpler</strong> because you only need to submit your Certificate of Completion at the end. No affidavit, no driving record required.</p>
+            <table class="fee-table" style="margin-top:.75rem">
+              <tbody>
+                <tr><th>Violation type</th><th>Court fee</th></tr>
+                <tr><td>Moving violation</td><td>$184.00</td></tr>
+                <tr><td>School zone moving violation</td><td>$209.00</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:13px;color:var(--tx2);margin-top:.75rem">When you finish the course, you only need to submit: <strong style="color:var(--tx)">Certificate of Completion.</strong> That's it.</p>
+          </div>
+
+          <h2 class="sh">How to complete DSC — step by step</h2>
+
+          <div class="box warn">
+            <div class="box-lbl">Important — do this in the right order</div>
+            <p><strong>Do not take the course before the court approves you.</strong> If you take it first, the judge may reject your certificate and you will have wasted your money.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-dot">1</div>
+              <div class="step-body">
+                <strong>Submit your application to the court before your arraignment date</strong>
+                <p>Download the DSC Application form, complete it, and submit with your Driver's License, proof of insurance, and the court fee. You can apply by mail, email, or in person.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">2</div>
+              <div class="step-body">
+                <strong>Wait for your approval letter in the mail</strong>
+                <p>The court will mail you a letter confirming approval and your 90-day deadline. Do not take the course until this arrives.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">3</div>
+              <div class="step-body">
+                <strong>Take any TDLR-approved 6-hour defensive driving course</strong>
+                <p>Online or in person — your choice. All courses cost at least $25 by law. You have 90 days from your approval date.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">4</div>
+              <div class="step-body">
+                <strong>Submit your completion documents by mail or in person</strong>
+                <p>Do not email your certificate. See required documents below based on your situation.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Forms and documents to download</h2>
+
+          <div class="req-list">
+            <div class="req-item">
+              <div class="req-num">1</div>
+              <div class="req-body">
+                <strong>DSC Application</strong>
+                <span>Required for everyone. Fill out and sign before submitting your request to the court.</span><br>
+                <a class="dl-link" href="https://houstontx.gov/courts/forms/DSC-Application.pdf" target="_blank" rel="noopener noreferrer">Download from Houston Courts</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">2</div>
+              <div class="req-body">
+                <strong>DSC Affidavit</strong>
+                <span>Required for standard DSC only (not if you missed your date). Must be signed and notarized. Court clerks can notarize in person for $10.</span><br>
+                <a class="dl-link" href="https://houstontx.gov/courts/forms/DSC-Affidavit.pdf" target="_blank" rel="noopener noreferrer">Download from Houston Courts</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">3</div>
+              <div class="req-body">
+                <strong>Certified Type 3A Driving Record</strong>
+                <span>Required for standard DSC only. Must specifically be a "Type 3A." Order online instantly at texas.gov, or by mail using the DPS form (allow 2–3 weeks).</span><br>
+                <a class="dl-link" href="https://www.texas.gov" target="_blank" rel="noopener noreferrer">Order online at texas.gov</a>
+                <a class="dl-link" href="https://www.dps.texas.gov/internetforms/forms/dr-1.pdf" target="_blank" rel="noopener noreferrer" style="margin-left:.35rem">Mail-in order form (PDF)</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">4</div>
+              <div class="req-body">
+                <strong>Certificate of Completion</strong>
+                <span>Required for everyone. Provided by your course provider after finishing. Submit the signed "Court Copy" — do not email it to the court.</span><br>
+                <span class="ph-link">Provided by your course provider</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Where to submit your request and documents</h2>
+
+          <div class="sub-methods">
+            <div class="sub-card">
+              <div class="method">By mail</div>
+              <p>City of Houston Municipal Courts<br>P.O. Box 4996<br>Houston, TX 77210-4996</p>
+            </div>
+            <div class="sub-card">
+              <div class="method">By email</div>
+              <p>
+                <a href="mailto:mcd@houstontx.gov">mcd@houstontx.gov</a><br><br>
+                <span style="font-size:12px;color:var(--red-tx);font-weight:600">Do not email your certificate</span>
+              </p>
+            </div>
+            <div class="sub-card">
+              <div class="method">In person</div>
+              <p><a href="https://houstontx.gov/courts/locations.html" target="_blank" rel="noopener noreferrer">6 court locations</a> across Houston. Clerk can notarize your affidavit for $10.</p>
+            </div>
+          </div>
+
+          <p style="font-size:13px;color:var(--tx2);margin-top:1rem">Questions? Call the Houston Court Help Line: <strong style="color:var(--tx)">713.837.0311</strong></p>
+        </section>
+
+        <div class="div"></div>
+
+        <!-- ── Deferred Disposition Panel ── -->
+        <section aria-label="Deferred Disposition option">
+          <h2 class="sh">What is Deferred Disposition?</h2>
+
+          <div class="box neutral">
+            <div class="box-lbl">Plain English explanation</div>
+            <p>You plead guilty or no contest. The court does not find you guilty yet — it puts your case on hold. You pay a bond and follow the court's conditions. If you stay out of trouble for the required period, your case is dismissed and the bond money is applied to a fee. If you get another ticket or violate the conditions, the conviction goes on your record.</p>
+          </div>
+
+          <div class="box info" style="margin-top:.75rem">
+            <div class="box-lbl">If you are under 25</div>
+            <p>If you choose Deferred Disposition and you are <strong>under 25 years old</strong>, the judge is required by law to also make you complete a Driver Safety Course as one of your conditions. You effectively end up doing both.</p>
+          </div>
+
+          <h2 class="sh">Am I eligible?</h2>
+
+          <p style="font-size:14px;color:var(--tx2);margin-bottom:.875rem">Most people are eligible to request by mail or email. However, the following situations require you to appear in person — the court will not accept a mail or email request:</p>
+
+          <div class="inel-list">
+            <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">Going 26 mph or more over the posted speed limit — must appear in person</span></div>
+            <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">Commercial Driver's License (CDL) holder — must appear in person</span></div>
+            <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">Passing a school bus — must appear in person</span></div>
+            <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">No liability auto insurance at time of citation — must appear in person</span></div>
+            <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">Violation in a construction zone with workers present — must appear in person</span></div>
+            <div class="inel-row"><span class="inel-x">!</span><span class="inel-text">Juvenile — must appear in person with a parent or guardian</span></div>
+          </div>
+
+          <h2 class="sh">How much does it cost?</h2>
+
+          <table class="fee-table" style="width:100%">
+            <tbody>
+              <tr><th>Violation type</th><th>Total cost (fee + bond)</th></tr>
+              <tr><td>Standard non-accident traffic case</td><td>$243.90</td></tr>
+              <tr><td>Speeding 14 mph or less over limit</td><td>$258.90</td></tr>
+              <tr><td>Speeding 15–25 mph over limit</td><td>$288.90</td></tr>
+              <tr><td>School zone case</td><td>$283.90</td></tr>
+              <tr><td>Accident case</td><td>$308.90</td></tr>
+            </tbody>
+          </table>
+
+          <h2 class="sh">How to apply — step by step</h2>
+
+          <div class="box warn">
+            <div class="box-lbl">Deadline</div>
+            <p>You must submit your request <strong>on or before your first court date</strong> to avoid a Failure to Appear warrant.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-dot">1</div>
+              <div class="step-body">
+                <strong>Download and complete the Deferred Disposition Application</strong>
+                <p>Fill it out completely and sign it. Do not leave any fields blank.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">2</div>
+              <div class="step-body">
+                <strong>Gather your required documents</strong>
+                <p>You will need your completed application, a copy of your Texas Driver's License (front side only, valid at time of application), and a copy of your auto insurance (valid at time of application, showing you as insured).</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-dot">3</div>
+              <div class="step-body">
+                <strong>Submit everything with your payment before your court date</strong>
+                <p>By mail, email, or in person. Payment accepted by check, cashier's check, money order (payable to City of Houston Municipal Courts), or credit card. Credit card payments are taken by phone.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Forms to download</h2>
+
+          <div class="req-list">
+            <div class="req-item">
+              <div class="req-num">1</div>
+              <div class="req-body">
+                <strong>Deferred Disposition Application</strong>
+                <span>Required. Complete, sign, and submit with your payment and supporting documents before your court date.</span><br>
+                <a class="dl-link" href="https://houstontx.gov/courts/forms/Deferred-Disposition-Application.pdf" target="_blank" rel="noopener noreferrer">Download from Houston Courts</a>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">2</div>
+              <div class="req-body">
+                <strong>Texas Driver's License (copy)</strong>
+                <span>Front side only. Must be valid at time of application. CDL holders are not eligible.</span><br>
+                <span class="ph-link">Your own document — no download needed</span>
+              </div>
+            </div>
+            <div class="req-item">
+              <div class="req-num">3</div>
+              <div class="req-body">
+                <strong>Proof of auto insurance (copy)</strong>
+                <span>Must be valid at time of application and list you as the insured driver.</span><br>
+                <span class="ph-link">Your own document — no download needed</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="sh">Where to submit</h2>
+
+          <div class="sub-methods sub-methods-4">
+            <div class="sub-card">
+              <div class="method">By mail</div>
+              <p>City of Houston Municipal Courts<br>P.O. Box 4996<br>Houston, TX 77210-4996</p>
+            </div>
+            <div class="sub-card">
+              <div class="method">By email</div>
+              <p>
+                <a href="mailto:mcd@houstontx.gov">mcd@houstontx.gov</a><br><br>
+                <span style="font-size:12px;color:var(--tx3)">Credit card payment taken by phone</span>
+              </p>
+            </div>
+            <div class="sub-card">
+              <div class="method">In person</div>
+              <p>Appear before the Annex Judge with your documents and payment. <a href="https://houstontx.gov/courts/locations.html" target="_blank" rel="noopener noreferrer">Court locations</a></p>
+            </div>
+            <div class="sub-card">
+              <div class="method">By phone</div>
+              <p>Call 713.247.5479 to request Deferred Disposition by phone. Credit card payments are also taken by phone.</p>
+            </div>
+          </div>
+
+          <div class="box warn" style="margin-top:1.5rem">
+            <div class="box-lbl">If you miss your compliance deadline</div>
+            <p>You will be required to appear at a Show Cause Hearing approximately 30 days after your due date. A letter will be sent to your address on file. Call 713.837.0311 for hearing information.</p>
+          </div>
+
+          <p style="font-size:13px;color:var(--tx2);margin-top:1rem">Questions? Call: <strong style="color:var(--tx)">713.837.0311</strong> or <strong style="color:var(--tx)">713.247.5479</strong></p>
+        </section>
+
+        <div class="div"></div>
+
+        <div class="cta">
+          <div>
+            <strong>Need to pick a defensive driving course?</strong>
+            <p style="font-size:14px;color:var(--tx2)">Compare all 133 TDLR-approved providers by price, format, and language — free, no signup.</p>
+          </div>
+          <a class="cta-btn" href="/">Compare courses on TX Course Guide</a>
+        </div>
+
+        <div class="disc">
+          <div class="dl">Disclaimer and source verification</div>
+          <p>This page is an independent summary created by TX Course Guide for informational purposes only. TX Course Guide is not affiliated with the City of Houston, Houston Municipal Courts, or the Texas Department of Licensing and Regulation (TDLR). All information is sourced directly from official City of Houston Municipal Courts pages and reflects content as of March 2026. Rules, fees, and procedures may change — always verify current requirements with the court before taking action. This is not legal advice. If you have questions specific to your case, contact the court directly or consult a licensed attorney.</p>
+          <div class="src-links">
+            <a class="src-link" href="https://houstontx.gov/courts/HowDoIRequestDefensiveDriving.html" target="_blank" rel="noopener noreferrer">Official DSC page</a>
+            <a class="src-link" href="https://houstontx.gov/courts/HowDoIRequestDeferredDisposition.html" target="_blank" rel="noopener noreferrer">Official Deferred Disposition page</a>
+            <a class="src-link" href="https://houstontx.gov/courts/index.html" target="_blank" rel="noopener noreferrer">Houston Municipal Courts</a>
+            <a class="src-link" href="https://www.tdlr.texas.gov/driver/safety/providers/search/" target="_blank" rel="noopener noreferrer">TDLR provider search</a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@400;500;600&display=swap');
+
+.houston-page {
+  --tx: #18181b;
+  --tx2: #52525b;
+  --tx3: #a1a1aa;
+  --bg: #fff;
+  --bg2: #fafaf9;
+  --bg3: #f4f4f0;
+  --bd: #e4e4e7;
+  --bd2: #d4d4d8;
+  --blue: #1d4ed8;
+  --blue-bg: #eff6ff;
+  --blue-bd: #bfdbfe;
+  --blue-tx: #1e40af;
+  --green: #15803d;
+  --green-bg: #f0fdf4;
+  --green-bd: #bbf7d0;
+  --green-tx: #166534;
+  --red: #b91c1c;
+  --red-bg: #fef2f2;
+  --red-bd: #fecaca;
+  --red-tx: #991b1b;
+  --amber: #92400e;
+  --amber-bg: #fffbeb;
+  --amber-bd: #fde68a;
+  --amber-tx: #78350f;
+  --sans: 'DM Sans', sans-serif;
+  --serif: 'Literata', Georgia, serif;
+  --r: 8px;
+  --rl: 12px;
+  font-family: var(--sans);
+  color: var(--tx);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+@media (prefers-color-scheme: dark) {
+  .houston-page {
+    --tx: #f4f4f5;
+    --tx2: #a1a1aa;
+    --tx3: #71717a;
+    --bg: #18181b;
+    --bg2: #1f1f23;
+    --bg3: #27272a;
+    --bd: #3f3f46;
+    --bd2: #52525b;
+    --blue: #60a5fa;
+    --blue-bg: #1e3a5f;
+    --blue-bd: #1d4ed8;
+    --blue-tx: #93c5fd;
+    --green: #4ade80;
+    --green-bg: #14532d;
+    --green-bd: #15803d;
+    --green-tx: #86efac;
+    --red: #f87171;
+    --red-bg: #450a0a;
+    --red-bd: #7f1d1d;
+    --red-tx: #fca5a5;
+    --amber: #fbbf24;
+    --amber-bg: #1c1400;
+    --amber-bd: #78350f;
+    --amber-tx: #fcd34d;
+  }
+}
+
+.wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
+
+.pg-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  margin-bottom: .5rem;
+}
+h1 {
+  font-family: var(--serif);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: .75rem;
+}
+.lead {
+  font-size: 15px;
+  color: var(--tx2);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+
+.sh {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  margin: 2.75rem 0 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--bd);
+}
+
+.picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 500px) {
+  .picker { grid-template-columns: 1fr; }
+}
+.pick-btn {
+  border: 1px solid var(--bd);
+  border-radius: var(--rl);
+  padding: 1.125rem 1.25rem;
+  background: var(--bg);
+  text-align: left;
+  font-family: var(--sans);
+}
+.pick-btn .pb-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .35rem;
+  color: var(--tx3);
+}
+.pick-btn.blue .pb-tag { color: var(--blue-tx); }
+.pick-btn.green .pb-tag { color: var(--green-tx); }
+.pick-btn h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--tx);
+  margin-bottom: .3rem;
+}
+.pick-btn p {
+  font-size: 13px;
+  color: var(--tx2);
+  line-height: 1.5;
+  margin: 0;
+}
+.pick-btn.blue { border-color: var(--blue); }
+.pick-btn.green { border-color: var(--green); }
+
+.box {
+  border-radius: var(--rl);
+  padding: 1.125rem 1.375rem;
+  margin-bottom: 1rem;
+}
+.box.warn    { background: transparent; border: 1px solid var(--amber-bd); border-left: 3px solid var(--amber); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.danger  { background: transparent; border: 1px solid var(--red-bd);   border-left: 3px solid var(--red);   border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info    { background: transparent; border: 1px solid var(--blue-bd);  border-left: 3px solid var(--blue);  border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.success { background: transparent; border: 1px solid var(--green-bd); border-left: 3px solid var(--green); border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.neutral { background: var(--bg2);  border: 1px solid var(--bd);                                            border-radius: var(--r); padding: 1rem 1.125rem; }
+.box.info:has(.compare) { background: var(--bg2); border: 1px solid var(--bd); border-left: none; border-radius: var(--rl); }
+.box-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: .45rem;
+}
+.box.warn    .box-lbl { color: var(--amber-tx); }
+.box.danger  .box-lbl { color: var(--red-tx); }
+.box.info    .box-lbl { color: var(--blue-tx); }
+.box.success .box-lbl { color: var(--green-tx); }
+.box.neutral .box-lbl { color: var(--tx3); }
+.box p, .box li {
+  font-size: 14px;
+  color: var(--tx2);
+  line-height: 1.6;
+}
+.box strong { color: var(--tx); font-weight: 600; }
+.box ul {
+  padding-left: 1rem;
+  margin-top: .4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.req-list { display: flex; flex-direction: column; gap: .5rem; margin-top: .75rem; }
+.req-item {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  padding: .75rem 1rem;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+}
+.req-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bd2);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tx2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.req-body { flex: 1; }
+.req-body strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tx);
+  display: block;
+  margin-bottom: .15rem;
+}
+.req-body span { font-size: 13px; color: var(--tx2); line-height: 1.5; }
+.dl-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: .4rem;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  padding: .25rem .65rem;
+  background: var(--blue-bg);
+  border: 1px solid var(--blue-bd);
+  border-radius: 4px;
+}
+.dl-link:hover { opacity: .8; }
+.ph-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: .4rem;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tx3);
+  padding: .25rem .65rem;
+  background: var(--bg3);
+  border: 1px dashed var(--bd2);
+  border-radius: 4px;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .75rem;
+  font-size: 13px;
+}
+.fee-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  padding: .5rem .75rem;
+  border-bottom: 1px solid var(--bd);
+}
+.fee-table td {
+  padding: .5rem .75rem;
+  border-bottom: 1px solid var(--bd);
+  color: var(--tx2);
+}
+.fee-table td:last-child {
+  font-weight: 600;
+  color: var(--tx);
+  text-align: right;
+}
+.fee-table tr:last-child td { border-bottom: none; }
+
+.inel-list { display: flex; flex-direction: column; gap: .25rem; margin-top: .6rem; }
+.inel-row {
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  padding: .5rem .75rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--bd);
+  border-radius: 4px;
+}
+.inel-row:last-child { border-bottom: none; }
+.inel-x { font-size: 11px; font-weight: 700; color: var(--red-tx); flex-shrink: 0; padding-top: 2px; }
+.inel-text { font-size: 13px; color: var(--tx2); line-height: 1.45; }
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  margin-top: .75rem;
+}
+.steps::before {
+  content: '';
+  position: absolute;
+  left: 13px;
+  top: 28px;
+  bottom: 28px;
+  width: 1px;
+  background: var(--bd);
+  opacity: 0.6;
+}
+.step { display: flex; gap: 1rem; padding: .75rem 0; }
+.step-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--bd2);
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tx2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.step-body { padding-top: 3px; }
+.step-body strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tx);
+  display: block;
+  margin-bottom: .2rem;
+}
+.step-body p { font-size: 13px; color: var(--tx2); line-height: 1.55; margin: 0; }
+
+.sub-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin-top: .75rem;
+}
+.sub-methods-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 620px) {
+  .sub-methods-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .sub-methods { grid-template-columns: 1fr; }
+  .sub-methods-4 { grid-template-columns: repeat(2, 1fr); }
+}
+.sub-card {
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  padding: .875rem 1rem;
+  background: var(--bg);
+}
+.sub-card .method {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  margin-bottom: .4rem;
+}
+.sub-card p { font-size: 13px; color: var(--tx2); line-height: 1.5; margin: 0; }
+.sub-card a { color: var(--blue); text-decoration: none; }
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .875rem;
+  margin-top: .75rem;
+}
+@media (max-width: 480px) {
+  .compare { grid-template-columns: 1fr; }
+}
+.comp-card {
+  border-radius: var(--r);
+  padding: .875rem 1rem;
+  border: 1px solid var(--bd);
+  background: var(--bg);
+}
+.comp-card.dsc { border-top: 2px solid var(--blue); }
+.comp-card.def { border-top: 2px solid var(--green); }
+.comp-card .ct {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .35rem;
+}
+.comp-card.dsc .ct { color: var(--blue-tx); }
+.comp-card.def .ct { color: var(--green-tx); }
+.comp-card h4 { font-size: 14px; font-weight: 600; color: var(--tx); margin-bottom: .35rem; }
+.comp-card ul { list-style: none; display: flex; flex-direction: column; gap: .3rem; padding: 0; margin: 0; }
+.comp-card li {
+  font-size: 13px;
+  color: var(--tx2);
+  line-height: 1.4;
+  display: flex;
+  gap: .5rem;
+}
+.comp-card li::before { content: '–'; color: var(--tx3); flex-shrink: 0; }
+
+.div { height: 1px; background: var(--bd); margin: 2rem 0; }
+
+.cta {
+  border: 1px solid var(--bd);
+  border-radius: var(--rl);
+  padding: 1.375rem 1.5rem;
+  background: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.cta p { font-size: 14px; color: var(--tx2); flex: 1; margin: 0; }
+.cta strong { color: var(--tx); font-weight: 600; display: block; margin-bottom: .2rem; }
+.cta-btn {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: .625rem 1.125rem;
+  background: var(--tx);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--r);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.disc {
+  margin-top: 2.5rem;
+  padding: 1.125rem 1.375rem;
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  border-radius: var(--rl);
+}
+.disc .dl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  margin-bottom: .5rem;
+}
+.disc p { font-size: 12px; color: var(--tx3); line-height: 1.65; margin: 0; }
+.disc a { color: var(--blue); text-decoration: none; }
+.src-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+.src-link {
+  font-size: 11px;
+  font-weight: 600;
+  padding: .25rem .6rem;
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  color: var(--blue);
+  text-decoration: none;
+}
+</style>

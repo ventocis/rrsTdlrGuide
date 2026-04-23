@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fallback font metrics — closely match DM Sans so layout barely shifts when web fonts aren't cached */
+@font-face {
+  font-family: 'DM Sans';
+  src: local('Arial');
+  ascent-override: 94%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+  size-adjust: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ─── Proto design tokens — single source of truth ─────────────────────── */
+:root {
+  /* Teal accent */
+  --proto-teal: #0D9488;
+  --proto-teal-dark: #0F766E;
+  --proto-teal-bg: #F0FDFA;
+  --proto-teal-border: #D1FAE5;
+  --proto-teal-text: #5EEAD4;
+
+  /* Grays */
+  --proto-page-bg: #F8FAFB;
+  --proto-card-border: #E5E7EB;
+  --proto-row-border: #F3F4F6;
+  --proto-hover-bg: #FAFBFC;
+  --proto-text: #111827;
+  --proto-text-muted: #6B7280;
+  --proto-text-light: #9CA3AF;
+  --proto-label: #6B7280;
+
+  /* Header */
+  --proto-header-from: #0F172A;
+  --proto-header-to: #1E293B;
+  --proto-header-subtitle: #94A3B8;
+  --proto-search-border: rgba(255, 255, 255, 0.1);
+  --proto-search-bg: rgba(255, 255, 255, 0.07);
+
+  /* Pills — cert */
+  --pill-cert-free-bg: #ECFDF5;
+  --pill-cert-free-text: #065F46;
+  --pill-cert-free-border: #A7F3D0;
+  --pill-cert-paid-bg: #FEF2F2;
+  --pill-cert-paid-text: #DC2626;
+  --pill-cert-paid-border: #FECACA;
+  --pill-cert-mail-bg: #F3F4F6;
+  --pill-cert-mail-text: #4B5563;
+  --pill-cert-mail-border: #D1D5DB;
+
+  /* Pills — format */
+  --pill-format-both-bg: #F5F3FF;
+  --pill-format-both-text: #6D28D9;
+  --pill-format-both-border: #DDD6FE;
+  --pill-format-inperson-bg: #FFF7ED;
+  --pill-format-inperson-text: #C2410C;
+  --pill-format-inperson-border: #FED7AA;
+  --pill-format-online-bg: #EFF6FF;
+  --pill-format-online-text: #1D4ED8;
+  --pill-format-online-border: #BFDBFE;
+
+  /* Pills — language */
+  --pill-lang-engspanish-bg: #FFF7ED;
+  --pill-lang-engspanish-text: #9A3412;
+  --pill-lang-engspanish-border: #FDBA74;
+  --pill-lang-english-bg: #F1F5F9;
+  --pill-lang-english-text: #475569;
+  --pill-lang-english-border: #CBD5E1;
+  --pill-lang-spanish-bg: #FEF9C3;
+  --pill-lang-spanish-text: #854D0E;
+  --pill-lang-spanish-border: #FDE047;
+  --pill-lang-other-bg: #F3F4F6;
+  --pill-lang-other-text: #4B5563;
+  --pill-lang-other-border: #D1D5DB;
+
+  /* RUI color palette for status states */
+  --color-rui-success-700: #388e3c;
+  --color-rui-error-600: #a61b1b;
+  --color-rui-warning-50: #fff8e7;
+  --color-rui-warning-200: #f8e3a3;
+  --color-rui-warning-800: #7c5e10;
+}

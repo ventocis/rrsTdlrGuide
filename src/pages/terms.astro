@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="Terms of Use — TX Course Guide"
+  description="Terms of use for TX Course Guide. Rules and conditions for using our Texas defensive driving comparison website."
+  url="/terms"
+  noindex={true}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/terms" />
+    <main class="mx-auto w-full max-w-[720px] px-4 py-10 sm:px-6">
+      <h1 class="mb-2 text-2xl font-bold" style="color: var(--proto-text);">Terms of Use</h1>
+      <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">Last updated: March 2025</p>
+
+      <div class="space-y-6 text-[14px] leading-relaxed" style="color: var(--proto-text);">
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Acceptance of Terms</h2>
+          <p>By accessing or using TX Course Guide ("the site"), you agree to be bound by these Terms of Use. If you do not agree, please do not use the site.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Use of the Site</h2>
+          <p>TX Course Guide is provided for informational and comparison purposes only. The information on this site is not legal advice. Always verify information with the relevant provider, court, or the Texas Department of Licensing and Regulation (TDLR) before making decisions.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Accuracy of Information</h2>
+          <p>We make every effort to keep provider information accurate and up to date. However, course prices, features, and availability are subject to change without notice. We make no warranty as to the accuracy, completeness, or timeliness of the information on this site.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Affiliate Disclosure</h2>
+          <p>TX Course Guide may earn a commission when you purchase a course through links on this site. This affiliate relationship does not influence our provider rankings or editorial content. We maintain editorial independence.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">No Endorsement</h2>
+          <p>Listing a provider on this site does not constitute an endorsement of that provider. TX Course Guide is not affiliated with TDLR or the State of Texas.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Limitation of Liability</h2>
+          <p>TX Course Guide is not liable for any damages arising from your use of this site or reliance on the information provided. Use this site at your own risk.</p>
+        </section>
+        <section>
+          <h2 class="mb-2 text-lg font-semibold" style="color: var(--proto-text);">Contact</h2>
+          <p>Questions about these terms? Contact us at <a href="mailto:info@txcourseguide.com" class="font-medium hover:underline" style="color: var(--proto-teal);">info@txcourseguide.com</a>.</p>
+        </section>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

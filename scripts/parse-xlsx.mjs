@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Reads TDLRguide.xlsx (first sheet) and writes data/providers.json.
+ * Reads TX Course Guide.xlsx (first sheet) and writes data/providers.json.
  *
  * Expected columns (first row = header; names are matched flexibly, case-insensitive):
  *   Provider, License, Website, Rating, Price, Fee, Minimum Certificate Cost,
@@ -23,11 +23,11 @@ import * as XLSXNS from 'xlsx'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-const workbookPath = path.join(__dirname, '..', 'TDLRguide.xlsx')
+const workbookPath = path.join(__dirname, '..', 'TX Course Guide.xlsx')
 const outputPath = path.join(__dirname, '..', 'data', 'providers.json')
 
 if (!fs.existsSync(workbookPath)) {
-  console.error(`TDLRguide.xlsx not found at ${workbookPath}`)
+  console.error(`TX Course Guide.xlsx not found at ${workbookPath}`)
   process.exit(1)
 }
 

@@ -1,0 +1,3891 @@
+[
+  {
+    "id": 1,
+    "name": "ROAD READY SAFETY",
+    "license": "CP1234",
+    "website": "https://roadreadysafety.com/courses/tx-defensive",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 2,
+    "name": "AAA CONTINUING EDUCATION",
+    "license": "CP084",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "name": "RUSHDEFENSIVEDRIVING.COM",
+    "license": "CP343",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "name": "$25 DEFENSIVE DRIVING",
+    "license": "CP1003",
+    "website": "https://tylerdrivingschool.com",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "name": "1-DRIVING.COM",
+    "license": "CP935",
+    "website": "https://1driving.com/",
+    "duplicates": [],
+    "price": 29,
+    "priceDisplay": "29",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 29,
+    "totalCostDisplay": "29",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "1-STREET WISE DRIVING SCHOOLS",
+    "license": "CP1091",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "1SAFEDRIVER.COM",
+    "license": "CP221",
+    "website": "https://1safedriver.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "247TEXASDRIVERSAFETY.COM",
+    "license": "CP156",
+    "website": "https://247texasdriversafety.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "name": "2SIC INC",
+    "license": "CP076",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "4 V DRIVING SCHOOL LLC",
+    "license": "CP1089",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "A2Z DRIVING SCHOOL DALLAS",
+    "license": "CP1088",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "name": "ACEABLE DEFENSIVE DRIVING",
+    "license": "CP262",
+    "website": "https://www.aceable.com/defensive-driving/texas/#products",
+    "duplicates": [],
+    "price": 49,
+    "priceDisplay": "49",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 64,
+    "totalCostDisplay": "64",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "name": "ADS DEFENSIVE DRIVING CURRICULUM",
+    "license": "CP042",
+    "website": "https://austindrivingschool.com/",
+    "duplicates": [],
+    "price": 39,
+    "priceDisplay": "39",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 39,
+    "totalCostDisplay": "39",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "name": "ALL IS WELL DRIVING ACADEMY, LLC",
+    "license": "CP1046",
+    "website": "https://www.alliswelldrivingacademy.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "name": "ANGELO DRIVING, INC.",
+    "license": "CP136",
+    "website": "https://www.angelodrivingacademy.com/driver-safety-defensive-driver-safety-class.html",
+    "duplicates": [],
+    "price": 30,
+    "priceDisplay": "30",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 30,
+    "totalCostDisplay": "30",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 16,
+    "name": "APPROVED NATIONAL DRIVING SCHOOL OF TEXAS",
+    "license": "CP1093",
+    "website": "https://approvedonlinedefensivedriving.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 17,
+    "name": "ASTROWORLD DRIVING ACADEMY",
+    "license": "CP1090",
+    "website": "https://www.astroworldda.com/blank-page-2",
+    "duplicates": [],
+    "price": 40,
+    "priceDisplay": "40",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 40,
+    "totalCostDisplay": "40",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 18,
+    "name": "AUSTIN TICKET DISMISSAL COURSES",
+    "license": "CP047",
+    "website": "https://austindrivingschool.com/ticket-dismissal-defensive-driving/",
+    "duplicates": [],
+    "price": 39,
+    "priceDisplay": "39",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 39,
+    "totalCostDisplay": "39",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 19,
+    "name": "AUTOMOTIVE EDUCATION",
+    "license": "CP1067",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 20,
+    "name": "AWARE DRIVER",
+    "license": "CP995",
+    "website": "https://www.onlinetxdefensivedrivingcourse.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 21,
+    "name": "CHEAP AND EASY DEFENSIVE DRIVING",
+    "license": "CP055",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 22,
+    "name": "CHEAPEST - FREE CERTIFICATE - FREE AUDIO -100% PASS - EZ - SHORT",
+    "license": "CP006",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 23,
+    "name": "CHEROKEE DRIVING SCHOOL LLC",
+    "license": "CP1221",
+    "website": "https://cherokeedrivingschool.com/online-courses",
+    "duplicates": [],
+    "price": 40,
+    "priceDisplay": "40",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 40,
+    "totalCostDisplay": "40",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 24,
+    "name": "COMEDY DEFENSIVE DRIVING",
+    "license": "CP333",
+    "website": "https://comedydefensivedriving.com/texas/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 25,
+    "name": "COMEDYSAFEDRIVER.COM",
+    "license": "CP360",
+    "website": "COMEDYSAFEDRIVER.COM",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 27.5,
+    "totalCostDisplay": "27.5",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 26,
+    "name": "DAD'S DRIVING SCHOOL PLLC",
+    "license": "CP1196",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 27,
+    "name": "DALLAS DEFENSIVE DRIVING SCHOOL",
+    "license": "CP1204",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 28,
+    "name": "DEFENSIVE DRIVERS INSTITUTE, LLC",
+    "license": "CP1013",
+    "website": "https://defensivedriversinstitute.com/defensive-driving/texas-defensive-driving-course/?srsltid=AfmBOoq6xXIDK4xT6q9rolXXsLPBgNKNLU5i81wOgLG5WgxTqI8P7mSG",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 29,
+    "name": "DEFENSIVE DRIVING BY IMPROV COMEDY CLUB",
+    "license": "CP342",
+    "website": "https://www.myimprov.com/defensive-driving/texas/tx-online-course/?hl=en",
+    "duplicates": [],
+    "price": 25.95,
+    "priceDisplay": "25.95",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28.95,
+    "totalCostDisplay": "28.95",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 30,
+    "name": "DEFENSIVE DRIVING FOUNDATION",
+    "license": "CP1007",
+    "website": "https://defensivedrivingfoundation.com",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 31,
+    "name": "DEFENSIVEDRIVING.COM",
+    "license": "CP284",
+    "website": "https://www.defensivedriving.com/texas/home/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 32,
+    "name": "DRIVE DEFENSIVELY IN TEXAS, LLC",
+    "license": "CP206",
+    "website": "https://drivedefensivelyintexas.net/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 33,
+    "name": "DRIVE SAFE DRIVING SCHOOL",
+    "license": "CP1014",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 34,
+    "name": "DRIVE SMART",
+    "license": "CP064",
+    "website": "https://onlinetrafficeducation.com/",
+    "duplicates": [],
+    "price": 28,
+    "priceDisplay": "28",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 35,
+    "name": "DRIVER TRAINING ASSOCIATES, INC.",
+    "license": "CP090",
+    "website": "https://drivertrainingassociates.com/texas/defensive-driving-tx.html",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 36,
+    "name": "DRIVERS EDUCATION OF AMERICA, INC.",
+    "license": "CP1051",
+    "website": "https://defensivedrivingclasstx.com/cherokee-county/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 37,
+    "name": "DRIVERSED.COM",
+    "license": "CP019",
+    "website": "https://driversed.com/texas/defensive-driving/",
+    "duplicates": [],
+    "price": 34,
+    "priceDisplay": "34",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 49,
+    "totalCostDisplay": "49",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 38,
+    "name": "DRIVESAFETODAY.COM INC",
+    "license": "CP001",
+    "website": "https://drivesafetoday.com/courses/texas",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 39,
+    "name": "DRIVEWISE TRAINING SCHOOL",
+    "license": "CP404",
+    "website": "https://www.drivewise.com/online-learning/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 40,
+    "name": "DRIVING SAFETY AWARENESS",
+    "license": "CP094",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 41,
+    "name": "DRIVING SCHOOL OF HOUSTON LLC",
+    "license": "CP1189",
+    "website": "https://www.drivingschoolofhouston.com/",
+    "duplicates": [],
+    "price": 50,
+    "priceDisplay": "50",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 42,
+    "name": "DRIVING UNIVERSITY, LLC",
+    "license": "CP712",
+    "website": "https://www.drivinguniversity.com/texas-approved-online-defensive-driving-school/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 43,
+    "name": "DRIVINGQUEST",
+    "license": "CP020",
+    "website": "https://drivingquest.com/defensive-driving/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 31,
+    "totalCostDisplay": "31",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 44,
+    "name": "EXCELLENT DRIVING SCHOOL LLC",
+    "license": "CP1010",
+    "website": "https://excellentdrivingschool.us",
+    "duplicates": [],
+    "price": 65,
+    "priceDisplay": "65",
+    "stateFee": 3.99,
+    "stateFeeDisplay": "3.99",
+    "totalCost": 72.97999999999999,
+    "totalCostDisplay": "72.97999999999999",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 45,
+    "name": "FAMILY DRIVING SCHOOL",
+    "license": "CP1193",
+    "website": "https://familydrivingschooldps.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 46,
+    "name": "FIRST CLASS DEFENSIVE DRIVING",
+    "license": "CP661",
+    "website": "https://aladdinmedia.com/firstclassdriver/coastline.html",
+    "duplicates": [],
+    "price": 28.95,
+    "priceDisplay": "28.95",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28.95,
+    "totalCostDisplay": "28.95",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 47,
+    "name": "FREE AUDIO - FREE CERTIFICATE - CHEAP - EZ - 100% PASS - SHORT - VIDEO",
+    "license": "CP008",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 48,
+    "name": "FREE CERTIFICATE - FREE AUDIO - LOWEST PRICE -100% PASS-EZ-SHORT",
+    "license": "CP309",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 49,
+    "name": "FUNNYBONE SCHOOLS OF DEFENSIVE DRIVING",
+    "license": "CP167",
+    "website": "https://funnybonedefensivedrivingschool.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 50,
+    "name": "GET DRIVERS ED",
+    "license": "CP1052",
+    "website": "https://getdriversed.com/",
+    "duplicates": [],
+    "price": 65,
+    "priceDisplay": "65",
+    "stateFee": 3.99,
+    "stateFeeDisplay": "3.99",
+    "totalCost": 72.97999999999999,
+    "totalCostDisplay": "72.97999999999999",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 51,
+    "name": "GETDEFENSIVE.COM",
+    "license": "CP021",
+    "website": "GETDEFENSIVE.COM",
+    "duplicates": [],
+    "price": 30,
+    "priceDisplay": "30",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 30,
+    "totalCostDisplay": "30",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 52,
+    "name": "GLORIOUS DRIVING SCHOOL",
+    "license": "CP1066",
+    "website": "https://gloriousdrivingsch.com/",
+    "duplicates": [],
+    "price": 40,
+    "priceDisplay": "40",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 40,
+    "totalCostDisplay": "40",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 53,
+    "name": "HIGHWAY TRAFFIC SCHOOL, LLC",
+    "license": "CP994",
+    "website": "https://www.highwaytrafficschool.com/?srsltid=AfmBOorJj9Zndkl6lQGu1iSqdzduhDGlJS4sk4mpdzhdwF1r0cuDzVqF",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 54,
+    "name": "I.S.A.E. EDUCATION PROGRAMS",
+    "license": "CP1168",
+    "website": "https://www.isaeonline.com/online-classes/",
+    "duplicates": [],
+    "price": 50,
+    "priceDisplay": "50",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 55,
+    "name": "INTERNET EDUCATIONAL SERVICES INC",
+    "license": "CP007",
+    "website": "https://interneteducationalservices.com/#7e37be3f-9c7d-40e9-8edb-7b335db3d482",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 56,
+    "name": "J&T ADULT DRIVING SCHOOL LLC",
+    "license": "CP1158",
+    "website": "https://www.jtadultdrivingschool.com/",
+    "duplicates": [],
+    "price": 29.99,
+    "priceDisplay": "29.99",
+    "stateFee": 3.99,
+    "stateFeeDisplay": "3.99",
+    "totalCost": 37.97,
+    "totalCostDisplay": "37.97",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 57,
+    "name": "KUBOSH DEFENSIVE DRIVING",
+    "license": "CP1172",
+    "website": "https://kuboshdefensivedriving.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 58,
+    "name": "LOLA AUTOESCUELA DEFENSIVA",
+    "license": "CP069",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 59,
+    "name": "LONE STAR DRIVING SCHOOL MISSOURI CITY",
+    "license": "CP137",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 60,
+    "name": "LONE STAR INSTITUTE",
+    "license": "CP004",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 61,
+    "name": "LOWEST PRICE - FREE CERTIFICATE - FREE AUDIO - VIDEO 100%PASS EZ",
+    "license": "CP014",
+    "website": "https://www.cheapestfasteasytexas.com/home",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 62,
+    "name": "MANEJA SEGURO LLC",
+    "license": "CP1187",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 63,
+    "name": "MDX SAFETY TRAINING AND CONSULTING",
+    "license": "CP1171",
+    "website": "https://mdxsafetyinc.com/#services",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 64,
+    "name": "MOUNTAIN VIEW VOCATIONAL INSTITUTE LLC",
+    "license": "CP1197",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 65,
+    "name": "MR SAFETY DRIVING SCHOOL",
+    "license": "CP1016",
+    "website": "https://mrsafetyschool.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 66,
+    "name": "NATIONAL DRIVER TRAINING INSTITUTE",
+    "license": "CP302",
+    "website": "https://nationaldrivertraining.com/aff-landing.php?age=Teen%2FAdult&state=TX&affid=1064&pid=3",
+    "duplicates": [],
+    "price": 30,
+    "priceDisplay": "30",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 30,
+    "totalCostDisplay": "30",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 67,
+    "name": "NATIONAL HIGHWAY SAFETY ADMINISTRATION",
+    "license": "CP104",
+    "website": "https://nhsa.com/en/texas-online-driving-school",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 68,
+    "name": "NATIONAL POINT AND INSURANCE REDUCTION COURSE INC",
+    "license": "CP105",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 69,
+    "name": "NEXTDOORDRIVING.COM",
+    "license": "CP154",
+    "website": "NEXTDOORDRIVING.COM",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 70,
+    "name": "NOBODYLIKESTICKETS.COM",
+    "license": "CP1012",
+    "website": "NOBODYLIKESTICKETS.COM",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 71,
+    "name": "NOVA DRIVING SCHOOL TX LLC",
+    "license": "CP1194",
+    "website": "https://tx.novadriving.com/",
+    "duplicates": [],
+    "price": 40,
+    "priceDisplay": "40",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 40,
+    "totalCostDisplay": "40",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 72,
+    "name": "NTSI",
+    "license": "CP1188",
+    "website": "https://ntsi.com/texas/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 73,
+    "name": "PLUMB MEDIA AND EDUCATION",
+    "license": "CP1198",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 74,
+    "name": "PREMIER DEFENSIVE DRIVING",
+    "license": "CP018",
+    "website": "https://www.premierdefensivedriving.com/Courses/TexasDefensiveDriving",
+    "duplicates": [],
+    "price": 28,
+    "priceDisplay": "28",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 75,
+    "name": "S & R TRUCK DRIVING INSTITUTE",
+    "license": "CP1195",
+    "website": "https://srtdi.org/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 76,
+    "name": "SAFE DRIVER CENTRE",
+    "license": "CP341",
+    "website": "https://www.safedriverscentre.com",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 77,
+    "name": "SAFE DRIVERS ACADEMY LLC",
+    "license": "CP1064",
+    "website": "https://safedriversacademy.com/texas-defensive-driving-course/",
+    "duplicates": [],
+    "price": 28,
+    "priceDisplay": "28",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 78,
+    "name": "SAFE2DRIVE",
+    "license": "CP577",
+    "website": "https://www.safe2drive.com/texas-defensive-driving.aspx",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 79,
+    "name": "SAFEKEYS DRIVING SCHOOL",
+    "license": "CP031",
+    "website": "https://www.safekeysdrivingschool.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 80,
+    "name": "SAFETY DRIVING SCHOOL LLC",
+    "license": "CP1192",
+    "website": "https://www.safedrivingschoolmidland.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 81,
+    "name": "SAFETY SENSE SOLUTIONS LLC",
+    "license": "CP1058",
+    "website": "https://safetysensesolutions.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 82,
+    "name": "SAFEWAY HOLDINGS, LLC",
+    "license": "CP702",
+    "website": "https://www.defensivedriving.com/texas/home",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 83,
+    "name": "SIMPLE DEFENSIVE DRIVING SCHOOL LLC",
+    "license": "CP1174",
+    "website": "https://www.simpleddsonline.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 84,
+    "name": "SMILE DRIVING SCHOOL",
+    "license": "CP1015",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 85,
+    "name": "STATEWIDE DEFENSIVE DRIVING",
+    "license": "CP036",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 86,
+    "name": "STRAIGHT FORWARD DRIVING SCHOOL",
+    "license": "CP1044",
+    "website": "https://www.straightforwarddriving.com/",
+    "duplicates": [],
+    "price": 45,
+    "priceDisplay": "45",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 87,
+    "name": "STREET SMART DRIVING SCHOOL INC",
+    "license": "CP1002",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 88,
+    "name": "SUGAR LAND DRIVING SCHOOL",
+    "license": "CP1186",
+    "website": "https://sugarlanddrivingschool.com/",
+    "duplicates": [],
+    "price": 43,
+    "priceDisplay": "43",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 43,
+    "totalCostDisplay": "43",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 89,
+    "name": "SUNNY DAY DEFENSIVE DRIVING @ GOLDEN CORRAL",
+    "license": "CP338",
+    "website": "https://sunnydaydd.com/",
+    "duplicates": [],
+    "price": 29,
+    "priceDisplay": "29",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 29,
+    "totalCostDisplay": "29",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 90,
+    "name": "SW TOWING CE LLC",
+    "license": "CP1190",
+    "website": "https://swtowingce.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 91,
+    "name": "SWEET CHARIOT PRODUCTIONS, LLC",
+    "license": "CP1008",
+    "website": "https://sweetchariotdriving.com",
+    "duplicates": [],
+    "price": 50,
+    "priceDisplay": "50",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 92,
+    "name": "TDLR RESERVED ACCOUNT",
+    "license": "CP999",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 93,
+    "name": "TEXAS DEFENSIVE DRIVING ACADEMY",
+    "license": "CP1092",
+    "website": "https://texasdefensivedrivingacademy.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 94,
+    "name": "TEXAS DEFENSIVE DRIVING SCHOOL",
+    "license": "CP411",
+    "website": "https://www.texdds.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 95,
+    "name": "TEXAS DRIVING CLASS INC",
+    "license": "CP1004",
+    "website": "https://etrafficschool.org/course/texas-defensive-driving",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 96,
+    "name": "TEXAS FAST EASY DEFENSIVE DRIVING",
+    "license": "CP1006",
+    "website": "https://fasteasydefensivedriving.com",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 97,
+    "name": "THAT'S THE TICKET DRIVER SAFETY COURSE",
+    "license": "CP613",
+    "website": "https://mycomedyspeedrelief.com",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 98,
+    "name": "THE SAFER DRIVER",
+    "license": "CP1127",
+    "website": "https://thesaferdriver.com/texas/",
+    "duplicates": [],
+    "price": 28,
+    "priceDisplay": "28",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 99,
+    "name": "THE TRAINING INSTITUTE",
+    "license": "CP1214",
+    "website": "https://www.thetraininginstitute.education/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 100,
+    "name": "TICKET ERASER LLC",
+    "license": "CP015",
+    "website": "https://ticketcleanup.com/",
+    "duplicates": [],
+    "price": 28,
+    "priceDisplay": "28",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 101,
+    "name": "TIGERS DRIVING ACADEMY LLC",
+    "license": "CP1203",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 102,
+    "name": "TRAFFIC SAFETY INSTITUTE",
+    "license": "CP1094",
+    "website": "https://start.trafficsafetyinstitute.com/texas-driver-safety",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 103,
+    "name": "TRAFFIC SAFETY RESEARCH, LLC",
+    "license": "CP1119",
+    "website": "https://www.trafficsafetyresearch.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 104,
+    "name": "TRAFFIC SCHOOL ONLINE",
+    "license": "CP058",
+    "website": "https://trafficschoolonline.com/state/texas-defensive-driving-course",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 105,
+    "name": "TRAFFIC101.COM, INC.",
+    "license": "CP750",
+    "website": "https://www.trafficschool101.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 106,
+    "name": "TU ESCUELITA DE MANEJO",
+    "license": "CP1005",
+    "website": "https://www.tuescuelitademanejo.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 107,
+    "name": "TU LICENCIA EN ESPANOL LLC",
+    "license": "CP1191",
+    "website": "https://www.tulicenciaenespanol.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "Spanish"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 108,
+    "name": "US-BD DRIVING SCHOOL",
+    "license": "CP1173",
+    "website": "https://us-bddrivingschool.com/",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 109,
+    "name": "VIDEO - EZ 100% PASS-NO FINAL-CHEAP-FREE AUDIO-FREE CERTIFICATE",
+    "license": "CP012",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 110,
+    "name": "VIDEO -- FREE CERTIFICATE -- SHORT-- FAST-EZ--DEFENSIVE DRIVING",
+    "license": "CP011",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 111,
+    "name": "VIDEO -- SHORT -- EZ -- FREE CERTIFICATE -- CHEAP -- OPEN BOOK",
+    "license": "CP016",
+    "website": "https://www.easyfastcheaptexas.com/home",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 112,
+    "name": "VIDEO- FREE CERTIFICATE -FREE AUDIO- CHEAPEST-100% PASS EZ",
+    "license": "CP013",
+    "duplicates": [],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 113,
+    "name": "WIRELESSDEFENSIVEDRIVING.COM",
+    "license": "CP997",
+    "website": "WIRELESSDEFENSIVEDRIVING.COM",
+    "duplicates": [],
+    "price": 30,
+    "priceDisplay": "30",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 30,
+    "totalCostDisplay": "30",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 114,
+    "name": "WWW.CHEAPDRIVINGCOURSE.COM",
+    "license": "CP002",
+    "website": "https://www.cheapdrivingcourse.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 115,
+    "name": "XLR8 DEFENSIVE DRIVING",
+    "license": "CP1001",
+    "website": "https://xlr8drivingschool.com/",
+    "duplicates": [],
+    "price": 40,
+    "priceDisplay": "40",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 40,
+    "totalCostDisplay": "40",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 116,
+    "name": "- ONLY $25 - CLICK HERE NOW - EASY, FAST, QUICK COURSE",
+    "license": "CP028",
+    "website": "https://fastestwaytopass.com",
+    "duplicates": [
+      {
+        "name": "$25 FAST EASY QUICK DEFENSIVE DRIVING-CLICK HERE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP033"
+      },
+      {
+        "name": "-JUST $25-FAST, EASY, SHORTEST COURSE ONLINE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP034"
+      },
+      {
+        "name": "- ONLY $25 - START TODAY - FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP035"
+      },
+      {
+        "name": "-ONLY $25 FASTEST LEGAL DEFENSIVE DRIVING COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP038"
+      },
+      {
+        "name": "-SHORTEST LEGAL DEFENSIVE DRIVING COURSE -ONLY $25",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP039"
+      },
+      {
+        "name": "$25 LOWEST PRICE ALLOWED - FINISH AS FAST AS LEGAL",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP040"
+      },
+      {
+        "name": "-NO FINAL EXAM COURSE-ONLY $25-FAST AND SIMPLE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP041"
+      },
+      {
+        "name": "ONLY $25 FAST, SIMPLE & EASY - START HERE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP043"
+      },
+      {
+        "name": "-FINISH ANYTIME-JUST $25- TX LOWEST PRICE ALLOWED",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP044"
+      },
+      {
+        "name": "-FINISH AS FAST AS ALLOWED, LOWEST PRICE BY LAW$25",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP045"
+      },
+      {
+        "name": "$25-FREE-CERTIFICATE/NO FINAL",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP048"
+      },
+      {
+        "name": "$25 - NO HIDDEN FEES / FREE - CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP049"
+      },
+      {
+        "name": "$25-WITH-VIDEOS & FREE-CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP050"
+      },
+      {
+        "name": "$25-FREE-CERTIFICATE/NO HIDDEN FEES",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP051"
+      },
+      {
+        "name": "$25-EASY&FAST/FREE-CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP052"
+      },
+      {
+        "name": "$25 / FREE - CERTIFICATE / GUARANTEED PASS",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP053"
+      },
+      {
+        "name": "$25 TODAY - FREE CERTIFICATE - GUARANTEED TO PASS",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP054"
+      },
+      {
+        "name": "$25 - N O - F I N A L - E X A M / FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP056"
+      },
+      {
+        "name": "NOW $25 - F R E E - C E R T I F I C A T E / NO HID",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP057"
+      },
+      {
+        "name": "$25-NO HIDDEN FEES/NO FINAL EXAM/FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP059"
+      },
+      {
+        "name": "ONLY $25-FREE CERTIFICATE/EASY&FAST/NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP060"
+      },
+      {
+        "name": "ONLY $25-FREE-CERTIFICATE-EASY TO PASS",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP061"
+      },
+      {
+        "name": "ONLY $25-FREE CERTIFICATE-SAVE $$ AND TIME",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP062"
+      },
+      {
+        "name": "$25-FREE-CERTIFICATE & NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP063"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1068"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1069"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM PASS GUARANTEE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1070"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1071"
+      },
+      {
+        "name": "$25 ALLVIDEODRIVINGSAFETY.COM PASS PROMISE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1072"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM ALL VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1073"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1074"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVING4LESS.COM PASS GUARANTEE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1075"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM ALL VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1076"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM FREE VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1077"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1078"
+      },
+      {
+        "name": "$25 DEFENSIVEDRIVINGFORLESS.COM - VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1079"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1080"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM NO FINAL",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1081"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1082"
+      },
+      {
+        "name": "$25 EASYFASTDEFENSIVEDRIVING.COM VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1083"
+      },
+      {
+        "name": "$25 FREE CERTIFICATE ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1084"
+      },
+      {
+        "name": "$25 PASS PROMISE ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1085"
+      },
+      {
+        "name": "$25 NO FINAL EXAM ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1086"
+      },
+      {
+        "name": "$25 PASS GUARANTEE ONLINEVIDEODRIVINGSAFETY.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1087"
+      },
+      {
+        "name": "FREE VIDEO COURSE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1095"
+      },
+      {
+        "name": "QUICK $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1096"
+      },
+      {
+        "name": "NO FINAL EXAM $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1097"
+      },
+      {
+        "name": "SIMPLE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1098"
+      },
+      {
+        "name": "24/7 365 SIGN UP NOW $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1099"
+      },
+      {
+        "name": "SUPER FAST $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1100"
+      },
+      {
+        "name": "FAST EASY $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1101"
+      },
+      {
+        "name": "JOIN TODAY $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1102"
+      },
+      {
+        "name": "FAST $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1103"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM 24/7 365 SIGN UP NOW",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1104"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM FREE VIDEO COURSE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1105"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM JOIN TODAY",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1106"
+      },
+      {
+        "name": "FREE PDF CERTIFICATE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1107"
+      },
+      {
+        "name": "FREE CERTIFICATE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1108"
+      },
+      {
+        "name": "PASS GUARANTEE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1109"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM NO FINAL EXAM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1110"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM PASS GUARANTEE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1111"
+      },
+      {
+        "name": "START TODAY $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1112"
+      },
+      {
+        "name": "PASS PROMISE $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1113"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM PASS PROMISE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1114"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM FREE PDF CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1115"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM START TODAY",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1116"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1117"
+      },
+      {
+        "name": "$25 FASTVIDEODEFENSIVEDRIVING.COM START NOW",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1118"
+      },
+      {
+        "name": "EASY FAST $25 FASTVIDEODEFENSIVEDRIVING.COM",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP1120"
+      },
+      {
+        "name": "ONLY $25 -F R E E - CERTIFICATE-SAVE TIME & $$$",
+        "url": "https://fastestwaytopass.com",
+        "license": "CP129"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 117,
+    "name": "FAST EASY DEFENSIVE DRIVING",
+    "license": "CP023",
+    "website": "https://fasteasydefensivedriving.com",
+    "duplicates": [
+      {
+        "name": "$25 DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1036"
+      },
+      {
+        "name": "DALLAS DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1037"
+      },
+      {
+        "name": "EASIEST COURSE DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1038"
+      },
+      {
+        "name": "FASTEST COURSE DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1039"
+      },
+      {
+        "name": "HOUSTON DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1040"
+      },
+      {
+        "name": "DFW DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1041"
+      },
+      {
+        "name": "6 HOUR DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1042"
+      },
+      {
+        "name": "FUNNY DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1043"
+      },
+      {
+        "name": "ARLINGTON DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1047"
+      },
+      {
+        "name": "$25 COMEDY DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1057"
+      },
+      {
+        "name": "$25 COURT APPROVED DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1059"
+      },
+      {
+        "name": "$25 EASY DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1060"
+      },
+      {
+        "name": "$25 FAST EASY DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1061"
+      },
+      {
+        "name": "$25 FINISH FAST DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1062"
+      },
+      {
+        "name": "$25 STATE APPROVED DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1063"
+      },
+      {
+        "name": "ALLEN DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1121"
+      },
+      {
+        "name": "ROUND ROCK DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1122"
+      },
+      {
+        "name": "DENTON DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1123"
+      },
+      {
+        "name": "SUGAR LAND DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1124"
+      },
+      {
+        "name": "THE WOODLANDS DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1125"
+      },
+      {
+        "name": "GARLAND DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1153"
+      },
+      {
+        "name": "SAN ANTONIO DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1154"
+      },
+      {
+        "name": "FRISCO DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1155"
+      },
+      {
+        "name": "RICHARDSON DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1156"
+      },
+      {
+        "name": "FORT WORTH DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1157"
+      },
+      {
+        "name": "PEARLAND DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1169"
+      },
+      {
+        "name": "ABILENE DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1176"
+      },
+      {
+        "name": "COLLEGE STATION DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1177"
+      },
+      {
+        "name": "TEMPLE DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1178"
+      },
+      {
+        "name": "LEANDER DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1179"
+      },
+      {
+        "name": "CELINA DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1180"
+      },
+      {
+        "name": "BEAUMONT DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1181"
+      },
+      {
+        "name": "CONROE DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1182"
+      },
+      {
+        "name": "CEDAR PARK DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1183"
+      },
+      {
+        "name": "PHARR DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1184"
+      },
+      {
+        "name": "BAYTOWN DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1185"
+      },
+      {
+        "name": "DEFENSIVE DRIVING",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1205"
+      },
+      {
+        "name": "DRIVING SAFETY",
+        "url": "https://fasteasydefensivedriving.com",
+        "license": "CP1207"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 50,
+    "totalCostDisplay": "50",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 118,
+    "name": "EASYPASSDEFENSIVEDRIVING.COM",
+    "license": "CP1126",
+    "website": "easypassdefensivedriving.com",
+    "duplicates": [
+      {
+        "name": "ERASEMYTICKET.COM",
+        "url": "ereasemyticket.com",
+        "license": "CP1128"
+      },
+      {
+        "name": "$25 EASYQUICKDEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "QUICKDEFENSIVEDRIVING.COM",
+        "license": "CP1129"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM FREE CERTIFICATE",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1130"
+      },
+      {
+        "name": "$25 TICKETDISMISSONLINE.COM FREE CERTIFICATE",
+        "url": "TICKETDISMISSONLINE.COM",
+        "license": "CP1131"
+      },
+      {
+        "name": "$25 EASYPASSTEXASCOURSE.COM FREE CERTIFICATE",
+        "url": "PASSTEXASCOURSE.COM",
+        "license": "CP1132"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM EASY FAST",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1139"
+      },
+      {
+        "name": "$25 EASYPASSDEFENSIVEDRIVING.COM FREE AUDIO",
+        "url": "PASSDEFENSIVEDRIVING.COM",
+        "license": "CP1142"
+      },
+      {
+        "name": "$25 EASYPASSDEFENSIVEDRIVING.COM FREE CERTIFICATE",
+        "url": "PASSDEFENSIVEDRIVING.COM",
+        "license": "CP1143"
+      },
+      {
+        "name": "$25 EASYPASSTEXASCOURSE.COM FREE AUDIO",
+        "url": "PASSTEXASCOURSE.COM",
+        "license": "CP1144"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM FREE CERTIFICATE",
+        "url": "ERASEMYTICKET.COM",
+        "license": "CP1145"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM EASY PASS",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1146"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM PASS PROMISE",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1175"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM EASY PASS",
+        "url": "ERASEMYTICKET.COM",
+        "license": "CP1213"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM EASY FAST",
+        "url": "ERASEMYTICKET.COM",
+        "license": "CP1227"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM EASY QUICK",
+        "url": "ERASEMYTICKET.COM",
+        "license": "CP1228"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM FREE AUDIO",
+        "url": "ERASEMYTICKET.COM",
+        "license": "CP1229"
+      },
+      {
+        "name": "$25 ERASEMYTICKET.COM QUICK EASY",
+        "url": "ERASEMYTICKET.COM",
+        "license": "CP1230"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM EASY QUICK",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1231"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM FAST EASY",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1232"
+      },
+      {
+        "name": "$25 TEXASCOURSEONLINE.COM QUICK EASY",
+        "url": "TEXASCOURSEONLINE.COM",
+        "license": "CP1233"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 119,
+    "name": "$25 DALLAS VIDEO DEFENSIVE DRIVING",
+    "license": "CP1147",
+    "duplicates": [
+      {
+        "name": "$25 EL PASO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1148"
+      },
+      {
+        "name": "$25 GARLAND VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1149"
+      },
+      {
+        "name": "$25 FORT WORTH VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1150"
+      },
+      {
+        "name": "$25 PLANO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1151"
+      },
+      {
+        "name": "$25 DENTON VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1152"
+      },
+      {
+        "name": "$25 BROWNSVILLE VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1159"
+      },
+      {
+        "name": "$25 LEWISVILLE VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1160"
+      },
+      {
+        "name": "SAN ANTONIO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1161"
+      },
+      {
+        "name": "$25 ROUND ROCK VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1162"
+      },
+      {
+        "name": "$25 MCKINNEY VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1163"
+      },
+      {
+        "name": "$25 LUBBOCK VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1164"
+      },
+      {
+        "name": "$25 IRVING VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1165"
+      },
+      {
+        "name": "$25 FRISCO VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1166"
+      },
+      {
+        "name": "$25 HOUSTON VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1167"
+      },
+      {
+        "name": "$25 ARLINGTON VIDEO DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1170"
+      }
+    ],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 120,
+    "name": "$25 - ONLINE VIDEO COURSE - NO FINAL TEST- INSTANT",
+    "license": "CP082",
+    "duplicates": [
+      {
+        "name": "$$$ $25 $$$ - ONLINE VIDEO COURSE- UNLIMITED ATTEM",
+        "url": "Not Found",
+        "license": "CP149"
+      },
+      {
+        "name": "$25 - EASY ONLINE VIDEO DEF DRIVING- NO FINAL EXAM",
+        "url": "Not Found",
+        "license": "CP151"
+      },
+      {
+        "name": "$$$ $25 $$$ - ONLINE VIDEO COURSE- INSTANT CERT",
+        "url": "Not Found",
+        "license": "CP152"
+      },
+      {
+        "name": "$25 - EASY FASTER DEFENSIVE DRIVING- NO FINAL EXAM",
+        "url": "Not Found",
+        "license": "CP153"
+      },
+      {
+        "name": "$25 - EASY CRS ONLINE WITH VIDEOS - NO FINAL TEST",
+        "url": "Not Found",
+        "license": "CP755"
+      },
+      {
+        "name": "$25- FREE VIDEO UPGRADE DEFENSIVE DRIVING COURSE",
+        "url": "Not Found",
+        "license": "CP756"
+      },
+      {
+        "name": "$25 - VIDEO COURSE TEXAS WITH - NO FINAL TEST",
+        "url": "Not Found",
+        "license": "CP757"
+      },
+      {
+        "name": "$$$ $25 $$$ SAVE MONEY WITH FREE VIDEO DEF",
+        "url": "Not Found",
+        "license": "CP758"
+      },
+      {
+        "name": "$25 - FAST EASY VIDEO COURSE - NO FINAL TEST",
+        "url": "Not Found",
+        "license": "CP759"
+      },
+      {
+        "name": "$25 - VIDEO COURSE WITH INSTANT CERTIFICATE",
+        "url": "Not Found",
+        "license": "CP760"
+      },
+      {
+        "name": "$25 - SAME DAY CERTIFICATE VIDEO COURSE NO FINAL",
+        "url": "Not Found",
+        "license": "CP761"
+      },
+      {
+        "name": "$25- VIDEO UPGRADE COURSE - NO FINAL EXAM",
+        "url": "Not Found",
+        "license": "CP762"
+      },
+      {
+        "name": "$25- EASY TO TAKE ONLINE VIDEO COURSE",
+        "url": "Not Found",
+        "license": "CP763"
+      }
+    ],
+    "price": 0,
+    "priceDisplay": "Not Found",
+    "stateFee": 0,
+    "stateFeeDisplay": "Not Found",
+    "totalCost": 0,
+    "totalCostDisplay": "Not Found",
+    "online": false,
+    "inPerson": false,
+    "languages": [
+      "Not Found"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 121,
+    "name": "COURTAPPROVEDCOMEDYDRIVINGSAFETY.COM",
+    "license": "CP1199",
+    "website": "COURTAPPROVEDCOMEDYDRIVINGSAFETY.COM",
+    "duplicates": [
+      {
+        "name": "TRYITFREEDEFENSIVEDRIVING",
+        "url": "Not Found",
+        "license": "CP1200"
+      },
+      {
+        "name": "COMEDYDRIVINGSAFETYONLINE.COM",
+        "url": "COMEDYDRIVINGSAFETYONLINE.COM",
+        "license": "CP1201"
+      },
+      {
+        "name": "TRYITFREECOMEDYDRIVINGSAFETY.COM",
+        "url": "TRYITFREECOMEDYDRIVINGSAFETY.COM",
+        "license": "CP1202"
+      },
+      {
+        "name": "APPROVEDDEFENSIVEDRIVING.COM",
+        "url": "APPROVEDDEFENSIVEDRIVING.COM",
+        "license": "CP1209"
+      },
+      {
+        "name": "25USDDEFENSIVEDRIVING.COM",
+        "url": "25USDDEFENSIVEDRIVING.COM",
+        "license": "CP1210"
+      },
+      {
+        "name": "25USDCOMEDYDRIVINGSAFETY.COM",
+        "url": "25USDCOMEDYDRIVINGSAFETY.COM",
+        "license": "CP1211"
+      },
+      {
+        "name": "TRYITFREEDRIVINGSAFETY.COM",
+        "url": "TRYITFREEDRIVINGSAFETY.COM",
+        "license": "CP1212"
+      },
+      {
+        "name": "CURELEADFOOT.COM",
+        "url": "CURELEADFOOT.COM",
+        "license": "CP1223"
+      },
+      {
+        "name": "ASAFERDRIVER.COM",
+        "url": "ASAFERDRIVER.COM",
+        "license": "CP728"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 122,
+    "name": "COMEDY DRIVING SAFETY",
+    "license": "CP126",
+    "website": "https://www.comedydrivingsafety.com/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 123,
+    "name": "$25-FREE VIDEO COURSE-INSTANT CERTIFICATE DOWNLOAD",
+    "license": "CP077",
+    "website": "https://www.easyvideocourseonline.com/register",
+    "duplicates": [
+      {
+        "name": "$25 - --E--A--S--Y-- NO FINAL EXAM - INSTANT CERTI",
+        "url": "Not Found",
+        "license": "CP078"
+      },
+      {
+        "name": "$25 - EASY TO PASS COURSE VIDEO COURSE",
+        "url": "Not Found",
+        "license": "CP079"
+      },
+      {
+        "name": "$25 -EASY TO PASS COURSE - INSTANT CERTIFICATE",
+        "url": "Not Found",
+        "license": "CP081"
+      },
+      {
+        "name": "$25- NO FINAL EXAM- VID CRS ONLINE- NO FINAL TEST",
+        "url": "Not Found",
+        "license": "CP150"
+      },
+      {
+        "name": "$$$ $25 $$$ - BEST-WITH VIDEO COURSE -INSTANT CERT",
+        "url": "Not Found",
+        "license": "CP751"
+      },
+      {
+        "name": "$25 - TEXAS DEFENSIVE DRIVING - FREE CERTIFICATE",
+        "url": "Not Found",
+        "license": "CP752"
+      },
+      {
+        "name": "$25 EASY TO PASS COURSE - FREE CERTIFICATE- WITH",
+        "url": "https://www.easyvideocourseonline.com/register",
+        "license": "CP753"
+      },
+      {
+        "name": "$25 - E A S Y - CHEAP -FREE INSTANT CERTIFICATE DO",
+        "url": "Not Found",
+        "license": "CP754"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 124,
+    "name": "ONLINE DEFENSIVE DRIVING SCHOOLS",
+    "license": "CP027",
+    "website": "https://www.instantdefensivedriving.com/",
+    "duplicates": [
+      {
+        "name": "COURT APPROVED DEFENSIVE DRIVING",
+        "url": "https://www.courtapproved.com/",
+        "license": "CP106"
+      },
+      {
+        "name": "TEXAS COMEDY COURSE",
+        "url": "https://www.texascomedycourse.com/how/",
+        "license": "CP125"
+      },
+      {
+        "name": "DEFENSIVEDRIVINGSCHOOL.COM",
+        "url": "DEFENSIVEDRIVINGSCHOOL.COM",
+        "license": "CP127"
+      },
+      {
+        "name": "TEXAS BEST DEFENSIVE DRIVING",
+        "url": "DEFENSIVEDRIVINGSCHOOL.COM",
+        "license": "CP128"
+      },
+      {
+        "name": "TEXAS DRIVING SAFETY",
+        "url": "https://www.texasonlinedrivingsafety.com/driving-safety-courses/",
+        "license": "CP132"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 125,
+    "name": "FAST TRACK DEFENSIVE DRIVING",
+    "license": "CP037",
+    "website": "https://fasttrackdefensivedriving.com/tdlr-approved-driving-safety-course",
+    "duplicates": [
+      {
+        "name": "BEST DRIVING SAFETY",
+        "url": "Not Found",
+        "license": "CP066"
+      },
+      {
+        "name": "$25-FREE CERTIFICATE - NO HIDDEN FEES",
+        "url": "Not Found",
+        "license": "CP067"
+      },
+      {
+        "name": "TEXAS APPROVED DRIVING SAFETY",
+        "url": "https://fasttrackdefensivedriving.com/register",
+        "license": "CP068"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 126,
+    "name": "AMERICAN SAFETY COUNCIL, INC.",
+    "license": "CP520",
+    "website": "https://cart.safemotorist.com/cart/",
+    "duplicates": [],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 127,
+    "name": "COMEDY GUYS DEFENSIVE DRIVING",
+    "license": "CP1054",
+    "website": "https://www.comedyguys.com/",
+    "duplicates": [
+      {
+        "name": "EASY DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1055"
+      },
+      {
+        "name": "MESQUITE DEFENSIVE DRIVING",
+        "url": "Not Found",
+        "license": "CP1056"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 128,
+    "name": "-- VIDEO -- CHEAPER -- FASTER -- EASIER -- TEXAS DEFENSIVE DRIVING",
+    "license": "CP065",
+    "website": "https://www.defensivedrivingez.com/home",
+    "duplicates": [
+      {
+        "name": "LOWEST PRICE-FREE CERTIFICATE-VIDEO-100%PASS-SHORT EZ-FREE AUDIO",
+        "url": "Not Found",
+        "license": "CP316"
+      },
+      {
+        "name": "CHEAPEST--FREE AUDIO--FREE CERTIFICATE--EASY--FAST--TEXAS SCHOOL",
+        "url": "https://www.dismisstickettexas.com/home",
+        "license": "CP010"
+      },
+      {
+        "name": "CHEAPEST - FREE CERTIFICATE-VIDEO-100% PASS-SHORT EZ-FREE AUDIO",
+        "url": "https://www.dismissticketcheapfast.com/start-course",
+        "license": "CP317"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Mail",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 129,
+    "name": "DEFENSIVEDRIVINGCOURSE.COM",
+    "license": "CP280",
+    "website": "DEFENSIVEDRIVINGCOURSE.COM",
+    "duplicates": [
+      {
+        "name": "ASENSEOFHUMORDRIVING.COM",
+        "url": "ASENSEOFHUMORDRIVING.COM",
+        "license": "CP814"
+      }
+    ],
+    "price": 28.95,
+    "priceDisplay": "28.95",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 28.95,
+    "totalCostDisplay": "28.95",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 130,
+    "name": "FUNNY DRIVING LLC",
+    "license": "CP073",
+    "website": "funnydriving.com",
+    "duplicates": [
+      {
+        "name": "COMEDY DRIVING INC.",
+        "url": "comedydriving.com",
+        "license": "CP319"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 27,
+    "totalCostDisplay": "27",
+    "online": true,
+    "inPerson": true,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Paid",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 131,
+    "name": "I DRIVE SAFELY, LLC",
+    "license": "CP022",
+    "website": "www.idrivesafely.com",
+    "duplicates": [
+      {
+        "name": "I DRIVE SAFELY LLC",
+        "url": "www.idrivesafely.com",
+        "license": "CP024"
+      }
+    ],
+    "price": 29,
+    "priceDisplay": "29",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 29,
+    "totalCostDisplay": "29",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 132,
+    "name": "URBANTRAFFICSCHOOL.COM",
+    "license": "CP003",
+    "website": "https://www.urbantrafficschool.com/user",
+    "duplicates": [
+      {
+        "name": "---WITH VIDEOS----EASYTEXASCOURSE.COM",
+        "url": "https://www.easytexascourse.com/",
+        "license": "CP025"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 0,
+    "stateFeeDisplay": "0",
+    "totalCost": 25,
+    "totalCostDisplay": "25",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  },
+  {
+    "id": 133,
+    "name": "DRIVESAFE",
+    "license": "CP315",
+    "website": "https://www.drivesafeonline.org/texas/defensive-driving-course/",
+    "duplicates": [
+      {
+        "name": "DRIVESAFE ONLINE",
+        "url": "https://drivesafeonline.org",
+        "license": "CP075"
+      }
+    ],
+    "price": 25,
+    "priceDisplay": "25",
+    "stateFee": 3,
+    "stateFeeDisplay": "3",
+    "totalCost": 28,
+    "totalCostDisplay": "28",
+    "online": true,
+    "inPerson": false,
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "instantCert": "Free",
+    "moneyBack": false,
+    "lastVerified": "",
+    "featured": false
+  }
+]
