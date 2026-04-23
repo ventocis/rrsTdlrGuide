@@ -22,7 +22,7 @@ export class AppStack extends cdk.Stack {
     super(scope, id, props);
 
     new StaticSite(this, "Site", {
-      siteName: "tdlrguide",
+      siteName: "txcourseguide",
       domainName: props.domainName,
       hostedZone: props.hostedZone,
       certificate: props.certificate,

@@ -18,7 +18,7 @@ jobs:
   deploy:
     environment: ${{ inputs.environment }}
     concurrency:
-      group: tdlrguide-deployment-${{ inputs.environment }}
+      group: txcourseguide-deployment-${{ inputs.environment }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
 
@@ -31,7 +31,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
           cache: npm
           cache-dependency-path: |
             package-lock.json

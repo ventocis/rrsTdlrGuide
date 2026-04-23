@@ -24,6 +24,6 @@ Thumbs.db
 !.env.production
 
 # Courts data source
-Courts Directory By County*.xlsx
 infra/cdk.out/
 infra/node_modules/
+.claude/launch.json

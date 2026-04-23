@@ -8,7 +8,7 @@ on:
 jobs:
   bump-version:
     concurrency:
-      group: tdlrguide-version-${{ github.ref_name }}
+      group: txcourseguide-version-${{ github.ref_name }}
       cancel-in-progress: false
     runs-on: ubuntu-latest
     # Skip if it contains the word "Bump version to" to prevent recursion
