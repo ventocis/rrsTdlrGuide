@@ -86,8 +86,8 @@ interface Props {
 }
 
 export default function ProviderTable({ providers: allProviders }: Props) {
-  const [sortBy, setSortBy] = useState<SortKey>('totalCost');
-  const [sortDir, setSortDir] = useState<SortDir>('desc');
+  const [sortBy, setSortBy] = useState<SortKey>('price');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [searchQuery, setSearchQuery] = useState('');
   const [formatFilter, setFormatFilter] = useState<string[]>([]);
   const [certFilter, setCertFilter] = useState<string[]>([]);
@@ -124,7 +124,15 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     arr.sort((a, b) => {
       if (a.featured && !b.featured) return -1;
       if (!a.featured && b.featured) return 1;
-      if (sortBy === 'price') return (a.price - b.price) * dir;
+      if (sortBy === 'price') {
+        // Push providers with no listed price to the bottom in all cases
+        const aNoPrice = a.price === 0;
+        const bNoPrice = b.price === 0;
+        if (aNoPrice && bNoPrice) return 0;
+        if (aNoPrice) return 1;
+        if (bNoPrice) return -1;
+        return (a.price - b.price) * dir;
+      }
       if (sortBy === 'totalCost') return (a.totalCost - b.totalCost) * dir;
       if (sortBy === 'name') return a.name.localeCompare(b.name) * dir;
       return 0;
