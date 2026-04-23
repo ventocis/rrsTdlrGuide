@@ -28,13 +28,15 @@ const appConfig: Record<AppEnv, Omit<AppStackProps & CloudfrontCertificateStackP
     existingHostedZoneId: "Z08769821BMPC7MBE1M1Z",
     dkimValue: "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0A22yOKzvnf68B24wMGTjowha5H26NbSgMc1OCI1IGFyaTGxL1nB7efvjJmZI8wdZ0BJ8skbhWC+cZp7SFeRABoWuTKARK+L+Uh5LkRp86Sz+yqaYvE5Uc3iTXayFaNsK7O+xYP++1I0+g8r0lz5QyuFowROn/KNi0S+d7SOIWB+9l2PSsaCm4pj02FEVGrO15bJmfMIiOYZMD3vwxOnBsh80eDeuDDfTuzJe6zfvuRLD8MW5tJhh5sW5o6Rzr4QK1eoZA25T5TOpzvckALVULGvOVWKX1SRyW1mhZ5d7A+g/I0LtBdZKjMgt3U1y7YVnPwO62NiUDe2xNuEBNMoFQIDAQAB",
     dmarcPolicy: "reject",
+    // Deploy QA DNS stack first, then paste the 4 NS record values here.
+    subdomainDelegations: [
+      {
+        subdomain: "qa",
+        nameServers: ["ns-1333.awsdns-38.org", "ns-433.awsdns-54.com", "ns-1944.awsdns-51.co.uk", "ns-731.awsdns-27.net"],
+      },
+    ],
   },
 };
-
-// TODO: Deploy QA DNS stack first, then paste the 4 NS record values here.
-// Find them in the Route 53 console under the qa.txcourseguide.com hosted zone.
-// const qaSubdomainNameServers: string[] = ["ns-1092.awsdns-08.org", "ns-1020.awsdns-63.net", "ns-184.awsdns-23.com", "ns-1741.awsdns-25.co.uk"];
-const qaSubdomainNameServers: string[] = [];
 
 Object.values(AppEnv).forEach((env) => {
   const config = appConfig[env];
@@ -42,7 +44,7 @@ Object.values(AppEnv).forEach((env) => {
   const dnsStack = new stacks.DnsStack(app, `rrsTxCourseGuide-dns-${env}`, {
     ...config,
     env: config.env,
-    subdomainDelegations: env === AppEnv.PROD && qaSubdomainNameServers.length > 0 ? [{ subdomain: "qa", nameServers: qaSubdomainNameServers }] : undefined,
+    subdomainDelegations: config.subdomainDelegations,
   });
   applyCdkTags(dnsStack, env, gitRepoName);
 
