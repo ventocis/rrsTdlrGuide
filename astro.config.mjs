@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-
 const siteUrl = (process.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
 export default defineConfig({

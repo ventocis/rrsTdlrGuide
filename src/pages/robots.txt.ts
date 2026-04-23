@@ -34,7 +34,7 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-Sitemap: ${siteUrl}/sitemap-index.xml`
+Sitemap: ${siteUrl}/sitemap.xml`
     : `# QA — no indexing
 User-agent: *
 Disallow: /
