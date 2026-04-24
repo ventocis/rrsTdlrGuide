@@ -412,7 +412,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                     <tr
                       key={p.id}
                       className="border-b transition-colors"
-                      style={{ borderColor: 'var(--proto-row-border)', background: p.featured ? 'var(--proto-teal-bg)' : 'white' }}
+                      style={{ borderColor: 'var(--proto-row-border)', background: 'white' }}
                     >
                       <td className="px-3 py-2.5 min-w-[220px]">
                         <div className="flex items-center gap-2">
@@ -441,7 +441,6 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                           ) : (
                             <span className="text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>{p.name}</span>
                           )}
-                          {p.featured && <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'var(--proto-teal)', color: 'white' }}>Featured</span>}
                         </div>
                       </td>
                       <td className="px-3 py-2.5 text-center text-[12px]" style={{ color: 'var(--proto-text-light)' }}>{p.license || '—'}</td>
