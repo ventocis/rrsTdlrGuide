@@ -31,26 +31,18 @@ const { currentPath = '/' } = Astro.props;
 
       <!-- Desktop nav links -->
       <nav class="hidden min-h-[36px] flex-wrap items-center justify-end gap-1.5 sm:flex sm:gap-2" aria-label="Main navigation">
-        {currentPath !== '/courts' && (
-          <a href="/courts" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
-            Court Lookup
-          </a>
-        )}
-        {currentPath !== '/ticket-calculator' && (
-          <a href="/ticket-calculator" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
-            Ticket Calculator
-          </a>
-        )}
-        {currentPath !== '/eligibility-checker' && (
-          <a href="/eligibility-checker" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
-            Eligibility Checker
-          </a>
-        )}
-        {currentPath !== '/faq' && (
-          <a href="/faq" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
-            FAQ
-          </a>
-        )}
+        <a href="/courts" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/courts' ? 'nav-active' : ''}`} style="color: #fff;">
+          Court Lookup
+        </a>
+        <a href="/ticket-calculator" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/ticket-calculator' ? 'nav-active' : ''}`} style="color: #fff;">
+          Ticket Calculator
+        </a>
+        <a href="/eligibility-checker" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/eligibility-checker' ? 'nav-active' : ''}`} style="color: #fff;">
+          Eligibility Checker
+        </a>
+        <a href="/faq" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/faq' ? 'nav-active' : ''}`} style="color: #fff;">
+          FAQ
+        </a>
 
         <!-- City Guides dropdown (pure CSS) -->
         <div class="city-dropdown-wrapper">
@@ -71,11 +63,9 @@ const { currentPath = '/' } = Astro.props;
           </div>
         </div>
 
-        {currentPath !== '/pricing' && (
-          <a href="/pricing" class="inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px]" style="color: #fff;">
-            Pricing Guide
-          </a>
-        )}
+        <a href="/pricing" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/pricing' ? 'nav-active' : ''}`} style="color: #fff;">
+          Pricing Guide
+        </a>
       </nav>
 
       <!-- Mobile hamburger -->
@@ -104,15 +94,9 @@ const { currentPath = '/' } = Astro.props;
   >
     <nav class="border-t border-white/10 px-3 py-3" aria-label="Mobile navigation">
       <div class="flex flex-col gap-0.5">
-        {currentPath !== '/courts' && (
-          <a href="/courts" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Court Lookup</a>
-        )}
-        {currentPath !== '/ticket-calculator' && (
-          <a href="/ticket-calculator" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Ticket Calculator</a>
-        )}
-        {currentPath !== '/eligibility-checker' && (
-          <a href="/eligibility-checker" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Eligibility Checker</a>
-        )}
+        <a href="/courts" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Court Lookup</a>
+        <a href="/ticket-calculator" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Ticket Calculator</a>
+        <a href="/eligibility-checker" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Eligibility Checker</a>
         <details class="group">
           <summary class="w-full cursor-pointer list-none rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10 flex items-center justify-between">
             City Guides <span class="text-[10px]">▾</span>
@@ -125,18 +109,19 @@ const { currentPath = '/' } = Astro.props;
             <a href="/austin" class="rounded px-3 py-2 text-[13px] font-medium text-white/90 hover:bg-white/10">Austin</a>
           </div>
         </details>
-        {currentPath !== '/faq' && (
-          <a href="/faq" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">FAQ</a>
-        )}
-        {currentPath !== '/pricing' && (
-          <a href="/pricing" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Pricing Guide</a>
-        )}
+        <a href="/faq" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">FAQ</a>
+        <a href="/pricing" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Pricing Guide</a>
       </div>
     </nav>
   </div>
 </div>
 
 <style is:global>
+.nav-active {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.85;
+}
 .city-dropdown-wrapper {
   position: relative;
 }
