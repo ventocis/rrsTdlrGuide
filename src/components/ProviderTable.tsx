@@ -100,6 +100,13 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     if (!/^https?:\/\//i.test(u)) u = `https://${u}`;
     if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
       (window as any).gtag('event', 'provider_click', { provider_name: p.name, provider_slug: slugify(p.name), destination_url: u });
+      if (p.featured) {
+        (window as any).gtag('event', 'rrs_provider_click', {
+          provider_name: p.name,
+          destination_url: u,
+          event_category: 'outbound_click',
+        });
+      }
     }
     window.open(u, '_blank', 'noopener,noreferrer');
     if (p.featured) setShareToast(true);
