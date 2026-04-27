@@ -16,7 +16,7 @@ const appConfig: Record<AppEnv, Omit<AppStackProps & CloudfrontCertificateStackP
     crossRegionReferences: true,
     domainName: `qa.${rootDomain}`,
     googleVerificationTxt: "google-site-verification=EHjTUN2dhJOI6qyJK3s6Xj154bsSK2X189OeUjNpg5M",
-    dkimValue: "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnvEXNV+gEYUtLFXCInTm9bHQF4hBZX0dh0HMgO+8WVnuzvVv+UBgJlxJ7cKG0XXzHV0QcYGe6t/uUKY9EPRFYmXP3IHs6TKkHBoN0nxBvSSLWpER4sabLd+MVgz74pOz29WMs2nuG0uJSih1RchDaTYJOBv08QLlUInSA+0FVhZlAvNxZ3KST1qs9a/6GHD/y9IqWb492oIHdSmmzlq3lBJVCTuHv0jfLCM/yHy56+QZieETWg3ZGsXkJtHSh35av7DnPHdfyfdJ0lZQiWQjHJYdVYsNsL8/d1i/EbfpD9vhNtWpDRsj0JbXMokXz7ptmKua3JTLC8pPzX4WZTIVIQIDAQAB",
+    dkimValue: "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArP/0BqH0bbQ3tQcPl73EK/AZcu704L8ebGefgG0DDiNBCSELZ5v46LKlbHOTXXUL7f9q33t2RDl23ZLzB7XhBwFCgFqducEp00TXURLxR1qM8LzwM+WKLa5PoapD6dSrJuyz/xdfgMwj8AVgdTRQghZzP8wZEqJwPYvGepIbKIIqKNUG875bQcGKvzzugHVIOOzrk3oY/nUUjU1xeqEI7Wi99cfBYsCv1a/rK0/tWXY26Bx5QlGuvDwKPpHYRf0tUcbmj6QAsTsa5Y9EuVcp7axOGA6/MqNjMXhKjtBanVh9x4XKRBbXNcZnqOHdPHRokOkt97ongW0C1LEH8aMpSwIDAQAB",
     dmarcPolicy: "reject",
   },
   [AppEnv.PROD]: {
@@ -26,7 +26,7 @@ const appConfig: Record<AppEnv, Omit<AppStackProps & CloudfrontCertificateStackP
     domainName: rootDomain,
     googleVerificationTxt: "google-site-verification=0ZBx192zBIrLLL2A8BxDA58qCqT3a77ZOTBemty3CZM",
     existingHostedZoneId: "Z08769821BMPC7MBE1M1Z",
-    dkimValue: "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0A22yOKzvnf68B24wMGTjowha5H26NbSgMc1OCI1IGFyaTGxL1nB7efvjJmZI8wdZ0BJ8skbhWC+cZp7SFeRABoWuTKARK+L+Uh5LkRp86Sz+yqaYvE5Uc3iTXayFaNsK7O+xYP++1I0+g8r0lz5QyuFowROn/KNi0S+d7SOIWB+9l2PSsaCm4pj02FEVGrO15bJmfMIiOYZMD3vwxOnBsh80eDeuDDfTuzJe6zfvuRLD8MW5tJhh5sW5o6Rzr4QK1eoZA25T5TOpzvckALVULGvOVWKX1SRyW1mhZ5d7A+g/I0LtBdZKjMgt3U1y7YVnPwO62NiUDe2xNuEBNMoFQIDAQAB",
+    dkimValue: "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnmvgsGqsY7lwhgKGdoP2UhTz/KX8aE6a7n/bSbSoagWfJGVOmKPCiYr5vK+xG62RBF8l2i1KFRtDAoGBnWFsJ18Uh1KqXkoCyG/e84+iWjHBQxQDZ6DuSfGWYVnEO6g3JhmHZH2KnQ3LWuY3CZbjdILjM8aC0ypZapvORPiK59Xbmb0p3LLuvt2S7YQq+iDX6gJJpeQX675xGa1838DoQcq/PPfqBr+DS4VBDUMCRw+AygW9C3DuASOej5eWAjT2zWBvZs1NXNqOsDNEs00ecJr05uIo62Il1CXX6IvmZPS2KPuO1+jV1CHud1BGdw2Hah7ONDqF2tDtUNgnoTG9MQIDAQAB",
     dmarcPolicy: "reject",
     // Deploy QA DNS stack first, then paste the 4 NS record values here.
     subdomainDelegations: [
