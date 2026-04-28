@@ -99,16 +99,16 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     let u = p.website.trim();
     if (!/^https?:\/\//i.test(u)) u = `https://${u}`;
     if (typeof window !== 'undefined') {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
-        event: 'provider_click',
+      const gtag = (window as any).gtag || function() {
+        ((window as any).dataLayer = (window as any).dataLayer || []).push(arguments);
+      };
+      gtag('event', 'provider_click', {
         provider_name: p.name,
         provider_slug: slugify(p.name),
         destination_url: u,
       });
       if (p.featured) {
-        (window as any).dataLayer.push({
-          event: 'rrs_provider_click',
+        gtag('event', 'rrs_provider_click', {
           provider_name: p.name,
           destination_url: u,
           event_category: 'outbound_click',
