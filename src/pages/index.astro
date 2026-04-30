@@ -27,7 +27,17 @@ const jsonLdOrganization = {
   '@type': 'Organization',
   name: 'TX Course Guide',
   url: siteUrl,
-  description: 'Independent comparison guide for TDLR-approved defensive driving and driver safety courses in Texas.'
+  description: 'Independent comparison guide for TDLR-approved defensive driving and driver safety courses in Texas.',
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/favicon.png`,
+    width: 512,
+    height: 512,
+  },
+  sameAs: [
+    siteUrl,
+    'https://txcourseguide.com',
+  ]
 };
 ---
 

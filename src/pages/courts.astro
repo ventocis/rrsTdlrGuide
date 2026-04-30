@@ -28,6 +28,17 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 2, name: 'Texas Court Lookup', item: `${siteUrl}/courts` }
   ]
 };
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How do I find my Texas court for a traffic ticket?', acceptedAnswer: { '@type': 'Answer', text: 'Use the Texas Court Lookup at txcourseguide.com/courts. Select your county and court type (Justice of the Peace or Municipal) to find your court\'s judge name, phone number, email, and website. Your citation should also list the court name or precinct number.' } },
+    { '@type': 'Question', name: 'What is the difference between a JP Court and a Municipal Court in Texas?', acceptedAnswer: { '@type': 'Answer', text: 'Justice of the Peace (JP) Courts handle citations issued in unincorporated county areas and some smaller cities. Municipal Courts handle citations issued within incorporated city limits. For example, a ticket issued inside Houston city limits goes to Houston Municipal Court; one issued in unincorporated Harris County goes to a Harris County JP Court.' } },
+    { '@type': 'Question', name: 'How do I contact my Texas court to request defensive driving?', acceptedAnswer: { '@type': 'Answer', text: 'Use the court\'s phone number or email found in the Texas Court Lookup. Contact them before your appearance date to request permission to take a Driver Safety Course (DSC). Do not enroll in a course before receiving approval.' } },
+    { '@type': 'Question', name: 'Why do I need to contact my court before taking defensive driving?', acceptedAnswer: { '@type': 'Answer', text: 'Texas law requires you to receive court approval before enrolling in and completing a defensive driving course for ticket dismissal. Taking the course without prior court approval is a common mistake that results in the dismissal being denied.' } },
+  ]
+};
 ---
 
 <Layout
@@ -35,7 +46,7 @@ const breadcrumb = {
   description="Look up any Texas Justice of the Peace or Municipal court by county. Get judge name, phone, email, and website for defensive driving ticket dismissal."
   keywords="Texas court lookup, JP court Texas, municipal court Texas, Justice of the Peace, court directory Texas"
   url="/courts"
-  jsonLd={[jsonLdWebApp, breadcrumb]}
+  jsonLd={[jsonLdWebApp, breadcrumb, faqLd]}
 >
   <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
     <SiteHeader currentPath="/courts" />

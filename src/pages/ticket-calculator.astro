@@ -6,7 +6,7 @@ import TicketCalculator from '../components/TicketCalculator';
 
 const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
 
-const jsonLd = {
+const appLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'Texas Speeding Ticket Insurance Cost Calculator',
@@ -17,13 +17,33 @@ const jsonLd = {
   url: `${siteUrl}/ticket-calculator`,
   publisher: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl }
 };
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'How much does a Texas speeding ticket really cost?', acceptedAnswer: { '@type': 'Answer', text: 'The true 3-year cost of a Texas speeding ticket is far more than the fine. A ticket raises your auto insurance premium by an average of 22% for 3 years. On a $2,600 annual premium, that is roughly $572 per year in extra insurance costs — or over $1,700 over 3 years — on top of the ticket fine itself.' } },
+    { '@type': 'Question', name: 'How much does a speeding ticket raise insurance in Texas?', acceptedAnswer: { '@type': 'Answer', text: 'A speeding ticket raises Texas car insurance premiums by an average of 22%, based on industry data. The surcharge typically lasts 3 years from the conviction date.' } },
+    { '@type': 'Question', name: 'Can a defensive driving course prevent an insurance rate increase in Texas?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. If you successfully dismiss your ticket using a TDLR-approved Driver Safety Course (DSC), no conviction is entered on your driving record, so your insurance company cannot apply a surcharge. The $25–$38 course cost is typically a fraction of the 3-year insurance increase you would otherwise pay.' } },
+    { '@type': 'Question', name: 'How does the Texas ticket cost calculator work?', acceptedAnswer: { '@type': 'Answer', text: 'Enter your current annual insurance premium and the ticket fine amount. The calculator estimates your 3-year insurance surcharge at the ~22% average increase rate and compares the total cost of paying the ticket versus taking a defensive driving course to dismiss it.' } },
+  ]
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TX Course Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Ticket Cost Calculator', item: `${siteUrl}/ticket-calculator` },
+  ]
+};
 ---
 
 <Layout
   title="Texas Speeding Ticket Cost Calculator — See What It Really Costs You | TX Course Guide"
   description="Find out the true 3-year cost of a Texas speeding ticket including insurance rate increases — and how a $25 Driver Safety Course changes the math. Free calculator."
   url="/ticket-calculator"
-  jsonLd={jsonLd}
+  jsonLd={[appLd, faqLd, breadcrumbLd]}
 >
   <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
     <SiteHeader currentPath="/ticket-calculator" />
