@@ -94,10 +94,24 @@ export default function ProviderTable({ providers: allProviders }: Props) {
   const [shareBanner, setShareBanner] = useState(false);
   const [copyDone, setCopyDone] = useState(false);
 
+  function buildProviderUrl(website: string): string {
+    let u = website.trim();
+    if (!/^https?:\/\//i.test(u)) u = `https://${u}`;
+    try {
+      const url = new URL(u);
+      if (url.hostname.includes('roadreadysafety.com')) {
+        url.searchParams.set('utm_source', 'TXcourseguide');
+        url.searchParams.set('utm_medium', 'referral');
+        url.searchParams.set('utm_campaign', 'provider_table');
+        return url.toString();
+      }
+    } catch {}
+    return u;
+  }
+
   function openProviderWebsite(p: Provider) {
     if (!p.website) return;
-    let u = p.website.trim();
-    if (!/^https?:\/\//i.test(u)) u = `https://${u}`;
+    let u = buildProviderUrl(p.website);
     if (typeof window !== 'undefined') {
       const gtag = (window as any).gtag || function() {
         ((window as any).dataLayer = (window as any).dataLayer || []).push(arguments);
@@ -473,7 +487,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                           )}
                           {isValidUrl(p.website) ? (
                             <a
-                              href={p.website!.startsWith('http') ? p.website : `https://${p.website}`}
+                              href={buildProviderUrl(p.website!)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-[13px] font-semibold hover:underline"
