@@ -74,6 +74,15 @@ const faqSchema = {
   ]
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TX Course Guide', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Harris County Traffic Ticket Guide', item: `${siteUrl}/harris-county` },
+  ]
+};
+
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
@@ -94,7 +103,7 @@ const howToSchema = {
   title={pageTitle}
   description={pageDescription}
   url="/harris-county"
-  jsonLd={[faqSchema, howToSchema]}
+  jsonLd={[faqSchema, howToSchema, breadcrumbSchema]}
 >
   <div class="harris-county-page">
     <SiteHeader currentPath="/harris-county" />

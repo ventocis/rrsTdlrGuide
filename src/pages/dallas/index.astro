@@ -66,6 +66,15 @@ const faqSchema = {
   ]
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TX Course Guide', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Dallas Traffic Ticket Guide', item: `${siteUrl}/dallas` },
+  ]
+};
+
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
@@ -85,7 +94,7 @@ const howToSchema = {
   title={pageTitle}
   description={pageDescription}
   url="/dallas"
-  jsonLd={[faqSchema, howToSchema]}
+  jsonLd={[faqSchema, howToSchema, breadcrumbSchema]}
 >
   <div class="dallas-page">
     <SiteHeader currentPath="/dallas" />
