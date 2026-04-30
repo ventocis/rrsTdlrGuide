@@ -154,27 +154,6 @@ const breadcrumbLd = {
         </p>
       </section>
 
-      <section class="mt-8 rounded-lg border px-5 py-4" style="border-color: var(--proto-teal); background: #F0FDFA;">
-        <p class="mb-1 text-[13px] font-bold uppercase tracking-wider" style="color: var(--proto-teal-dark);">Overall easiest + best value pick</p>
-        <h2 class="m-0 text-lg font-semibold" style="color: var(--proto-text);">Road Ready Safety</h2>
-        <p class="mt-2 mb-0 text-[15px] leading-relaxed" style="color: var(--proto-text);">
-          These rankings show the cheapest totals first. But our overall pick is Road Ready Safety because it gives you an easier experience and includes instant certificate delivery. It is often about <strong>${roadReadyDiff === 0 ? 'a few dollars' : `$${roadReadyDiff}`}</strong> more than the absolute cheapest options, but many drivers prefer it for speed and simplicity.
-        </p>
-        <p class="mt-3 mb-0">
-          <a
-            href={withRoadReadyUtm(roadReady?.website || 'https://roadreadysafety.com/courses/tx-defensive')}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-provider-name="ROAD READY SAFETY"
-            data-provider-url={withRoadReadyUtm(roadReady?.website || 'https://roadreadysafety.com/courses/tx-defensive')}
-            class="provider-outbound-link text-[14px] font-semibold hover:underline"
-            style="color: var(--proto-teal);"
-          >
-            Visit Road Ready Safety →
-          </a>
-        </p>
-      </section>
-
       <section class="mt-10">
         <h2 class="mb-3 text-xl font-bold" style="color: var(--proto-text);">Top 10 Cheapest Texas Defensive Driving Courses</h2>
         <div class="overflow-x-auto rounded-lg border" style="border-color: var(--proto-card-border);">
@@ -187,7 +166,6 @@ const breadcrumbLd = {
                 <th class="px-3 py-2.5 text-left font-semibold">Fees</th>
                 <th class="px-3 py-2.5 text-left font-semibold">Total</th>
                 <th class="px-3 py-2.5 text-left font-semibold">Certificate</th>
-                <th class="px-3 py-2.5 text-left font-semibold">Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -211,9 +189,6 @@ const breadcrumbLd = {
                   <td class="px-3 py-2.5">${Number(p.stateFee || 0).toFixed(2)}</td>
                   <td class="px-3 py-2.5 font-semibold">${Number(p.totalCost).toFixed(2)}</td>
                   <td class="px-3 py-2.5">{p.instantCert}</td>
-                  <td class="px-3 py-2.5">
-                    {p.instantCert === 'Free' ? 'Good value: instant certificate included' : 'Low cost, but certificate options vary'}
-                  </td>
                 </tr>
               ))}
             </tbody>
@@ -267,8 +242,8 @@ const breadcrumbLd = {
             <p class="px-4 pb-4 mt-0" style="color: var(--proto-text-muted);">The minimum legal base price is $25 for TDLR-approved courses.</p>
           </details>
           <details class="rounded-lg border bg-white" style="border-color: var(--proto-card-border);">
-            <summary class="cursor-pointer px-4 py-3 font-semibold">Why is Road Ready Safety your overall pick if it is not always #1 cheapest?</summary>
-            <p class="px-4 pb-4 mt-0" style="color: var(--proto-text-muted);">Because many drivers care about both cost and ease. Road Ready Safety includes instant certificate delivery and a simple experience, so it is strong value even when slightly above the absolute lowest price.</p>
+            <summary class="cursor-pointer px-4 py-3 font-semibold">How should I choose when many courses have the same low price?</summary>
+            <p class="px-4 pb-4 mt-0" style="color: var(--proto-text-muted);">If totals are similar, compare certificate delivery speed, language options, website clarity, and refund policy. The lowest sticker price is not always the easiest overall experience.</p>
           </details>
           <details class="rounded-lg border bg-white" style="border-color: var(--proto-card-border);">
             <summary class="cursor-pointer px-4 py-3 font-semibold">Is online defensive driving valid in Texas?</summary>
