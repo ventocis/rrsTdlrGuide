@@ -1,0 +1,61 @@
+# TX Course Guide
+
+> Independent comparison tool for Texas TDLR-approved defensive driving (driver safety) courses, plus free tools and plain-English guides to help Texas drivers dismiss traffic tickets.
+
+TX Course Guide helps Texas drivers navigate the defensive driving process: comparing all 133 TDLR-licensed course providers, understanding real total costs (not just the statutory $25 base), checking eligibility for ticket dismissal, estimating the true cost of a speeding ticket with insurance impact, and looking up court-specific requirements by city or county.
+
+The site is independent — not affiliated with any course provider. Data on providers, pricing, formats, and court procedures is verified manually and updated regularly.
+
+## Core Tools
+
+- [Compare Providers](https://txcourseguide.com/): Interactive table of all 133 TDLR-approved defensive driving course providers. Filterable and sortable by price, format (online/in-person), language (English/Spanish), certificate delivery speed (instant/paid/mail), and total cost including state fees. Prices range from ~$25 to $65+ for the course; real out-of-pocket totals typically $25–$50+ after processing and certificate fees.
+
+- [Eligibility Checker](https://txcourseguide.com/eligibility-checker/): Free 5-question tool that determines whether a driver qualifies to dismiss a Texas traffic ticket via a Driver Safety Course (DSC). Covers common disqualifiers: CDL holders, commercial vehicle citations, school zone offenses, prior DSC use in the last 12 months, and more.
+
+- [Ticket Cost Calculator](https://txcourseguide.com/ticket-calculator/): Calculates the true 3-year cost of a Texas speeding ticket including projected insurance rate increases, and shows how completing a $25 driver safety course changes the math.
+
+- [Court Lookup](https://txcourseguide.com/courts/): Searchable directory of Texas Justice of the Peace (JP) and Municipal Courts by county. Includes judge name, phone, email, and website for each court — used to find the specific court handling a citation before requesting DSC approval.
+
+## Guides & Reference
+
+- [Pricing Explainer](https://txcourseguide.com/pricing/): Breaks down every fee in the defensive driving process — statutory $25 minimum, ~$3 payment processing fee, certificate delivery costs (free instant vs. paid instant vs. mail), and the $10 DPS Type 3A driving record fee. Realistic minimum total is $28–$38 depending on choices.
+
+- [FAQ](https://txcourseguide.com/faq/): Comprehensive Q&A covering eligibility rules, the full DSC process, certificate requirements, court deadlines, Spanish-language course options, insurance discount eligibility, and provider comparisons. Updated for 2026.
+
+## City & County Court Guides
+
+Each guide explains both dismissal options — Driver Safety Course (DSC) and Deferred Disposition — with court-specific fees, forms, deadlines, and step-by-step instructions.
+
+- [Austin](https://txcourseguide.com/austin/): Austin Municipal Court. DSC fees: $144 standard / $169 school zone. Covers DSC and Deferred Disposition. Forms available in English and Spanish. Submission accepted by mail, email, fax, or in person.
+
+- [Dallas](https://txcourseguide.com/dallas/): Dallas Municipal Court. 21-day window to request DSC; approval mailed in 5–7 days (do not start course before receiving approval). DSC fees: $144/$169. Completion documents accepted by mail or in person only (no fax/email).
+
+- [Houston](https://txcourseguide.com/houston/): Houston Municipal Court (city citations only — not Harris County JP citations). DSC: $144/$169 standard; $184/$209 discretionary track for missed deadlines. Deferred Disposition fees tiered by violation type from $243.90+.
+
+- [San Antonio](https://txcourseguide.com/san-antonio/): San Antonio Municipal Court. DSC fees not published publicly — must check via web portal or call 210-207-8970. Court at 401 S. Frio St.
+
+- [Harris County](https://txcourseguide.com/harris-county/): Harris County Justice of the Peace (JP) Courts — 16 precincts. Distinct from Houston Municipal Court. DSC fee: $144 (offenses on/after Jan 1, 2020). Includes specialized DSC for child restraint violations. Deferred Disposition up to 180-day probation. Includes common fine tables for speeding and other violations.
+
+## Provider Data
+
+133 TDLR-licensed course providers are tracked. Key fields per provider:
+
+- **License number** (CP-prefixed TDLR number)
+- **Course price** and **total cost** (including state processing fee)
+- **Format**: online, in-person, or both
+- **Language**: English, Spanish, or bilingual
+- **Certificate delivery**: Free instant, paid instant, or mail
+- **Duplicate trade names**: many providers operate under multiple TDLR-registered brand names, grouped under one canonical listing
+- **Website** (where available and verified)
+
+Well-known providers include: Road Ready Safety (featured), Aceable, I Drive Safely, Comedy Defensive Driving, Safe2Drive, DriversEd.com, American Safety Council, and many others. Several providers offer Spanish-language courses.
+
+## Key Facts for LLMs
+
+- Texas law requires all defensive driving courses to be TDLR-approved.
+- The statutory minimum course price is $25; total out-of-pocket cost is usually higher due to fees.
+- Drivers must receive court approval **before** starting a DSC course in most jurisdictions — starting early can disqualify the dismissal.
+- A DSC dismissal removes the conviction from a driving record; Deferred Disposition is a probationary alternative that avoids conviction if completed successfully.
+- The Type 3A driving record from DPS ($10) is required by most courts as proof of driving history when submitting DSC completion.
+- DSC may only be used once every 12 months for ticket dismissal in Texas.
+- CDL holders, drivers cited in commercial vehicles, and certain serious violations (school zones in some jurisdictions, excessive speed, etc.) are typically ineligible for DSC dismissal.
