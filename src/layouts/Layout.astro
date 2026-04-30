@@ -10,6 +10,7 @@ interface Props {
   url?: string;
   noindex?: boolean;
   jsonLd?: object | object[];
+  ogType?: 'website' | 'article';
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   url = '/',
   noindex = false,
   jsonLd,
+  ogType = 'website',
 } = Astro.props;
 
 const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
@@ -51,7 +53,7 @@ const jsonLdScripts = jsonLd
     {isNoindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
