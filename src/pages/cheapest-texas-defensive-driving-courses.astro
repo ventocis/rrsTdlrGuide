@@ -1,0 +1,316 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import providersRaw from '../data/providers.json';
+
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
+const pagePath = '/cheapest-texas-defensive-driving-courses';
+const pageUrl = `${siteUrl}${pagePath}`;
+
+const providers = providersRaw as any[];
+
+function normalizeUrl(url: string): string {
+  const trimmed = url.trim();
+  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+}
+
+function withRoadReadyUtm(url: string): string {
+  try {
+    const parsed = new URL(normalizeUrl(url));
+    if (parsed.hostname.includes('roadreadysafety.com')) {
+      parsed.searchParams.set('utm_source', 'TXcourseguide');
+      parsed.searchParams.set('utm_medium', 'referral');
+      parsed.searchParams.set('utm_campaign', 'cheapest_courses_list');
+      return parsed.toString();
+    }
+    return parsed.toString();
+  } catch {
+    return normalizeUrl(url);
+  }
+}
+
+const rankedProviders = providers
+  .filter((p: any) =>
+    p.website &&
+    p.online === true &&
+    Number(p.totalCost) > 0 &&
+    String(p.totalCostDisplay || '').toLowerCase() !== 'not found' &&
+    Number(p.price) > 0 &&
+    String(p.priceDisplay || '').toLowerCase() !== 'not found'
+  )
+  .sort((a: any, b: any) => {
+    if (a.totalCost !== b.totalCost) return a.totalCost - b.totalCost;
+    if (a.price !== b.price) return a.price - b.price;
+    return String(a.name).localeCompare(String(b.name));
+  });
+
+const topTen = rankedProviders.slice(0, 10);
+const roadReady = rankedProviders.find((p: any) => String(p.name).toUpperCase() === 'ROAD READY SAFETY');
+const cheapestTotal = topTen.length ? Number(topTen[0].totalCost) : 25;
+const roadReadyDiff = roadReady ? Math.max(0, Number(roadReady.totalCost) - cheapestTotal) : 3;
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Cheapest Texas Defensive Driving Courses',
+  description: 'Compare the top 10 cheapest Texas defensive driving courses by real total cost. See base price, fees, and why Road Ready Safety is our easiest overall pick.',
+  url: pageUrl,
+  datePublished: '2026-04-30',
+  dateModified: '2026-04-30',
+  author: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl },
+  publisher: { '@type': 'Organization', name: 'TX Course Guide', url: siteUrl },
+};
+
+const itemListLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Top 10 Cheapest Texas Defensive Driving Courses',
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  numberOfItems: topTen.length,
+  itemListElement: topTen.map((p: any, idx: number) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    item: {
+      '@type': 'Course',
+      name: p.name,
+      provider: { '@type': 'Organization', name: p.name },
+      url: withRoadReadyUtm(p.website),
+    },
+  })),
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the cheapest legal price for a Texas defensive driving course?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Texas law sets the minimum base course price at $25 for TDLR-approved defensive driving courses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the real total cost for most Texas defensive driving courses?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most drivers pay around $25 to $31 total for budget options, depending on processing fees and certificate delivery.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why is Road Ready Safety the overall easiest pick?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Road Ready Safety includes instant certificate delivery and a simple user flow. It may cost about $3 more than the absolute cheapest options, but many drivers prefer it for speed and convenience.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you rank the cheapest courses?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We rank by known all-in total cost first, then by base price, then alphabetically when tied. We exclude providers where pricing is not found.',
+      },
+    },
+  ],
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TX Course Guide', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Cheapest Texas Defensive Driving Courses', item: pageUrl },
+  ],
+};
+---
+
+<Layout
+  title="Cheapest Texas Defensive Driving Courses (2026) | TX Course Guide"
+  description="Cheapest Texas defensive driving courses ranked by real total cost. See the top 10 list, fee breakdowns, and why Road Ready Safety is our easiest overall pick."
+  keywords="cheapest Texas defensive driving courses, cheapest defensive driving Texas, Texas defensive driving cost"
+  url={pagePath}
+  ogType="article"
+  jsonLd={[articleLd, itemListLd, faqLd, breadcrumbLd]}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath={pagePath} />
+    <main class="mx-auto w-full max-w-[920px] px-4 py-10 sm:px-6">
+      <h1 class="mb-2 text-2xl font-bold leading-tight sm:text-3xl" style="color: var(--proto-text);">
+        Cheapest Texas Defensive Driving Courses
+      </h1>
+      <p class="mb-8 text-[14px]" style="color: var(--proto-text-muted);">
+        Updated 2026 · High-intent list for drivers who want the lowest real cost.
+      </p>
+
+      <section class="rounded-lg border px-5 py-4" style="background: var(--proto-teal-bg); border-color: var(--proto-teal-border);">
+        <p class="mb-1 text-[13px] font-bold uppercase tracking-wider" style="color: var(--proto-teal-dark);">Quick answer</p>
+        <p class="m-0 text-[15px]" style="color: var(--proto-text);">
+          The cheapest legal base price in Texas is <strong>$25</strong>. Real total cost is usually <strong>$25 to $31</strong> after fees.
+        </p>
+      </section>
+
+      <section class="mt-8 rounded-lg border px-5 py-4" style="border-color: var(--proto-teal); background: #F0FDFA;">
+        <p class="mb-1 text-[13px] font-bold uppercase tracking-wider" style="color: var(--proto-teal-dark);">Overall easiest + best value pick</p>
+        <h2 class="m-0 text-lg font-semibold" style="color: var(--proto-text);">Road Ready Safety</h2>
+        <p class="mt-2 mb-0 text-[15px] leading-relaxed" style="color: var(--proto-text);">
+          These rankings show the cheapest totals first. But our overall pick is Road Ready Safety because it gives you an easier experience and includes instant certificate delivery. It is often about <strong>${roadReadyDiff === 0 ? 'a few dollars' : `$${roadReadyDiff}`}</strong> more than the absolute cheapest options, but many drivers prefer it for speed and simplicity.
+        </p>
+        <p class="mt-3 mb-0">
+          <a
+            href={withRoadReadyUtm(roadReady?.website || 'https://roadreadysafety.com/courses/tx-defensive')}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-provider-name="ROAD READY SAFETY"
+            data-provider-url={withRoadReadyUtm(roadReady?.website || 'https://roadreadysafety.com/courses/tx-defensive')}
+            class="provider-outbound-link text-[14px] font-semibold hover:underline"
+            style="color: var(--proto-teal);"
+          >
+            Visit Road Ready Safety →
+          </a>
+        </p>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="mb-3 text-xl font-bold" style="color: var(--proto-text);">Top 10 Cheapest Texas Defensive Driving Courses</h2>
+        <div class="overflow-x-auto rounded-lg border" style="border-color: var(--proto-card-border);">
+          <table class="w-full border-collapse text-[14px]">
+            <thead>
+              <tr style="background: var(--proto-text); color: #fff;">
+                <th class="px-3 py-2.5 text-left font-semibold">Rank</th>
+                <th class="px-3 py-2.5 text-left font-semibold">Provider</th>
+                <th class="px-3 py-2.5 text-left font-semibold">Base</th>
+                <th class="px-3 py-2.5 text-left font-semibold">Fees</th>
+                <th class="px-3 py-2.5 text-left font-semibold">Total</th>
+                <th class="px-3 py-2.5 text-left font-semibold">Certificate</th>
+                <th class="px-3 py-2.5 text-left font-semibold">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topTen.map((p: any, idx: number) => (
+                <tr class="border-b" style={`border-color: var(--proto-row-border); ${idx % 2 === 1 ? 'background: var(--proto-hover-bg);' : ''}`}>
+                  <td class="px-3 py-2.5 font-semibold">{idx + 1}</td>
+                  <td class="px-3 py-2.5">
+                    <a
+                      href={withRoadReadyUtm(p.website)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-provider-name={p.name}
+                      data-provider-url={withRoadReadyUtm(p.website)}
+                      class="provider-outbound-link font-semibold hover:underline"
+                      style="color: var(--proto-teal);"
+                    >
+                      {p.name}
+                    </a>
+                  </td>
+                  <td class="px-3 py-2.5">${Number(p.price).toFixed(2)}</td>
+                  <td class="px-3 py-2.5">${Number(p.stateFee || 0).toFixed(2)}</td>
+                  <td class="px-3 py-2.5 font-semibold">${Number(p.totalCost).toFixed(2)}</td>
+                  <td class="px-3 py-2.5">{p.instantCert}</td>
+                  <td class="px-3 py-2.5">
+                    {p.instantCert === 'Free' ? 'Good value: instant certificate included' : 'Low cost, but certificate options vary'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mt-10 rounded-lg border px-5 py-4" style="border-color: var(--proto-card-border); background: #FFFFFF;">
+        <h2 class="mb-3 text-xl font-bold" style="color: var(--proto-text);">Key Facts</h2>
+        <ul class="list-inside list-disc space-y-1 text-[15px] leading-relaxed" style="color: var(--proto-text);">
+          <li>Texas sets a legal minimum base price of $25 for approved defensive driving courses.</li>
+          <li>Many budget providers land between $25 and $31 total before driving record costs.</li>
+          <li>Road Ready Safety is our easiest overall pick because instant certificate delivery is included.</li>
+          <li>Always check your full checkout total, not just the headline price.</li>
+        </ul>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="mb-3 text-xl font-bold" style="color: var(--proto-text);">How We Calculate Cost (Methodology)</h2>
+        <div class="space-y-3 text-[15px] leading-relaxed" style="color: var(--proto-text);">
+          <p>
+            We manually review provider websites and compare posted pricing details. We record the base course price, known processing/state fees, and certificate-related costs shown in our data.
+          </p>
+          <p>
+            We calculate the total as: <strong>Base course price + known fees = total cost</strong>.
+          </p>
+          <ul class="list-inside list-disc space-y-1 pl-2">
+            <li>Ranked by lowest known total cost first.</li>
+            <li>Tie-breakers: lower base price, then alphabetical name.</li>
+            <li>Providers with missing pricing (\"Not Found\") are excluded from this Top 10 list.</li>
+            <li>Prices can change, so always check the provider checkout page before paying.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="mb-3 text-xl font-bold" style="color: var(--proto-text);">What To Watch For</h2>
+        <ul class="list-inside list-disc space-y-1 text-[15px] leading-relaxed" style="color: var(--proto-text);">
+          <li>A $25 headline price does not always mean $25 total.</li>
+          <li>Some providers charge extra for instant certificate delivery.</li>
+          <li>Your court may also require a Type 3A driving record from DPS ($10).</li>
+          <li>Always get court approval before starting a course.</li>
+        </ul>
+      </section>
+
+      <section class="mt-10">
+        <h2 class="mb-3 text-xl font-bold" style="color: var(--proto-text);">Cheapest Courses FAQ</h2>
+        <div class="space-y-3 text-[15px]" style="color: var(--proto-text);">
+          <details class="rounded-lg border bg-white" style="border-color: var(--proto-card-border);">
+            <summary class="cursor-pointer px-4 py-3 font-semibold">What is the cheapest legal Texas defensive driving price?</summary>
+            <p class="px-4 pb-4 mt-0" style="color: var(--proto-text-muted);">The minimum legal base price is $25 for TDLR-approved courses.</p>
+          </details>
+          <details class="rounded-lg border bg-white" style="border-color: var(--proto-card-border);">
+            <summary class="cursor-pointer px-4 py-3 font-semibold">Why is Road Ready Safety your overall pick if it is not always #1 cheapest?</summary>
+            <p class="px-4 pb-4 mt-0" style="color: var(--proto-text-muted);">Because many drivers care about both cost and ease. Road Ready Safety includes instant certificate delivery and a simple experience, so it is strong value even when slightly above the absolute lowest price.</p>
+          </details>
+          <details class="rounded-lg border bg-white" style="border-color: var(--proto-card-border);">
+            <summary class="cursor-pointer px-4 py-3 font-semibold">Is online defensive driving valid in Texas?</summary>
+            <p class="px-4 pb-4 mt-0" style="color: var(--proto-text-muted);">Yes. Online courses are valid as long as the provider is TDLR-approved.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="mt-10 border-t pt-6 text-[14px]" style="border-color: var(--proto-card-border); color: var(--proto-text-muted);">
+        <p>
+          Helpful next steps:
+          <a href="/" class="ml-1 font-semibold hover:underline" style="color: var(--proto-teal);">Compare all providers</a>,
+          <a href="/pricing" class="ml-1 font-semibold hover:underline" style="color: var(--proto-teal);">see full pricing guide</a>,
+          <a href="/eligibility-checker" class="ml-1 font-semibold hover:underline" style="color: var(--proto-teal);">check ticket dismissal eligibility</a>.
+        </p>
+      </section>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>
+
+<script>
+document.addEventListener('astro:page-load', () => {
+  const links = document.querySelectorAll('.provider-outbound-link');
+  if (!links.length) return;
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof window === 'undefined') return;
+      const providerName = (link as HTMLElement).dataset.providerName || 'Unknown Provider';
+      const destinationUrl = (link as HTMLElement).dataset.providerUrl || (link as HTMLAnchorElement).href;
+      const slug = providerName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      const gtag = (window as any).gtag || function() {
+        ((window as any).dataLayer = (window as any).dataLayer || []).push(arguments);
+      };
+      gtag('event', 'provider_click', {
+        provider_name: providerName,
+        provider_slug: slug,
+        destination_url: destinationUrl,
+        source_page: 'cheapest_courses_list',
+      });
+    });
+  });
+});
+</script>
