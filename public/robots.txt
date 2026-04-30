@@ -6,4 +6,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tdlrguide.com/sitemap.xml
+Sitemap: https://txcourseguide.com/sitemap.xml
