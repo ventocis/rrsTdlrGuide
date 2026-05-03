@@ -232,16 +232,28 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     setExpandedRows(prev => ({ ...prev, [id]: !prev[id] }));
   }
 
+  function fireGtag(eventName: string, params: Record<string, string>) {
+    if (typeof window === 'undefined') return;
+    const gtag = (window as any).gtag || function() {
+      ((window as any).dataLayer = (window as any).dataLayer || []).push(arguments);
+    };
+    gtag('event', eventName, params);
+  }
+
   function toggleFormat(key: string) {
-    if (key === 'all') { setFormatFilter([]); return; }
-    setFormatFilter(prev => prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]);
+    if (key === 'all') { setFormatFilter([]); } else {
+      setFormatFilter(prev => prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]);
+    }
+    fireGtag('format_filter_selected', { filter_value: key });
     setShowAll(false);
   }
 
   function toggleCert(key: string) {
-    if (key === 'all') { setCertFilter([]); return; }
-    const k = key.toLowerCase();
-    setCertFilter(prev => prev.includes(k) ? prev.filter(c => c !== k) : [...prev, k]);
+    if (key === 'all') { setCertFilter([]); } else {
+      const k = key.toLowerCase();
+      setCertFilter(prev => prev.includes(k) ? prev.filter(c => c !== k) : [...prev, k]);
+    }
+    fireGtag('cert_filter_selected', { filter_value: key.toLowerCase() });
     setShowAll(false);
   }
 

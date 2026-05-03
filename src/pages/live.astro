@@ -14,7 +14,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 
     <main>
       <!-- Hero -->
-      <div style="background: linear-gradient(135deg, #0a3d38 0%, #0f6b5e 100%); padding: 48px 16px 56px;">
+      <div style="background: linear-gradient(135deg, #1e293b 0%, #1a3a3a 100%); padding: 48px 16px 56px;">
         <div style="max-width: 640px; margin: 0 auto; text-align: center;">
           <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12); border-radius:99px; padding:6px 14px; margin-bottom:20px;">
             <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;" id="hero-dot"></span>
@@ -170,6 +170,22 @@ import SiteFooter from '../components/SiteFooter.astro';
     }
   }
 
+  // GA4 helper
+  function fireGtag(eventName, params) {
+    var gtag = window.gtag || function() {
+      (window.dataLayer = window.dataLayer || []).push(arguments);
+    };
+    gtag('event', eventName, params);
+  }
+
+  // Fire GA4 event when user selects their ticket stage
+  var stageSelect = document.getElementById('ls-stage');
+  if (stageSelect) {
+    stageSelect.addEventListener('change', function() {
+      fireGtag('live_stage_selected', { stage_value: stageSelect.value });
+    });
+  }
+
   // Klaviyo form submission
   var KLAVIYO_KEY = 'Wh2Jwz';
   var LIST_ID = 'XEqjdE';
@@ -197,26 +213,24 @@ import SiteFooter from '../components/SiteFooter.astro';
         data: {
           type: 'subscription',
           attributes: {
-            list_id: LIST_ID,
-            email_marketing: { consent: 'SUBSCRIBED' },
             custom_source: 'Live Q&A Landing Page',
-          },
-          relationships: {
-            list: { data: { type: 'list', id: LIST_ID } },
-          },
-          profile: {
-            data: {
-              type: 'profile',
-              attributes: {
-                email: email,
-                first_name: name,
-                properties: {
-                  ticket_stage: stage,
-                  live_question: question || '',
-                  signup_source: 'live_landing_page',
+            profile: {
+              data: {
+                type: 'profile',
+                attributes: {
+                  email: email,
+                  first_name: name,
+                  properties: {
+                    ticket_stage: stage,
+                    live_question: question || '',
+                    signup_source: 'live_landing_page',
+                  },
                 },
               },
             },
+          },
+          relationships: {
+            list: { data: { type: 'list', id: LIST_ID } },
           },
         },
       }),
