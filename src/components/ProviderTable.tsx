@@ -364,9 +364,6 @@ export default function ProviderTable({ providers: allProviders }: Props) {
             Filter & Sort
           </button>
         </div>
-        <div className="px-3 pb-2 text-[11px]" style={{ color: 'var(--proto-text-light)' }}>
-          {resultCount} providers
-        </div>
       </div>
 
       {/* Mobile bottom sheet drawer */}
@@ -639,7 +636,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <p className="truncate text-[14px] font-semibold leading-tight" style={{ color: 'var(--proto-text)' }}>{p.name}</p>
+                    <span className="inline-flex items-baseline gap-2">
+                      <p className="truncate text-[14px] font-semibold leading-tight" style={{ color: 'var(--proto-text)' }}>{p.name}</p>
+                      {p.featured && <span className="shrink-0 text-[11px]" style={{ color: 'var(--proto-text-light)', fontWeight: 400 }}>Sponsored</span>}
+                    </span>
                     {p.license && <p className="mt-0.5 text-[11px]" style={{ color: 'var(--proto-text-light)' }}>{p.license}</p>}
                   </div>
                   <div className="shrink-0 text-right">
