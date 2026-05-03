@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 
 export type DuplicateBrand = {
   name: string;
@@ -96,6 +96,17 @@ export default function ProviderTable({ providers: allProviders }: Props) {
   const [copyDone, setCopyDone] = useState(false);
   const [totalCostTooltip, setTotalCostTooltip] = useState(false);
   const [methodologyOpen, setMethodologyOpen] = useState(false);
+
+  // Hide the Trustpilot floating bar while the mobile filter drawer is open
+  useEffect(() => {
+    const bar = document.getElementById('tp-float');
+    if (!bar) return;
+    if (drawerOpen) {
+      bar.style.display = 'none';
+    } else if (!sessionStorage.getItem('tp-float-dismissed')) {
+      bar.style.display = 'flex';
+    }
+  }, [drawerOpen]);
 
   function buildProviderUrl(website: string): string {
     let u = website.trim();
