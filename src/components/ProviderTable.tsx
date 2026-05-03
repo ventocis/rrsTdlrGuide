@@ -93,6 +93,8 @@ export default function ProviderTable({ providers: allProviders }: Props) {
   const [shareToast, setShareToast] = useState(false);
   const [shareBanner, setShareBanner] = useState(false);
   const [copyDone, setCopyDone] = useState(false);
+  const [totalCostTooltip, setTotalCostTooltip] = useState(false);
+  const [methodologyOpen, setMethodologyOpen] = useState(false);
 
   function buildProviderUrl(website: string): string {
     let u = website.trim();
@@ -280,7 +282,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-2 py-0 sm:px-5">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-1.5">
-              <span className="text-[12px] font-semibold" style={{ color: 'var(--proto-label)' }}>Format</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: 'var(--proto-label)', letterSpacing: '0.06em' }}>Format:</span>
               <div className="inline-flex gap-1">
                 {formatOptions.map(f => (
                   <button
@@ -297,8 +299,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                 ))}
               </div>
             </div>
+            {/* Separator between filter groups */}
+            <div style={{ width: 1, height: 20, background: 'var(--proto-card-border)', flexShrink: 0 }} />
             <div className="flex items-center gap-1.5">
-              <span className="text-[12px] font-semibold" style={{ color: 'var(--proto-label)' }}>Certificate</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: 'var(--proto-label)', letterSpacing: '0.06em' }}>Certificate:</span>
               <div className="inline-flex gap-1">
                 {certOptions.map(f => (
                   <button
@@ -430,6 +434,38 @@ export default function ProviderTable({ providers: allProviders }: Props) {
 
       {/* Main content */}
       <div className="mx-auto mb-16 mt-3.5 w-full max-w-[1600px] px-2 sm:px-5">
+
+        {/* Methodology block */}
+        <div className="mb-4 rounded-xl border overflow-hidden" style={{ borderColor: 'var(--proto-card-border)', background: 'white' }}>
+          <button
+            type="button"
+            onClick={() => setMethodologyOpen(o => !o)}
+            className="flex w-full items-center justify-between px-4 py-3 text-left"
+            style={{ background: 'white' }}
+            aria-expanded={methodologyOpen}
+          >
+            <span className="text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>
+              How we calculate this
+            </span>
+            <span className="text-[12px] ml-2 shrink-0" style={{ color: 'var(--proto-text-muted)' }}>
+              {methodologyOpen ? '▲ Hide' : '▼ Show'}
+            </span>
+          </button>
+          {methodologyOpen && (
+            <div className="px-4 pb-4 pt-0" style={{ borderTop: '1px solid var(--proto-card-border)' }}>
+              <p className="mt-3 text-[13px] leading-relaxed" style={{ color: 'var(--proto-text-muted)' }}>
+                Most courses advertise a base price — but that's not what you actually pay. We add the required fee plus the minimum certificate cost, since every court requires a certificate to dismiss your ticket. That's why a course that says "$25" often costs $28 or more when you factor everything in. We always show you the real minimum you'll pay.
+              </p>
+              <p className="mt-3 text-[12px] font-semibold" style={{ color: 'var(--proto-label)' }}>Certificate Delivery column:</p>
+              <ul className="mt-1.5 space-y-1 text-[12px]" style={{ color: 'var(--proto-text-muted)' }}>
+                <li><strong style={{ color: 'var(--proto-text)' }}>Free</strong> = instant digital download is included at no extra charge.</li>
+                <li><strong style={{ color: 'var(--proto-text)' }}>Paid</strong> = instant download is available but costs extra.</li>
+                <li><strong style={{ color: 'var(--proto-text)' }}>Mail</strong> = no instant option; your certificate is mailed to you (allow 5–10 business days).</li>
+              </ul>
+            </div>
+          )}
+        </div>
+
         {/* Desktop table */}
         <div className="hidden sm:block w-full overflow-x-auto rounded-xl border bg-white shadow-sm" style={{ borderColor: 'var(--proto-card-border)' }}>
           <div style={{ display: 'block', width: '100%', minWidth: 880 }}>
@@ -438,11 +474,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                 <tr>
                   {[
                     { col: 'name', label: 'Provider', cls: 'text-left min-w-[220px]' },
-                    { col: 'license', label: 'License', cls: 'text-center' },
                     { col: 'price', label: 'Price', cls: 'text-center' },
                     { col: 'fee', label: 'Fee', cls: 'text-center' },
                     { col: 'totalCost', label: 'Total Cost', cls: 'text-center' },
-                    { col: 'cert', label: 'Instant Cert', cls: 'text-center' },
+                    { col: 'cert', label: 'Certificate Delivery', cls: 'text-center' },
                     { col: 'format', label: 'Format', cls: 'text-center' },
                     { col: 'lang', label: 'Language', cls: 'text-center' },
                   ].map(({ col, label, cls }) => (
@@ -452,10 +487,38 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                       onClick={() => ['name', 'price', 'totalCost'].includes(col) ? toggleSort(col as SortKey) : undefined}
                       style={['name', 'price', 'totalCost'].includes(col) ? { cursor: 'pointer' } : { cursor: 'default' }}
                     >
-                      <span className="inline-flex items-center justify-center">
+                      <span className="inline-flex items-center justify-center gap-1">
                         {label}
+                        {col === 'totalCost' && (
+                          <span
+                            className="relative"
+                            onMouseEnter={() => setTotalCostTooltip(true)}
+                            onMouseLeave={() => setTotalCostTooltip(false)}
+                            onClick={e => { e.stopPropagation(); setTotalCostTooltip(v => !v); }}
+                            style={{ cursor: 'default' }}
+                          >
+                            <span style={{ fontSize: 11, color: 'var(--proto-teal)', fontWeight: 400, lineHeight: 1 }}>ⓘ</span>
+                            {totalCostTooltip && (
+                              <span
+                                className="absolute left-1/2 top-full z-50 mt-1.5 w-56 rounded-lg px-3 py-2 text-[11px] font-normal leading-snug shadow-lg"
+                                style={{
+                                  transform: 'translateX(-50%)',
+                                  background: '#1e293b',
+                                  color: '#f1f5f9',
+                                  border: '1px solid rgba(255,255,255,0.08)',
+                                  whiteSpace: 'normal',
+                                  textTransform: 'none',
+                                  letterSpacing: 0,
+                                  pointerEvents: 'none',
+                                }}
+                              >
+                                Price + Fee + minimum certificate cost. This is the real minimum you'll pay.
+                              </span>
+                            )}
+                          </span>
+                        )}
                         {['name', 'price', 'totalCost'].includes(col) && (
-                          <span className="ml-1 text-[10px]" style={{ opacity: sortBy === col ? 1 : 0.25 }}>
+                          <span className="text-[10px]" style={{ opacity: sortBy === col ? 1 : 0.25 }}>
                             {sortArrow(col)}
                           </span>
                         )}
@@ -478,30 +541,39 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                             <button
                               type="button"
                               onClick={() => toggleExpand(p.id)}
-                              className="text-[11px] font-semibold w-4 h-4 flex items-center justify-center rounded"
+                              className="text-[11px] font-semibold w-4 h-4 flex items-center justify-center rounded shrink-0"
                               style={{ color: 'var(--proto-teal)', background: 'var(--proto-teal-bg)' }}
                               title="Expand duplicate brands"
                             >
                               {expandedRows[p.id] ? '−' : '+'}
                             </button>
                           )}
-                          {isValidUrl(p.website) ? (
-                            <a
-                              href={buildProviderUrl(p.website!)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[13px] font-semibold hover:underline"
-                              style={{ color: 'var(--proto-teal)' }}
-                              onClick={e => { e.preventDefault(); openProviderWebsite(p); }}
-                            >
-                              {p.name}
-                            </a>
-                          ) : (
-                            <span className="text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>{p.name}</span>
-                          )}
+                          <div>
+                            <span className="inline-flex items-baseline gap-2">
+                              {isValidUrl(p.website) ? (
+                                <a
+                                  href={buildProviderUrl(p.website!)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[13px] font-semibold hover:underline"
+                                  style={{ color: 'var(--proto-teal)' }}
+                                  onClick={e => { e.preventDefault(); openProviderWebsite(p); }}
+                                >
+                                  {p.name}
+                                </a>
+                              ) : (
+                                <span className="text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>{p.name}</span>
+                              )}
+                              {p.featured && (
+                                <span className="text-[11px]" style={{ color: 'var(--proto-text-light)', fontWeight: 400 }}>Sponsored</span>
+                              )}
+                            </span>
+                            {p.license && (
+                              <div className="text-[10px] mt-0.5" style={{ color: 'var(--proto-text-light)' }}>{p.license}</div>
+                            )}
+                          </div>
                         </div>
                       </td>
-                      <td className="px-3 py-2.5 text-center text-[12px]" style={{ color: 'var(--proto-text-light)' }}>{p.license || '—'}</td>
                       <td className="px-3 py-2.5 text-center text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>
                         {p.priceDisplay && p.priceDisplay.toString().toLowerCase() !== 'not found' ? `$${p.price.toFixed(0)}` : '—'}
                       </td>
@@ -540,7 +612,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                           </div>
                           {d.license && <div className="text-[11px]" style={{ color: 'var(--proto-text-light)' }}>{d.license}</div>}
                         </td>
-                        <td colSpan={7} className="px-3 py-2 text-[11px]" style={{ color: 'var(--proto-text-muted)' }}>Alternative brand name under same parent company</td>
+                        <td colSpan={6} className="px-3 py-2 text-[11px]" style={{ color: 'var(--proto-text-muted)' }}>Alternative brand name under same parent company</td>
                       </tr>
                     ))}
                   </>
@@ -656,7 +728,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
               className="rounded-xl border px-6 py-2.5 text-[13px] font-semibold transition-colors hover:opacity-80"
               style={{ borderColor: 'var(--proto-card-border)', background: 'white', color: 'var(--proto-text)' }}
             >
-              {showAll ? 'Show fewer ↑' : `Show all ${resultCount} providers ↓`}
+              {showAll ? 'Show fewer ↑' : 'Show more ↓'}
             </button>
           </div>
         )}
