@@ -102,6 +102,101 @@ const jsonLdScripts = jsonLd
     )}
   </head>
   <body class="w-full overflow-x-hidden m-0 p-0" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif; color: var(--proto-text);">
+
+    <!-- Live Q&A schedule banner -->
+    <div id="live-banner" style="display:none; width:100%; padding:8px 16px; text-align:center; font-size:12px; font-weight:600; position:relative; z-index:100;">
+      <a id="live-banner-link" href="/live" style="color:inherit; text-decoration:none; display:inline-flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:center;">
+        <span id="live-dot" style="display:inline-block; width:8px; height:8px; border-radius:50%; background:currentColor; flex-shrink:0;"></span>
+        <span id="live-banner-text"></span>
+      </a>
+      <button id="live-banner-close" aria-label="Dismiss" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); background:none; border:none; font-size:16px; cursor:pointer; color:inherit; opacity:0.6; line-height:1;">×</button>
+    </div>
+    <script is:inline>
+      (function() {
+        var YOUTUBE_URL = 'https://youtube.com/@txcourseguide';
+        // MWF = days 1,3,5. Show time: 5:30 PM ET = 21:30 UTC (EST) / 20:30 UTC (EDT)
+        // Texas is CT = ET-1h. Display as "4:30 PM CT / 5:30 PM ET"
+        var LIVE_DAYS = [1, 3, 5]; // Mon=1, Wed=3, Fri=5
+        var LIVE_HOUR_ET = 17; // 5 PM ET
+        var LIVE_MIN_ET = 30;  // :30
+        var LIVE_DURATION_MIN = 30;
+
+        function getETOffset() {
+          // Approximate ET offset: EDT = UTC-4, EST = UTC-5
+          var jan = new Date(new Date().getFullYear(), 0, 1).getTimezoneOffset();
+          var jul = new Date(new Date().getFullYear(), 6, 1).getTimezoneOffset();
+          var stdOffset = Math.max(jan, jul); // EST = 300min
+          var now = new Date();
+          var isDST = now.getTimezoneOffset() < stdOffset;
+          return isDST ? -4 : -5; // hours from UTC
+        }
+
+        function isLiveNow() {
+          var now = new Date();
+          var etOffset = getETOffset();
+          var utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+          var etNow = new Date(utcMs + etOffset * 3600000);
+          var day = etNow.getDay();
+          if (!LIVE_DAYS.includes(day)) return false;
+          var startMin = LIVE_HOUR_ET * 60 + LIVE_MIN_ET;
+          var curMin = etNow.getHours() * 60 + etNow.getMinutes();
+          return curMin >= startMin && curMin < startMin + LIVE_DURATION_MIN;
+        }
+
+        function nextLiveDay() {
+          var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+          var now = new Date();
+          var etOffset = getETOffset();
+          var utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+          var etNow = new Date(utcMs + etOffset * 3600000);
+          var today = etNow.getDay();
+          // Find next live day
+          for (var i = 1; i <= 7; i++) {
+            var d = (today + i) % 7;
+            if (LIVE_DAYS.includes(d)) return days[d];
+          }
+          return 'Monday';
+        }
+
+        var banner = document.getElementById('live-banner');
+        var bannerLink = document.getElementById('live-banner-link');
+        var bannerText = document.getElementById('live-banner-text');
+        var dot = document.getElementById('live-dot');
+        var closeBtn = document.getElementById('live-banner-close');
+
+        if (sessionStorage.getItem('live-banner-dismissed')) return;
+
+        if (isLiveNow()) {
+          banner.style.display = 'block';
+          banner.style.background = '#dc2626';
+          banner.style.color = '#fff';
+          dot.style.background = '#fff';
+          dot.style.animation = 'livepulse 1.2s ease-in-out infinite';
+          bannerText.textContent = "We're live right now! Join the free Texas ticket Q&A →";
+          bannerLink.href = YOUTUBE_URL;
+          // Add pulse keyframes
+          if (!document.getElementById('live-pulse-style')) {
+            var s = document.createElement('style');
+            s.id = 'live-pulse-style';
+            s.textContent = '@keyframes livepulse{0%,100%{opacity:1}50%{opacity:0.3}}';
+            document.head.appendChild(s);
+          }
+        } else {
+          banner.style.display = 'block';
+          banner.style.background = '#0f172a';
+          banner.style.color = '#94a3b8';
+          dot.style.display = 'none';
+          bannerText.textContent = 'Free Live Q&A — Mon · Wed · Fri at 4:30 PM CT (5:30 PM ET) · Ask your Texas ticket questions →';
+          bannerLink.href = '/live';
+        }
+
+        closeBtn.addEventListener('click', function() {
+          banner.style.display = 'none';
+          sessionStorage.setItem('live-banner-dismissed', '1');
+        });
+      })();
+    </script>
+
     <slot />
 
     <!-- Trustpilot popup — shows after 60s, sessionStorage-gated -->
