@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="Free Live Q&A — Texas Defensive Driving | TX Course Guide"
+  description="Join our free live Q&A every Monday, Wednesday, and Friday at 4:30 PM CT. Ask your Texas defensive driving and ticket questions live on YouTube."
+  url="/live"
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/live" />
+
+    <main>
+      <!-- Hero -->
+      <div style="background: linear-gradient(135deg, var(--proto-header-from), var(--proto-header-to)); padding: 48px 16px 56px;">
+        <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+          <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12); border-radius:99px; padding:6px 14px; margin-bottom:20px;">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;" id="hero-dot"></span>
+            <span style="font-size:12px; font-weight:600; color:rgba(255,255,255,0.9);" id="hero-status">Free Live Q&amp;A</span>
+          </div>
+          <h1 style="font-size:clamp(26px,5vw,38px); font-weight:800; color:#fff; margin:0 0 12px; line-height:1.2;">
+            Got a Texas Ticket?<br/>Get Your Questions Answered — Free
+          </h1>
+          <p style="font-size:15px; color:rgba(255,255,255,0.8); margin:0 0 24px; line-height:1.6; max-width:520px; margin-left:auto; margin-right:auto;">
+            Every Monday, Wednesday, and Friday at <strong style="color:#fff;">4:30 PM CT</strong>, we go live on YouTube to answer real questions about Texas defensive driving courses, court deadlines, and ticket dismissal.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:8px;">
+            <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:10px; padding:12px 20px; text-align:center;">
+              <div style="font-size:18px; font-weight:800; color:#fff;">Mon · Wed · Fri</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:2px;">4:30 PM CT &nbsp;/&nbsp; 5:30 PM ET</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:10px; padding:12px 20px; text-align:center;">
+              <div style="font-size:18px; font-weight:800; color:#fff;">30 min</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:2px;">Live on YouTube</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:10px; padding:12px 20px; text-align:center;">
+              <div style="font-size:18px; font-weight:800; color:#fff;">100% Free</div>
+              <div style="font-size:11px; color:rgba(255,255,255,0.65); margin-top:2px;">No signup required to watch</div>
+            </div>
+          </div>
+          <a href="https://youtube.com/@txcourseguide" target="_blank" rel="noopener noreferrer" id="hero-yt-btn"
+            style="display:inline-flex; align-items:center; gap:8px; background:#ff0000; color:#fff; font-size:14px; font-weight:700; padding:12px 24px; border-radius:10px; text-decoration:none; margin-top:20px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Watch on YouTube
+          </a>
+        </div>
+      </div>
+
+      <!-- Sign-up form -->
+      <div style="max-width:560px; margin:0 auto; padding:40px 16px 60px;">
+        <div style="background:#fff; border-radius:16px; border:1px solid var(--proto-card-border); padding:32px 28px; box-shadow:0 2px 16px rgba(0,0,0,0.06);">
+          <h2 style="font-size:20px; font-weight:800; color:var(--proto-text); margin:0 0 4px;">Get a reminder before we go live</h2>
+          <p style="font-size:13px; color:var(--proto-text-muted); margin:0 0 24px; line-height:1.5;">We'll send you a heads-up before each session so you don't miss it. No spam, ever.</p>
+
+          <form id="live-signup-form" style="display:flex; flex-direction:column; gap:16px;">
+            <!-- Name -->
+            <div>
+              <label for="ls-name" style="display:block; font-size:12px; font-weight:600; color:var(--proto-label); margin-bottom:5px;">Your Name</label>
+              <input id="ls-name" name="name" type="text" placeholder="First name" required
+                style="width:100%; box-sizing:border-box; border:1px solid var(--proto-card-border); border-radius:8px; padding:10px 12px; font-size:14px; color:var(--proto-text); outline:none; font-family:inherit;" />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="ls-email" style="display:block; font-size:12px; font-weight:600; color:var(--proto-label); margin-bottom:5px;">Email Address</label>
+              <input id="ls-email" name="email" type="email" placeholder="you@email.com" required
+                style="width:100%; box-sizing:border-box; border:1px solid var(--proto-card-border); border-radius:8px; padding:10px 12px; font-size:14px; color:var(--proto-text); outline:none; font-family:inherit;" />
+            </div>
+
+            <!-- Stage -->
+            <div>
+              <label for="ls-stage" style="display:block; font-size:12px; font-weight:600; color:var(--proto-label); margin-bottom:5px;">Where are you right now?</label>
+              <select id="ls-stage" name="stage" required
+                style="width:100%; box-sizing:border-box; border:1px solid var(--proto-card-border); border-radius:8px; padding:10px 12px; font-size:14px; color:var(--proto-text); outline:none; font-family:inherit; background:#fff; appearance:auto;">
+                <option value="" disabled selected>Pick the one that fits you best</option>
+                <option value="just_got_ticket">I just got a ticket — figuring out what to do</option>
+                <option value="have_court_approval">I have court approval — picking a course</option>
+                <option value="enrolled_in_course">I'm enrolled in a course — I have questions</option>
+                <option value="course_completed">I finished my course — not sure what's next</option>
+              </select>
+            </div>
+
+            <!-- Question -->
+            <div>
+              <label for="ls-question" style="display:block; font-size:12px; font-weight:600; color:var(--proto-label); margin-bottom:5px;">
+                Got a specific question? <span style="font-weight:400; color:var(--proto-text-muted);">(optional)</span>
+              </label>
+              <textarea id="ls-question" name="question" rows="3" placeholder="What's confusing or stressing you out? We'll try to cover it on the next live."
+                style="width:100%; box-sizing:border-box; border:1px solid var(--proto-card-border); border-radius:8px; padding:10px 12px; font-size:14px; color:var(--proto-text); outline:none; font-family:inherit; resize:vertical;"></textarea>
+            </div>
+
+            <button type="submit" id="ls-submit"
+              style="width:100%; padding:13px; background:var(--proto-header-from); color:#fff; font-size:15px; font-weight:700; border:none; border-radius:10px; cursor:pointer; font-family:inherit; transition:opacity 0.15s;">
+              Save My Spot 🎯
+            </button>
+            <p id="ls-error" style="display:none; font-size:12px; color:#ef4444; text-align:center; margin:0;"></p>
+            <p style="font-size:11px; color:var(--proto-text-light); text-align:center; margin:0;">No spam. Unsubscribe any time.</p>
+          </form>
+
+          <!-- Success state -->
+          <div id="live-signup-success" style="display:none; text-align:center; padding:16px 0;">
+            <div style="font-size:40px; margin-bottom:12px;">🎉</div>
+            <p style="font-size:17px; font-weight:700; color:var(--proto-text); margin:0 0 8px;">You're on the list!</p>
+            <p style="font-size:13px; color:var(--proto-text-muted); margin:0 0 20px; line-height:1.5;">We'll email you before each session. In the meantime, subscribe on YouTube so you don't miss a thing.</p>
+            <a href="https://youtube.com/@txcourseguide" target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex; align-items:center; gap:8px; background:#ff0000; color:#fff; font-size:13px; font-weight:700; padding:10px 20px; border-radius:8px; text-decoration:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Subscribe on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- What to expect -->
+        <div style="margin-top:32px;">
+          <h3 style="font-size:15px; font-weight:700; color:var(--proto-text); margin:0 0 14px;">What we cover on every session</h3>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            {[
+              ['📋', 'How to get court permission to take a defensive driving course'],
+              ['🎓', 'Which TDLR-approved courses are worth it (and which to avoid)'],
+              ['📜', 'How to submit your certificate to the court correctly'],
+              ['💸', 'How to actually get your ticket dismissed and save the most money'],
+              ['❓', 'Your questions — live, in real time'],
+            ].map(([icon, text]) => (
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <span style="font-size:18px; flex-shrink:0; line-height:1.4;">{icon}</span>
+                <span style="font-size:13px; color:var(--proto-text-muted); line-height:1.5;">{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <SiteFooter />
+  </div>
+</Layout>
+
+<script is:inline>
+(function() {
+  // Live-now hero state
+  var LIVE_DAYS = [1,3,5];
+  var LIVE_HOUR_ET = 17, LIVE_MIN_ET = 30, LIVE_DUR = 30;
+  function etOffset() {
+    var jan = new Date(new Date().getFullYear(),0,1).getTimezoneOffset();
+    var jul = new Date(new Date().getFullYear(),6,1).getTimezoneOffset();
+    return new Date().getTimezoneOffset() < Math.max(jan,jul) ? -4 : -5;
+  }
+  function isLive() {
+    var now = new Date();
+    var et = new Date(now.getTime() + now.getTimezoneOffset()*60000 + etOffset()*3600000);
+    if (!LIVE_DAYS.includes(et.getDay())) return false;
+    var cur = et.getHours()*60+et.getMinutes();
+    var start = LIVE_HOUR_ET*60+LIVE_MIN_ET;
+    return cur>=start && cur<start+LIVE_DUR;
+  }
+  if (isLive()) {
+    var dot = document.getElementById('hero-dot');
+    var status = document.getElementById('hero-status');
+    var btn = document.getElementById('hero-yt-btn');
+    if (dot) { dot.style.background='#ef4444'; dot.style.animation='livepulse 1.2s ease-in-out infinite'; }
+    if (status) status.textContent = '🔴 We\'re live right now!';
+    if (btn) btn.textContent = '▶ Join the Live Now';
+    if (!document.getElementById('live-pulse-style')) {
+      var s = document.createElement('style');
+      s.id='live-pulse-style';
+      s.textContent='@keyframes livepulse{0%,100%{opacity:1}50%{opacity:0.3}}';
+      document.head.appendChild(s);
+    }
+  }
+
+  // Klaviyo form submission
+  var KLAVIYO_KEY = 'Wh2Jwz';
+  var LIST_ID = 'XEqjdE';
+  var form = document.getElementById('live-signup-form');
+  var successEl = document.getElementById('live-signup-success');
+  var errorEl = document.getElementById('ls-error');
+  var submitBtn = document.getElementById('ls-submit');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('ls-name').value.trim();
+    var email = document.getElementById('ls-email').value.trim();
+    var stage = document.getElementById('ls-stage').value;
+    var question = document.getElementById('ls-question').value.trim();
+
+    submitBtn.textContent = 'Saving...';
+    submitBtn.disabled = true;
+    errorEl.style.display = 'none';
+
+    // Subscribe to Klaviyo list
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + KLAVIYO_KEY, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'revision': '2023-12-15' },
+      body: JSON.stringify({
+        data: {
+          type: 'subscription',
+          attributes: {
+            list_id: LIST_ID,
+            email_marketing: { consent: 'SUBSCRIBED' },
+            custom_source: 'Live Q&A Landing Page',
+          },
+          relationships: {
+            list: { data: { type: 'list', id: LIST_ID } },
+          },
+          profile: {
+            data: {
+              type: 'profile',
+              attributes: {
+                email: email,
+                first_name: name,
+                properties: {
+                  ticket_stage: stage,
+                  live_question: question || '',
+                  signup_source: 'live_landing_page',
+                },
+              },
+            },
+          },
+        },
+      }),
+    })
+    .then(function(res) {
+      if (res.ok || res.status === 202) {
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      } else {
+        return res.json().then(function(d) { throw new Error(d.errors?.[0]?.detail || 'Something went wrong.'); });
+      }
+    })
+    .catch(function(err) {
+      errorEl.textContent = err.message || 'Something went wrong. Please try again.';
+      errorEl.style.display = 'block';
+      submitBtn.textContent = 'Save My Spot 🎯';
+      submitBtn.disabled = false;
+    });
+  });
+})();
+</script>

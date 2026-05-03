@@ -18,6 +18,7 @@ export const GET: APIRoute = () => {
     { path: '/harris-county',       priority: '0.8', changefreq: 'monthly' },
     { path: '/san-antonio',         priority: '0.8', changefreq: 'monthly' },
     { path: '/austin',              priority: '0.8', changefreq: 'monthly' },
+    { path: '/live',               priority: '0.7', changefreq: 'weekly'  },
     // Excluded: /404, /privacy, /terms (noindex or low-value)
   ];
 
