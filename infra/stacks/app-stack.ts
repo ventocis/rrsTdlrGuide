@@ -1,5 +1,5 @@
 import type { AppEnv } from "@roadreadysafety/cdk-infrastructure/constants";
-import { StaticSite, GoogleWorkspaceEmail } from "@roadreadysafety/cdk-infrastructure/constructs";
+import { StaticSite, GoogleWorkspaceEmail, KlaviyoSendingDomain } from "@roadreadysafety/cdk-infrastructure/constructs";
 import * as cdk from "aws-cdk-lib";
 import type * as acm from "aws-cdk-lib/aws-certificatemanager";
 import type * as r53 from "aws-cdk-lib/aws-route53";
@@ -15,6 +15,7 @@ export interface AppStackProps extends cdk.StackProps {
   googleVerificationTxt: string;
   dkimValue?: string;
   dmarcPolicy: "none" | "quarantine" | "reject";
+  klaviyoVerificationTxt?: string;
 }
 
 export class AppStack extends cdk.Stack {
@@ -37,6 +38,14 @@ export class AppStack extends cdk.Stack {
       googleVerificationTxt: props.googleVerificationTxt,
       dkimValue: props.dkimValue,
       dmarcPolicy: props.dmarcPolicy,
+      additionalRootTxtValues: props.klaviyoVerificationTxt ? [props.klaviyoVerificationTxt] : [],
     });
+
+    if (props.klaviyoVerificationTxt) {
+      new KlaviyoSendingDomain(this, "KlaviyoSendingDomain", {
+        hostedZone: props.hostedZone,
+        recordName: "send",
+      });
+    }
   }
 }

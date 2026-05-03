@@ -28,6 +28,7 @@ const appConfig: Record<AppEnv, Omit<AppStackProps & CloudfrontCertificateStackP
     existingHostedZoneId: "Z08769821BMPC7MBE1M1Z",
     dkimValue: "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnmvgsGqsY7lwhgKGdoP2UhTz/KX8aE6a7n/bSbSoagWfJGVOmKPCiYr5vK+xG62RBF8l2i1KFRtDAoGBnWFsJ18Uh1KqXkoCyG/e84+iWjHBQxQDZ6DuSfGWYVnEO6g3JhmHZH2KnQ3LWuY3CZbjdILjM8aC0ypZapvORPiK59Xbmb0p3LLuvt2S7YQq+iDX6gJJpeQX675xGa1838DoQcq/PPfqBr+DS4VBDUMCRw+AygW9C3DuASOej5eWAjT2zWBvZs1NXNqOsDNEs00ecJr05uIo62Il1CXX6IvmZPS2KPuO1+jV1CHud1BGdw2Hah7ONDqF2tDtUNgnoTG9MQIDAQAB",
     dmarcPolicy: "reject",
+    klaviyoVerificationTxt: "klaviyo-site-verification=Wh2Jwz",
     // Deploy QA DNS stack first, then paste the 4 NS record values here.
     subdomainDelegations: [
       {
