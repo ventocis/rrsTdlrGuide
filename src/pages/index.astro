@@ -50,14 +50,6 @@ const jsonLdOrganization = {
   <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
     <SiteHeader currentPath="/" />
     <main role="main" aria-label="Compare Texas defensive driving courses">
-      <div class="mx-auto w-full max-w-[1600px] px-3 pt-5 pb-1 sm:px-4">
-        <h1 class="text-[15px] font-semibold leading-tight sm:text-[16px]" style="color: var(--proto-text);">
-          Compare Texas Defensive Driving Courses
-        </h1>
-        <p class="mt-1 text-[13px] font-medium leading-snug sm:text-[14px]" style="color: var(--proto-text);">
-          Find the cheapest TDLR-approved defensive driving course in Texas. We track every provider so you don't have to.
-        </p>
-      </div>
       <ProviderTable providers={providers} client:load />
     </main>
     <SiteFooter />
