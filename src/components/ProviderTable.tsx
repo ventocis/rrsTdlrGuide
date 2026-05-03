@@ -549,20 +549,25 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                             </button>
                           )}
                           <div>
-                            {isValidUrl(p.website) ? (
-                              <a
-                                href={buildProviderUrl(p.website!)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[13px] font-semibold hover:underline"
-                                style={{ color: 'var(--proto-teal)' }}
-                                onClick={e => { e.preventDefault(); openProviderWebsite(p); }}
-                              >
-                                {p.name}
-                              </a>
-                            ) : (
-                              <span className="text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>{p.name}</span>
-                            )}
+                            <span className="inline-flex items-baseline gap-2">
+                              {isValidUrl(p.website) ? (
+                                <a
+                                  href={buildProviderUrl(p.website!)}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[13px] font-semibold hover:underline"
+                                  style={{ color: 'var(--proto-teal)' }}
+                                  onClick={e => { e.preventDefault(); openProviderWebsite(p); }}
+                                >
+                                  {p.name}
+                                </a>
+                              ) : (
+                                <span className="text-[13px] font-semibold" style={{ color: 'var(--proto-text)' }}>{p.name}</span>
+                              )}
+                              {p.featured && (
+                                <span className="text-[11px]" style={{ color: 'var(--proto-text-light)', fontWeight: 400 }}>Sponsored</span>
+                              )}
+                            </span>
                             {p.license && (
                               <div className="text-[10px] mt-0.5" style={{ color: 'var(--proto-text-light)' }}>{p.license}</div>
                             )}
@@ -723,7 +728,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
               className="rounded-xl border px-6 py-2.5 text-[13px] font-semibold transition-colors hover:opacity-80"
               style={{ borderColor: 'var(--proto-card-border)', background: 'white', color: 'var(--proto-text)' }}
             >
-              {showAll ? 'Show fewer ↑' : `Show all ${resultCount} providers ↓`}
+              {showAll ? 'Show fewer ↑' : 'Show more ↓'}
             </button>
           </div>
         )}
