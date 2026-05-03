@@ -19,7 +19,8 @@
     "instantCert": "Free",
     "moneyBack": false,
     "lastVerified": "",
-    "featured": true
+    "featured": true,
+    "pinOrder": 1
   },
   {
     "id": 2,
@@ -255,7 +256,8 @@
     "instantCert": "Paid",
     "moneyBack": false,
     "lastVerified": "",
-    "featured": false
+    "featured": false,
+    "pinOrder": 4
   },
   {
     "id": 13,
@@ -759,7 +761,8 @@
     "instantCert": "Mail",
     "moneyBack": false,
     "lastVerified": "",
-    "featured": false
+    "featured": false,
+    "pinOrder": 2
   },
   {
     "id": 36,
@@ -3828,7 +3831,8 @@
     "instantCert": "Free",
     "moneyBack": false,
     "lastVerified": "",
-    "featured": false
+    "featured": false,
+    "pinOrder": 3
   },
   {
     "id": 132,

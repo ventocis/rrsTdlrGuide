@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 
 export type DuplicateBrand = {
   name: string;
@@ -24,6 +24,7 @@ export type Provider = {
   instantCert: 'Free' | 'Paid' | 'Mail';
   lastVerified?: string;
   featured?: boolean;
+  pinOrder?: number;
 };
 
 type SortKey = 'price' | 'totalCost' | 'name';
@@ -95,6 +96,17 @@ export default function ProviderTable({ providers: allProviders }: Props) {
   const [copyDone, setCopyDone] = useState(false);
   const [totalCostTooltip, setTotalCostTooltip] = useState(false);
   const [methodologyOpen, setMethodologyOpen] = useState(false);
+
+  // Hide the Trustpilot floating bar while the mobile filter drawer is open
+  useEffect(() => {
+    const bar = document.getElementById('tp-float');
+    if (!bar) return;
+    if (drawerOpen) {
+      bar.style.display = 'none';
+    } else if (!sessionStorage.getItem('tp-float-dismissed')) {
+      bar.style.display = 'flex';
+    }
+  }, [drawerOpen]);
 
   function buildProviderUrl(website: string): string {
     let u = website.trim();
@@ -182,8 +194,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     const arr = [...filtered];
     const dir = sortDir === 'asc' ? 1 : -1;
     arr.sort((a, b) => {
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
+      // Pinned providers always appear first, in pinOrder sequence
+      const aPin = typeof a.pinOrder === 'number' ? a.pinOrder : 9999;
+      const bPin = typeof b.pinOrder === 'number' ? b.pinOrder : 9999;
+      if (aPin !== bPin) return aPin - bPin;
       if (sortBy === 'price') {
         // Push providers with no listed price to the bottom in all cases
         const aNoPrice = a.price === 0;
@@ -360,9 +374,6 @@ export default function ProviderTable({ providers: allProviders }: Props) {
           >
             Filter & Sort
           </button>
-        </div>
-        <div className="px-3 pb-2 text-[11px]" style={{ color: 'var(--proto-text-light)' }}>
-          {resultCount} providers
         </div>
       </div>
 
@@ -636,7 +647,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <p className="truncate text-[14px] font-semibold leading-tight" style={{ color: 'var(--proto-text)' }}>{p.name}</p>
+                    <span className="inline-flex items-baseline gap-2">
+                      <p className="truncate text-[14px] font-semibold leading-tight" style={{ color: 'var(--proto-text)' }}>{p.name}</p>
+                      {p.featured && <span className="shrink-0 text-[11px]" style={{ color: 'var(--proto-text-light)', fontWeight: 400 }}>Sponsored</span>}
+                    </span>
                     {p.license && <p className="mt-0.5 text-[11px]" style={{ color: 'var(--proto-text-light)' }}>{p.license}</p>}
                   </div>
                   <div className="shrink-0 text-right">
