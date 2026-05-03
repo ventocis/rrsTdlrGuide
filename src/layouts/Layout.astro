@@ -124,14 +124,12 @@ const jsonLdScripts = jsonLd
           popup.style.display = 'none';
           sessionStorage.setItem('tp-popup-dismissed', '1');
         }
-        // Close on backdrop click (but not inner card click)
         popup.addEventListener('click', function(e) {
           if (e.target === popup) dismissTpPopup();
         });
         document.getElementById('tp-close-x').addEventListener('click', dismissTpPopup);
         document.getElementById('tp-maybe-later').addEventListener('click', dismissTpPopup);
         document.getElementById('tp-review-link').addEventListener('click', dismissTpPopup);
-
         if (!sessionStorage.getItem('tp-popup-dismissed')) {
           setTimeout(function() { popup.style.display = 'flex'; }, 60000);
         }
