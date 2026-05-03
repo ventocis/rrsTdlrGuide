@@ -170,6 +170,22 @@ import SiteFooter from '../components/SiteFooter.astro';
     }
   }
 
+  // GA4 helper
+  function fireGtag(eventName, params) {
+    var gtag = window.gtag || function() {
+      (window.dataLayer = window.dataLayer || []).push(arguments);
+    };
+    gtag('event', eventName, params);
+  }
+
+  // Fire GA4 event when user selects their ticket stage
+  var stageSelect = document.getElementById('ls-stage');
+  if (stageSelect) {
+    stageSelect.addEventListener('change', function() {
+      fireGtag('live_stage_selected', { stage_value: stageSelect.value });
+    });
+  }
+
   // Klaviyo form submission
   var KLAVIYO_KEY = 'Wh2Jwz';
   var LIST_ID = 'XEqjdE';
