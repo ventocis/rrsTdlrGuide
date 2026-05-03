@@ -43,7 +43,7 @@ const jsonLdOrganization = {
 
 <Layout
   title="Compare Texas Defensive Driving Courses | TX Course Guide"
-  description="Compare all TDLR-approved defensive driving providers. Real prices, certificate options, formats, and languages. Free tool for Texas drivers."
+  description="Compare every TDLR-approved Texas defensive driving course by real total cost — not just the advertised price. Filter by format, language, and certificate delivery. Every provider, every fee, no surprises."
   url="/"
   jsonLd={[jsonLdWebSite, jsonLdOrganization]}
 >
@@ -56,9 +56,6 @@ const jsonLdOrganization = {
         </h1>
         <p class="mt-1 text-[13px] font-medium leading-snug sm:text-[14px]" style="color: var(--proto-text);">
           Find the cheapest TDLR-approved defensive driving course in Texas. We track every provider so you don't have to.
-        </p>
-        <p class="mt-0.5 text-[12px]" style="color: var(--proto-text-muted);">
-          {totalProviders} TDLR-approved providers · real prices, formats, and certificate delivery
         </p>
       </div>
       <ProviderTable providers={providers} client:load />

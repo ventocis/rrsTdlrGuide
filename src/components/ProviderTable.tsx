@@ -24,6 +24,7 @@ export type Provider = {
   instantCert: 'Free' | 'Paid' | 'Mail';
   lastVerified?: string;
   featured?: boolean;
+  pinOrder?: number;
 };
 
 type SortKey = 'price' | 'totalCost' | 'name';
@@ -182,8 +183,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     const arr = [...filtered];
     const dir = sortDir === 'asc' ? 1 : -1;
     arr.sort((a, b) => {
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
+      // Pinned providers always appear first, in pinOrder sequence
+      const aPin = typeof a.pinOrder === 'number' ? a.pinOrder : 9999;
+      const bPin = typeof b.pinOrder === 'number' ? b.pinOrder : 9999;
+      if (aPin !== bPin) return aPin - bPin;
       if (sortBy === 'price') {
         // Push providers with no listed price to the bottom in all cases
         const aNoPrice = a.price === 0;
