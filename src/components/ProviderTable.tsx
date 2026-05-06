@@ -96,6 +96,10 @@ export default function ProviderTable({ providers: allProviders }: Props) {
   const [copyDone, setCopyDone] = useState(false);
   const [totalCostTooltip, setTotalCostTooltip] = useState(false);
   const [methodologyOpen, setMethodologyOpen] = useState(false);
+  // SSR renders all rows so Google/Bing can crawl every provider.
+  // After hydration flips to true, the normal 25-row limit applies.
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => { setIsClient(true); }, []);
 
   // Hide the Trustpilot floating bar while the mobile filter drawer is open
   useEffect(() => {
@@ -214,7 +218,9 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     return arr;
   }, [filtered, sortBy, sortDir]);
 
-  const visible = showAll ? sorted : sorted.slice(0, INITIAL_LIMIT);
+  // During SSR (isClient=false) show everything so crawlers see all 133 rows.
+  // On the client, apply the normal pagination limit.
+  const visible = !isClient ? sorted : (showAll ? sorted : sorted.slice(0, INITIAL_LIMIT));
   const resultCount = sorted.length;
   const hasActiveFilters = formatFilter.length > 0 || certFilter.length > 0;
 
