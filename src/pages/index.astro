@@ -52,6 +52,16 @@ const jsonLdOrganization = {
     <main role="main" aria-label="Compare Texas defensive driving courses">
       <ProviderTable providers={providers} client:load />
     </main>
+    <!-- Hide rows beyond the initial limit before React hydrates to prevent a
+         133→25 row flash. Google/Bing still see all rows in the raw HTML. -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        var rows = document.querySelectorAll('tbody tr');
+        for (var i = 25; i < rows.length; i++) {
+          rows[i].style.display = 'none';
+        }
+      });
+    </script>
     <SiteFooter />
   </div>
 </Layout>
