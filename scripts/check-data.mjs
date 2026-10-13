@@ -72,7 +72,7 @@ if (fs.existsSync(dePath)) {
     // yet. That is expected, not an error — but it must not stay unconfirmed
     // forever, so it warns until the state catches up.
     if (p.source === 'owner-reported') warnings.push(`driver-ed: ${at} is owner-reported and not yet in TDLR's file — re-check after the next data:pull`)
-    if (!['online', 'in-person', 'hybrid'].includes(p.delivery)) errors.push(`driver-ed: ${at} delivery "${p.delivery}" is not a known value`)
+    if (!['online', 'in-person', 'hybrid', 'parent-taught'].includes(p.delivery)) errors.push(`driver-ed: ${at} delivery "${p.delivery}" is not a known value`)
     if (p.price != null) dePriced++
   }
   // A C licence must not be listed as if it were a defensive driving course.
