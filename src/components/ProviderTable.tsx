@@ -72,11 +72,15 @@ function langPillStyle(langs: string[]): React.CSSProperties {
   return { background: 'var(--pill-lang-other-bg)', color: 'var(--pill-lang-other-text)', border: '1px solid var(--pill-lang-other-border)' };
 }
 
-const SHARE_SMS_BODY = encodeURIComponent(
-  'If you ever get a ticket in Texas, use this before you buy a course — txcourseguide.com. Shows all 133 approved options with real prices.'
-);
-const SHARE_REDDIT_TEXT =
-  "There's a free comparison tool that shows all 133 TDLR-approved courses with real pricing and certificate delivery — txcourseguide.com. No signup, just the table. Saved me from overpaying.";
+// Derived from the data, not hardcoded: the directory shrinks when licences
+// lapse and grows when new operators are added, and stale counts in share copy
+// are the kind of thing a competitor screenshots.
+const shareSmsBody = (n: number) =>
+  encodeURIComponent(
+    `If you ever get a ticket in Texas, use this before you buy a course — txcourseguide.com. Shows all ${n} approved options with real prices.`
+  );
+const shareRedditText = (n: number) =>
+  `There's a free comparison tool that shows all ${n} TDLR-approved courses with real pricing and certificate delivery — txcourseguide.com. No signup, just the table. Saved me from overpaying.`;
 
 interface Props {
   providers: Provider[];
@@ -155,7 +159,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
   function dismissBanner() { setShareBanner(false); }
 
   function handleCopyReddit() {
-    navigator.clipboard.writeText(SHARE_REDDIT_TEXT).then(() => {
+    navigator.clipboard.writeText(shareRedditText(allProviders.length)).then(() => {
       setCopyDone(true);
       setTimeout(() => setCopyDone(false), 2000);
     });
@@ -218,7 +222,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     return arr;
   }, [filtered, sortBy, sortDir]);
 
-  // During SSR (isClient=false) show everything so crawlers see all 133 rows.
+  // During SSR (isClient=false) show everything so crawlers see every row.
   // On the client, apply the normal pagination limit.
   const visible = !isClient ? sorted : (showAll ? sorted : sorted.slice(0, INITIAL_LIMIT));
   const resultCount = sorted.length;
@@ -800,7 +804,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             <a
-              href={`sms:?&body=${SHARE_SMS_BODY}`}
+              href={`sms:?&body=${shareSmsBody(allProviders.length)}`}
               className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold text-white transition-opacity hover:opacity-80"
               style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.2)' }}
             >
@@ -839,7 +843,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
             </p>
             <div className="flex flex-wrap items-center gap-2">
               <a
-                href={`sms:?&body=${SHARE_SMS_BODY}`}
+                href={`sms:?&body=${shareSmsBody(allProviders.length)}`}
                 className="inline-flex items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-semibold text-white transition-opacity hover:opacity-80"
                 style={{ background: 'rgba(255,255,255,0.15)' }}
               >

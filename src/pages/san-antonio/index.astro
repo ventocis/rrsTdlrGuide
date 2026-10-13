@@ -1,4 +1,6 @@
 ---
+import providersRaw from '../../data/providers.json';
+const providerCount = (providersRaw as any[]).length;
 import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
@@ -224,7 +226,7 @@ const howToSchema = {
         <div class="cta">
           <div>
             <strong>Need to pick a defensive driving course?</strong>
-            <p style="font-size:14px;color:var(--tx2)">Compare all 133 TDLR-approved providers by price, format, and language — free, no signup.</p>
+            <p style="font-size:14px;color:var(--tx2)">Compare all {providerCount} TDLR-approved providers by price, format, and language — free, no signup.</p>
           </div>
           <a class="cta-btn" href="/">Compare courses on TX Course Guide</a>
         </div>
