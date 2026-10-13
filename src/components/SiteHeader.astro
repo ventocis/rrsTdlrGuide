@@ -40,6 +40,9 @@ const { currentPath = '/' } = Astro.props;
         <a href="/courts" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/courts' ? 'nav-active' : ''}`} style="color: #fff;">
           Court Lookup
         </a>
+        <a href="/drivers-ed" class={`inline-flex shrink-0 items-center rounded px-2 py-1 text-[11px] font-medium transition-colors hover:opacity-90 sm:text-[12px] ${currentPath === '/drivers-ed' ? 'nav-active' : ''}`} style="color: #fff;">
+          Driver's Ed
+        </a>
 
         <!-- City Guides dropdown (pure CSS) -->
         <div class="city-dropdown-wrapper">
@@ -94,6 +97,7 @@ const { currentPath = '/' } = Astro.props;
         <a href="/" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Compare Courses</a>
         <a href="/eligibility-checker" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Eligibility Checker</a>
         <a href="/courts" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Court Lookup</a>
+        <a href="/drivers-ed" class="rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10">Driver's Ed</a>
         <details class="group">
           <summary class="w-full cursor-pointer list-none rounded px-3 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-white/10 flex items-center justify-between">
             City Guides <span class="text-[10px]">▾</span>
