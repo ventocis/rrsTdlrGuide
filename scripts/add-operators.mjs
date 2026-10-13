@@ -17,12 +17,33 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { parseCsv } from './lib/tdlr.mjs'
+import { parseCsv, readSnapshot, resolveSnapshot, isCurrent } from './lib/tdlr.mjs'
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dest = path.join(root, 'src/data/providers.json')
 const providers = JSON.parse(fs.readFileSync(dest, 'utf8'))
-const roster = parseCsv(fs.readFileSync(path.join(root, 'tdlr-source/reports/ds-new-operators.csv'), 'utf8'))
+
+// Derived from the reviewed grouping plus a snapshot, both of which are either
+// tracked or one command away — rather than from an intermediate CSV that would
+// have to be committed to keep this reproducible.
+const groups = parseCsv(fs.readFileSync(path.join(root, 'tdlr-source/operator-groups.csv'), 'utf8'))
+const snap = resolveSnapshot(root, process.argv)
+const byLicence = new Map(
+  readSnapshot(snap, 'vsDriverSafetyProvider.csv').filter(isCurrent).map((r) => [r['License Number'].toUpperCase(), r])
+)
+const roster = groups
+  .filter((g) => g.Flags.includes('NEW') || g.Flags.includes('PARTIAL'))
+  .map((g) => {
+    const lic = g.LicenceNumbers.split(' ')[0].toUpperCase()
+    const s = byLicence.get(lic) ?? {}
+    return {
+      License: lic,
+      Licensee: g.ProposedOperator,
+      City: s.City ?? '',
+      GroupSize: g.Licences,
+      Flags: g.Flags,
+    }
+  })
 
 const have = new Set()
 for (const p of providers) {
