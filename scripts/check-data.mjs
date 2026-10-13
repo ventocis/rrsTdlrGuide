@@ -50,6 +50,33 @@ for (const p of providers) {
   if (p.website && !/^https?:\/\//i.test(p.website)) warnings.push(`${at}: website "${p.website}" has no scheme`)
 }
 
+// --- driver education -------------------------------------------------------
+const dePath = path.join(root, 'src', 'data', 'driver-ed.json')
+let deCount = 0, dePriced = 0
+if (fs.existsSync(dePath)) {
+  const de = JSON.parse(fs.readFileSync(dePath, 'utf8'))
+  deCount = de.length
+  const seenDe = new Set()
+  for (const p of de) {
+    const at = `${p.license} ${p.name}`
+    if (seenDe.has(p.license)) errors.push(`driver-ed: licence ${p.license} appears twice`)
+    seenDe.add(p.license)
+    if (!/^C\d+[A-Z]?$/.test(p.license)) errors.push(`driver-ed: ${at} licence is not a C-number`)
+    // A price must never be half-entered: a number without the flag, or a flag
+    // without a number, means someone edited this by hand and stopped halfway.
+    if (p.price != null && !p.verified?.price) errors.push(`driver-ed: ${at} has a price but verified.price is false`)
+    if (p.price == null && p.verified?.price) errors.push(`driver-ed: ${at} is flagged price-verified but has no price`)
+    if (p.website && !/^https?:\/\//i.test(p.website)) errors.push(`driver-ed: ${at} website "${p.website}" has no scheme`)
+    if (p.website && !p.verified?.website) warnings.push(`driver-ed: ${at} has a website that was never confirmed`)
+    if (!['online', 'in-person', 'hybrid'].includes(p.delivery)) errors.push(`driver-ed: ${at} delivery "${p.delivery}" is not a known value`)
+    if (p.price != null) dePriced++
+  }
+  // A C licence must not be listed as if it were a defensive driving course.
+  for (const p of de) {
+    if (seenLic.has(p.license)) errors.push(`driver-ed: ${p.license} also appears in providers.json — a driver ed licence is not a defensive driving licence`)
+  }
+}
+
 // Cross-check against the state, when a snapshot is available.
 let licNote = 'skipped (no TDLR snapshot — run `npm run data:pull`)'
 try {
@@ -75,6 +102,7 @@ fs.writeFileSync(
 )
 
 console.log(`providers       ${providers.length}`)
+console.log(`driver ed       ${deCount} (${dePriced} priced)`)
 console.log(`licence check   ${licNote}`)
 console.log(`errors          ${errors.length}`)
 console.log(`warnings        ${warnings.length}`)

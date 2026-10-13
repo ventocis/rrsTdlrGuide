@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import DriverEdTable from '../components/DriverEdTable';
+import driverEdRaw from '../data/driver-ed.json';
+
+const providers = driverEdRaw as any[];
+const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://txcourseguide.com').replace(/\/$/, '');
+
+const jsonLdItemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'TDLR-licensed online driver education providers in Texas',
+  numberOfItems: providers.length,
+  itemListElement: providers.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'DrivingSchool',
+      name: p.name,
+      ...(p.website ? { url: p.website } : {}),
+      ...(p.phone ? { telephone: p.phone } : {}),
+      identifier: p.license,
+      areaServed: { '@type': 'State', name: 'Texas' },
+    },
+  })),
+};
+
+const jsonLdBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TX Course Guide', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Online Driver Education', item: `${siteUrl}/drivers-ed` },
+  ],
+};
+
+const jsonLdFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is driver education the same as a defensive driving course?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Driver education is how you qualify for a first Texas licence, as a teen or an adult. A defensive driving or driver safety course is what a court accepts to dismiss a ticket, or an insurer accepts for a discount. They are separate TDLR licence types, and a provider approved for one is not automatically approved for the other.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can a Texas teen complete driver education entirely online?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The classroom portion can be completed online with a TDLR-licensed online provider. The behind-the-wheel hours must still be driven in a car, either with a licensed instructor or through the parent-taught programme.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I check that a driving school is licensed in Texas?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Every provider has a TDLR licence number. Driver education licences begin with C and driving safety (defensive driving) licences begin with CP. You can confirm any number against TDLR’s public licence search.',
+      },
+    },
+  ],
+};
+---
+
+<Layout
+  title="Texas Online Driver Education Providers | TX Course Guide"
+  description="Every TDLR-licensed provider approved to teach Texas driver education entirely online, with licence numbers straight from the state's licence file. Teen and adult first-licence courses."
+  url="/drivers-ed"
+  jsonLd={[jsonLdItemList, jsonLdBreadcrumb, jsonLdFaq]}
+>
+  <div class="min-h-screen" style="background-color: var(--proto-page-bg); font-family: 'DM Sans', system-ui, sans-serif;">
+    <SiteHeader currentPath="/drivers-ed" />
+    <main role="main" aria-label="Texas online driver education providers">
+      <DriverEdTable providers={providers} client:load />
+
+      <section class="mx-auto max-w-[1200px] px-3 pb-10 sm:px-5">
+        <div class="rounded-lg border p-4 sm:p-5" style="border-color: var(--proto-border); background: var(--proto-card-bg, transparent);">
+          <h2 class="text-[17px] font-bold" style="color: var(--proto-text);">
+            Driver education or defensive driving — which one do you need?
+          </h2>
+          <dl class="mt-3 grid gap-4 sm:grid-cols-2">
+            <div>
+              <dt class="text-[14px] font-semibold" style="color: var(--proto-text);">Driver education</dt>
+              <dd class="mt-1 text-[13px] leading-relaxed" style="color: var(--proto-text-muted);">
+                For getting a Texas licence for the first time, whether you are fifteen or fifty. Licence
+                numbers start with <strong>C</strong>. The classroom part can be done online; the
+                behind-the-wheel hours cannot. That is this page.
+              </dd>
+            </div>
+            <div>
+              <dt class="text-[14px] font-semibold" style="color: var(--proto-text);">Defensive driving</dt>
+              <dd class="mt-1 text-[13px] leading-relaxed" style="color: var(--proto-text-muted);">
+                For dismissing a ticket or earning an insurance discount. Licence numbers start with
+                <strong>CP</strong>. If you are holding a citation, this is the one you want —
+                <a href="/" class="font-semibold hover:underline" style="color: var(--proto-teal);">compare those courses</a>.
+              </dd>
+            </div>
+          </dl>
+          <p class="mt-4 text-[13px] leading-relaxed" style="color: var(--proto-text-muted);">
+            A few companies hold both licences and appear on both pages; those are tagged above. Holding one
+            does not imply the other, so a school that can teach your teen to drive cannot necessarily
+            dismiss your ticket.
+          </p>
+        </div>
+      </section>
+    </main>
+    <SiteFooter />
+  </div>
+</Layout>

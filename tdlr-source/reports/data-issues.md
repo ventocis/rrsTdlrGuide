@@ -16,9 +16,8 @@ Generated 2026-10-13 by `npm run check:data`. Do not silence an error by setting
 - CP023 FAST EASY DEFENSIVE DRIVING: total 50 != price 25 + fee 0 (set totalIncludesExtras if intended)
 - CP073 FUNNY DRIVING LLC: total 27 != price 25 + fee 0 (set totalIncludesExtras if intended)
 
-## Warnings (155)
+## Warnings (154)
 
-- CP1234 ROAD READY SAFETY: no lastVerified date
 - CP084 AAA CONTINUING EDUCATION: no lastVerified date
 - CP343 RUSHDEFENSIVEDRIVING.COM: no lastVerified date
 - CP1003 $25 DEFENSIVE DRIVING: no lastVerified date
