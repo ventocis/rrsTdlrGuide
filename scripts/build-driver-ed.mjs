@@ -21,7 +21,7 @@ const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..')
 const R = (p) => parseCsv(fs.readFileSync(path.join(root, p), 'utf8'))
 
 const roster = R('tdlr-source/reports/de-online.csv')
-const research = new Map(R('tdlr-source/reports/de-research-de-online.csv').map((r) => [r.License, r]))
+const research = new Map(R('tdlr-source/research/de-online.csv').map((r) => [r.License, r]))
 const branches = R('tdlr-source/reports/de-branches.csv')
 const providers = JSON.parse(fs.readFileSync(path.join(root, 'src/data/providers.json'), 'utf8'))
 
@@ -65,6 +65,40 @@ const out = roster.map((r) => {
   }
 })
 
+// Providers licensed too recently to appear in TDLR's published file. Kept in a
+// tracked file rather than hand-edited into the output, so regenerating does not
+// silently drop them — the mistake that cost a round trip in July.
+const addPath = path.join(root, 'tdlr-source/driver-ed-additions.json')
+if (fs.existsSync(addPath)) {
+  for (const a of JSON.parse(fs.readFileSync(addPath, 'utf8'))) {
+    if (out.some((p) => p.license === a.license)) continue
+    const cp = byName.get(norm(a.name))
+    out.push({
+      id: id++,
+      license: a.license,
+      name: a.name,
+      profession: a.profession,
+      delivery: a.delivery,
+      website: a.website ?? null,
+      price: a.price ?? null,
+      priceDisplay: a.priceDisplay ?? null,
+      courseTypes: a.courseTypes ?? [],
+      btwHours: a.btwHours ?? null,
+      locations: a.locations ?? [],
+      city: a.city ?? null,
+      county: a.county ?? null,
+      phone: a.phone ?? null,
+      licenseExpires: a.licenseExpires ?? null,
+      alsoDefensiveDriving: cp ? cp.license : null,
+      lastVerified: a.lastVerified ?? TODAY,
+      source: a.source ?? 'owner-reported',
+      verified: { roster: false, website: !!a.website, price: a.price != null },
+    })
+  }
+  out.sort((a, b) => a.name.localeCompare(b.name))
+  out.forEach((p, i) => { p.id = i + 1 })
+}
+
 const dest = path.join(root, 'src/data/driver-ed.json')
 fs.writeFileSync(dest, JSON.stringify(out, null, 2))
 
@@ -72,3 +106,4 @@ console.log(`wrote src/data/driver-ed.json — ${out.length} providers`)
 console.log(`  website confirmed   ${out.filter((p) => p.verified.website).length}`)
 console.log(`  price researched    ${out.filter((p) => p.verified.price).length}`)
 console.log(`  also sell defensive driving ${out.filter((p) => p.alsoDefensiveDriving).length}`)
+console.log(`  awaiting TDLR file  ${out.filter((p) => p.source === 'owner-reported').length}`)

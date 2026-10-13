@@ -1,0 +1,17 @@
+[
+  {
+    "_why": "Licensed 2026-10-13. TDLR's public licence file topped out at C3704 when last pulled, so this cannot be confirmed there yet. Reported by the licence holder. check:data will stop warning once TDLR publishes it; if the warning is still here weeks from now, chase it.",
+    "license": "C3705",
+    "name": "ROAD READY SAFETY",
+    "profession": "Online only driver education provider",
+    "delivery": "online",
+    "website": "https://roadreadysafety.com/",
+    "courseTypes": ["adult-ade1317"],
+    "city": "SPRING LAKE",
+    "county": null,
+    "phone": "616-307-5271",
+    "licenseExpires": null,
+    "source": "owner-reported",
+    "lastVerified": "2026-10-13"
+  }
+]

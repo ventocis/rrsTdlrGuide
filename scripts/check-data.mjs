@@ -68,6 +68,10 @@ if (fs.existsSync(dePath)) {
     if (p.price == null && p.verified?.price) errors.push(`driver-ed: ${at} is flagged price-verified but has no price`)
     if (p.website && !/^https?:\/\//i.test(p.website)) errors.push(`driver-ed: ${at} website "${p.website}" has no scheme`)
     if (p.website && !p.verified?.website) warnings.push(`driver-ed: ${at} has a website that was never confirmed`)
+    // A licence issued in the last few days will not be in TDLR's published file
+    // yet. That is expected, not an error — but it must not stay unconfirmed
+    // forever, so it warns until the state catches up.
+    if (p.source === 'owner-reported') warnings.push(`driver-ed: ${at} is owner-reported and not yet in TDLR's file — re-check after the next data:pull`)
     if (!['online', 'in-person', 'hybrid'].includes(p.delivery)) errors.push(`driver-ed: ${at} delivery "${p.delivery}" is not a known value`)
     if (p.price != null) dePriced++
   }
@@ -85,6 +89,22 @@ try {
   const stale = [...seenLic.keys()].filter((l) => l.startsWith('CP') && !current.has(l))
   for (const l of stale) warnings.push(`${seenLic.get(l)}: licence ${l} is not CURRENT at TDLR`)
   licNote = `${seenLic.size} licences checked, ${stale.length} not current`
+
+  if (fs.existsSync(dePath)) {
+    const deCurrent = new Set([
+      ...readSnapshot(snap, 'vsDriverEduProvider.csv').filter(isCurrent).map((r) => r['License Number'].toUpperCase()),
+      ...readSnapshot(snap, 'vsDriverEduProviderBranch.csv').filter(isCurrent).map((r) => r['License Number'].toUpperCase()),
+    ])
+    for (const p of JSON.parse(fs.readFileSync(dePath, 'utf8'))) {
+      if (deCurrent.has(p.license.toUpperCase())) {
+        if (p.source === 'owner-reported') {
+          console.log(`  note   driver-ed: ${p.license} now appears in TDLR's file — drop it from driver-ed-additions.json`)
+        }
+      } else if (p.source !== 'owner-reported') {
+        errors.push(`driver-ed: ${p.license} ${p.name} is not CURRENT in TDLR's driver education file`)
+      }
+    }
+  }
 } catch {}
 
 // Findings land in a tracked file so they become a worklist rather than console

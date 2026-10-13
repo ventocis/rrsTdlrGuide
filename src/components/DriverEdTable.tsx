@@ -26,6 +26,7 @@ export type DriverEdProvider = {
   licenseExpires: string | null;
   alsoDefensiveDriving: string | null;
   lastVerified?: string;
+  source?: string;
   verified: { roster: boolean; website: boolean; price: boolean };
 };
 
@@ -53,6 +54,13 @@ function deliveryPillStyle(d: DriverEdProvider['delivery']): React.CSSProperties
   if (d === 'in-person') return { background: 'var(--pill-format-inperson-bg)', color: 'var(--pill-format-inperson-text)', border: '1px solid var(--pill-format-inperson-border)' };
   return { background: 'var(--pill-format-online-bg)', color: 'var(--pill-format-online-text)', border: '1px solid var(--pill-format-online-border)' };
 }
+
+const COURSE_TYPE_LABELS: Record<string, string> = {
+  'adult-ade1317': 'Adult (6-hour ADE-1317)',
+  'teen-32hr': 'Teen (32-hour)',
+  'parent-taught': 'Parent-taught',
+  'btw-only': 'Behind-the-wheel only',
+};
 
 /** "Dallas, Dallas Co." reads badly — drop the county when it repeats the city. */
 function locationLabel(p: DriverEdProvider): string {
@@ -218,6 +226,19 @@ export default function DriverEdTable({ providers }: Props) {
                       also defensive driving
                     </a>
                   )}
+                  {p.courseTypes.length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {p.courseTypes.map((c) => (
+                        <span
+                          key={c}
+                          className="rounded px-1.5 py-0.5 text-[10px] font-semibold"
+                          style={{ background: 'var(--pill-lang-english-bg)', color: 'var(--pill-lang-english-text)', border: '1px solid var(--pill-lang-english-border)' }}
+                        >
+                          {COURSE_TYPE_LABELS[c] ?? c}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   {p.locations.length > 0 && (
                     <button
                       type="button"
@@ -320,6 +341,15 @@ export default function DriverEdTable({ providers }: Props) {
               <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={deliveryPillStyle(p.delivery)}>
                 {deliveryLabel(p.delivery)}
               </span>
+              {p.courseTypes.map((c) => (
+                <span
+                  key={c}
+                  className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                  style={{ background: 'var(--pill-lang-english-bg)', color: 'var(--pill-lang-english-text)', border: '1px solid var(--pill-lang-english-border)' }}
+                >
+                  {COURSE_TYPE_LABELS[c] ?? c}
+                </span>
+              ))}
               {p.alsoDefensiveDriving && (
                 <a
                   href="/"
