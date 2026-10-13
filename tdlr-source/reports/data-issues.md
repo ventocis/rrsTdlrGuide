@@ -13,7 +13,7 @@ Generated 2026-10-13 by `npm run check:data`. Do not silence an error by setting
 - CP1158 J&T ADULT DRIVING SCHOOL LLC: total 37.97 != price 29.99 + fee 3.99 (set totalIncludesExtras if intended)
 - CP073 FUNNY DRIVING LLC: total 27 != price 25 + fee 0 (set totalIncludesExtras if intended)
 
-## Warnings (127)
+## Warnings (149)
 
 - CP084 AAA CONTINUING EDUCATION: no lastVerified date
 - CP343 RUSHDEFENSIVEDRIVING.COM: no lastVerified date
@@ -142,3 +142,25 @@ Generated 2026-10-13 by `npm run check:data`. Do not silence an error by setting
 - CP022 I DRIVE SAFELY, LLC: website "www.idrivesafely.com" has no scheme
 - CP003 URBANTRAFFICSCHOOL.COM: no lastVerified date
 - CP315 DRIVESAFE: no lastVerified date
+- CP1237 TICKET DISMISSAL TEXAS: no lastVerified date
+- CP1258 360TRAINING.COM, INC.: no lastVerified date
+- CP1240 99 DRIVING SCHOOL LLC: no lastVerified date
+- CP1327 A AUTO DRIVING SCHOOL: no lastVerified date
+- CP1259 ALL AMERICAN DRIVING SCHOOL: no lastVerified date
+- CP1243 AMERICAN COURSE ACADEMY: no lastVerified date
+- CP1337 ANIME DRIVING SCHOOL: no lastVerified date
+- CP1262 BLITZ COURT CLASSES: no lastVerified date
+- CP1265 BRIGHT SAFETY LLC: no lastVerified date
+- CP1314 DEFENSIVEONLINEDRIVINGTEXAS.COM: no lastVerified date
+- CP1266 DRIVABLE ED: no lastVerified date
+- CP1235 DRIVING LOGIC INC: no lastVerified date
+- CP1241 HALLMARK DRIVING ACADEMY: no lastVerified date
+- CP1236 PASS DRIVERS ED LLC: no lastVerified date
+- CP1242 PASS FAST WITH AI: no lastVerified date
+- CP1306 RG MARKETING AGENCY LLC: no lastVerified date
+- CP1326 ROUTE DRIVING SAFETY: no lastVerified date
+- CP1264 SOUTH REGION DRIVING SCHOOL -TEXAS CITY LLC: no lastVerified date
+- CP1348 TEXAS DEFENSIVE DRIVING: no lastVerified date
+- CP1373 TEXAS TRAFFIC SCHOOL: no lastVerified date
+- CP1282 WAXAHACHI DRIVING SAFETY: no lastVerified date
+- CP1370 ZONIX EDUCATION LLC: no lastVerified date

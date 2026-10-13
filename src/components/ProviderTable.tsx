@@ -21,7 +21,7 @@ export type Provider = {
   online: boolean;
   inPerson: boolean;
   languages: string[];
-  instantCert: 'Free' | 'Paid' | 'Mail';
+  instantCert: 'Free' | 'Paid' | 'Mail' | 'Unknown';
   lastVerified?: string;
   featured?: boolean;
   pinOrder?: number;
@@ -56,6 +56,10 @@ function langLabel(langs: string[]): string {
 function certPillStyle(cert: string): React.CSSProperties {
   if (cert === 'Free') return { background: 'var(--pill-cert-free-bg)', color: 'var(--pill-cert-free-text)', border: '1px solid var(--pill-cert-free-border)' };
   if (cert === 'Paid') return { background: 'var(--pill-cert-paid-bg)', color: 'var(--pill-cert-paid-text)', border: '1px solid var(--pill-cert-paid-border)' };
+  // "Unknown" is not a delivery method, so it gets a muted pill rather than
+  // borrowing Mail's styling. Claiming "Mail" for a provider nobody has checked
+  // is how the Safe2Drive complaint happened.
+  if (cert === 'Unknown') return { background: 'transparent', color: 'var(--proto-text-light)', border: '1px dashed var(--proto-card-border)' };
   return { background: 'var(--pill-cert-mail-bg)', color: 'var(--pill-cert-mail-text)', border: '1px solid var(--pill-cert-mail-border)' };
 }
 
@@ -287,6 +291,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
     { key: 'free', label: 'Free' },
     { key: 'paid', label: 'Paid' },
     { key: 'mail', label: 'Mail' },
+    { key: 'unknown', label: 'Not checked' },
   ];
 
   const sortOptions = [
@@ -617,7 +622,7 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                         {p.totalCostDisplay && p.totalCostDisplay.toString().toLowerCase() !== 'not found' ? `$${p.totalCost.toFixed(0)}` : '—'}
                       </td>
                       <td className="px-3 py-2.5 text-center">
-                        <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={certPillStyle(p.instantCert)}>{p.instantCert}</span>
+                        <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={certPillStyle(p.instantCert)}>{p.instantCert === 'Unknown' ? 'not checked' : p.instantCert}</span>
                       </td>
                       <td className="px-3 py-2.5 text-center">
                         {(p.online || p.inPerson) && (
@@ -688,7 +693,9 @@ export default function ProviderTable({ providers: allProviders }: Props) {
                 </div>
                 <div className="mt-2.5 flex flex-wrap gap-1.5">
                   <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={certPillStyle(p.instantCert)}>
-                    {(p.instantCert === 'Free' || p.instantCert === 'Paid') ? 'Instant Cert' : 'Cert'}: {p.instantCert}
+                    {p.instantCert === 'Unknown'
+                      ? 'Cert: not checked'
+                      : `${p.instantCert === 'Free' || p.instantCert === 'Paid' ? 'Instant Cert' : 'Cert'}: ${p.instantCert}`}
                   </span>
                   {(p.online || p.inPerson) && (
                     <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={formatPillStyle(p)}>{formatLabel(p)}</span>
