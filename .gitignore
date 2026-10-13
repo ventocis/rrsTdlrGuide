@@ -27,3 +27,5 @@ Thumbs.db
 infra/cdk.out/
 infra/node_modules/
 .claude/launch.json
+# TDLR raw licence snapshots — re-pullable with `npm run data:pull`
+tdlr-source/snapshots/
