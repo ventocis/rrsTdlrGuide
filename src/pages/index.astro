@@ -53,7 +53,7 @@ const jsonLdOrganization = {
       <ProviderTable providers={providers} client:load />
     </main>
     <!-- Hide rows beyond the initial limit before React hydrates to prevent a
-         133→25 row flash. Google/Bing still see all rows in the raw HTML. -->
+         full→25 row flash. Google/Bing still see all rows in the raw HTML. -->
     <script is:inline>
       document.addEventListener('DOMContentLoaded', function() {
         var rows = document.querySelectorAll('tbody tr');

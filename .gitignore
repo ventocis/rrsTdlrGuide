@@ -29,3 +29,6 @@ infra/node_modules/
 .claude/launch.json
 # TDLR raw licence snapshots — re-pullable with `npm run data:pull`
 tdlr-source/snapshots/
+
+# Derived reports — regenerate with `npm run data:reconcile` / `check:data`
+tdlr-source/reports/
