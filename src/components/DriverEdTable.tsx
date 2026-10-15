@@ -264,7 +264,7 @@ export default function DriverEdTable({ providers }: Props) {
                     <a
                       href={p.website as string}
                       target="_blank"
-                      rel="nofollow noopener noreferrer"
+                      rel="noopener noreferrer"
                       className="text-[14px] font-semibold hover:underline"
                       style={{ color: 'var(--proto-teal)' }}
                     >
@@ -372,7 +372,7 @@ export default function DriverEdTable({ providers }: Props) {
                   <a
                     href={p.website as string}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="text-[15px] font-bold leading-snug hover:underline"
                     style={{ color: 'var(--proto-teal)' }}
                   >

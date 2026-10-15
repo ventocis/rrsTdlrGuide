@@ -85,7 +85,21 @@ const out = roster.map((r) => {
 const addPath = path.join(root, 'tdlr-source/driver-ed-additions.json')
 if (fs.existsSync(addPath)) {
   for (const a of JSON.parse(fs.readFileSync(addPath, 'utf8'))) {
-    if (out.some((p) => p.license === a.license)) continue
+    // Same file does two jobs: a licence already in TDLR's roster gets the
+    // verified research layered onto it; one that isn't there yet is added.
+    const existing = out.find((p) => p.license === a.license)
+    if (existing) {
+      for (const [k, v] of Object.entries(a)) {
+        if (k.startsWith('_') || k === 'license') continue
+        existing[k] = v
+      }
+      existing.verified = {
+        roster: existing.verified.roster,
+        website: !!a.website || existing.verified.website,
+        price: a.price != null || existing.verified.price,
+      }
+      continue
+    }
     const cp = byName.get(norm(a.name))
     out.push({
       id: id++,
