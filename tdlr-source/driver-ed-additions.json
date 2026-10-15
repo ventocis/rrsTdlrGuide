@@ -1,0 +1,27 @@
+[
+  {
+    "_why": "TDLR published C3705 on 2026-10-15 (ONLINE ONLY DRIVER EDUCATION PROVIDER, CURRENT, expires 10/12/2027), so the roster now supplies name, city, phone and expiry. What remains here is researched: the Texas Adult Driver Education Course, $39.95, 6 hours, verified on roadreadysafety.com/courses 2026-10-15.",
+    "license": "C3705",
+    "website": "https://roadreadysafety.com/adult-drivers-ed/texas",
+    "price": 39.95,
+    "priceDisplay": "39.95",
+    "courseTypes": [
+      "adult-ade1317"
+    ],
+    "lastVerified": "2026-10-15"
+  },
+  {
+    "_why": "Verified 2026-10-15 after an agency asked for a listing. TDLR has C3371 plus branches C3371B and C3371C, all CURRENT. Coastline's own location pages carry the same three licence numbers and the same phone, and quote $75 for the standalone course on both the Mansfield and Houston pages, so the price is statewide rather than per-location. They hold no CP licence, so they stay off the defensive driving table.",
+    "license": "C3371",
+    "website": "https://www.coastlineacademy.com/state/tx",
+    "price": 75,
+    "priceDisplay": "75",
+    "courseTypes": [
+      "teen-32hr",
+      "adult-ade1317",
+      "parent-taught",
+      "btw-only"
+    ],
+    "lastVerified": "2026-10-15"
+  }
+]

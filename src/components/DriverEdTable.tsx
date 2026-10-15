@@ -13,7 +13,7 @@ export type DriverEdProvider = {
   license: string;
   name: string;
   profession: string;
-  delivery: 'online' | 'in-person' | 'hybrid';
+  delivery: 'online' | 'in-person' | 'hybrid' | 'parent-taught';
   website: string | null;
   price: number | null;
   priceDisplay: string | null;
@@ -26,6 +26,7 @@ export type DriverEdProvider = {
   licenseExpires: string | null;
   alsoDefensiveDriving: string | null;
   lastVerified?: string;
+  source?: string;
   verified: { roster: boolean; website: boolean; price: boolean };
 };
 
@@ -45,14 +46,29 @@ function isValidUrl(url?: string | null): boolean {
 function deliveryLabel(d: DriverEdProvider['delivery']): string {
   if (d === 'hybrid') return 'Online / In-Person';
   if (d === 'in-person') return 'In-Person';
+  if (d === 'parent-taught') return 'Parent-Taught';
   return 'Online';
 }
 
 function deliveryPillStyle(d: DriverEdProvider['delivery']): React.CSSProperties {
+  if (d === 'parent-taught') return { background: 'var(--pill-lang-engspanish-bg)', color: 'var(--pill-lang-engspanish-text)', border: '1px solid var(--pill-lang-engspanish-border)' };
   if (d === 'hybrid') return { background: 'var(--pill-format-both-bg)', color: 'var(--pill-format-both-text)', border: '1px solid var(--pill-format-both-border)' };
   if (d === 'in-person') return { background: 'var(--pill-format-inperson-bg)', color: 'var(--pill-format-inperson-text)', border: '1px solid var(--pill-format-inperson-border)' };
   return { background: 'var(--pill-format-online-bg)', color: 'var(--pill-format-online-text)', border: '1px solid var(--pill-format-online-border)' };
 }
+
+/** Parent-taught already shows as the delivery pill; repeating it as a course
+ *  type chip is noise. */
+function visibleCourseTypes(p: DriverEdProvider): string[] {
+  return p.courseTypes.filter((c) => !(c === 'parent-taught' && p.delivery === 'parent-taught'));
+}
+
+const COURSE_TYPE_LABELS: Record<string, string> = {
+  'adult-ade1317': 'Adult (6-hour ADE-1317)',
+  'teen-32hr': 'Teen (32-hour)',
+  'parent-taught': 'Parent-taught',
+  'btw-only': 'Behind-the-wheel only',
+};
 
 /** "Dallas, Dallas Co." reads badly — drop the county when it repeats the city. */
 function locationLabel(p: DriverEdProvider): string {
@@ -74,6 +90,7 @@ export default function DriverEdTable({ providers }: Props) {
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(0);
+  const [deliveryFilter, setDeliveryFilter] = useState<string[]>([]);
   const [expanded, setExpanded] = useState<Record<number, boolean>>({});
 
   const toggleSort = useCallback((key: SortKey) => {
@@ -90,15 +107,31 @@ export default function DriverEdTable({ providers }: Props) {
 
   const filtered = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    if (!q) return providers;
-    return providers.filter(
-      (p) =>
+    return providers.filter((p) => {
+      if (deliveryFilter.length > 0 && !deliveryFilter.includes(p.delivery)) return false;
+      if (!q) return true;
+      return (
         p.name.toLowerCase().includes(q) ||
         p.license.toLowerCase().includes(q) ||
         (p.city || '').toLowerCase().includes(q) ||
-        p.locations.some((l) => l.city.toLowerCase().includes(q))
+        (p.county || '').toLowerCase().includes(q) ||
+        p.locations.some((l) => l.city.toLowerCase().includes(q) || (l.county || '').toLowerCase().includes(q))
+      );
+    });
+  }, [providers, searchQuery, deliveryFilter]);
+
+  const deliveryCounts = useMemo(() => {
+    const m: Record<string, number> = {};
+    for (const p of providers) m[p.delivery] = (m[p.delivery] || 0) + 1;
+    return m;
+  }, [providers]);
+
+  const toggleDelivery = useCallback((key: string) => {
+    setPage(0);
+    setDeliveryFilter((prev) =>
+      key === 'all' ? [] : prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
     );
-  }, [providers, searchQuery]);
+  }, []);
 
   const sorted = useMemo(() => {
     const dir = sortDir === 'asc' ? 1 : -1;
@@ -127,12 +160,13 @@ export default function DriverEdTable({ providers }: Props) {
     <div className="mx-auto max-w-[1200px] px-3 py-6 sm:px-5">
       <header className="mb-5">
         <h1 className="text-[22px] font-extrabold sm:text-[28px]" style={{ color: 'var(--proto-text)' }}>
-          Texas Online Driver Education Providers
+          Texas Driver Education Providers
         </h1>
         <p className="mt-2 max-w-[760px] text-[14px] leading-relaxed" style={{ color: 'var(--proto-text-muted)' }}>
-          Every provider licensed by TDLR to deliver driver education entirely online — {providers.length} of
-          them. This is first-licence driver ed, for a teen or an adult getting a Texas licence. It is a
-          different course from the defensive driving you take to dismiss a ticket.
+          All {providers.length} providers TDLR licenses to teach driver education in Texas — online schools,
+          in-person schools with their branch locations, and parent-taught course providers. This is
+          first-licence driver ed, for a teen or an adult getting a Texas licence. It is a different course
+          from the defensive driving you take to dismiss a ticket.
         </p>
         {pricedCount < providers.length && (
           <p
@@ -146,6 +180,37 @@ export default function DriverEdTable({ providers }: Props) {
         )}
       </header>
 
+      <div className="mb-3 flex flex-wrap items-center gap-1.5">
+        <span className="mr-1 text-[11px] font-semibold uppercase tracking-wide" style={{ color: 'var(--proto-text-light)' }}>
+          Format
+        </span>
+        {[
+          { key: 'all', label: 'All' },
+          { key: 'online', label: 'Online' },
+          { key: 'in-person', label: 'In-Person' },
+          { key: 'parent-taught', label: 'Parent-Taught' },
+        ].map((o) => {
+          const active = o.key === 'all' ? deliveryFilter.length === 0 : deliveryFilter.includes(o.key);
+          return (
+            <button
+              key={o.key}
+              type="button"
+              onClick={() => toggleDelivery(o.key)}
+              aria-pressed={active}
+              className="rounded-full px-2.5 py-1 text-[12px] font-semibold transition-colors"
+              style={
+                active
+                  ? { background: 'var(--proto-teal)', color: '#fff', border: '1px solid var(--proto-teal)' }
+                  : { background: 'transparent', color: 'var(--proto-text-muted)', border: '1px solid var(--proto-border)' }
+              }
+            >
+              {o.label}
+              {o.key !== 'all' && deliveryCounts[o.key] ? ` (${deliveryCounts[o.key]})` : ''}
+            </button>
+          );
+        })}
+      </div>
+
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <label className="sr-only" htmlFor="de-search">Search providers</label>
         <input
@@ -153,7 +218,7 @@ export default function DriverEdTable({ providers }: Props) {
           type="search"
           value={searchQuery}
           onChange={(e) => { setSearchQuery(e.target.value); setPage(0); }}
-          placeholder="Search by name, licence, or city"
+          placeholder="Search by name, licence, city, or county"
           className="w-full rounded-md border px-3 py-2 text-[14px] sm:w-[320px]"
           style={{ borderColor: 'var(--proto-border)', color: 'var(--proto-text)' }}
         />
@@ -199,7 +264,7 @@ export default function DriverEdTable({ providers }: Props) {
                     <a
                       href={p.website as string}
                       target="_blank"
-                      rel="nofollow noopener noreferrer"
+                      rel="noopener noreferrer"
                       className="text-[14px] font-semibold hover:underline"
                       style={{ color: 'var(--proto-teal)' }}
                     >
@@ -217,6 +282,19 @@ export default function DriverEdTable({ providers }: Props) {
                     >
                       also defensive driving
                     </a>
+                  )}
+                  {visibleCourseTypes(p).length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {visibleCourseTypes(p).map((c) => (
+                        <span
+                          key={c}
+                          className="rounded px-1.5 py-0.5 text-[10px] font-semibold"
+                          style={{ background: 'var(--pill-lang-english-bg)', color: 'var(--pill-lang-english-text)', border: '1px solid var(--pill-lang-english-border)' }}
+                        >
+                          {COURSE_TYPE_LABELS[c] ?? c}
+                        </span>
+                      ))}
+                    </div>
                   )}
                   {p.locations.length > 0 && (
                     <button
@@ -294,7 +372,7 @@ export default function DriverEdTable({ providers }: Props) {
                   <a
                     href={p.website as string}
                     target="_blank"
-                    rel="nofollow noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="text-[15px] font-bold leading-snug hover:underline"
                     style={{ color: 'var(--proto-teal)' }}
                   >
@@ -320,6 +398,15 @@ export default function DriverEdTable({ providers }: Props) {
               <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={deliveryPillStyle(p.delivery)}>
                 {deliveryLabel(p.delivery)}
               </span>
+              {visibleCourseTypes(p).map((c) => (
+                <span
+                  key={c}
+                  className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                  style={{ background: 'var(--pill-lang-english-bg)', color: 'var(--pill-lang-english-text)', border: '1px solid var(--pill-lang-english-border)' }}
+                >
+                  {COURSE_TYPE_LABELS[c] ?? c}
+                </span>
+              ))}
               {p.alsoDefensiveDriving && (
                 <a
                   href="/"
