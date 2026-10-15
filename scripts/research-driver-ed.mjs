@@ -12,7 +12,7 @@
  * it lands in the worksheet, never straight into the site data.
  *
  * Run: node scripts/research-driver-ed.mjs <roster.csv>
- * Output: tdlr-source/reports/de-research-<roster>.csv
+ * Output: tdlr-source/research/<roster>.csv  (tracked — these cost network calls)
  */
 
 import fs from 'fs'
@@ -84,7 +84,7 @@ for (const r of roster) {
   console.log(`  ${r.License.padEnd(7)} ${name.slice(0, 34).padEnd(34)} ${status}${prices ? '  $' + prices : ''}`)
 }
 
-const out = path.join(root, 'tdlr-source/reports', `de-research-${path.basename(rosterPath, '.csv')}.csv`)
+const out = path.join(root, 'tdlr-source/research', `${path.basename(rosterPath, '.csv')}.csv`)
 fs.writeFileSync(out, toCsv(
   ['License', 'Licensee', 'City', 'Phone', 'CandidateUrl', 'UrlSource', 'ResolvedUrl', 'Status', 'CandidatePrices'],
   rows
